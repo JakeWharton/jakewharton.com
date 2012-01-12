@@ -1,0 +1,5 @@
+auto: true
+url: "http://jakewharton.com"
+pygments: true
+permalink: /:title/
+pagination: 5

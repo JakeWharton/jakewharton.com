@@ -1,0 +1,90 @@
+body {
+	padding-top: 40px;
+	background: #f5f5f5 url('/static/graphy.png') repeat;
+}
+
+.navbar-inner, .nav .dropdown-menu {
+	background: #222 url('/static/black_linen_v2.png') repeat;
+}
+
+
+header {
+	padding: 40px 0 20px;
+	border-bottom: 2px solid #d5d5d5;
+}
+header h1 {
+	margin-bottom: 10px;
+}
+header p {
+	font-size: 16px;
+}
+header ul {
+	margin-top: 15px;
+}
+header li {
+	display: inline;
+}
+.home header h1 {
+	font-size: 70px;
+	line-height: 70px;
+	letter-spacing: -3px;
+}
+.home header p {
+	font-size: 30px;
+	line-height: 30px;
+	letter-spacing: -1px;
+}
+
+
+section {
+	margin-top: 40px;
+}
+section h1 {
+	margin-bottom: 15px;
+}
+
+
+footer {
+	margin-top: 40px;
+	border-top: 2px solid #d5d5d5;
+	padding: 20px 0;
+}
+footer kbd {
+	font-weight: bold;
+}
+
+
+dt {
+	margin-bottom: 2px;
+}
+dd {
+	margin-bottom: 10px;
+}
+
+.projects .row {
+	margin-top: 40px;
+}
+.projects h4 {
+	margin-bottom: 5px;
+}
+.projects h6 {
+	margin-bottom: 5px;
+}
+
+.contributors li {
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+.contributors li img {
+	vertical-align: bottom;
+}
+.tags span {
+	font-weight: bold;
+}
+
+.post-list li {
+	margin-bottom: 10px;
+}
+.post-list li a {
+	font-weight: bold;
+}

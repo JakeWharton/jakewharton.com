@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!--[if lt IE 9]><script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+		<title>{{ page.title }} - Jake Wharton</title>
+
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/site.css"/>
+	</head>
+	<body class="{{ page.tab }}">
+		<div class="navbar navbar-fixed">
+			<div class="navbar-inner">
+				<div class="container">
+					<a href="/" class="brand">jakewharton.com</a>
+					<ul class="nav">
+						<li{% if page.tab == 'home' %} class="active"{% endif %}><a href="/">Home</a></li>
+						<li{% if page.tab == 'posts' %} class="active"{% endif %}><a href="/posts.html">Posts</a></li>
+						<li{% if page.tab == 'projects' %} class="active"{% endif %}><a href="/projects.html">Projects</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			{{ content }}
+
+			<footer>
+				<p>&copy; 2012 Jake Wharton &mdash; <kbd><a href="http://twitter.com/JakeWharton">@</a></kbd> &middot; <kbd><a href="http://profiles.google.com/jakewharton">+</a></kbd></p>
+			</footer>
+		</div>
+	</body>
+</html>

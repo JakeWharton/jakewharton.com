@@ -1,0 +1,53 @@
+---
+title: Home
+layout: default
+tab: home
+---
+
+<header>
+	<h1>I write codes.</h1>
+	<p>Chronicles of the life of a serial programmer and his obsessions.</p>
+</header>
+
+<section>
+	<div class="row">
+		<div class="span6">
+			<h1>Blog <small>Ramblings and technical mumbo-jumbo</small></h1>
+			<dl class="unstyled">
+				{% for post in site.categories.post limit: 4 %}
+				<dt><a href="{{ post.url }}">{{ post.title }}</a> &ndash; <span class="label">{{ post.date | date_to_string }}</span></dt>
+				<dd>{{ post.lead }}</dd>
+				{% endfor %}
+			</dl>
+			<p><a href="/posts.html">I like this. Show me more &rarr;</a></p>
+		</div>
+		<div class="span6">
+			<h1>Projects <small>Libraries, apps, and other concoctions</small></h1>
+			<dl>
+				{% for post in site.categories.project limit: 4 %}
+				<dt><a href="{{ post.url }}">{{ post.title }}</a></dt>
+				<dd>{{ post.content }}</dd>
+				{% endfor %}
+			</dl>
+			<p><a href="/projects.html">I like this. Show me more &rarr;</a></p>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="row">
+		<div class="span12">
+			<h1>Socialize <small>Fork, follow, circle, drink, listen, check-in, and watch with me!</small></h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span3">GitHub</div>
+		<div class="span3">Twitter</div>
+		<div class="span3">Google Plus</div>
+		<div class="span3">Untappd</div>
+	</div>
+	<div class="row">
+		<div class="span3">Last.fm</div>
+		<div class="span3">Foursquare</div>
+		<div class="span3">Trakt.tv</div>
+	</div>
+</section>
