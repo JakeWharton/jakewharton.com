@@ -1,14 +1,14 @@
 ---
-title: Advanced Pre-Honeycomb Animation
+title: Advanced Pre-Honeycomb Animation with NineOldAndroids
 layout: post
-published: false
 
 categories: post
 tags:
 - Android
 - NineOldAndroids
 
-lead: Translation, scale, and other transformations were introduced in Honeycomb but can still be used on previous platforms.
+lead: Translation, scale, and other transformations were introduced in Honeycomb but can still be easily used on previous platforms.
+source: http://nineoldandroids.com
 ---
 
 The lovely new [animation framework][1] in Android 3.0 came with some additional
@@ -24,7 +24,7 @@ himself semed to produce a reliable, stable implementation for this--the
 recommendation always being to just use the build-in view animation.
 
 As I was digging around in the `View` class I noticed that there really was no
-way to achieve this effect directly even with reflection. It was only once I
+way to achieve this effect directly, even with reflection. It was only once I
 started poking around how view animations are processed and executed did a
 rather clever solution appear to me.
 
@@ -36,8 +36,14 @@ of the associated view at whatever time interval it is at. Since the
 is applied to the canvas rendering the view we can easily achieve all of the
 transformations of the native methods introduced in Honeycomb.
 
-So now that we know these transformations were possible how best to implement
-them in a manner that can be used by the new animation API. To accomplish this
+{% codeblock lang:java %}
+void applyTransformation(float interpolatedTime, Transformation t) {
+    //Perform transformations
+}
+{% /codeblock %}
+
+So now that we know these transformations were possible, how best to implement
+them in a manner that can be used by the new animation API? To accomplish this
 we use a few tricks of view animation in order to do this in a way that is as
 lightweight and fast as possible (we're on the UI thread, remember).
 
@@ -47,13 +53,12 @@ transformations. Now it became a matter of synchronizing our new class with the
 NineOldAndroids library since it would be the one actually controlling the
 animation.
 
-Instead of attempting to integrate NineOldAndroids directly in our class or try
-to make the NineOldAndroids library aware of our class I chose an alternate
-route. Our animation class would act only as a proxy to the alpha and the
-`Transformation` object by exposing methods to allow changing the various
-properties that were introduced in Honeycomb.
+Instead of attempting to integrate NineOldAndroids directly in this custom class
+I chose to make it act only as a proxy to the alpha and the `Transformation`
+object by exposing methods to allow changing the various properties that were
+introduced in Honeycomb.
 
-In order to take the native behavior of view animation out of the equation, our
+In order to take the native stepping of view animation out of the equation, our
 custom class immediately sets two properties on itself: `setDuration(0)` and
 `setFillAfter(true)`. This effectively disables the timer internally triggering
 the transformation and it allows the transformations that we make to be
@@ -62,28 +67,67 @@ to occur the animation is kept around so that its transformation can be applied
 whenever the view is invalidated. This is the behavior that we leverage in order
 to provide our animation.
 
+{% codeblock lang:java %}
+AnimatorProxy(View view) {
+    setDuration(0); //perform transformation immediately
+    setFillAfter(true); //persist transformation beyond duration
+    view.setAnimation(this);
+    mView = view;
+}
+{% /codeblock %}
+
 We expose our new properties as getter and setter methods that the new animation
 API can interact with and hold them in instance variables in our animation. Each
 invalidation then triggers our callback which we can then apply the newly
 updated values for each property, thus, animating the view.
 
+{% codeblock lang:java %}
+void setAlpha(float alpha) {
+    mAlpha = alpha;
+    mView.invalidate();
+}
+{% /codeblock %}
+
 This works extremely well and provides fluid, multi-property animation using
 NineOldAndroids for the new animation API but it still requires us to use the
-animation class for these specific properties. In order to provide a more
-seamless experience the next major version of NineOldAndroids, version 2.0,
-provides a set of base classes for `View`, `ViewGroup`, and the major layout
-classes.
+animation proxy class for these specific properties. In order to provide a more
+seamless experience, we need a way to have this handled automatically.
 
-Each one of these base classes provides the methods for the properties which
-were introduced in Honeycomb so that you can animate any view extending from
-them as if they existed natively. The classes also handle calling the superclass
-implementations if they are present. *Note: this means that they can only be
-used on Android 2.1+*
+In order to determine when this class is required we add a small check in the
+initialization method of `ObjectAnimator`. If the animation meets the following
+four conditions then a proxy instance is used: we are using a named property and
+not a `Property`, we are running on pre-3.0 Android, the target class is an
+instance of `View`, and the named property is one of the ones introduced in
+Honeycomb.
 
-In a followup release to NineOldAndroids 2.0 I hope to provide a means of
-automatically creating and using this animation class as a proxy without
-necessitating the use of these base activities (and thus allow it to work on
-all Android platforms).
+{% codeblock lang:java %}
+if ((mProperty == null) && AnimatorProxy.NEEDS_PROXY && (mTarget instanceof View)
+        && PROXY_PROPERTIES.containsKey(mPropertyName)) {
+    setProperty(PROXY_PROPERTIES.get(mPropertyName));
+}
+{% /codeblock %}
+
+Here, `PROXY_PROPERTIES` is a `Map` which maps the required property names to
+special `Property` classes that automatically use an instance of our proxy
+animation class.
+
+Now you can enjoy advanced Honeycomb-style animation of post-Honeycomb `View`
+properties by simple changing your imports to use NineOldAndroids!
+
+{% codeblock lang:java %}
+AnimatorSet set = new AnimatorSet();
+set.playTogether(
+    ObjectAnimator.ofFloat(myView, "rotationX", 0, 360),
+    ObjectAnimator.ofFloat(myView, "rotationY", 0, 180),
+    ObjectAnimator.ofFloat(myView, "rotation", 0, -90),
+    ObjectAnimator.ofFloat(myView, "translationX", 0, 90),
+    ObjectAnimator.ofFloat(myView, "translationY", 0, 90),
+    ObjectAnimator.ofFloat(myView, "scaleX", 1, 1.5f),
+    ObjectAnimator.ofFloat(myView, "scaleY", 1, 0.5f),
+    ObjectAnimator.ofFloat(myView, "alpha", 1, 0.25f, 1)
+);
+set.setDuration(5 * 1000).start();
+{% /codeblock %}
 
 
  [1]: http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html
