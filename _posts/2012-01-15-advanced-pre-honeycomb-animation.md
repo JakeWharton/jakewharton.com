@@ -129,7 +129,11 @@ set.playTogether(
 set.setDuration(5 * 1000).start();
 {% endhighlight %}
 
+Download NineOldAndroids 2.0.0 from [nineoldandroids.com][2] and check it out
+on [GitHub][4].
+
 
  [1]: http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html
  [2]: http://nineoldandroids.com
  [3]: http://stackoverflow.com/q/8734001/132047
+ [4]: http://github.com/JakeWharton/NineOldAndroids/
