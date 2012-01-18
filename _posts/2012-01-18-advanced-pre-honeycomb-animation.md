@@ -19,9 +19,9 @@ for which methods exist on the running platform.
 
 Recently I [set out][3] to solve this problem and allow for utilizing my library
 to animate these properties regardless of the API level. Neither an answer to
-the linked StackOverflow question nor talking to the animation guru Chet Haase
-himself semed to produce a reliable, stable implementation for this--the
-recommendation always being to just use the build-in view animation.
+the linked StackOverflow question nor a quick excahgen with the animation guru
+Chet Haase himself semed to produce a reliable, stable implementation for
+this--the recommendation always being to just use the built-in view animation.
 
 As I was digging around in the `View` class I noticed that there really was no
 way to achieve this effect directly, even with reflection. It was only once I
