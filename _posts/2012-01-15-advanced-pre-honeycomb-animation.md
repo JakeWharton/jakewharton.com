@@ -109,7 +109,9 @@ if ((mProperty == null) && AnimatorProxy.NEEDS_PROXY && (mTarget instanceof View
 
 Here, `PROXY_PROPERTIES` is a `Map` which maps the required property names to
 special `Property` classes that automatically use an instance of our proxy
-animation class.
+animation class. By setting a `Property` instance on the animation we will
+essentially override the string equivalent so that reflection on the method
+is not attempted.
 
 Now you can enjoy advanced Honeycomb-style animation of post-Honeycomb `View`
 properties by simple changing your imports to use NineOldAndroids!
