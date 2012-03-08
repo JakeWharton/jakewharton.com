@@ -19,7 +19,7 @@ For those who are not aware, version 4.0 is a feature-complete backport of the A
 
 In the next 48 hours I plan to fill out the release a bit with a proper migration guide for applications coming from the v3.x branch along with some minor updates to the [website][4] with new screenshots. Savy developers should already have all they need, however. The library is [available for download][5] on the website along with its sample applications--the source code to which is included in the download.
 
-For those who would like to stay up-to-date with the library in a more automated fashion you can download its samples from the newly re-branded Play Market:
+For those who would like to stay up-to-date with the library in a more automated fashion you can download its samples from the newly re-branded Play Store:
 
  * [ActionBarSherlock: Demos Sample][9]
  * [ActionBarSherlock: Fragments Sample][10]
