@@ -33,6 +33,14 @@ I would like to issue a special thank you to all the developers with whom I have
 
 If you release an application that uses ActionBarSherlock version 4 I would love to hear about it. Please contact me via [Twitter][6], [Google+][7], or [email][8].
 
+-----
+
+*Quick follow up:* It should be noted that some bugs still exist and may rear their heads depending on how you use the library. The library is under constant development and I will do my best to get updates and fixes out ASAP. The library is certainly more stable than not and I could not in good conscience allow anyone to develop using v3.5.x any longer. I'm hoping that the increased exposure that should come with the final release will help attract more developer attention which should aid in resolving bugs more quickly.
+
+**Please use the Google group too for all discussions @ [abs.io/forum][18]**
+
+Also, pull requests save lives so send them!
+
 &nbsp;
 
 ![ActionBarSherlock Logo][16] ![Happy Birthday to me!][2] ![Ice Cream Sandwich][17]
@@ -57,3 +65,4 @@ If you release an application that uses ActionBarSherlock version 4 I would love
  [15]: https://play.google.com/store/apps/details?id=com.androiduipatterns.mentionobserver
  [16]: /static/post-image/actionbarsherlock-logo.png
  [17]: /static/post-image/android-ice-cream-sandwich.jpg
+ [18]: http://abs.io/forum
