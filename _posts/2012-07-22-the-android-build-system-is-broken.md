@@ -68,3 +68,8 @@ because Google is advocating and supporting ant and the Eclipse plugin.
 We finally have an operating system that has been refined at an amazing level of
 detail. We have tooling around developing and debugging applications to an
 unparalleled depth. We deserve a build system with the same attention to detail.
+
+*Follow discussion on [Google+][1]*
+
+
+ [1]: https://plus.google.com/108284392618554783657/posts/KuWYBtLKtSE
