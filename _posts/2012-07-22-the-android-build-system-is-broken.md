@@ -71,6 +71,9 @@ unparalleled depth. We deserve a build system with the same attention to detail.
 
 *Follow discussion on [Google+][1] or [Reddit][2]*
 
+**Update:** Be sure you check out Xavier Durochet's reply on the Google+ thread
+(approximately 17 comments down).
+
 
  [1]: https://plus.google.com/108284392618554783657/posts/KuWYBtLKtSE
  [2]: http://www.reddit.com/r/androiddev/comments/wztec/the_android_build_system_is_broken/
