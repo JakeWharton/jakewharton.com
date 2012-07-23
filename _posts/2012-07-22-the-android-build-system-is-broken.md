@@ -69,7 +69,8 @@ We finally have an operating system that has been refined at an amazing level of
 detail. We have tooling around developing and debugging applications to an
 unparalleled depth. We deserve a build system with the same attention to detail.
 
-*Follow discussion on [Google+][1]*
+*Follow discussion on [Google+][1] or [Reddit][2]*
 
 
  [1]: https://plus.google.com/108284392618554783657/posts/KuWYBtLKtSE
+ [2]: http://www.reddit.com/r/androiddev/comments/wztec/the_android_build_system_is_broken/
