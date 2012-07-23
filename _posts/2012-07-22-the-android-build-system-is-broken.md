@@ -6,7 +6,7 @@ categories: post
 tags:
 - Android
 
-lead: As the complexity of Android projects increases, tolerance for the build
+lead: As the complexity of Android projects increase, tolerance for the build
       system goes to zero.
 ---
 
