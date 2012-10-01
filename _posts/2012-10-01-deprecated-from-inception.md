@@ -24,7 +24,7 @@ By design, ActionBarSherlock uses the native action bar API and theming. Yes you
 
 Some day, market saturation and the demands of your application will necessitate updating your `minSdkVersion` to 14 (or higher).
 
-If you are using a different action bar library or you have rolled your own then you will have either zero work ahead of you (which means you will still be using your crappy implementation) or you have a lot of work ahead of you (migrating to use the native components). Both of these situations are not ideal and I can think of handfuls of massively popular apps who will someday find themselves in this predicament.
+If you are using a different action bar library or you have rolled your own then you will either have zero work ahead of you (which means you will still be using your crappy implementation) or you have a lot of work ahead of you (migrating to use the native components). Both of these situations are not ideal and I can think of handfuls of massively popular apps who will someday find themselves in this predicament.
 
 On the other hand, if you happen to be using ActionBarSherlock, all you have to do is switch from using the custom types back to the native types. This switch is so easy that 99% of it can be scripted. It boils down to changing a few imports, replacing calls to `getSupportActionBar` with `getActionBar`, and using a `Holo` parent theme rather than a `Sherlock` one.
 
