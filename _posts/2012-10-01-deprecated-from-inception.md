@@ -20,7 +20,7 @@ In order to have pleasant longevity, libraries you integrate into your applicati
 
 ActionBarSherlock is very much the opposite of a small, modular library. When you decide to include ActionBarSherlock in your app you are committing your application to using it for the foreseeable future. Or are you?
 
-By design, ActionBarSherlock uses the native action bar API and theming. Yes you have to use types that exist in different packages and duplicate theme attributes but the names of classes, methods, and attributes mirror their native counterparts exactly. In fact, you have to go out of your way in order to find things that have actually are not API-compatible with the native action bar.
+By design, ActionBarSherlock uses the native action bar API and theming. Yes you have to use types that exist in different packages and duplicate theme attributes but the names of classes, methods, and attributes mirror their native counterparts exactly. In fact, you have to go out of your way in order to find things that are not API-compatible with the native action bar.
 
 Some day, market saturation and the demands of your application will necessitate updating your `minSdkVersion` to 14 (or higher).
 
