@@ -35,3 +35,8 @@ The process also works in reverse, in fact. At AnDevCon III I gave a talk where 
 Google has announced that they are working on a library that will backport a subset of the action bar. I was disappointed in this anouncement for two reasons: it was announced 12 months too late (and remains yet unreleased) and it is wasting engineering time of a talented developer. There are so many gaping holes in Android development where their time could be better spent. If they wanted to come out with a backport then it should have been done at the same time as ICS dropped.
 
 Let us hope they honor the notion of deprecation from inception as well, otherwise they will only make things worse.
+
+*Follow the discussion on [Google+][1] and [Reddit][2]*
+
+ [1]: https://plus.google.com/u/1/108284392618554783657/posts/SA1KF2uHBnM
+ [2]: http://www.reddit.com/r/androiddev/comments/10rybj/actionbarsherlock_deprecated_from_inception/
