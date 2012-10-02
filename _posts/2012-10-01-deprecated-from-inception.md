@@ -16,7 +16,7 @@ If you are writing an application right now with a `minSdkVersion` lower than 14
 
 Writing applications is hard and nobody wants to spend time writing boilerplate code. It sucks valuable engineering time away from what is most important in your app: the content. Throw in ActionBarSherlock and a slew of other open source libraries to bootstrap your development so you can make the best app possible.
 
-In order to have pleasant longevity, libraries you integrate into your application should be as small and modular as possible. Intevitably new libraries will be released and some will have features that you which to integrate at the cost of others. If a library is small, these replacements can be seamless (and often times drop-in).
+In order to have pleasant longevity, libraries you integrate into your application should be as small and modular as possible. Inevitably new libraries will be released and some will have features that you wish to integrate at the cost of others. If a library is small, these replacements can be seamless (and often times drop-in).
 
 ActionBarSherlock is very much the opposite of a small, modular library. When you decide to include ActionBarSherlock in your app you are committing your application to using it for the foreseeable future. Or are you?
 
