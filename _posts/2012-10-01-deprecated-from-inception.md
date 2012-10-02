@@ -18,7 +18,7 @@ Writing applications is hard and nobody wants to spend time writing boilerplate 
 
 In order to have pleasant longevity, libraries you integrate into your application should be as small and modular as possible. Inevitably new libraries will be released and some will have features that you wish to integrate at the cost of others. If a library is small, these replacements can be seamless (and often times drop-in).
 
-ActionBarSherlock is very much the opposite of a small, modular library. When you decide to include ActionBarSherlock in your app you are committing your application to using it for the foreseeable future. Or are you?
+ActionBarSherlock is very much the opposite of a small, modular library. When you decide to include ActionBarSherlock in your app you are committing to using it for the foreseeable future. Or are you?
 
 By design, ActionBarSherlock uses the native action bar API and theming. Yes you have to use types that exist in different packages and duplicate theme attributes but the names of classes, methods, and attributes mirror their native counterparts exactly. In fact, you have to go out of your way in order to find things that are not API-compatible with the native action bar.
 
