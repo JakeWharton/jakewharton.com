@@ -23,6 +23,9 @@ code {
   color: #444;
   background-color: #f6f6f6;
 }
+blockquote {
+  font-size: 14px;
+}
 
 header {
   background-color: #111;
@@ -82,7 +85,7 @@ header ul a:hover span {
   margin-bottom: 15px;
 }
 .content li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .post-item {
