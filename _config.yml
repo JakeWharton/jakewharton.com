@@ -2,3 +2,4 @@ auto: true
 url: "http://jakewharton.com"
 pygments: true
 permalink: /:title/
+markdown: kramdown
