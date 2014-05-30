@@ -1,0 +1,115 @@
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+a, a span {
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+a {
+  color: #48b983;
+}
+a:hover {
+  color: #40a776;
+}
+
+code {
+  color: #444;
+  background-color: #f6f6f6;
+}
+
+header {
+  background-color: #111;
+  color: #eee;
+  padding: 40px;
+}
+header h1 {
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: 11px;
+  margin: 0;
+}
+header h1 a {
+  color: #eee;
+}
+header h1 a:hover {
+  text-decoration: none;
+}
+header ul {
+  margin: 25px 0 0;
+}
+header ul li {
+  padding-bottom: 20px;
+}
+header ul a {
+  color: #ddd;
+  font-weight: 700;
+}
+header ul a span {
+  color: #888;
+  font-weight: 300;
+  padding-right: 2px;
+}
+header ul a:hover {
+  color: #48b983;
+  text-decoration: none;
+}
+header ul a:hover span {
+  color: #1b8057;
+}
+
+.content {
+  padding: 40px;
+  max-width: 1000px;
+  line-height: 22px;
+}
+.content h2 {
+  margin-top: 0;
+}
+.content p {
+  margin-bottom: 15px;
+}
+.content p:last-child {
+  margin-bottom: 0;
+}
+.content ul {
+  margin-bottom: 15px;
+}
+.content li {
+  margin-bottom: 5px;
+}
+
+.post-item {
+  margin-bottom: 40px;
+}
+.post-item:last-child {
+  margin-bottom: 0;
+}
+.post-item a {
+  display: block;
+}
+.post-item a:hover {
+  text-decoration: none;
+}
+.post-item a h2 {
+  color: #222;
+}
+.post-item a:hover h2 {
+  text-decoration: underline;
+}
+.post-item a p {
+  color: #888;
+}
+.post-item a p.date {
+  color: #aaa;
+}
+
+.post h2 {
+  margin-bottom: 20px;
+}

@@ -1,53 +1,22 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} - Jake Wharton</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700" type="text/css">
+    <link rel="stylesheet" href="/static/app.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Jake Wharton</a></h1>
+    </header>
 
-		<!--[if lt IE 9]><script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-		<title>{{ page.title }} - Jake Wharton</title>
-
-		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="/static/site.css"/>
-		<link rel="stylesheet" type="text/css" href="/static/pygments.css"/>
-	</head>
-	<body class="{{ page.tab }}">
-		<div class="navbar navbar-fixed">
-			<div class="navbar-inner">
-				<div class="container">
-					<a href="/" class="brand">jakewharton.com</a>
-					<ul class="nav">
-						<li{% if page.tab == 'home' %} class="active"{% endif %}><a href="/">Home</a></li>
-						<li{% if page.tab == 'posts' %} class="active"{% endif %}><a href="/posts.html">Posts</a></li>
-						<li{% if page.tab == 'projects' %} class="active"{% endif %}><a href="/projects.html">Projects</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			{{ content }}
-
-			<footer>
-				<p>&copy; 2012 Jake Wharton &mdash; <kbd><a href="http://twitter.com/JakeWharton">@</a></kbd> &middot; <kbd><a href="http://profiles.google.com/jakewharton">+</a></kbd></p>
-			</footer>
-		</div>
-		<script type="text/javascript">
-			var _gauges = _gauges || [];
-			(function() {
-				var t   = document.createElement('script');
-				t.type  = 'text/javascript';
-				t.async = true;
-				t.id    = 'gauges-tracker';
-				t.setAttribute('data-site-id', '4f455e10cb25bc5f5b00007b');
-				t.src = '//secure.gaug.es/track.js';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(t, s);
-			})();
-		</script>
-	</body>
+    <div class="content">
+      {{ content }}
+    </div>
+  </body>
 </html>

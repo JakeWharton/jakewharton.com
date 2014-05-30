@@ -1,31 +1,24 @@
----
-layout: default
-tab: posts
----
+<!DOCTYPE html>
 
-<header>
-	<h1>{{ page.title }}</h1>
-	<p>{{ page.lead }}</p>
-	{% if page.source %}<p><a href="{{ page.source }}">{{ page.source }}</a></p>{% endif %}
-</header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} - Jake Wharton</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700" type="text/css">
+    <link rel="stylesheet" href="/static/app.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Jake Wharton</a></h1>
+    </header>
 
-<section>
-	<div class="row">
-		<div class="span9">
-			<div class="content">
-				{{ content }}
-			</div>
-			<div id="disqus"></div>
-		</div>
-		<div class="span2 offset1">
-			<h6>Posted</h6>
-			<p>{{ page.date | date_to_string }}</p>
-			<h6>Tags</h6>
-			<ul class="unstyled">
-				{% for tag in page.tags %}
-				<li>{{ tag }}</li>
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-</section>
+    <div class="content post">
+      <h2>{{ page.title }}</h2>
+
+      {{ content }}
+    </div>
+  </body>
+</html>
