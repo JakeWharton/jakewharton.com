@@ -17,8 +17,11 @@
 
     <div class="content post">
       <h2>{{ page.title }}</h2>
+      <p class="date">{{ page.date | date_to_long_string }}</p>
 
       {{ content }}
+
+      <p class="signature">&mdash; Jake Wharton</p>
     </div>
   </body>
 </html>

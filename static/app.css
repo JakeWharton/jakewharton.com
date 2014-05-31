@@ -109,8 +109,13 @@ header ul a:hover span {
 .post-item a p {
   color: #888;
 }
-.post-item a p.date {
+
+p.date {
   color: #aaa;
+}
+p.signature {
+  margin-top: 60px;
+  color: #666;
 }
 
 .post h2 {
