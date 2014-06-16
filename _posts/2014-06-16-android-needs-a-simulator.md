@@ -115,7 +115,7 @@ Thankfully these are all solvable problems. Each one just needs the right person
 
 The single greatest hurdle to the creation of the simulator we deserve is the time, effort, and desire required to build and maintain it. Sorry, tools team! I'm told [they're hiring][9].
 
-
+*Follow the discussion on [Google+][11] and [Reddit][12].*
 
 
 
@@ -134,3 +134,5 @@ The single greatest hurdle to the creation of the simulator we deserve is the ti
  [8]: https://android.googlesource.com/platform/frameworks/base/+/master/tools/layoutlib
  [9]: https://twitter.com/droidxav/status/476181900357169152
  [10]: https://android.googlesource.com/platform/frameworks/testing/+/master/androidtestlib/
+ [11]: https://plus.google.com/108284392618554783657/posts/FYxnhQuEyoq
+ [12]: http://www.reddit.com/r/androiddev/comments/28al7i/android_needs_a_simulator_not_an_emulator/
