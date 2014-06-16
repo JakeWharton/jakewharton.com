@@ -13,7 +13,7 @@ Two years ago I wrote [a blog post][1] complaining that the Android build system
 
 [Xavier Ducrohet][2] swooped in and dropped a bomb on the [resulting Google+ thread][3]: "We are looking at revamping the whole thing".
 
-In the two years since he and the tools team have transformed the landscape of how Android development is done. A first-party Gradle plugin now provides the powerful and dynamic platform on which any app of quality is built. Ownership of the Android plugin inside IntelliJ IDEA (with a sprinkle of branding) yeilds a development environment that moves mountains for you.
+In the two years since he and the tools team have transformed the landscape of how Android development is done. A first-party Gradle plugin now provides the powerful and dynamic platform on which any app of quality is built. Ownership of the Android plugin inside IntelliJ IDEA (with a sprinkle of branding) yields a development environment that moves mountains for you.
 
 Neither the Gradle plugin nor the IntelliJ IDEA plugin (known bundled as Android Studio) are at a v1.0 yet. They're both still beta (albeit arguably in the sense that GMail was circa 2008).
 
@@ -86,7 +86,7 @@ Using a simulator would reduce this to a single step: compilation with `javac`. 
 Ok so I glossed over two other toolchain components we'd need to run our class files in a JVM-hosted simulator:
 
  1. A modified `aapt` whose only responsibility was generation of `R` files would still be needed. Thankfully the slower operations this resource step performs (image optimization and text file encoding) wouldn't be needed. XML files can be read on-the-fly as text by the simulator. Images don't need optimized since they are just being displayed from the local filesystem.
- 2. A signing key is required for the OS to verify installation and grant special permissions. Rather than having to actually sign anything, the key can be read from the keystore and included as a string.
+ 2. A signing key is required for the OS to verify installation and grant special permissions. Rather than having to actually sign anything, a simple certificate can be created from the keystore and included as a string.
 
 Imagine how quick the time between modifying your source code and running the application becomes when the only steps needed are a resource scan, `javac`, and copying a string. Oh, but do you have a ton of dependencies? Not a problem since all that's needed is appending the file path of the `.jar` file onto the JVM classpath.
 
