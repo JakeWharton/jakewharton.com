@@ -19,6 +19,10 @@ a:hover {
   color: #40a776;
 }
 
+ul, ol {
+  padding-left: 25px;
+}
+
 code {
   color: #444;
   background-color: #f6f6f6;
@@ -38,6 +42,13 @@ header h1 {
   letter-spacing: 12px;
   margin: 0 0 0 4px;
 }
+@media (max-width: 767px) {
+  header h1 {
+    letter-spacing: 5px;
+    font-size: 40px;
+  }
+}
+
 header h1 a {
   color: #eee;
 }
