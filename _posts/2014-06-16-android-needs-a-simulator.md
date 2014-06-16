@@ -70,7 +70,7 @@ What does a simulator buy us that a traditional emulator does not?
 
  * Creating, configuration, and running simualtors becomes about the runtime, not the right configuration of options for optimal performance.
  * Instrumentation tests gain stability and speed which thus massively increases their utility. A simulator that runs headless as part of the normal build means your build can run these tests no differently than it compiles the Java sources.
- * The need for a separate, JVM-based unit test solution dimishes drastically. Even more exciting is that the need for a third-party testing solution like Robolectric dimishes with it. When a headless simulator is part of your build (and with an [upcoming test runner diversification][10]), unit tests on the JVM become a first-party delight.
+ * The need for a separate, JVM-based unit test solution diminishes drastically. Even more exciting is that the need for a third-party testing solution like Robolectric dimishes with it. When a headless simulator is part of your build (and with an [upcoming test runner diversification][10]), unit tests on the JVM become a first-party delight.
  * The lack of an emulated architecture layer, the overhead of a whole OS running, and the need for build steps like packaging (more on that to follow) means you are able to develop and deploy at a speed which just isn't possible in the current setup.
 
 There always will be a need for a proper emulator for acceptance testing your application in an environment that behaves exactly like a device. For day-to-day development this is simply not needed. Developer productivity will rise dramatically and the simplicity through which testing can now be done will encourage their use and with any luck improve overall app quality.
