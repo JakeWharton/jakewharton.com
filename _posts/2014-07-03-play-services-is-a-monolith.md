@@ -13,9 +13,7 @@ lead: Monolithic libraries are rarely the answer and when abused cause much more
 
 Sounds scary, right? It isn't.
 
-Google Play Services 5.0 which [just launched][1] contributes over <strong>twenty thousand</strong> methods to your app. 20k+. That's one third of the limit!
-
-That's scary.
+Google Play Services 5.0 which [just launched][1] contributes over <strong>twenty thousand</strong> methods to your app. 20k+. One third of the limit! <em>That</em> is scary.
 
 The Play Services library includes proprietary functionality built on the normal Android APIs and a separate APK downloaded on all devices with the Play Store. Some of the services it provides are invaluable. Like Guava it is also a monolothic library but it <em>is</em> a bad thing in this case.
 
