@@ -13,7 +13,7 @@ lead: Monolithic libraries are rarely the answer and when abused cause much more
 
 Sounds scary, right? It isn't.
 
-Google Play Services 5.0 which [just launched][1] contributes <strong>twenty thousand</strong> methods to your app. 20k. That's one third of the limit!
+Google Play Services 5.0 which [just launched][1] contributes over <strong>twenty thousand</strong> methods to your app. 20k+. That's one third of the limit!
 
 That's scary.
 
