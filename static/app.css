@@ -98,6 +98,9 @@ header ul a:hover span {
 .content li {
   margin-bottom: 10px;
 }
+.content img {
+  max-width: 100%;
+}
 
 .post-item {
   margin-bottom: 40px;
