@@ -165,8 +165,12 @@ And the full by-package breakdown of Play Services:
 
 You can grab these two scripts from here: [gist.github.com/JakeWharton/6002797](https://gist.github.com/JakeWharton/6002797)
 
+The dependency graphs were generated using [degraph][5] and [yEd][6]. Download the `.graphml` for [Play Services](/static/files/play-services-5.graphml) and [Guava](/static/files/guava-17.graphml).
+
 
  [1]: http://android-developers.blogspot.com/2014/07/google-play-services-5.html
  [2]: https://code.google.com/p/guava-libraries/
  [3]: http://jakewharton.com/android-needs-a-simulator/
  [4]: http://thenextweb.com/socialmedia/2014/05/06/large-tech-companies-hopping-app-unbundling-trend/
+ [5]: https://github.com/schauder/degraph
+ [6]: http://www.yworks.com/en/products_yed_about.html
