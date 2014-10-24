@@ -1,5 +1,5 @@
-auto: true
 url: "http://jakewharton.com"
-pygments: true
+highlighter: pygments
 permalink: /:title/
 markdown: kramdown
+
