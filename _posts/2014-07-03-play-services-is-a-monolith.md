@@ -25,24 +25,24 @@ Most of the library's offerings are very disparate, having only the fact that th
 
 At worst, we specify a few dependencies manually:
 
-{% highlight groovy %}
+```groovy
 dependencies {
   compile 'com.google.android.gms:play-services-ads:5.0.+'
   compile 'com.google.android.gms:play-services-analytics:5.0.+'
   compile 'com.google.android.gms:play-services-games:5.0.+'
 }
-{% endhighlight %}
+```
 
 Best case would be a plugin that provided a clear DSL to what you were getting and offered easier configuration of the various components.
 
-{% highlight groovy %}
+```groovy
 apply plugin: 'com.google.playservices'
 
 playServices {
   version 5.0.+
   components ads, analytics, games
 }
-{% endhighlight %}
+```
 
 (You can even still provide the "fat" jar in both the dependency management world and the people who like manual dependency management.)
 

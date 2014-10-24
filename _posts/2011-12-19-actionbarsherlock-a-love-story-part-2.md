@@ -28,15 +28,16 @@ Over the next few weeks I managed to get simple screens of the application worki
 
 At this point there were a handful of users who knew of the library and likely even less using it, progress on the VM app had stalled because of issues in getting my custom SOAP client working properly, and I had become aware of just how limiting my custom API really was. The following code snippet was taken from one of the samples of version 2.1.1:
 
-
-    ActionBarSherlock.from(this)
-            .with(savedInstanceState)
-            .layout(R.layout.activity_hello)
-            .menu(R.menu.hello)
-            .homeAsUp(true)
-            .title(R.string.hello)
-            .handleCustom(ActionBarForAndroidActionBar.Handler.class)
-            .attach();
+```java
+ActionBarSherlock.from(this)
+    .with(savedInstanceState)
+    .layout(R.layout.activity_hello)
+    .menu(R.menu.hello)
+    .homeAsUp(true)
+    .title(R.string.hello)
+    .handleCustom(ActionBarForAndroidActionBar.Handler.class)
+    .attach();
+```
 
 While there was nothing fundamentally wrong with this API in the context of my app, requests were coming in for the support of other action bar features. Constantly implementing methods for every item was clearly going to create a mess of a library. I chose once again to embark on a rewrite to afford a more flexible model.
 

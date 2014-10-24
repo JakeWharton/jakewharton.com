@@ -36,11 +36,11 @@ of the associated view at whatever time interval it is at. Since the
 is applied to the canvas rendering the view we can easily achieve all of the
 transformations of the native methods introduced in Honeycomb.
 
-{% highlight java %}
+```java
 void applyTransformation(float interpolatedTime, Transformation t) {
     //Perform transformations
 }
-{% endhighlight %}
+```
 
 So now that we know these transformations were possible, how best to implement
 them in a manner that can be used by the new animation API? To accomplish this
@@ -67,26 +67,26 @@ to occur the animation is kept around so that its transformation can be applied
 whenever the view is invalidated. This is the behavior that we leverage in order
 to provide our animation.
 
-{% highlight java %}
+```java
 AnimatorProxy(View view) {
     setDuration(0); //perform transformation immediately
     setFillAfter(true); //persist transformation beyond duration
     view.setAnimation(this);
     mView = view;
 }
-{% endhighlight %}
+```
 
 We expose our new properties as getter and setter methods that the new animation
 API can interact with and hold them in instance variables in our animation. Each
 invalidation then triggers our callback which we can then apply the newly
 updated values for each property, thus, animating the view.
 
-{% highlight java %}
+```java
 void setAlpha(float alpha) {
     mAlpha = alpha;
     mView.invalidate();
 }
-{% endhighlight %}
+```
 
 This works extremely well and provides fluid, multi-property animation using
 NineOldAndroids for the new animation API but it still requires us to use the
@@ -100,12 +100,12 @@ not a `Property`, we are running on pre-3.0 Android, the target class is an
 instance of `View`, and the named property is one of the ones introduced in
 Honeycomb.
 
-{% highlight java %}
+```java
 if ((mProperty == null) && AnimatorProxy.NEEDS_PROXY && (mTarget instanceof View)
         && PROXY_PROPERTIES.containsKey(mPropertyName)) {
     setProperty(PROXY_PROPERTIES.get(mPropertyName));
 }
-{% endhighlight %}
+```
 
 Here, `PROXY_PROPERTIES` is a `Map` which maps the required property names to
 special `Property` classes that automatically use an instance of our proxy
@@ -116,7 +116,7 @@ is not attempted.
 Now you can enjoy advanced Honeycomb-style animation of post-Honeycomb `View`
 properties by simple changing your imports to use NineOldAndroids!
 
-{% highlight java %}
+```java
 AnimatorSet set = new AnimatorSet();
 set.playTogether(
     ObjectAnimator.ofFloat(myView, "rotationX", 0, 360),
@@ -129,7 +129,7 @@ set.playTogether(
     ObjectAnimator.ofFloat(myView, "alpha", 1, 0.25f, 1)
 );
 set.setDuration(5 * 1000).start();
-{% endhighlight %}
+```
 
 Download NineOldAndroids 2.0.0 from [nineoldandroids.com][2] and check it out
 on [GitHub][4].
