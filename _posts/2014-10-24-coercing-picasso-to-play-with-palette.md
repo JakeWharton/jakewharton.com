@@ -157,7 +157,7 @@ Picasso.with(context)
     });
 ```
 
-I have hard coded the pool size to retain 5 instances. This is an educated guess based on how I know Picasso's internals to work. If you are adopting this implementation you should add logging to test whether the size needs to be increased for you application.
+I have hard coded the pool size to retain 5 instances. This is an educated guess based on how I know Picasso's internals to work. If you were adopting this implementation you should add logging to test whether the size needs to be increased for you application.
 
 ----
 
