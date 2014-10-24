@@ -1,5 +1,4 @@
 url: "http://jakewharton.com"
 highlighter: pygments
 permalink: /:title/
-markdown: kramdown
-
+markdown: redcarpet
