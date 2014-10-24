@@ -9,7 +9,7 @@ tags:
 lead: Palette is a fantastic addition to the support library suite. Unfortunately Picasso doesn't have any obvious places to wire it in. Thankfully all it takes is a bit of creativity with its existing APIs.
 ---
 
-Features feel how I imagine children would. They are relatively easy to spawn but require a lengthy committment and constant care. Picasso's API would be nothing short of a Greek tradgedy if we humored every feature request that we received. Finding the right balance of what is appropriate to add and what isn't is a constant struggle.
+Features feel how I imagine children would. They are relatively easy to spawn but require a lengthy committment and constant care. Picasso's API would be nothing short of a Greek tragedy if we humored every feature request that we received. Finding the right balance of what is appropriate to add and what isn't is a constant struggle.
 
 When [the Palette library](https://developer.android.com/tools/support-library/features.html#v7-palette) was teased the inevitable feature request came in to Picasso for a means of supporting it. This was certainly not an unreasonable request, and while we might not explicitly support it directly we will probably add something in the future to more easily facilitate its use.
 
