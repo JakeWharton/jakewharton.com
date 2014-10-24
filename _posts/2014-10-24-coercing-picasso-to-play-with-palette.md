@@ -141,7 +141,7 @@ public final PaletteTransformation implements Transformation {
 }
 ```
 
-Our calling code only changes subtly to use the new static factory and the more semantically named palette extraction method.
+Our calling code only changes slightly to use the new static factory and the more semantically named palette extraction method.
 
 ```java
 final PaletteTransformation paletteTransformation = PaletteTransformation.obtain();
