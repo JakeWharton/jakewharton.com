@@ -192,7 +192,7 @@ public final class PaletteTransformation implements Transformation {
 }
 ```
 
-The `WeakHashMap` will release the `Palette` reference when its assciated `Bitmap` is garbage collected. We rely on Picasso's memory cache to retain the strong reference even if it isn't currently being displayed in an `ImageView`.
+The `WeakHashMap` will release the `Palette` reference when its associated `Bitmap` is garbage collected. We rely on Picasso's memory cache to retain the strong reference even if it isn't currently being displayed in an `ImageView`.
 
 The calling code has to obtain the final `Bitmap` in order to query the cache. This is trivial in Picasso's `Target`, but much more ugly in the more common `Callback`.
 
