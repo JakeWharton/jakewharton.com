@@ -23,7 +23,7 @@ There are two ways that Picasso can notify the caller of a successful image down
 
 Palette actually has an asynchronous mode of operation that we could leverage in these two callback locations but you wouldn't want to. The images are ready to be displayed when the callbacks are invoked so either delaying display until you can run Palette on another background thread or displaying the image right away and getting the Palette information later both seem like sub-par experiences.
 
-From the time Picasso gets the `Bitmap` to the time it makes it back to the main thread, where can we hook in to allow the invocation of Palette inside of the threading model which is alreday being managed by Picasso? Those familiar with Picasso will know that there's two places: the `Downloader` (or `RequestHandler` in the upcoming v2.4) and in a `Transformer`.
+From the time Picasso gets the `Bitmap` to the time it makes it back to the main thread, where can we hook in to allow the invocation of Palette inside of the threading model which is already being managed by Picasso? Those familiar with Picasso will know that there's two places: the `Downloader` (or `RequestHandler` in the upcoming v2.4) and in a `Transformer`.
 
 `Downloader` and the upcoming `RequestHandler` are means to obtaining the original `Bitmap` instances (or `InputStream` instances) to fulfill a request. While we could invoke Palette here, I'm going to immediately reject it for a few reasons. There are multiple sources from which an image can be loaded which means we need to duplicate our logic across all of them. Additionally, the number of sources is constantly changing and some of them you cannot replace (I'm looking at you, drawable resource ID loading). Sometimes sources provide an `InputStream` which means we now have the burden of doing the initial `Bitmap` decoding ourselves--a job which is supposed to be Picasso's, right? Finally, the `Bitmap` at this level is the raw, original sized version. Not only will Palette operate much more slowly on it but a later transformation might alter the color makeup of the image.
 
@@ -144,7 +144,7 @@ public final PaletteTransformation implements Transformation {
 Our calling code only changes slightly to use the new static factory and the more semantically named palette extraction method.
 
 ```java
-final PaletteTransformation paletteTransformation = PaletteTransformation.obtain();
+final PaletteTransformation paletteTransformation = PaletteTransformation.getInstance();
 Picasso.with(context)
     .load(url)
     .fit().centerCrop()
