@@ -39,7 +39,7 @@ Best case would be a plugin that provided a clear DSL to what you were getting a
 apply plugin: 'com.google.playservices'
 
 playServices {
-  version 5.0.+
+  version '5.0.+'
   components ads, analytics, games
 }
 ```
