@@ -21,7 +21,7 @@ A lot of really cool functionality is being put in Play Services. You'll have a 
 
 Most of the library's offerings are very disparate, having only the fact that they're by Google as a common thread. This screams for small, modular artifacts which can be composed!
 
-<strong>Google, it's time to unbundle.</strong> [All the cool kids are doing it][4].
+<strong>Google, it's time to unbundle.</strong> [All the cool kids are doing it][4]. *(Spoiler alert: [it happened][7])*
 
 At worst, we specify a few dependencies manually:
 
@@ -174,3 +174,4 @@ The dependency graphs were generated using [degraph][5] and [yEd][6]. Download t
  [4]: http://thenextweb.com/socialmedia/2014/05/06/large-tech-companies-hopping-app-unbundling-trend/
  [5]: https://github.com/schauder/degraph
  [6]: http://www.yworks.com/en/products_yed_about.html
+ [7]: http://android-developers.blogspot.com/2014/11/google-play-services-65.html
