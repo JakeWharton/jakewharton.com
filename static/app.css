@@ -86,6 +86,14 @@ header ul a:hover span {
 .content h2 {
   margin-top: 0;
 }
+.content h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.content h4 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
 .content p {
   margin-bottom: 15px;
 }
