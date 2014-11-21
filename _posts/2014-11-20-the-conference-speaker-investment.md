@@ -89,7 +89,7 @@ What is a technical presentation without code? Showing code on screen is a very 
 
 It should come as no surprise that yet again size is important here. You don't need to go as large as text, but limit the number of lines of code to 12 to 15 on a slide. Similar to the gradual enhancement in visualizations, if you need to show more than 5 or 6 lines of code break it up into logical chunks and fade them in individually. Explain each section as it comes in and then summarize in one line again once the complete snippet is on the screen to reinforce the behavior.
 
-Syntax highlighting of code is essential for slides. Programmer's eyes are trained to recognize the semantic building blocks of code through syntax highlighting. There is absolutely not reason to omit this. IntelliJ 14 or newer will do rich-text copy with syntax highlighting and can even be customized to use a different style when copying than the active one (search 'rich' in preferences).
+Syntax highlighting of code is essential for slides. Programmer's eyes are trained to recognize the semantic building blocks of code through syntax highlighting. There is absolutely no reason to omit this. IntelliJ 14 or newer will do rich-text copy with syntax highlighting and can even be customized to use a different style when copying than the active one (search 'rich' in preferences).
 
 <img src="/static/post-image/slide_code_diff.gif" width="300" class="pull-right"/>
 
