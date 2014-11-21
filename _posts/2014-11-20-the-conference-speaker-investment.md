@@ -57,7 +57,7 @@ There are tons of articles on how to create effective slides. Slides should norm
 
 There's a variety of tools to choose from for creating slides, choose the one that best suits the job. Google Slides is fantastic for collaborating on content, Keynote has a fantastic balance of simplicity and power, and Javascript-based tools allow fantastic interactivity. There's also PowerPoint, but I'm not a Windows user. All will work, choose the one which will make you the most productive and I'll leave it to other articles to compare.
 
-Slides should be done in widescreen (16:9) at 1080p (1920x180) resolution. Hopefully this will be the native resolution at which they will be played (as discussed above), but at worst they will be downscaled which is always better than having them upscaled.
+Slides should be done in widescreen (16:9) at 1080p (1920x1080) resolution. Hopefully this will be the native resolution at which they will be played (as discussed above), but at worst they will be downscaled which is always better than having them upscaled.
 
 Never start a presentation with a description of who you are, what you do, and the outline of your slides. This is content for the abstract of your talk that most people will have read and used in choosing to attend. Those who didn't read this information don't need it because they chose your talk for its catchy title or something and thus won't care either way.
 
