@@ -174,4 +174,4 @@ The dependency graphs were generated using [degraph][5] and [yEd][6]. Download t
  [4]: http://thenextweb.com/socialmedia/2014/05/06/large-tech-companies-hopping-app-unbundling-trend/
  [5]: https://github.com/schauder/degraph
  [6]: http://www.yworks.com/en/products_yed_about.html
- [7]: http://android-developers.blogspot.com/2014/11/google-play-services-65.html
+ [7]: http://android-developers.blogspot.com/2014/12/google-play-services-and-dex-method.html
