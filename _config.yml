@@ -2,3 +2,5 @@ url: "http://jakewharton.com"
 highlighter: pygments
 permalink: /:title/
 markdown: redcarpet
+gems:
+  - jekyll-feed
