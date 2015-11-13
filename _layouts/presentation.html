@@ -26,6 +26,11 @@
         {{ content }}
       </section>
 
+      {% if page.video %}
+      <section class="video">
+        <p>Video available at <a href="{{ page.video }}">{{ page.video }}</a>.</p>
+      </section>
+      {% endif %}
       {% if page.youtube %}
       <section class="youtube">
         <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe>
