@@ -20,7 +20,7 @@
 
     <div class="content presentation">
       <h2>{{ page.title }}</h2>
-      <p class="date">{{ page.date | date:"%d %B %Y" }} &ndash; <a href="{{ page.homepage }}">{{ page.event }} ({{ page.location }})</a></p>
+      <p class="date">{{ page.date | date:"%d %B %Y" }} &ndash; {% if page.homepage %}<a href="{{ page.homepage }}">{% endif %}{{ page.event }} ({{ page.location }}){% if page.homepage %}</a>{% endif %}</p>
 
       <section class="description">
         {{ content }}
