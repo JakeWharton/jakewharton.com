@@ -9,8 +9,7 @@ date: 2015-10-30
 type: Technical
 
 title: Advancing Development with Kotlin
-speakerdeck_id: 4103f5af52c8438ba49f85c533eadc2f
-speakerdeck_link: https://speakerdeck.com/jakewharton/advancing-development-with-kotlin-droidcon-uk-2015
+speakerdeck: 4103f5af52c8438ba49f85c533eadc2f
 ---
 
 Using Kotlin for Android development has grown in popularity over the last year. Even to those who are not currently using it, the value proposition of the language immediately resonates. There already are a lot of introductory talks to the language and its extensions for use on Android. This talk will explore advancing the usage and design patterns of the language for Android development to solve larger problems.

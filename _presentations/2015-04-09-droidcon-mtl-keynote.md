@@ -11,10 +11,8 @@ additional_presenters:
 - Jesse Wilson
 
 title: An Open Source Advantage
-speakerdeck_id: 018fdc6a90ef4a56b76d56c45b5c8e4d
-speakerdeck_link: https://speakerdeck.com/swankjesse/an-open-source-advantage-droidcon-mtl-2015
-youtube_id: PCxz2LEmuL4
-youtube_link: https://www.youtube.com/watch?v=PCxz2LEmuL4
+speakerdeck: 018fdc6a90ef4a56b76d56c45b5c8e4d
+youtube: PCxz2LEmuL4
 ---
 
 A successful app takes a lot of code. The best developers don’t write all of that code themselves; instead they rely on open source to solve all of the common problems. That way they can direct their energy on application-specific tasks.

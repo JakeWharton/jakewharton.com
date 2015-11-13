@@ -26,26 +26,26 @@
         {{ content }}
       </section>
 
-      {% if page.youtube_id %}
+      {% if page.youtube %}
       <section class="youtube">
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ page.youtube_id }}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ page.youtube }}" frameborder="0" allowfullscreen></iframe>
       </section>
       {% endif %}
-      {% if page.parleys_id %}
+      {% if page.parleys %}
       <section class="parleys">
-      <div data-parleys-presentation="{{ page.parleys_id }}" style="width:100%;height:300px">
+      <div data-parleys-presentation="{{ page.parleys }}" style="width:100%;height:300px">
       <script async type="text/javascript" src="https://parleys.com/js/parleys-share.js"></script>
       </div>
       </section>
       {% endif %}
-      {% if page.vimeo_id %}
+      {% if page.vimeo %}
       <section class="vimeo">
-        <iframe src="https://player.vimeo.com/video/{{ page.vimeo_id }}" width="100%" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/{{ page.vimeo }}" width="100%" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </section>
       {% endif %}
-      {% if page.speakerdeck_id %}
+      {% if page.speakerdeck %}
       <section class="speakerdeck">
-      <script async class="speakerdeck-embed" data-id="{{ page.speakerdeck_id }}" data-ratio="1.77777777777778" src="https://speakerdeck.com/assets/embed.js"></script>
+      <script async class="speakerdeck-embed" data-id="{{ page.speakerdeck }}" data-ratio="1.77777777777778" src="https://speakerdeck.com/assets/embed.js"></script>
       </section>
       {% endif %}
     </div>

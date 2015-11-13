@@ -9,8 +9,7 @@ date: 2014-04-22
 type: Technical
 
 title: Android Apps with Dagger
-speakerdeck_id: 0b0491d0c78f013168aa3a2cd771e4db
-speakerdeck_link: https://speakerdeck.com/jakewharton/android-apps-with-dagger-sf-android-meetup-april-2014
+speakerdeck: 0b0491d0c78f013168aa3a2cd771e4db
 ---
 
 An introduction to dependency injection, the Dagger library, and how to combine the two in your Android applications.
