@@ -135,6 +135,13 @@ header ul a:hover span {
 p.date {
   color: #aaa;
 }
+p.date a, p.date a:link, p.date a:visited {
+  color: #aaa !important;
+  text-decoration: underline;
+}
+p.date a:hover, p.date a:active {
+  color: #48b983 !important;
+}
 p.signature {
   margin-top: 60px;
   color: #666;
@@ -142,4 +149,19 @@ p.signature {
 
 .post h2 {
   margin-bottom: 20px;
+}
+
+.presentation-list .date {
+  font-family: monospace;
+}
+
+.presentation section {
+  margin-top: 20px;
+  margin-botom: 20px;
+}
+.presentation .parleys a {
+  display: none;
+}
+.presentation .description {
+  margin-bottom: 50px;
 }

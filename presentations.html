@@ -1,0 +1,11 @@
+---
+title: Presentations
+layout: default
+---
+
+<ul class="presentation-list list-unstyled">
+{% assign sorted_presentations = (site.presentations | sort: 'date_start' | reverse) %}
+{% for presentation in sorted_presentations %}
+  <li class="presentation"><span class="date">{{ presentation.date | date: "%Y-%m-%d" }}&nbsp;</span>&nbsp;<a href="{{ presentation.url }}">{{ presentation.title }}</a>&nbsp;<small>{{ presentation.event }} ({{ presentation.location }})</small></li>
+{% endfor %}
+</ul>
