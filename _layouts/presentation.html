@@ -16,11 +16,28 @@
     <meta property="og:title" content="{{ page.title | escape }}">
     <meta property="og:description" content="{{ content | strip_html | escape }}">
     <meta property="og:site_name" content="Jake Wharton">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     {% if page.youtube %}
     <meta property="og:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
     {% elsif page.speakerdeck %}
     <meta property="og:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
     {% endif %}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@JakeWharton">
+    <meta name="twitter:domain" value="jakewharton.com">
+    <meta name="twitter:title" value="{{ page.title | escape }}">
+    <meta name="twitter:description" value="{{ content | strip_html | escape }}">
+    {% if page.youtube %}
+    <meta name="twitter:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
+    {% elsif page.speakerdeck %}
+    <meta name="twitter:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
+    {% endif %}
+    <meta name="twitter:url" value="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:label1" value="Date">
+    <meta name="twitter:data1" value="{{ page.date | date:"%d %B %Y" }}">
+    <meta name="twitter:label2" value="Content">
+    <meta name="twitter:data2" value="Video: {% if page.video or page.youtube or page.vimeo or page.parleys %}Yes{% else %}No{% endif %}, Slides: {% if page.speakerdeck %}Yes{% else %}No{% endif %}">
   </head>
   <body>
     <header>
