@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }} - Jake Wharton</title>
+    <title>Presentation: {{ page.title }} - Jake Wharton</title>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700" type="text/css">
     <link rel="stylesheet" href="/static/app.css" type="text/css">
     <link rel="stylesheet" href="/static/syntax.css" type="text/css">
     {% feed_meta %}
     <meta name="theme-color" content="#111111">
+
     <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:title" content="Presentation: {{ page.title | escape }}">
     <meta property="og:description" content="{{ content | strip_html | escape }}">
     <meta property="og:site_name" content="Jake Wharton">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -26,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@JakeWharton">
     <meta name="twitter:domain" value="jakewharton.com">
-    <meta name="twitter:title" value="{{ page.title | escape }}">
+    <meta name="twitter:title" value="Presentation: {{ page.title | escape }}">
     <meta name="twitter:description" value="{{ content | strip_html | escape }}">
     {% if page.youtube %}
     <meta name="twitter:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
