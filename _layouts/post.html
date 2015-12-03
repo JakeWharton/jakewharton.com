@@ -15,7 +15,7 @@
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="Post: {{ page.title | escape }}">
-    <meta property="og:description" content="{{ content | truncatewords: 100 | strip_html | escape }}">
+    <meta property="og:description" content="{{ page.lead | escape }}">
     <meta property="og:site_name" content="Jake Wharton">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
@@ -23,7 +23,7 @@
     <meta name="twitter:site" content="@JakeWharton">
     <meta name="twitter:domain" value="jakewharton.com">
     <meta name="twitter:title" value="Post: {{ page.title | escape }}">
-    <meta name="twitter:description" value="{{ content | truncatewords: 100 | strip_html | escape }}">
+    <meta name="twitter:description" value="{{ page.lead | escape }}">
     <meta name="twitter:url" value="{{ site.url }}{{ page.url }}">
     <meta name="twitter:label1" value="Date">
     <meta name="twitter:data1" value="{{ page.date | date:"%d %B %Y" }}">
