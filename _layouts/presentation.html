@@ -18,6 +18,8 @@
     <meta property="og:site_name" content="Jake Wharton">
     {% if page.youtube %}
     <meta property="og:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
+    {% elsif page.speakerdeck %}
+    <meta property="og:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
     {% endif %}
   </head>
   <body>
