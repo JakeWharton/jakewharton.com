@@ -8,6 +8,7 @@ tags:
 - ActionBarSherlock
 
 lead: After months of development and amazing feedback from developers the first official release of version 4 is available.
+image: /static/post-image/actionbarsherlock-logo.png
 source: http://actionbarsherlock.com
 ---
 

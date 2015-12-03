@@ -7,6 +7,7 @@ tags:
 - Android
 
 lead: Monolithic libraries are rarely the answer and when abused cause much more harm than small, module artifacts. Most people think of Guava, but there's a new kid on the block who's twice as bad.
+image: /static/post-image/play-services-deps.png
 ---
 
 [Guava][2] is a monolithic library, but that's not necessarily a bad thing. Nobody thinks twice when bundling it for the JVM. In the world of Android the mention of Guava has a bit of a negative stigma due to the dex file format's method limit and a concern about bloating APK size. The latter is no longer a valid argument. The dex method limit is a hard 64k limit to which Guava contributes just over 14k methods. 20% of this hard limit vanishes when you include Guava.

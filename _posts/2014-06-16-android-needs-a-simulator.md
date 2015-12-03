@@ -7,6 +7,7 @@ tags:
 - Android
 
 lead: The emulator quality is terrible, the AVD manager is weak, and third-party solutions like Genymotion are mediocre at best. Developers need an Android simulator.
+image: /static/post-image/emulator-m3.png
 ---
 
 Two years ago I wrote [a blog post][1] complaining that the Android build system was broken. At the time, Eclipse ADT and Ant were the blessed solutions and they just hadn't scaled with the platform. Third-party solutions existed for both tooling and IDE but they always felt a bit illegitimate and at risk for problems. My post joined the cries of others who knew that something *had* to be done.

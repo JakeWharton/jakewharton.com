@@ -7,6 +7,7 @@ tags:
 - Android
 
 lead: Speaking at conferences is an investment of speakers in time, energy, and knowledge. The quality of a presentation and of the conference itself can be measured in the amount of investment made. Here are my tips for future conference speakers.
+image: /static/post-image/devoxx_room.jpg
 ---
 
 Speaking at conferences is an investment of speakers in time, energy, and knowledge. The quality of a presentation and of the conference itself can be measured in the amount of investment made.
