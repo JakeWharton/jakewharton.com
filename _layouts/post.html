@@ -13,26 +13,26 @@
     {% feed_meta %}
     <meta name="theme-color" content="#111111">
 
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Post: {{ page.title | escape }}">
-    <meta property="og:description" content="{{ page.lead | escape }}">
-    <meta property="og:site_name" content="Jake Wharton">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="og:type" content="article">
+    <meta name="og:title" content="Post: {{ page.title | escape }}">
+    <meta name="og:description" content="{{ page.lead | escape }}">
+    <meta name="og:site_name" content="Jake Wharton">
+    <meta name="og:url" content="{{ site.url }}{{ page.url }}">
     {% if page.image %}
-    <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+    <meta name="og:image" content="{{ site.url }}{{ page.image }}">
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@JakeWharton">
-    <meta name="twitter:domain" value="jakewharton.com">
-    <meta name="twitter:title" value="Post: {{ page.title | escape }}">
-    <meta name="twitter:description" value="{{ page.lead | escape }}">
+    <meta name="twitter:domain" content="jakewharton.com">
+    <meta name="twitter:title" content="Post: {{ page.title | escape }}">
+    <meta name="twitter:description" content="{{ page.lead | escape }}">
     {% if page.image %}
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
     {% endif %}
-    <meta name="twitter:url" value="{{ site.url }}{{ page.url }}">
-    <meta name="twitter:label1" value="Date">
-    <meta name="twitter:data1" value="{{ page.date | date:"%d %B %Y" }}">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:label1" content="Date">
+    <meta name="twitter:data1" content="{{ page.date | date:"%d %B %Y" }}">
   </head>
   <body>
     <header>

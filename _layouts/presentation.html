@@ -13,32 +13,32 @@
     {% feed_meta %}
     <meta name="theme-color" content="#111111">
 
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Presentation: {{ page.title | escape }}">
-    <meta property="og:description" content="{{ content | strip_html | escape }}">
-    <meta property="og:site_name" content="Jake Wharton">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="og:type" content="article">
+    <meta name="og:title" content="Presentation: {{ page.title | escape }}">
+    <meta name="og:description" content="{{ content | strip_html | escape }}">
+    <meta name="og:site_name" content="Jake Wharton">
+    <meta name="og:url" content="{{ site.url }}{{ page.url }}">
     {% if page.youtube %}
-    <meta property="og:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
+    <meta name="og:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
     {% elsif page.speakerdeck %}
-    <meta property="og:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
+    <meta name="og:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@JakeWharton">
-    <meta name="twitter:domain" value="jakewharton.com">
-    <meta name="twitter:title" value="Presentation: {{ page.title | escape }}">
-    <meta name="twitter:description" value="{{ content | strip_html | escape }}">
+    <meta name="twitter:domain" content="jakewharton.com">
+    <meta name="twitter:title" content="Presentation: {{ page.title | escape }}">
+    <meta name="twitter:description" content="{{ content | strip_html | escape }}">
     {% if page.youtube %}
     <meta name="twitter:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
     {% elsif page.speakerdeck %}
     <meta name="twitter:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
     {% endif %}
-    <meta name="twitter:url" value="{{ site.url }}{{ page.url }}">
-    <meta name="twitter:label1" value="Event">
-    <meta name="twitter:data1" value="{{ page.event }} ({{ page.location }})">
-    <meta name="twitter:label2" value="Date">
-    <meta name="twitter:data2" value="{{ page.date | date:"%d %B %Y" }}">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:label1" content="Event">
+    <meta name="twitter:data1" content="{{ page.event }} ({{ page.location }})">
+    <meta name="twitter:label2" content="Date">
+    <meta name="twitter:data2" content="{{ page.date | date:"%d %B %Y" }}">
   </head>
   <body>
     <header>
