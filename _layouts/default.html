@@ -11,6 +11,25 @@
     <link rel="stylesheet" href="/static/app.css" type="text/css">
     {% feed_meta %}
     <meta name="theme-color" content="#111111">
+
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="jakewharton.com">
+    <meta name="og:description" content="Blog posts, presentations, GitHub, and more.">
+    <meta name="og:site_name" content="Jake Wharton">
+    <meta name="og:url" content="{{ site.url }}">
+    <meta name="og:image" content="http://www.gravatar.com/avatar/e68309f117985270285ade8082f4877d?s=200">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@JakeWharton">
+    <meta name="twitter:domain" content="jakewharton.com">
+    <meta name="twitter:title" content="jakewharton.com">
+    <meta name="twitter:description" content="Blog posts, presentations, GitHub, and more.">
+    <meta name="twitter:image" content="http://www.gravatar.com/avatar/e68309f117985270285ade8082f4877d?s=200">
+    <meta name="twitter:url" content="{{ site.url }}">
+    <meta name="twitter:label1" content="Posts">
+    <meta name="twitter:data1" content="{{ site.posts | size }}">
+    <meta name="twitter:label2" content="Presentations">
+    <meta name="twitter:data2" content="{{ site.presentations | size }}">
   </head>
   <body>
     <header>
