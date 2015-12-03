@@ -37,8 +37,10 @@
     <meta name="twitter:url" value="{{ site.url }}{{ page.url }}">
     <meta name="twitter:label1" value="Date">
     <meta name="twitter:data1" value="{{ page.date | date:"%d %B %Y" }}">
+    {% if page.video or page.youtube or page.vimeo or page.parleys or page.speakerdeck %}
     <meta name="twitter:label2" value="Content">
     <meta name="twitter:data2" value="Video: {% if page.video or page.youtube or page.vimeo or page.parleys %}Yes{% else %}No{% endif %}, Slides: {% if page.speakerdeck %}Yes{% else %}No{% endif %}">
+    {% endif %}
   </head>
   <body>
     <header>
