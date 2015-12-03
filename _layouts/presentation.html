@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="/static/syntax.css" type="text/css">
     {% feed_meta %}
     <meta name="theme-color" content="#111111">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:description" content="{{ content | strip_html | escape }}">
+    <meta property="og:site_name" content="Jake Wharton">
+    {% if page.youtube %}
+    <meta property="og:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
+    {% endif %}
   </head>
   <body>
     <header>
