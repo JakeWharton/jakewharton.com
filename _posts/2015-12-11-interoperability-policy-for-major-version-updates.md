@@ -32,7 +32,7 @@ For major version updates in significantly foundational libraries we will take t
 
     Even for projects that have only a single artifact, including the project name in the group ID allows future updates that may introduce additional artifacts to not pollute the root namespace. In projects that have multiple artifacts from inception, it provides a means of grouping them together on artifact hosts like Maven central.
 
-    For example, the Maven coordinates for a project 'library' would be `com.example.retrofit:retrofit`. Additional modules (present or future) can be listed under the same group ID such as `com.example.retrofit:converter-moshi`.
+    For example, the Maven coordinates for the main Retrofit artifact could be `com.example.retrofit:retrofit`. Additional modules (present or future) can be listed under the same group ID such as `com.example.retrofit:converter-moshi`.
 
  3. **Rename the group ID in the Maven coordinates to include the version number.**
 
