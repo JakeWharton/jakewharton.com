@@ -22,7 +22,7 @@ For major version updates in significantly foundational libraries we will take t
 
     This immediately solves the API compatibility problem from transitive dependencies on multiple versions. Classes from each can be loaded on the same classpath without interacting negatively.
 
-    If possible, shims for older versions can be built on newer versions in a sibling artifact. This also allows users to perform major versions updates gradually or in increments rather than requiring an immediate switch.
+    Users can perform major versions updates gradually or in increments rather than requiring an immediate switch. If possible, shims for older versions can be built on newer versions in a sibling artifact.
 
     For example, versions 0.x and 1.x would be under `com.example.retrofit`, versions 2.x would be under `com.example.retrofit2`, and so on.
 
