@@ -1,5 +1,5 @@
 ---
-title: Interoperability Policy for Major Version Updates
+title: Java Interoperability Policy for Major Version Updates
 layout: post
 
 categories: post
