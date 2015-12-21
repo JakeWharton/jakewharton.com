@@ -14,7 +14,6 @@
     <meta name="theme-color" content="#111111">
 
     <meta name="og:type" content="article">
-    <meta name="og:updated_time" content="{{ page.date | date: "%Y-%m-%d" }}">
     <meta name="og:title" content="Post: {{ page.title }}">
     <meta name="og:description" content="{{ page.lead }}">
     <meta name="og:site_name" content="Jake Wharton">
@@ -22,6 +21,7 @@
     {% if page.image %}
     <meta name="og:image" content="{{ site.url }}{{ page.image }}">
     {% endif %}
+    <meta property="article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@JakeWharton">
@@ -32,8 +32,6 @@
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
     {% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-    <meta name="twitter:label1" content="Date">
-    <meta name="twitter:data1" content="{{ page.date | date:"%d %B %Y" }}">
   </head>
   <body>
     <header>
