@@ -54,6 +54,6 @@ The proliferation of Hungarian notation on Android is an accident and its contin
 
     When Android was purchased by Google, the Hungarian infection was already present. Changing it at this point would be needless churn and cause many conflicts across branches and third-party partners.
 
-With your continued support and activism on this topic, our generation could see this disease eradicated in our lifetime.
+With your continued support and activism on this topic, this disease can be eradicated in our lifetime.
 
 `mFriends` don't let `sFriends` use Hungarian notation!
