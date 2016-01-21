@@ -38,7 +38,7 @@ The proliferation of Hungarian notation on Android is an accident and its contin
 
     The visibility is a *useless* attribute to care about in a code review. The field is already present and available for use, and presumably its visibility was code-reviewed in a previous change. The type of a field, however, has a direct impact on *how* that field can being used in the change. The correct methods to call, the position in arguments, and the methods which can be called all are directly related to its type.
 
-    Not only is advocating for 'apps' Hungarian wrong because it's not useful, but it's doubly wrong since if anything 'system' Hungarian provides more relevant info. That's not to say you should use 'system' either, both the type and visibility of a field changes and you will forget to update the name. It's not hard to find [static `mContext` fields](https://github.com/square/leakcanary/blob/4950e1756c79fba871f524d5d9c47ed9322b23b3/leakcanary-android/src/main/java/com/squareup/leakcanary/AndroidExcludedRefs.java#L263-L269), afterall.
+    Not only is advocating for 'apps' Hungarian wrong because it's not useful, but it's doubly wrong since 'system' Hungarian would provide more relevant info. That's not to say you should use 'system', both the type and visibility of a field changes and you will forget to update the name. It's not hard to find [static `mContext` fields](https://github.com/square/leakcanary/blob/4950e1756c79fba871f524d5d9c47ed9322b23b3/leakcanary-android/src/main/java/com/squareup/leakcanary/AndroidExcludedRefs.java#L263-L269), afterall.
 
  *  "**The extra information helps in development**"
 
