@@ -50,7 +50,7 @@ The proliferation of Hungarian notation on Android is an accident and its contin
 
  *  "**I want to write Java code like Google does**"
 
-    While Android and AOSP are part of the company, Google explicitly and actively forbid Hungarian notation [in their Java style guide](https://google.github.io/styleguide/javaguide.html#s5.1-identifier-names). This public Java style guideline is the formalization of long-standing internal conventions.
+    While Android and AOSP are part of the company, Google explicitly and actively forbids Hungarian notation [in their Java style guide](https://google.github.io/styleguide/javaguide.html#s5.1-identifier-names). This public Java style guideline is the formalization of long-standing internal conventions.
 
     When Android was purchased by Google, the Hungarian infection was already present. Changing it at this point would be needless churn and cause many conflicts across branches and third-party partners.
 
