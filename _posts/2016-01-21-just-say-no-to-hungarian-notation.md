@@ -52,7 +52,7 @@ The proliferation of Hungarian notation on Android is an accident and its contin
 
     While Android and AOSP are part of the company, Google explicitly and actively forbids Hungarian notation [in their Java style guide](https://google.github.io/styleguide/javaguide.html#s5.1-identifier-names). This public Java style guideline is the formalization of long-standing internal conventions.
 
-    When Android was purchased by Google, the Hungarian infection was already present. Changing it at this point would be needless churn and cause many conflicts across branches and third-party partners.
+    Android had originated outside of Google and the team early on chose to host the Hungarian disease. Changing it at this point would be needless churn and cause many conflicts across branches and third-party partners.
 
 With your continued support and activism on this topic, this disease can be eradicated in our lifetime.
 
