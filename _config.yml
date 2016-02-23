@@ -1,6 +1,6 @@
 url: "http://jakewharton.com"
 
-highlighter: pygments
+highlighter: rouge
 permalink: /:title/
 markdown: kramdown
 
