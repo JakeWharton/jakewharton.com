@@ -2,7 +2,7 @@ url: "http://jakewharton.com"
 
 highlighter: pygments
 permalink: /:title/
-markdown: redcarpet
+markdown: kramdown
 
 gems:
   - jekyll-feed
