@@ -4,6 +4,8 @@ highlighter: rouge
 permalink: /:title/
 markdown: kramdown
 
+future: true
+
 gems:
   - jekyll-feed
 
