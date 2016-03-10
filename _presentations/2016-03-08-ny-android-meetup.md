@@ -9,6 +9,7 @@ date: 2016-03-08
 type: Technical
 
 title: AutoValue Extensions
+speakerdeck: dad26cd952b24c5c97faf409803f1889
 ---
 
 Google's AutoValue library provides easy value types in Java through code generation and its forthcoming release has a powerful new feature: extensions. This talk will introduce the extensions feature, cover useful extensions for Android, and offer tips for building your own.
