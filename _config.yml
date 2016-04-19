@@ -13,3 +13,5 @@ collections:
   presentations:
     output: true
     permalink: /presentation/:path/
+
+exclude: [vendor]
