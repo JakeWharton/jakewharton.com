@@ -11,6 +11,9 @@ type: Technical
 title: Simple HTTP with Retrofit 2
 speakerdeck: ba44159d080a4416acb1c62353d98371
 youtube: KIAoQbAu3eA
+
+redirect_from:
+  - /presentation/2015-08-27-droidcon-nyc/
 ---
 
 Retrofit has been simplifying HTTP calls for years and this new version is no different. In addition to fixing some long-standing annoyances, there are a handful of new features which make it more powerful than ever.

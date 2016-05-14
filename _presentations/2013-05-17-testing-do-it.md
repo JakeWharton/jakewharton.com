@@ -10,6 +10,9 @@ type: Technical
 
 title: "Testing: Do It"
 speakerdeck: 8389fd60a0e50130aa8066f78f5cbceb
+
+redirect_from:
+  - /presentation/2013-05-17-android-hacker-night/
 ---
 
 Designing your Android app for testability. How unit tests, instrumentation tests, and libraries like Dagger improve confidence in your app.

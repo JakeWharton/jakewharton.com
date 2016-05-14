@@ -8,10 +8,11 @@ future: true
 
 gems:
   - jekyll-feed
+  - jekyll-redirect-from
 
 collections:
   presentations:
     output: true
-    permalink: /presentation/:path/
+    permalink: /:title/
 
 exclude: [vendor]

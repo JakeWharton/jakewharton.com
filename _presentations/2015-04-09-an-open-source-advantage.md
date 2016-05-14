@@ -13,6 +13,9 @@ additional_presenters:
 title: An Open Source Advantage
 speakerdeck: 018fdc6a90ef4a56b76d56c45b5c8e4d
 youtube: PCxz2LEmuL4
+
+redirect_from:
+  - /presentation/2015-04-09-droidcon-mtl-keynote/
 ---
 
 A successful app takes a lot of code. The best developers don’t write all of that code themselves; instead they rely on open source to solve all of the common problems. That way they can direct their energy on application-specific tasks.

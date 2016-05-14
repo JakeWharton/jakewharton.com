@@ -11,6 +11,9 @@ type: Technical
 title: Demystifying RxJava Subscribers
 vimeo: 144812843
 speakerdeck: d439c614db4d42aa96f310ed6ab329d8
+
+redirect_from:
+  - /presentation/2015-11-05-oredev/
 ---
 
 RxJava is a powerful library for creating and composing streams of data. It can quickly be used to great effect, but a deeper understand of its internals will prevent running into pitfalls later on.

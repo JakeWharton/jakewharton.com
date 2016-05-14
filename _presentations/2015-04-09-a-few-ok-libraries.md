@@ -11,6 +11,9 @@ type: Technical
 title: A Few 'Ok' Libraries
 speakerdeck: a1ff81b8a55549e9b96ede49a7887a41
 youtube: WvyScM_S88c
+
+redirect_from:
+  - /presentation/2015-04-09-droidcon-mtl/
 ---
 
 This talk will be an in-depth look at Okio—a tiny library for interacting with bytes—and a few of the libraries written on top of it: OkHttp, Retrofit, and a newcomer named Moshi.

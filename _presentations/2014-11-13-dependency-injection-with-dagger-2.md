@@ -11,6 +11,9 @@ type: Technical
 title: Dependency Injection with Dagger 2
 speakerdeck: 3b298de04edb0132348e6661b83ad9a0
 parleys: the-future-dependency-injection-dagger-2
+
+redirect_from:
+  - /presentation/2014-11-13-devoxx/
 ---
 
 Dagger is a fast dependency injector for both Java and Android. Its second major version not only brings new features for parity with other frameworks but continues to push the boundaries of speed.
