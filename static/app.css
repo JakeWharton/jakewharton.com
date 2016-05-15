@@ -181,3 +181,26 @@ p.signature {
 .presentation .description {
   margin-bottom: 50px;
 }
+
+.presentation .youtube,
+.presentation .parleys,
+.presentation .vimeo {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.presentation .youtube iframe,
+.presentation .parleys iframe,
+.presentation .vimeo iframe,
+.presentation .youtube object,
+.presentation .vimeo object,
+.presentation .youtube embed,
+.presentation .vimeo embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
