@@ -10,7 +10,7 @@ layout: default
   {% if presentation.date > site.time %}
   <li class="presentation">
     <span class="date">{{ presentation.date | date: "%Y-%m-%d" }}</span>
-    {% if presentation.listing %}<a href="{{ presentation.listing }}">⇖ {% endif %}{{ presentation.title }}{% if presentation.listing %}</a>{% endif %}
+    {% if presentation.homepage %}<a href="{{ presentation.homepage }}">⇖ {% endif %}{{ presentation.title }}{% if presentation.homepage %}</a>{% endif %}
     <small>{{ presentation.event }} ({{ presentation.location }})</small>
   </li>
   {% endif %}
