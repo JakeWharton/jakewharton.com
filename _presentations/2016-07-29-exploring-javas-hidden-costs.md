@@ -10,6 +10,9 @@ date: 2016-07-29
 type: Technical
 
 title: Exploring Java's Hidden Costs
+
+redirect_from:
+- /presentation/2016-07-29-360andev/
 ---
 
 As Java 8 features comes to Android, it’s important to remember that every standard library API and language feature comes with an associated cost. Even as devices get faster and have more memory, concerns of code size and performance overhead are still very relevant. This talk will be an exploration into hidden costs associated with some of Java’s features. We’ll focus on optimizations relevant for both library and application developers and on the tools that can be used to measure their impact.
