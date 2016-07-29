@@ -9,7 +9,8 @@ date: 2016-07-29
 
 type: Technical
 
-title: Exploring Java's Hidden Costs
+title: Exploring Java Hidden Costs
+speakerdeck: 5ef7038a1106403bb53a34ff4bdedc4e
 
 redirect_from:
 - /presentation/2016-07-29-360andev/
