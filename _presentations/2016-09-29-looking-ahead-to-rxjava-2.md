@@ -3,11 +3,14 @@ layout: presentation
 
 event: Droidcon
 location: New York City, NY, USA
+homepage: http://droidcon.nyc/lineup
+listing: http://droidcon.nyc/lineup
 date: 2016-09-27
 
 type: Technical
 
 title: Looking Ahead to RxJava 2
+
 ---
 
 Development on the next major version of RxJava is underway. While the operators remain largely unchanged, Observable creation, subscription management, and backpressure has been completely overhauled in this new version.
