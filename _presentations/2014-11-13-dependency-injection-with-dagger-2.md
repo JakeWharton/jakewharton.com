@@ -10,7 +10,7 @@ type: Technical
 
 title: Dependency Injection with Dagger 2
 speakerdeck: 3b298de04edb0132348e6661b83ad9a0
-parleys: the-future-dependency-injection-dagger-2
+youtube: plK0zyRLIP8
 
 redirect_from:
   - /presentation/2014-11-13-devoxx/
