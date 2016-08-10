@@ -10,7 +10,7 @@ type: Technical
 
 title: Android Apps with Dagger
 speakerdeck: 609e1f702fff0131bf011acceddd82a6
-parleys: architecting-android-applications-dagger
+youtube: 0XHx9jtxIxU
 
 redirect_from:
   - /presentation/2013-11-14-devoxx/
