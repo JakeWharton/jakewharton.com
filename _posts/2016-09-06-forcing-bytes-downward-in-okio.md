@@ -138,13 +138,13 @@ give it a method signature like this:
     public void toJson(Object o, Sink sink)
 
 Because `Sink` offers no convenience on its own, the implementation would buffer it into an
-`BufferedSink` for its high-level APIs.
+`BufferedSink` for access to high-level APIs.
 
 Once the implementation was finished writing the JSON representation to the `BufferedSink` it needs
-to return. In order to not leave any bytes in the buffer it should call `emit()`. This writes all of
-the buffered bytes to the underlying `Sink`, but not any farther. Whether or not the `Sink` should
-be flushed all the way down is left as a decision for the caller. This affords more control to the
-caller so that if they wanted to serialize multiple objects and flush them all at once they are able
+to return. In order to not leave any bytes in the buffer it needs to call `emit()`. This writes all
+of the buffered bytes to the underlying `Sink`, but not any further. Whether or not the `Sink`
+should be flushed all the way down is left as a decision for the caller. This affords more control
+so that if the caller wants to serialize multiple objects and flush them all at once they are able
 to do so.
 
 Astute readers might be aware of [Moshi](https://github.com/square/moshi)–a small JSON
