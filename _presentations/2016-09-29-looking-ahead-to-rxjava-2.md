@@ -5,7 +5,7 @@ event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/lineup
 listing: http://droidcon.nyc/lineup
-date: 2016-09-27
+date: 2016-09-29
 
 type: Technical
 
