@@ -9,7 +9,7 @@ date: 2016-10-03
 
 type: Technical
 
-title: Exploring RxJava 2
+title: Exploring RxJava
 ---
 
 Development on the next major version of RxJava is underway. While the operators remain largely unchanged, Observable creation, subscription management, and backpressure has been completely overhauled in this new version.
