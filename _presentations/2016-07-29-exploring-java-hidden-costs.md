@@ -11,7 +11,7 @@ type: Technical
 
 title: Exploring Java Hidden Costs
 speakerdeck: 5ef7038a1106403bb53a34ff4bdedc4e
-video: https://realm.io/news/360andev-jake-wharton-java-hidden-costs-android/
+youtube: WALV33rWye4
 
 redirect_from:
 - /presentation/2016-07-29-360andev/
