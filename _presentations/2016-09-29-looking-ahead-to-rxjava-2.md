@@ -11,7 +11,7 @@ type: Technical
 
 title: Looking Ahead to RxJava 2
 speakerdeck: c9fd308945b548b5b91e9ad8a375f1cf
-
+youtube: hcxMtomE6fI
 ---
 
 Development on the next major version of RxJava is underway. While the operators remain largely unchanged, Observable creation, subscription management, and backpressure has been completely overhauled in this new version.
