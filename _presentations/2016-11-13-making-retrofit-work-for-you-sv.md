@@ -9,7 +9,7 @@ date: 2016-11-13
 
 type: Technical
 
-title: Making Retrofit 2 Work For You
+title: Making Retrofit Work For You
 ---
 
 Retrofit's recently-released version 2 is the easiest way to do HTTP in your applications. Once set up, Retrofit is designed to make declaring endpoints as simple as a method on an interface with annotations. Behind that simplicity, though, there is a lot of power and knowing how to use and configure it can make even the most problematic APIs easy to use.
