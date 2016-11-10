@@ -10,6 +10,7 @@ type: Technical
 
 title: 10 Kotlin Tricks in 10(ish) Minutes
 speakerdeck: 8c11623844ce435eb6f54a9d5e6c0ac6
+youtube: YKzUbeUtTak
 ---
 
 Kotlin is a new and popular language for Android development. Its major advantages and features are
