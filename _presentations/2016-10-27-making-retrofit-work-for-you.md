@@ -11,7 +11,7 @@ type: Technical
 
 title: Making Retrofit Work For You
 speakerdeck: cdac89f5440c4429ae785750564b7ce2
-video: https://skillsmatter.com/skillscasts/8416-making-retrofit-2-work-for-you
+vimeo: 190861165
 
 redirect_from:
   - /making-retrofit-2-work-for-you/
