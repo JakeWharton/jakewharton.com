@@ -41,6 +41,7 @@ For major version updates in significantly foundational libraries we will take t
     For example, take a project given _Library A_ with a dependency on 1.2.0, _Library B_ with a dependency on 1.3.0, _Library C_ with a dependency on 2.1.0, and a direct dependency on 2.4.0. A dependency resolver would first choose 1.3.0 for which _Library A_ and _Library B_ are compatible using the 1.x group ID. The resolver would then choose 2.4.0 for which _Library C_ is compatible using the 2.x group ID.
 
     Group ID renaming is chosen over the artifact ID for a few reasons:
+    
      * The filename of built artifacts is the combination of the artifact ID the the version. If the artifact ID contained the major version it would appear redundant (e.g., `retrofit2-2.1.0`).
      * Projects can be comprised of multiple artifacts and not all of them contain the raw name of the project. Properly describing the contents of the artifact is more important than including versioning information.
      * Maven-based builds reference dependencies on sibling modules in the same project using their artifact ID but can use variables for the group ID and version. If the artifact ID were to change, a lot of error-prone `pom.xml` changes would be required instead of one group ID change.
