@@ -10,6 +10,7 @@ date: 2017-03-22
 type: Technical
 
 title: The State of Managing State with RxJava
+speakerdeck: ba2f5b7895024e01833b552288893997
 ---
 
 RxJava's use in building Android apps has grown rapidly! Combining and composing synchronous and asynchronous sources of data has become easy. That burden that remains is where to put the overall state of the application and how to handle its changes. This talk will be an exploration in how we can increase the confidence and determinism of our app state.
