@@ -22,7 +22,11 @@ layout: default
   {% if presentation.date <= site.time %}
   <li class="presentation">
     <span class="date">{{ presentation.date | date: "%Y-%m-%d" }}</span>
+    {% if presentation.nolink %}
+    {{ presentation.title }}
+    {% else %}
     <a href="{{ presentation.url }}">{{ presentation.title }}</a>
+    {% endif %}
     <small>{{ presentation.event }} ({{ presentation.location }})</small>
   </li>
   {% endif %}
