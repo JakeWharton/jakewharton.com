@@ -8,6 +8,8 @@ listing: https://www.kotlinconf.com/
 date: 2017-11-03
 
 type: Technical
+additional_presenters:
+- Alec Strong
 
 title: Generating Kotlin Code
 ---

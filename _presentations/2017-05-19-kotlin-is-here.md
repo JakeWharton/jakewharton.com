@@ -8,6 +8,8 @@ listing: http://google.com/io
 date: 2017-05-19
 
 type: Technical
+additional_presenters:
+- Christina Lee
 
 title: Life is great and everything will be OK, Kotlin is here
 speakerdeck: 6e90b770ea4a4df1940a5f3be0cab9f6

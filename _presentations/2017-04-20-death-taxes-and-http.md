@@ -8,6 +8,8 @@ listing: http://chicagoroboto.com/sessions/death-taxes-and-http/
 date: 2017-04-20
 
 type: Keynote
+additional_presenters:
+- Jesse Wilson
 
 title: Death, Taxes, and HTTP
 speakerdeck: 565338a1efe9443ba19d6c924a0f3a74
