@@ -10,6 +10,7 @@ date: 2017-06-22
 type: Technical
 
 title: A Builder's Intro to Kotlin
+speakerdeck: d5dd5fc84b8e4e1b91c410bbe3170e9b
 ---
 
 Kotlin's popularity has been exploding in the past year. From last year's announcement that Gradle would support it as a build language, to its adoption on large platforms like Android and Spring, to its general applicability for writing IDE and build system plugins, it's hard to find an area that isn't adopting the language in some form.
