@@ -17,3 +17,5 @@ youtube: 6uroXz5l7Gk
 ---
 
 ‘Tis impossible to be sure of anything but death, taxes, and HTTP. This talk will explore some of the overhead inherent to HTTP and how it can be optimized or eliminated for more efficient networking.
+
+_Presented with Jesse Wilson_

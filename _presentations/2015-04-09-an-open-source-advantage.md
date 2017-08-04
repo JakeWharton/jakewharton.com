@@ -23,3 +23,5 @@ A successful app takes a lot of code. The best developers don’t write all of t
 In this keynote, we’ll show how to use open source effectively. We’ll start with guidance on evaluating a codebase. Then we’ll show you how to grow your relationship with an open source project, from user to contributor to maintainer.
 
 We’ll talk about forking for good and evil, rejected pull requests, and how open source can lead to your code running on one billion Android devices.
+
+_Presented with Jesse Wilson_
