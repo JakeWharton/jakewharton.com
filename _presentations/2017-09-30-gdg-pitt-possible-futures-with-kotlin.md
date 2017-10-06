@@ -9,7 +9,8 @@ date: 2017-09-30
 
 type: Technical
 
-title: TDB Kotlin Topic
+title: Possible Futures with Kotlin
+speakerdeck: 277857b1472d4e88ab78b814bd0dceb6
 ---
 
-TBD
+An overview of why Kotlin exists, its syntax, and its potential cross-platform future.
