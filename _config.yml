@@ -15,4 +15,6 @@ collections:
     output: true
     permalink: /:title/
 
+  podcasts:
+
 exclude: [vendor]
