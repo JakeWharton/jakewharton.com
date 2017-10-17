@@ -1,6 +1,4 @@
 ---
-layout: nil
-
 name: Talking Kotlin
 title: Catching up with Jake Wharton
 date: 2017-01-26

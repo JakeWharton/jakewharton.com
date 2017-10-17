@@ -1,6 +1,4 @@
 ---
-layout: nil
-
 name: Fragmented
 episode: 7
 title: Jake Wharton on Testing, SqlBrite, NotRxAndroid, RxJava and Much More
