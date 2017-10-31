@@ -1,0 +1,16 @@
+---
+title: Podcasts
+layout: default
+---
+
+{% assign sorted_podcasts = site.podcasts | sort: 'date' | reverse %}
+
+<ul class="presentation-list list-unstyled">
+{% for podcast in sorted_podcasts %}
+  <li class="presentation">
+    <span class="date">{{ podcast.date | date: "%Y-%m-%d" }}</span>
+    <a href="{{ podcast.link }}">⇖ {{ podcast.title }}</a>
+    <small>{{ podcast.name }}</small>
+  </li>
+{% endfor %}
+</ul>

@@ -3,7 +3,7 @@ title: Presentations
 layout: default
 ---
 
-{% assign sorted_presentations = (site.presentations | sort: 'date_start' | reverse) %}
+{% assign sorted_presentations = site.presentations | sort: 'date' | reverse %}
 
 <ul class="presentation-list list-unstyled">
 {% for presentation in sorted_presentations %}

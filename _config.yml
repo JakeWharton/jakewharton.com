@@ -6,7 +6,7 @@ markdown: kramdown
 
 future: true
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-redirect-from
 
@@ -14,5 +14,7 @@ collections:
   presentations:
     output: true
     permalink: /:title/
+
+  podcasts:
 
 exclude: [vendor]

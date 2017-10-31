@@ -39,7 +39,7 @@ header {
 header h1 {
   text-transform: uppercase;
   font-size: 50px;
-  letter-spacing: 12px;
+  letter-spacing: 15px;
   margin: 0 0 0 4px;
 }
 @media (max-width: 767px) {
