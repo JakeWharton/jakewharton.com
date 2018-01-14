@@ -1,7 +1,7 @@
 jakewharton.com
 ===============
 
-Blog posts, presentations, and other things...
+Blog posts, presentations, podcasts, and other things...
 
 
 Development
