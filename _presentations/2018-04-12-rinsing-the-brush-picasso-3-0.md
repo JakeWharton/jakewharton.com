@@ -8,7 +8,7 @@ listing: http://chicagoroboto.com/sessions/rinsing-brush-picasso-3-0/
 date: 2018-04-12
 
 type: Technical
-title: Rinsing the Brush: Picasso 3.0
+title: "Rinsing the Brush: Picasso 3.0"
 ---
 
 Picasso is a powerful image downloading and caching library for Android but since its launch in 2013, other libraries have improved or entered the scene and new requirements have come up.
