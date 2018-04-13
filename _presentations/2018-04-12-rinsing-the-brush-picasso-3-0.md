@@ -22,3 +22,5 @@ In this talk, we’ll:
  * …and more!
 
 You’ll learn to efficiently work with different image formats across millions of devices!
+
+_Presented with John Rodriguez_
