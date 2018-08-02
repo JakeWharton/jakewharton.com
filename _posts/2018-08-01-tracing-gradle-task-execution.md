@@ -23,7 +23,7 @@ Java Flight Recorder can be used on individual Gradle builds with the `jcmd` bin
 
 The flamegraph can show where time is being spent inside of tasks over the course of the build. The stacks aren't correlated to a task, though, so it's important to remember that you're looking at the larger picture. This also doesn't handle tasks which communicate with their own daemons such as the Kotlin compiler.
 
-While this produces a pretty output, its utility is small and the Gradle plugin integration is not the most stable. I would refrain from using this on CI as result unless you're going to build out a strong integration with `jcmd` directly.
+While this produces a pretty output, its utility is small and the Gradle plugin integration is not the most stable. I would refrain from using this on CI as result unless you're going to build out a strong integration with `jcmd` directly. These visualizations work well when you have a small subset of tasks to run rather than when your entire project is being built.
 
 ---
 
