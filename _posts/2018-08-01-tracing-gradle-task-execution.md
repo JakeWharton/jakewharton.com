@@ -41,7 +41,8 @@ initscript {
 }
 
 rootProject {
-  ext.chromeTraceFile = new File(rootProject.buildDir, 'trace.html')
+  def date = new java.text.SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date())
+  ext.chromeTraceFile = new File(rootProject.buildDir, "reports/trace/trace-${date}.html")
 }
 
 apply plugin: org.gradle.trace.GradleTracingPlugin
@@ -53,7 +54,7 @@ When invoking Gradle we need to reference this script and also pass a flag to en
 $ ./gradlew --init-script init.gradle -Dtrace build
 ```
 
-This will produce a trace file at `build/trace.html` which you can open in Chrome and navigate using the arrow keys and A-S-D-W keys.
+This will produce a trace file at `build/reports/trace/trace-(date).html` which you can open in Chrome and navigate using the arrow keys and A-S-D-W keys.
 
 [![Chrome trace of SDK Search build](/static/post-image/trace-1.png)](/static/post-image/trace-1.png)
 
