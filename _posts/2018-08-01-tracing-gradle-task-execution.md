@@ -6,18 +6,18 @@ categories: post
 tags:
 - Java
 
-lead: "Using Java flight recorder and Chrome traces as alternatives to `--profile` and `--scan` for gaining insight into your Gradle builds when running locally and on CI."
+lead: "Using Java Flight Recorder and Chrome traces as alternatives to `--profile` and `--scan` for gaining insight into your Gradle builds when running locally and on CI."
 ---
 
 Gradle provides two built-in mechanisms for tracing your build: `--profile` and `--scan`. The former produces a simple HTML report of task execution times. You can get a rough idea of where time was spent but are unlikely to glean any real insights. The latter sends a detailed report to Gradle's servers (or to a Gradle Enterprise installation) with much more granular information. Task details are rendered on a concurrent timeline corresponding to their execution. For CI builds, I tend to want something more granular than `--profile` but I don't like the idea of sending details of every build to Gradle with `--scan`. It seems entirely needless considering their plugin has all of that information locally but chooses to render it remotely.
 
-The [Gradle profiler][1] project started a few years ago as a way to deterministically measure build speeds. By creating scenarios such as an ABI-breaking change, ABI-compatible change, Android resource change, etc., the tool can run these scenarios multiple times to first warm up the JVM and then to produce an accurate picture of what gets executed. It offers integrations and outputs for use with popular JVM-based performance analysis tools such as YourKit and Java flight recorder.
+The [Gradle profiler][1] project started a few years ago as a way to deterministically measure build speeds. By creating scenarios such as an ABI-breaking change, ABI-compatible change, Android resource change, etc., the tool can run these scenarios multiple times to first warm up the JVM and then to produce an accurate picture of what gets executed. It offers integrations and outputs for use with popular JVM-based performance analysis tools such as YourKit and Java Flight Recorder.
 
 For CI builds, executing through the Gradle profiler would be an annoying abstraction to use. We can instead use it for inspiration and run its integrations on individual builds.
 
 ---
 
-Java flight recorder can be used on individual Gradle builds with the `jcmd` binary in the JDK and with flags to `java` specified on the `org.gradle.jvmargs` in your `gradle.properties`. There are even [Gradle plugins][2] which offer to start and stop the recording automatically. We can then open the resulting `.jfr` file in Java Mission Control or use [a command-line tool][3] to convert it into a [flamegraph][4]. 
+Java Flight Recorder can be used on individual Gradle builds with the `jcmd` binary in the JDK and with flags to `java` specified on the `org.gradle.jvmargs` in your `gradle.properties`. There are even [Gradle plugins][2] which offer to start and stop the recording automatically. We can then open the resulting `.jfr` file in Java Mission Control or use [a command-line tool][3] to convert it into a [flamegraph][4].
 
 [![Flame graph of SDK Search build](/static/post-image/trace-flame.png)](/static/post-image/trace-flame.png)
 
@@ -65,7 +65,7 @@ I have added this to SDK Search's CI builds in addition to the other reports it 
 
 ---
 
-Neither is perfect but both can be useful in different situations. Hopefully in the future visibility into workers will be added to the Chrome trace. Figuring out how to merge the Java flight recorder data into the Chrome trace would also be an amazing addition. For now, having the Chrome trace run on CI gives a good picture of how the build is performing and then Java flight recorder can be used either manually or with the Gradle profiler to dig into individual task performance.
+Neither is perfect but both can be useful in different situations. Hopefully in the future visibility into workers will be added to the Chrome trace. Figuring out how to merge the Java Flight Recorder data into the Chrome trace would also be an amazing addition. For now, having the Chrome trace run on CI gives a good picture of how the build is performing and then Java Flight Recorder can be used either manually or with the Gradle profiler to dig into individual task performance.
 
 Here are the four tracing outputs of a single build:
 
