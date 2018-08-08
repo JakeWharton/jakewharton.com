@@ -30,7 +30,7 @@ android.support.v7.widget.RecyclerView <init>(Context, AttributeSet)
 android.support.v7.widget.RecyclerView <init>(Context, AttributeSet, int)
 ```
 
-`SdkSearchApplication` and `MainActivity` contain only a default constructor but `RecyclerView` contains three. As far as the reflective lookup is concerned, only one constructor will be used. For types in the manifest the default (no-argument) constructor is used. For types in a layout XML file the two-arg `Context`+`AttributeSet` constructor is invoked by `LayoutInflater`. By generating rules with `<init>(...)` we are forcing every constructor to be retained despite only needed one.
+`SdkSearchApplication` and `MainActivity` contain only a default constructor but `RecyclerView` contains three. As far as the reflective lookup is concerned, only one constructor will be used. For types in the manifest the default (no-argument) constructor is used. For types in a layout XML file the two-arg `Context`+`AttributeSet` constructor is invoked by `LayoutInflater`. By generating rules with `<init>(...)` we are forcing every constructor to be retained despite only needing one.
 
 Starting with version 3.3.0-alpha05 of the Android Gradle plugin, a new version of `aapt2` is used which generates more precise rules that reference only the exact constructor which the reflective lookup will use.
 ```
