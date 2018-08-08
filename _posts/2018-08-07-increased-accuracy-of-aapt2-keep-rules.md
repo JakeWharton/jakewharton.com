@@ -56,7 +56,7 @@ public RecyclerView(@NonNull Context context, @Nullable AttributeSet attrs) {
     this(context, attrs, 0);
 }
 ```
-If optimization is also enabled and there are no other uses of that constructor it may get inlined–something that couldn't have happened with the old rules. 
+If optimization is also enabled and there are no other uses of that three-argument constructor it may get inlined–something that couldn't have happened with the old rules. 
 
 This seems like a small change, and it mostly is. Application, activity, and action provider subtypes tend to only have the one constructor so their counts are unlikely to change. View subtypes, however, very frequently have three or four constructors and you will likely now see two or three of those being removed. In the scope of an entire APK that allows on the order of tens or hundreds of methods to be removed which were _needlessly_ being kept. As the specificity of "keep" rules increases it not only reduces the raw number of methods that wind up in the final APK, but often allows optimization passes to have a greater effect.
 
