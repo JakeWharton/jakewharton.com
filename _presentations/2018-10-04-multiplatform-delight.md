@@ -12,6 +12,7 @@ additional_presenters:
 - Alec Strong
 
 title: A Multiplatform Delight
+speakerdeck: eb7e738565e149c1bd3b81ee7b11b639
 ---
 
 SQL Delight, a type-safe database API, recently completed migration from being a Java-generating, Android-specific tool to a Kotlin-generating, multiplatform one. Migrating an API from Java to Kotlin has obvious benefits, but adding multiplatform support for iOS introduces a dynamic which complicates the API, code generation, and runtime.
