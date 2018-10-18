@@ -5,7 +5,7 @@ event: Android Dev Summit
 location: Mountain View, CA, USA
 homepage: https://developer.android.com/dev-summit/
 listing: https://developer.android.com/dev-summit/
-date: 2018-11-07
+date: 2018-11-08
 
 type: Technical
 
