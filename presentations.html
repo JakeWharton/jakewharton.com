@@ -4,22 +4,23 @@ layout: default
 ---
 
 {% assign sorted_presentations = site.presentations | sort: 'date' | reverse %}
+{% assign upcoming_presentations = sorted_presentations | where_exp:"presentation", "presentation.date > site.time" %}
+{% assign past_presentations = sorted_presentations | where_exp:"presentation", "presentation.date <= site.time" %}
 
+{% if upcoming_presentations.size > 0 %}
 <ul class="presentation-list list-unstyled">
-{% for presentation in sorted_presentations %}
-  {% if presentation.date > site.time %}
+{% for presentation in upcoming_presentations %}
   <li class="presentation">
     <span class="date">{{ presentation.date | date: "%Y-%m-%d" }}</span>
     {% if presentation.homepage %}<a href="{{ presentation.homepage }}">⇖ {% endif %}{{ presentation.title }}{% if presentation.homepage %}</a>{% endif %}
     <small>{{ presentation.event }} ({{ presentation.location }})</small>
   </li>
-  {% endif %}
 {% endfor %}
 </ul>
 <hr>
+{% endif %}
 <ul class="presentation-list list-unstyled">
-{% for presentation in sorted_presentations %}
-  {% if presentation.date <= site.time %}
+{% for presentation in past_presentations %}
   <li class="presentation">
     <span class="date">{{ presentation.date | date: "%Y-%m-%d" }}</span>
     {% if presentation.nolink %}
@@ -29,6 +30,5 @@ layout: default
     {% endif %}
     <small>{{ presentation.event }} ({{ presentation.location }})</small>
   </li>
-  {% endif %}
 {% endfor %}
 </ul>
