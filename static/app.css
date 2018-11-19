@@ -113,28 +113,6 @@ header ul a:hover span {
   max-width: 100%;
 }
 
-.post-item {
-  margin-bottom: 40px;
-}
-.post-item:last-child {
-  margin-bottom: 0;
-}
-.post-item a {
-  display: block;
-}
-.post-item a:hover {
-  text-decoration: none;
-}
-.post-item a h2 {
-  color: #222;
-}
-.post-item a:hover h2 {
-  text-decoration: underline;
-}
-.post-item a p {
-  color: #888;
-}
-
 p.date {
   color: #aaa;
 }
