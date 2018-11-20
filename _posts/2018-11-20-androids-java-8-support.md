@@ -50,7 +50,7 @@ Uncaught translation error: com.android.dx.cf.code.SimException:
 1 error; aborting
 ```
 
-This is because lambdas use a newer bytecode, `invokedynamic`, added in Java 7. As the error message indicates, Android's support for this bytecode requires a minimum API of 26 or newer–something practically unfathomable for applications at the time of writing. Instead, a process named _desugaring_ is used which turns lambdas into representations compatible with all API levels developers were targeting.
+This is because lambdas use a newer bytecode, `invokedynamic`, added in Java 7. As the error message indicates, Android's support for this bytecode requires a minimum API of 26 or newer–something practically unfathomable for applications at the time of writing. Instead, a process named _desugaring_ is used which turns lambdas into representations compatible with all API levels developers are targeting.
 
 
 ### Desugaring History
