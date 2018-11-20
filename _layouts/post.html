@@ -32,6 +32,8 @@
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
     {% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js"></script>
   </head>
   <body>
     <header>
@@ -53,6 +55,11 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-3637749-19', 'jakewharton.com');
       ga('send', 'pageview');
+
+      (function () {
+        anchors.options.placement = 'right';
+        anchors.add('.content > h3, .content > h4, .content > h5, .content > h6');
+      })();
     </script>
   </body>
 </html>

@@ -194,3 +194,7 @@ img.float-right {
     margin: 1em auto;
   }
 }
+
+.anchorjs-link, .anchorjs-link:hover {
+  text-decoration: none;
+}
