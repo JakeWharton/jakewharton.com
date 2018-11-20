@@ -37,17 +37,17 @@ class Java8 {
 After compiling this program with `javac`, running it through the legacy `dx` tool produces an error.
 
 ```
-$ javac *.java  
+$ javac *.java
 
 $ ls
 Java8.java  Java8.class  Java8$Logger.class
 
 $ $ANDROID_HOME/build-tools/28.0.2/dx --dex --output . *.class
-Uncaught translation error: com.android.dx.cf.code.SimException: 
+Uncaught translation error: com.android.dx.cf.code.SimException:
   ERROR in Java8.main:([Ljava/lang/String;)V:
     invalid opcode ba - invokedynamic requires --min-sdk-version >= 26
     (currently 13)
- 1 error; aborting
+1 error; aborting
 ```
 
 This is because lambdas use a newer bytecode, `invokedynamic`, added in Java 7. As the error message indicates, Android's support for this bytecode requires a minimum API of 26 or newer–something practically unfathomable for applications at the time of writing. Instead, a process named _desugaring_ is used which turns lambdas into representations compatible with all API levels developers were targeting.
@@ -91,8 +91,8 @@ $ $ANDROID_HOME/build-tools/28.0.2/dexdump -d classes.dex
 0005: return-void
 
 [0002a8] Java8.sayHi:(LJava8$Logger;)V
-0000: const-string v0, "Hello" // string@0002
-0002: invoke-interface {v1, v0}, LJava8$Logger;.log:(Ljava/lang/String;)V // method@0003
+0000: const-string v0, "Hello"
+0002: invoke-interface {v1, v0}, LJava8$Logger;.log:(Ljava/lang/String;)V
 0005: return-void
 …
 ```
@@ -246,11 +246,11 @@ When we used the `dx` tool to attempt to compile lambda-containing Java bytecode
 
 ```
 $ $ANDROID_HOME/build-tools/28.0.2/dx --dex --output . *.class
-Uncaught translation error: com.android.dx.cf.code.SimException: 
+Uncaught translation error: com.android.dx.cf.code.SimException:
   ERROR in Java8.main:([Ljava/lang/String;)V:
     invalid opcode ba - invokedynamic requires --min-sdk-version >= 26
     (currently 13)
- 1 error; aborting
+1 error; aborting
 ```
 
 Thus, if you re-run D8 and specify `--min-api 26` it's reasonable to assume that "native" lambdas will be used and desugaring won't actually occur.
