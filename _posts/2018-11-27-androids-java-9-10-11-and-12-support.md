@@ -479,7 +479,7 @@ java.lang.UnsupportedOperationException
   at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
 ```
 
-Unfortunately, at the time of writing, this does not work. The version of ASM, the library used to read Java class files, predates the final implementation of nestmates. Beyond that, though, D8 does not support desugaring of nest mates. You can [star the D8 feature request]() on the Android issue tracker to convey your support for this feature.
+Unfortunately, at the time of writing, this does not work. The version of ASM, the library used to read Java class files, predates the final implementation of nestmates. Beyond that, though, D8 does not support desugaring of nest mates. You can [star the D8 feature request](https://issuetracker.google.com/issues/116628246) on the Android issue tracker to convey your support for this feature.
 
 Without support for desugaring nestmates it is currently impossible to use Java 11 for Android. Even if you avoid accessing things across the nested boundary, the mere presence of nesting will fail to compile.
 
