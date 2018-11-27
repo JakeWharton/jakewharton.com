@@ -8,7 +8,7 @@ tags:
 - Java
 ---
 
-The previous post in this series [explored Android's Java 8 support](/androids-java-8-support). Having support for the language features and APIs of Java 8 is table stakes at this point. We're not quite there with the APIs yet, sadly, but D8 has us covered with the language features. There's a future promise for the APIs which is essential for the health of the ecosystem.
+The first post in this series [explored Android's Java 8 support](/androids-java-8-support). Having support for the language features and APIs of Java 8 is table stakes at this point. We're not quite there with the APIs yet, sadly, but D8 has us covered with the language features. There's a future promise for the APIs which is essential for the health of the ecosystem.
 
 A lot of the reaction to the previous post echoed that Java 8 is quite old. The rest of the Java ecosystem is starting to move to Java 11 (being the first long-term supported release after 8) after having toyed with Java 9 and 10. I was _hoping_ for that reaction because I mostly wrote that post so that I could set up this one.
 
