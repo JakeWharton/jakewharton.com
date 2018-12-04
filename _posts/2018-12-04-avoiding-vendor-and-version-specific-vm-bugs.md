@@ -15,7 +15,7 @@ At this point in Android's tenure it'd be reasonable to think that this conversi
 
 ### Not A Not
 
-D8 takes compiled Java bytecode and produces equivalent functionality using Dalvik bytecode. We can see this with a simple example that uses Java's bitwise operator.
+D8 takes compiled Java bytecode and produces equivalent functionality using Dalvik bytecode. We can see this with a simple example that uses Java's bitwise not operator.
 
 ```java
 class Not {
