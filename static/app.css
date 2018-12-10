@@ -43,6 +43,9 @@ header h1 {
   margin: 0 0 0 4px;
 }
 @media (max-width: 767px) {
+  header {
+    padding: 30px;
+  }
   header h1 {
     letter-spacing: 5px;
     font-size: 40px;
@@ -85,6 +88,11 @@ header ul a:hover span {
   padding: 40px;
   max-width: 1000px;
   line-height: 22px;
+}
+@media (max-width: 767px) {
+  .content {
+    padding: 30px;
+  }
 }
 .content h2 {
   margin-top: 0;
