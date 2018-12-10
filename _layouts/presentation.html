@@ -23,6 +23,8 @@
     <meta name="og:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
     {% elsif page.speakerdeck %}
     <meta name="og:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
+    {% else %}
+    <meta name="og:image" content="{{ site.url }}/static/default_image.png">
     {% endif %}
 
     <meta name="twitter:card" content="summary_large_image">
@@ -34,6 +36,8 @@
     <meta name="twitter:image" content="http://img.youtube.com/vi/{{ page.youtube }}/maxresdefault.jpg">
     {% elsif page.speakerdeck %}
     <meta name="twitter:image" content="https://speakerd.s3.amazonaws.com/presentations/{{ page.speakerdeck }}/slide_0.jpg">
+    {% else %}
+    <meta name="twitter:image" content="{{ site.url }}/static/default_image.png">
     {% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
     <meta name="twitter:label1" content="Event">

@@ -20,6 +20,8 @@
     <meta name="og:url" content="{{ site.url }}{{ page.url }}">
     {% if page.image %}
     <meta name="og:image" content="{{ site.url }}{{ page.image }}">
+    {% else %}
+    <meta name="og:image" content="{{ site.url }}/static/default_image.png">
     {% endif %}
     <meta property="article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
 
@@ -30,6 +32,8 @@
     <meta name="twitter:description" content="{{ page.lead }}">
     {% if page.image %}
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+    {% else %}
+    <meta name="twitter:image" content="{{ site.url }}/static/default_image.png">
     {% endif %}
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 
