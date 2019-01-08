@@ -16,7 +16,7 @@ layout: null
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="{{ site.url }}{{ post.url }}"/>
+   <link href="{% if post.external %}{{ post.permalink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
