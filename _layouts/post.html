@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#111111">
 
     <meta name="og:type" content="article">
-    <meta name="og:title" content="Post: {{ page.title }}">
+    <meta name="og:title" content="{{ page.title }} – Jake Wharton">
     <meta name="og:description" content="{{ page.lead }}">
     <meta name="og:site_name" content="Jake Wharton">
     <meta name="og:url" content="{{ site.url }}{{ page.url }}">
@@ -25,10 +25,10 @@
     {% endif %}
     <meta property="article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}">
 
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@JakeWharton">
     <meta name="twitter:domain" content="jakewharton.com">
-    <meta name="twitter:title" content="Post: {{ page.title }}">
+    <meta name="twitter:title" content="{{ page.title }} – Jake Wharton">
     <meta name="twitter:description" content="{{ page.lead }}">
     {% if page.image %}
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
