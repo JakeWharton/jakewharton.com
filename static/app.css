@@ -30,6 +30,11 @@ code {
 blockquote {
   font-size: 14px;
 }
+pre code {
+  overflow-x: auto;
+  overflow-wrap: normal;
+  white-space: pre;
+}
 
 header {
   background-color: #111;
