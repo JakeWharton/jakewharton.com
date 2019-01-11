@@ -104,7 +104,7 @@ $ java -jar r8.jar \
     --release \
     --output . \
     --pg-conf rules.txt \
-    *.class
+    *.class kotlin-stdlib-1.3.11.jar
 
 $ $ANDROID_HOME/build-tools/28.0.3/dexdump -d classes.dex
 [000340] NullsKt.main:([Ljava/lang/String;)V
