@@ -27,13 +27,13 @@ code {
   color: #444;
   background-color: #f6f6f6;
 }
-blockquote {
-  font-size: 14px;
-}
 pre code {
   overflow-x: auto;
   overflow-wrap: normal;
   white-space: pre;
+}
+blockquote {
+  font-size: 14px;
 }
 
 header {
