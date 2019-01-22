@@ -361,7 +361,7 @@ After `-assumevalues` removed the conditional, the body of the static `setElevat
 
 #### No Configuration Necessary
 
-If you read [the post on VM-specific workarounds](/avoiding-vendor-and-version-specific-vm-bugs/) you might remember that D8 and R8 have a `--min-api` flag. When the Android Gradle plugin (AGP) invokes D8 or R8 it sets this flag to the minimum SDK version that your app supports. Starting with R8 1.4.22 which is part of AGP 3.4 beta 2 (and newer), a rule for `Build.VERSION.SDK_INT` is automatically added based on the `--min-api` flag's value.
+If you read [the post on VM-specific workarounds](/avoiding-vendor-and-version-specific-vm-bugs/) you might remember that D8 and R8 have a `--min-api` flag. When the Android Gradle plugin (AGP) invokes D8 or R8 it sets this flag to the minimum SDK version that your app supports. Starting with R8 1.4.22 which is part of AGP 3.4 beta 1 (and newer), a rule for `Build.VERSION.SDK_INT` is automatically added based on the `--min-api` flag's value.
 
 ```
 -assumevalues public class android.os.Build$VERSION {
