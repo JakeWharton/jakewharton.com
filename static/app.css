@@ -125,6 +125,10 @@ header ul a:hover span {
 .content img {
   max-width: 100%;
 }
+.content .footnotes {
+  margin-top: 40px;
+  font-size: 12px;
+}
 
 p.date {
   color: #aaa;
