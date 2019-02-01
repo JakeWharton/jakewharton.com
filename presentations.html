@@ -8,6 +8,7 @@ layout: default
 {% assign past_presentations = sorted_presentations | where_exp:"presentation", "presentation.date <= site.time" %}
 
 {% if upcoming_presentations.size > 0 %}
+<p class="date-header">Upcoming</p>
 <ul class="presentation-list list-unstyled">
 {% for presentation in upcoming_presentations %}
   <li class="presentation">
@@ -19,6 +20,7 @@ layout: default
 </ul>
 <hr>
 {% endif %}
+<p class="date-header">Past</p>
 <ul class="presentation-list list-unstyled">
 {% for presentation in past_presentations %}
   <li class="presentation">

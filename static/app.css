@@ -149,6 +149,11 @@ p.signature {
   margin-bottom: 20px;
 }
 
+.date-header {
+  font-weight: bold;
+  font-family: monospace;
+}
+
 .presentation-list .date {
   font-family: monospace;
   padding-right: 10px;
