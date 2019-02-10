@@ -9,6 +9,8 @@ tags:
 - R8
 ---
 
+> Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
+
 The previous post ([part 1](/r8-optimization-null-data-flow-analysis-part-1/), [part 2](/r8-optimization-null-data-flow-analysis-part-2/)) featured R8 performing data-flow analysis of variables in order to determine if they were maybe null, always null, or never null, and then potentially performing dead-code elimination based on that info.
 
 Another way to think about that optimization is that R8 tracks the use of a variable along with a range of its possible nullability. If any conditional against that range can be determined to always produce the same result, dead-code elimination removes the unused branches and the conditional disappears. [Part 2 of the last post](/r8-optimization-null-data-flow-analysis-part-2/#no-inlining-required) ended with an example where an `args` variable was passed into a `first` method and then checked for null before printing.

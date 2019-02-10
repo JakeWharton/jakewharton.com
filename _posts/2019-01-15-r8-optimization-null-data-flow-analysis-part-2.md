@@ -9,6 +9,8 @@ tags:
 - R8
 ---
 
+> Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
+
 [Part 1 of this post](/r8-optimization-null-data-flow-analysis-part-1/) demonstrated R8's ability to eliminate null checks after method inlining. This was accomplished by virtue of nullability information being present in R8's (and D8's) intermediate representation (IR). When the arguments flowing into a method were always non-null or always null, the now-inlined null check can be computed at compile-time.
 
 Examples in the last two posts have mostly used Kotlin. To improve readability of their bytecode, I've been removing a section of it. The last post started with an example of a `coalesce` function being called from a `main` function.

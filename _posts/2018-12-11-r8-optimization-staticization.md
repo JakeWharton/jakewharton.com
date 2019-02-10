@@ -8,6 +8,8 @@ tags:
 - Java
 ---
 
+> Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). This post introduces R8.
+
 The first three posts ([1](/androids-java-8-support/), [2](/androids-java-9-10-11-and-12-support/), [3](/avoiding-vendor-and-version-specific-vm-bugs/)) in this series explored D8. Among its core responsibility of converting Java bytecode to Dalvik bytecode, it desugars new Java language features and works around vendor- and version-specific bugs in Android's VMs.
 
 In general, D8 doesn't perform optimization. It may choose to use Dalvik bytecodes which more efficiently represent the intent of Java bytecodes (as seen with [the `not-int` example](/avoiding-vendor-and-version-specific-vm-bugs/#not-a-not)). Or, in the process of desugaring language features, it may choose to optimize the desugared code it is generating. Aside from these very localized changes, D8 otherwise performs a direct translation.

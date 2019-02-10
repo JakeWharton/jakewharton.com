@@ -8,6 +8,8 @@ tags:
 - Java
 ---
 
+> Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
+
 The [last post](/r8-optimization-staticization/) in this series was the first to cover R8 and one of its optimizations. This post will cover an optimization which performs data flow analysis of nullability. Let's dig in!
 
 A _coalesce_ function returns the first non-null argument that is provided. Running the following example, unsurprisingly, prints "one" and then "two".

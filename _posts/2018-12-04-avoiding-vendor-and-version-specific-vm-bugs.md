@@ -8,6 +8,8 @@ tags:
 - Java
 ---
 
+> Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/).
+
 The first two posts ([1](/androids-java-8-support/), [2](/androids-java-9-10-11-and-12-support/)) in this series explored how D8 is responsible for desugaring new Java language features to work on all versions of Android. Desugaring is the more interesting feature to demonstrate, but it's secondary functionality of D8. The primary responsibility is converting the stack-based Java bytecode into register-based Dalvik bytecode so that it can run on Android's VM.
 
 At this point in Android's tenure it'd be reasonable to think that this conversion (called _dexing_) is a solved problem. During the process of building and rolling out D8, however, interesting vendor-specific and version-specific bugs in different VMs were uncovered which this post is going to explore.
