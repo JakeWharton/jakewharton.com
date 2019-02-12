@@ -269,6 +269,6 @@ In real-world applications it becomes less clear whether computing these is the 
 
 When combined with inlining, R8's string optimizations help eliminate dead code and improve runtime performance when working with string literals. To track updates to and show support for new `String` methods being computed at compile-time star [issuetracker.google.com/issues/119364907](https://issuetracker.google.com/issues/119364907). For string concatenation star [issuetracker.google.com/issues/114002137](https://issuetracker.google.com/issues/114002137).
 
-The next post in the series will look at an optimization creates string literals at compile-time which otherwise would need to be created at runtime.
+The next post in the series will look at an optimization that creates string literals at compile-time which otherwise would need to be created at runtime.
 
 _(This post was adapted from a part of my [Digging into D8 and R8](/digging-into-d8-and-r8) talk that was never presented. Watch the video and look out for future blog posts for more content like this.)_
