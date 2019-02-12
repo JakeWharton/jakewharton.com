@@ -139,7 +139,7 @@ class Test {
 
 Take this more complete example where the `main` method calls a public library method `canonicalHost` with a string literal. The `canonicalHost` library method delegates to `patternHost` which is a private library method. Because this program is so small both methods will ultimately be inlined into the `main` method.
 
-We can pretend this inlining happened at the source-level to see how the code has changed.
+We can pretend this inlining happened at the source-level to see how the code changes as the string optimizations apply.
 
 ```java
 class Test {
