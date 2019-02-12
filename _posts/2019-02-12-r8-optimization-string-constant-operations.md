@@ -105,7 +105,7 @@ Since `WILDCARD` is a constant initialized with a string literal, its length is 
 000d: return-object v1
 ```
 
-Index `0008` now loads the constant value of 2 which is immediately passed to the `substring` call. The bytecode gets the performance benefit of a hardcoded value without the maintenance burden of keeping the two values in sync in source.
+Index `0008` now loads the constant value of 2 which is immediately passed to the `substring` call. The bytecode gets the performance benefit of a hardcoded value without the maintenance burden of keeping the two values in sync in the source code.
 
 And because this computation was trivial and removing the call to `length()` won't change the program's behavior, D8 will also perform this optimization!
 
@@ -156,7 +156,7 @@ class Test {
 }
 ```
 
-R8's intermediate representation (IR) during compilation uses static single-assignment form (SSA) ([introduced in part 1 of the null analysis](/r8-optimization-null-data-flow-analysis-part-1/)) which allows it to trace the origin of local variables. Despite `startsWith` operating on a variable, that variable's origin can be traced to a string literal. The argument to `startsWith` is a string constant as well allowing the operation to be replaced with its result at compile-time.
+R8's intermediate representation (IR) during compilation uses static single-assignment form (SSA) ([introduced in part 1 of the null analysis](/r8-optimization-null-data-flow-analysis-part-1/)) which allows it to trace the origin of local variables. Despite `startsWith` operating on the variable `pattern`, that variable's origin can be traced to a string literal. The argument to `startsWith` is also a string constant allowing the operation to be replaced with its result at compile-time.
 
 ```diff
  String pattern = "*.example.com";
