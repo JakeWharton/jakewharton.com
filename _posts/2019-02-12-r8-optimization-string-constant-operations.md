@@ -156,7 +156,7 @@ class Test {
 }
 ```
 
-R8's intermediate representation (IR) during compilation uses static single-assignment form (SSA) ([introduced in part 1 of the null analysis](/r8-optimization-null-data-flow-analysis-part-1/)) which allows it to, among other things, trace the origin of local variables. Despite `startsWith` operating on the variable `pattern`, that variable's origin can be traced to the string literal `"*.example.com"`. The argument to `startsWith` is also a string constant allowing the operation to be replaced with its result at compile-time.
+R8's intermediate representation (IR) during compilation uses static single-assignment form (SSA) ([introduced in part 1 of the null analysis](/r8-optimization-null-data-flow-analysis-part-1/)) which allows it to, among other things, trace the origin of local variables. Despite `startsWith` operating on the variable `pattern`, that variable's origin can be traced to the string literal `"*.example.com"`. The argument to `startsWith`, `WILDCARD`, is also a string constant allowing the whole operation to be replaced with its result at compile-time.
 
 ```diff
  String pattern = "*.example.com";
