@@ -211,8 +211,8 @@ $ $ANDROID_HOME/build-tools/28.0.3/dexdump -d classes.dex
 0007: new-instance v0, Ljava/lang/StringBuilder;
 0009: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V
 000c: const-string v1, "http://"
-000e: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;method@0004
-0011: invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;method@0004
+000e: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+0011: invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
 0014: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String;
 0017: move-result-object v2
 0018: invoke-static {v2}, Lokhttp3/HttpUrl;.get:(Ljava/lang/String;)Lokhttp3/HttpUrl;
