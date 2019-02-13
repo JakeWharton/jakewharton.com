@@ -47,7 +47,7 @@ Constant pool:
   #20 = Utf8               A:
 ```
 
-\#4 is a `String` type whose data is at #20 which is a UTF-8 entry for "A:". This was one of the string literals from the source (taken from [the Java 9 string concat example](/androids-java-9-10-11-and-12-support/#string-concat)). If you look at #2 or #3, they're signatures for a `Class` and `Methodref` (method reference), respectively. Each uses one or more UTF-8 entires to create the signature it represents.
+\#4 is a `String` type whose data is at #20 which is a UTF-8 entry for "A:". This was one of the string literals from the source (taken from [the Java 9 string concat example](/androids-java-9-10-11-and-12-support/#string-concat)). If you look at #2 or #3, they're signatures for a `Class` and `Methodref` (method reference), respectively. Each uses one or more UTF-8 entries to create the signature it represents.
 
 When using `dexdump` to look at Dalvik bytecode, the program doesn't show the string data section directly. Instead, strings are substituted into the bytecode output to make it easier to read.
 
