@@ -199,6 +199,6 @@ Since this optimization has the potential to create a large amount of strings, i
 
 ---
 
-The next post on R8 will look at an optimization which produces class literals like those used in this post (i.e., `const-class` bytecodes created from `MyClass.class`). You won't be surprised when that post shows class literal creation which in turn allows the optimizations from this post to apply which in turn allows the string optimizations to apply and so on.
+The next post on R8 will look at an optimization which produces class literals like those used in this post (i.e., the `const-class` bytecodes created from `MyClass.class`). You won't be surprised when that post shows class literal creation which in turn allows the optimizations from this post to apply which in turn allows the string optimizations to apply and so on.
 
 _(This post was adapted from a part of my [Digging into D8 and R8](/digging-into-d8-and-r8) talk that was never presented. Watch the video and look out for future blog posts for more content like this.)_
