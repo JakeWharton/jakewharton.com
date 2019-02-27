@@ -10,7 +10,7 @@ tags:
  
 > Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
 
-The [previous post in the series](/r8-optimization-string-constant-operations/) showed R8 (and D8) invoking string methods at compile-time when the inputs were all constants. R8 is able to do this because the content of constant strings are available inside the bytecode. That post also claimed that strings are the only non-primitive type that can be manipulated like this at compile-time.
+The [previous post in the series](/r8-optimization-string-constant-operations/) showed R8 (and D8) invoking string methods at compile-time when the inputs were all constants. R8 is able to do this because the content of constant strings is available inside the bytecode. That post also claimed that strings are the only non-primitive type that can be manipulated like this at compile-time.
 
 There is, however, another object type that can be manipulated at compile-time: classes. Classes are templates for the instances we interact with at runtime. Since bytecode fundamentally exists to hold these templates, some operations on classes can thus be performed at compile time.
 
@@ -175,7 +175,7 @@ In order for R8 to be allowed to replace `getSimpleName` it needs to do so with 
 000e: return-void
 ```
 
-Note how index 0007 now will load a tag value for the second log call (unlike the original R8 output) and how it correctly reflects the obfuscated name.
+Note how index `0007` now will load a tag value for the second log call (unlike the original R8 output) and how it correctly reflects the obfuscated name.
 
 There are other R8 optimizations which affect the class name even when obfuscation is disabled. While I plan to cover it in a future post, R8 will sometimes merge a superclass into a subtype if it can prove the superclass isn't needed and the subtype is the only one. When this happens, the class name string optimization will correctly reflect the subtype name even if the original code was equivalent to `TheSupertype.class.getSimpleName()`.
 
