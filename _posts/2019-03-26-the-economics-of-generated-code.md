@@ -175,7 +175,7 @@ Now the dex file only contains a single prefix string and we don't pay for the I
 000483: 7468 2049 443a 2000|
 ```
 
-22KB of string data reduced to 33 bytes! Now it is worth noting that we spend an extra 7 bytes loading the second string and invoking `String.concat`, but since the string was always more than 32 bytes it's still a nice win. There's actually still room to de-duplicate the actual concatenation and exception throwing code so that it's only paid once per class instead of once per view, but I'll leave that for another post.
+22KB of string data reduced to 33 bytes! Now it is worth noting that we spend an extra 7 bytes loading the second string and invoking `String.concat`, but since the string was always more than 32 bytes it's still a nice win. There's still room to de-duplicate the actual concatenation and exception throwing code so that it's only paid once per class instead of once per view, but I'll leave that for another post.
 
 ---
 
