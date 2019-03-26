@@ -59,7 +59,7 @@ When you compile, dex, and dump the Dalvik bytecode of the above class with `dex
 0007: move-result-object v2
 </pre>
 
-Despite placing the `getUnknownPairs()` method on the supertype, each generated class produces a reference to that method as if it were defined on each generated type. Moving the method does not actually reduce the count!
+Despite placing the `getUnknownPairs()` method on the `JsonModel` supertype, each generated class produces a reference to that method as if it were defined directly on the generated type. Moving the method does not actually reduce the count!
 
 A medium-sized app might have 100 models for its API layer. If each generated class contains four calls to a method defined in the supertype that's 400 method references created for no purpose.
 
