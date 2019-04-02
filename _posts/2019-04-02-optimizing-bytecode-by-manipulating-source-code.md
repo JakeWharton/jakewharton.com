@@ -187,7 +187,7 @@ digraph {
 
 Another side-effect of using D8 is that the loading of the exception message prefix string was de-duplicated at bytecode index `0008`. This is actually an unfortunate behavior since it now occurs during normal execution as well.
 
-Before attempting to fix these problems, let's manually re-arrange the bytecode (without dummy indices, for simplicity) to the ideal form we'd like to produce.
+Before attempting to fix these problems, let's manually re-arrange the bytecode (with dummy indices, for simplicity) to the ideal form we'd like to produce.
 
 ```
 [000258] MainBinding.bind:(Landroid/view/View;)LMainBinding;
