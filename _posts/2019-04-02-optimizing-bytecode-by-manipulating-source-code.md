@@ -18,7 +18,7 @@ The second example from that post dealt with looking up views, checking for null
    }
    TextView email = root.findViewById(R.id.email);
    if (email == null) {
--    throw new NullPointerException("View 'name' required but not found");
+-    throw new NullPointerException("View 'email' required but not found");
 +    throw new NullPointerException("Missing required view with ID: ".concat("email"));
    }
    return new MainBinding(root, name, email);
