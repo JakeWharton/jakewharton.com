@@ -137,7 +137,7 @@ $ cat rules.txt
 }
 -dontobfuscate
 
-$ java -jar ~/dev/android/r8/build/libs/r8.jar \
+$ java -jar r8.jar \
       --lib $ANDROID_HOME/platforms/android-28/android.jar \
       --release \
       --output . \
