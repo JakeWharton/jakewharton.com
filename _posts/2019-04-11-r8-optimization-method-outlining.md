@@ -28,7 +28,7 @@ A second exception is generated when that non-null property lacks a default valu
  return Person(
    name = name ?: throw JsonDataException(
 -      "Required property 'name' missing at ${reader.path}"),
-+      StringBuilder("Required property '").append("a")
++      StringBuilder("Required property '").append("name")
 +          .append("' missing at ").append(reader.path).toString()),
 ```
 
