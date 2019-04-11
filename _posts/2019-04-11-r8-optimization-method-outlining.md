@@ -178,7 +178,7 @@ Taking a look at the new method shows the common `StringBuilder` code.
 0012: return-object v1
 ```
 
-R8 has created the helper method which we were considering adding ourselves.
+R8 has created the helper method which we were considering adding ourselves!
 
 I specifically chose to use two types in the example which together have 10 properties resulting in 20 `StringBuilder` usages. This is the lower bound of duplicate sequences that R8 will consider outlining. The duplicated bytecode must also be between 3 and 99 bytes.
 
