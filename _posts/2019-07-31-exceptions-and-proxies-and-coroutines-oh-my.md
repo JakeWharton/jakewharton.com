@@ -30,7 +30,7 @@ interface MyService {
 }
 ```
 
-Kotlin does not require declaring checked exceptions. With Retrofit using a `Proxy` and performing a network call that may throw an `IOException`, you might expect to be required to declare `@Throws(IOException::class)`. This isn't actually required because the method signature gets rewritten by the Kotlin compiler to accept a `Continuation` parameter where both exceptions and results are forwarded.
+Kotlin does not require declaring checked exceptions. With Retrofit using a `Proxy` and performing a network call that may throw an `IOException`, you might expect to be required to declare `@Throws(IOException::class)` though. This isn't actually required because the method signature gets rewritten by the Kotlin compiler to accept a `Continuation` parameter where both exceptions and results are forwarded.
 
 ```java
 // Approximate Java for the compiled bytecode of MyService.kt:
