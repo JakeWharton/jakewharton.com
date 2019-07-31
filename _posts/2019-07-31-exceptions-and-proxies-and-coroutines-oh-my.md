@@ -166,7 +166,7 @@ There are two threads here: the caller and the background worker. If we ignore t
     />
 </a>
 
-Occasionally, the caller thread will be preempted between the `ContinuationImpl` creation (green) and the call to `getResult()` (red). If the background work is quick enough the continuation may be invoked (orange) before switching back. In this example, an exception is quickly thrown due to a failed DNS lookup that was cached.
+Occasionally, that preemption will occur precisely between the `ContinuationImpl` creation (green) and the call to `getResult()` (red). If the background work is quick enough the continuation may be invoked (orange) before switching back. In this example, an exception is quickly thrown due to a failed DNS lookup that was cached.
 
 
 ### The Fix
