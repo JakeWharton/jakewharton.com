@@ -132,7 +132,7 @@ static int additionalBytes(ZipFile file) {
 
 Using these two functions, the sum total should now exactly match the size of the zip file.
 
-There's some small improvements to be had here as well. For one, we don't need to encode the name and comment as UTF-8 bytes only then to get its length. Libraries like [Guava](https://guava.dev/releases/19.0/api/docs/com/google/common/base/Utf8.html#encodedLength(java.lang.CharSequence)) and [Okio](https://square.github.io/okio/2.x/okio/okio/kotlin.-string/utf8-size/) provide methods for calculating the UTF-8 length directly on a `String`. Additionally, the zip format is so simple that you could write your own parser which included the file trailers in its calculation depending on how accurate you needed the numbers to be.
+There's some small improvements to be had here if we want. For one, we don't need to encode the name and comment as UTF-8 bytes only then to get its length. Libraries like [Guava](https://guava.dev/releases/19.0/api/docs/com/google/common/base/Utf8.html#encodedLength(java.lang.CharSequence)) and [Okio](https://square.github.io/okio/2.x/okio/okio/kotlin.-string/utf8-size/) provide methods for calculating the UTF-8 length directly on a `String`. Additionally, the zip format is so simple that you could write your own parser which included the file trailers in its calculation depending on how accurate you needed the numbers to be.
 
 ---
 
