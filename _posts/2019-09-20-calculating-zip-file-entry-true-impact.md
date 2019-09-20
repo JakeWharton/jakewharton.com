@@ -41,7 +41,7 @@ An overview of the zip file format specification can be [found on Wikipedia](htt
 
 A slight tangent: Given this format, it's pretty obvious how `ZipInputStream` and `ZipFile` work. The former simply iterates forward through the bytes reading each entry as it comes. The latter parses the central directory at the end and then jumps to the offset of whichever entry you request.
 
-Back on our problem, `ZipEntry.getCompressedSize()` is only exposing the length of compressed data (pictured as the light blue `<data>` blocks). However, the header for each entry and the record in the central directory also contribute to the overall size impact. Thus, to get the real value, we need to be able to calculate the size of those two things.
+Back on our problem, `ZipEntry.getCompressedSize()` is only exposing the length of compressed data (pictured as the blue `<data>` blocks). However, the header for each entry and the record in the central directory also contribute to the overall size impact. Thus, to get the real value, we need to be able to calculate the size of those two things.
 
 #### Zip entry header
 
