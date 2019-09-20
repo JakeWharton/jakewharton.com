@@ -13,7 +13,7 @@ There's three built-in ways to read information about the contents of zip file i
 
  1. Mount the zip as a `FileSystem` using `FileSystems.newFileSystem` and then access its contents using `Path`s.
  2. Open it with `ZipInputStream` for a one-shot iteration over the zip entries.
- 3. Open it with `ZipFile` for random-access to the zip entries.
+ 3. Open it with `ZipFile` for random access to the zip entries.
 
 The first mechanism is extremely convenient. It allows interacting with the contents of a zip file using the same APIs as normal files. Unfortunately, by virtue of being exposed like regular files, you only have one way to check their size: `Files.size(Path)`. This delegates to an API called `BasicFileAttributes.size()` which returns size of the file contents. While there is a `ZipFileAttributes.compressedSize()` for returning the size of the compressed contents, it's internal to the JDK and not available for our use.
 
