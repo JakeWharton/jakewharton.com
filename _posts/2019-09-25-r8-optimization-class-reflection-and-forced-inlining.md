@@ -15,7 +15,7 @@ The previous post on R8 covered [method outlining](/r8-optimization-method-outli
 Class constant operations allow R8 to take calls such as `MyActivity.class.getSimpleName()` and replace it with the string literal `"MyActivity"`. This was presented in the context of log tags, where you might write that expression instead of the string literal so that the tag always reflects the actual class name, even after obfuscation. This works great in a static context where the `MyActivity.class` literal is fixed, but it does not work when used on an instance.
 
 
-### Instance reflection 
+### Instance reflection
 
 When dealing with an instance, the `Class` reference is obtained by calling `getClass()` instead of a `MyActivity.class` literal. This operation is not terribly expensive, but it is still a form of reflection.
 
@@ -59,7 +59,7 @@ Beyond that, the `Class<?>` reference immediately flows into a call to `getSimpl
 -0003: const-class v2, Lcom/example/MyActivity;
 -0005: invoke-virtual {v2}, Ljava/lang/Class;.getSimpleName:()Ljava/lang/String;
 -0008: move-result-object v2
-+0003: const-string v2, "MyActiviy"
++0003: const-string v2, "MyActivity"
 ```
 
 But how often do you write `this.getClass()` where the class is known unequivocally?
