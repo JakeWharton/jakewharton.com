@@ -113,7 +113,7 @@ R8 advertises its configuration rules as being compatible with those documented 
 
 There are three R8-specific rules which aid in controlling how inlining method bodies behaves: `-neverinline`, `-alwaysinline`, and `-forceinline`. Specifying `-neverinline` will, unsurprisingly, prevent a method from being inlined even when it's eligible. `-forceinline` is a test-specific flag which performs inlining no matter what and crashes if anything prevents it from working. Between those two, the `-alwaysinline` directive overrides the limitations of normal inlining to inline method bodies which might not otherwise be considered.
 
-Using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined into its call sites.
+Using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined.
 
 ```
 -alwaysinline class com.example.SomeLibrary {
@@ -121,7 +121,7 @@ Using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined
 }
 ```
 
-This rule forces the `getClass().getSimpleName()` call to be moved from the library code to each call site.
+This rule forces the `getClass().getSimpleName()` calls to be moved from the library code to each call site.
 
 ```diff
  @Override void onCreate(Bundle savedInstanceState) {
