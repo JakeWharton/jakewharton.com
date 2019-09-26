@@ -109,11 +109,11 @@ The inlining of method bodies has been a staple in previous R8 posts as it often
 
 ### Inlining by force
 
-R8 advertises its configuration rules as being compatible with those documented for ProGuard, the tool it's meant to replace. But aside from honoring what ProGuard supports, it does have a few special rules of its own. An example of this was shown in the [value assumption](/r8-optimization-value-assumption/) post (and ProGuard has since come to add support for that rule!).
+R8 advertises its configuration rules as being compatible with those documented for ProGuard, the tool it's meant to replace. But aside from honoring what ProGuard supports, it does have a undocumented rules of its own. An example of this was shown in the [value assumption](/r8-optimization-value-assumption/) post (and ProGuard has since come to add support for that rule!).
 
-There are three R8-specific rules which aid in controlling how inlining method bodies behaves: `-neverinline`, `-alwaysinline`, and `-forceinline`. Specifying `-neverinline` will, unsurprisingly, prevent a method from being inlined even when it's eligible. `-forceinline` is a test-specific flag which performs inlining no matter what and crashes if anything prevents it from working. Between those two, the `-alwaysinline` directive overrides the limitations of normal inlining to inline method bodies which might not otherwise be considered.
+There are three undocumented R8-specific rules which help control inlining: `-neverinline`, `-alwaysinline`, and `-forceinline`. Specifying `-neverinline` will, unsurprisingly, prevent a method from being inlined even when it's eligible. `-forceinline` performs inlining no matter what and crashes if anything prevents it from working. Between those two, the `-alwaysinline` directive overrides the limitations of normal inlining to inline method bodies which might not otherwise be considered. Unfortunately, these rules are undocumented for a very good reason: they're unsupported and supposed to be for testing-purposes only.
 
-Using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined.
+However, using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined.
 
 ```
 -alwaysinline class com.example.SomeLibrary {
@@ -121,7 +121,7 @@ Using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined
 }
 ```
 
-This rule forces the `getClass().getSimpleName()` calls to be moved from the library code to each call site.
+This causes the `getClass().getSimpleName()` calls to be moved from the library code to each call site.
 
 ```diff
  @Override void onCreate(Bundle savedInstanceState) {
@@ -143,7 +143,7 @@ As a result, we've created the above scenario where the enclosing class is known
 
 Once again we see the power of successive optimizations applying. No more reflection!
 
-Unlike previous posts where inlining happened automatically, the `-alwaysinline` directive forced behavior in R8. Inlining should only be forced like this when you know that a subsequent optimization will apply to offset the bytecode impact. In this example, there is a chance that the instance cannot be determined at compile-time and we end up slightly bloating the bytecode.
+Unlike previous posts where inlining happened automatically, the unsupported `-alwaysinline` directive forced this behavior in R8. Inlining should only be forced like this when you know that a subsequent optimization will apply to offset the bytecode impact. In this example, there is a chance that the instance cannot be determined at compile-time and we end up slightly bloating the bytecode. And, of course, the unsupported nature of the rule means it may change or disappear at any time. For a stable solution, Kotlin's `inline` function modifier has the same effect, but only for Kotlin callers.
 
 ---
 
