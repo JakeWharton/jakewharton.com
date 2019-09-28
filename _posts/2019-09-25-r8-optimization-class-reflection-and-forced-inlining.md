@@ -109,11 +109,11 @@ The inlining of method bodies has been a staple in previous R8 posts as it often
 
 ### Inlining by force
 
-R8 advertises its configuration rules as being compatible with those documented for ProGuard, the tool it's meant to replace. But aside from honoring what ProGuard supports, it does have a undocumented rules of its own. An example of this was shown in the [value assumption](/r8-optimization-value-assumption/) post (and ProGuard has since come to add support for that rule!).
+R8 advertises its configuration rules as being compatible with those documented for ProGuard, the tool it's meant to replace. But aside from honoring what ProGuard supports, it does have a undocumented rules of its own. An example of this was shown in the [value assumption](/r8-optimization-value-assumption/) post (and ProGuard has since come to add support for that rule!). While undocumented, this rule is supported by R8.
 
-There are three undocumented R8-specific rules which help control inlining: `-neverinline`, `-alwaysinline`, and `-forceinline`. Specifying `-neverinline` will, unsurprisingly, prevent a method from being inlined even when it's eligible. `-forceinline` performs inlining no matter what and crashes if anything prevents it from working. Between those two, the `-alwaysinline` directive overrides the limitations of normal inlining to inline method bodies which might not otherwise be considered. Unfortunately, these rules are undocumented for a very good reason: they're unsupported and supposed to be for testing-purposes only.
+Another undocumented, R8-specific rule can help guide inlinining is `-alwaysinline`. This directive overrides the limitations of normal inlining to inline method bodies which might not otherwise be considered. Unfortunately, this rule is undocumented for a very good reason: it is completely unsupported and supposed to be for testing-purposes only.
 
-However, using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined.
+By using `-alwaysinline`, the `create(Activity)` method can be forced to be inlined.
 
 ```
 -alwaysinline class com.example.SomeLibrary {
