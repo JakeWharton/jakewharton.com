@@ -58,7 +58,7 @@ async function crawlCaptureAndCompare(path, browser, width, height) {
       ignore: 'antialiasing'
     });
 
-    if (diffResult.misMatchPercentage > 1) {
+    if (diffResult.misMatchPercentage > 0.1) {
       console.log(`  ${diffResult.misMatchPercentage}% difference!`);
       const name = url.replace(/\//g, '') || 'index';
       await Promise.all([
@@ -67,7 +67,7 @@ async function crawlCaptureAndCompare(path, browser, width, height) {
         fs.writeFile(`${dir}/${name}_diff.png`, diffResult.getBuffer())
       ]);
     } else {
-      console.log('  identical')
+      console.log(`  identical (${diffResult.misMatchPercentage}% difference)`);
     }
 
     const links = (await localPage.$$eval('a', nodes => nodes.map(n => n.href)))
