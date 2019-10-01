@@ -17,4 +17,4 @@ collections:
 
   podcasts:
 
-exclude: [vendor]
+exclude: ['node_modules', 'scripts', 'vendor']

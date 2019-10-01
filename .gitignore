@@ -1,4 +1,5 @@
 _site
-.DS_Store
 vendor/
 .bundle
+node_modules/
+capture/
