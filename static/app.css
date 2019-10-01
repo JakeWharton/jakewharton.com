@@ -175,15 +175,11 @@ p.signature {
   margin-top: 20px;
   margin-botom: 20px;
 }
-.presentation .parleys a {
-  display: none;
-}
 .presentation .description {
   margin-bottom: 50px;
 }
 
 .presentation .youtube,
-.presentation .parleys,
 .presentation .vimeo {
   position: relative;
   padding-bottom: 56.25%;
@@ -192,7 +188,6 @@ p.signature {
   max-width: 100%;
 }
 .presentation .youtube iframe,
-.presentation .parleys iframe,
 .presentation .vimeo iframe,
 .presentation .youtube object,
 .presentation .vimeo object,
