@@ -93,8 +93,8 @@ R8 detects when a constant lookup flows into a call to `ordinal()` and replaces 
 This constant value now flows into the `switch` statement which can be eliminated leaving only the desired branch.
 
 ```diff
-[000b60] Greeter.main:([Ljava/lang/String;)V
-0000: sget-object v1, Ljava/lang/System;.out:Ljava/io/PrintStream;
+ [000b60] Greeter.main:([Ljava/lang/String;)V
+ 0000: sget-object v1, Ljava/lang/System;.out:Ljava/io/PrintStream;
 -0002: const/4 v0, #int 1
 - ⋮
 +0002: const-string v0, "informal"
