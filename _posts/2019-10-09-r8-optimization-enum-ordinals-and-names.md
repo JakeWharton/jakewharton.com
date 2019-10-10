@@ -61,7 +61,7 @@ public static void main(String... args) {
 }
 ```
 
-As this is the only usage of `greetingType` in our whole application, R8 inlines the method.
+As this is the only usage of `type` in our whole application, R8 inlines the method.
 
 ```
 [000b60] Greeter.main:([Ljava/lang/String;)V
