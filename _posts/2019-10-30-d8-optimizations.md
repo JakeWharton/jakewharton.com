@@ -107,7 +107,7 @@ If we actually compile and dex the above source file with D8, its Dalvik bytecod
 -0017: packed-switch-data (8 units)
 ```
 
-Instead of a `packed-switch` at bytecode index 0008, there are a series of `if`/`else if`-like checks. Based on the indices, you might think this winds up producing a larger binary but it's actually the opposite. The `packed-switch` is accompanied by a `packed-switch-data` bytecode that reports itself as being 8 units long. The `packed-switch` version has a total cost of 26 bytecodes whereas the `if`/`else if` version only costs 20.
+Instead of a `packed-switch` at bytecode index 0008, there are a series of `if`/`else if`-like checks. Based on the indices, you might think this winds up producing a larger binary but it's actually the opposite. The original `packed-switch` is accompanied by a `packed-switch-data` bytecode that reports itself as being 8 units long. So the `packed-switch` version has a total cost of 26 bytecodes whereas the `if`/`else if` version only costs 20.
 
 Rewriting switches to normal conditionals is only done when there is a bytecode savings. This depends on the number of `case` blocks, whether there's fallthrough, and whether or not the values are contiguous or not. D8 computes the cost of both forms and then chooses that which is smaller.
 
