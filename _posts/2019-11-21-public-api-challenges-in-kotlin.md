@@ -184,7 +184,7 @@ public final class Person {
 +  public final Person copy(java.lang.String, java.lang.String, int);
 -  public static Person copy$default(Person, java.lang.String, int, int, java.lang.Object);
 +  public static Person copy$default(Person, java.lang.String, java.lang.String, int, int, java.lang.Object);
-   ⋮
+    ⋮
 ```
 
 Even if you are only appending properties to avoid breaking the component functions, these two signatures **always** change. The use of `@JvmOverloads` on the primary constructor does not propagate to the `copy` functions. Any consumers using `copy` will now receive a `NoSuchMethodError` at runtime.
