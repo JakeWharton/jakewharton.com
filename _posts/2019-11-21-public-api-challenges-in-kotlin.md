@@ -29,7 +29,7 @@ public final class Person {
   }
   @Override public boolean equals(@Nullable Object o) {
     if (o == this) return true;
-    if (!(o instance Person)) return false;
+    if (!(o instanceof Person)) return false;
     Person other = (Person) o;
     return name.equals(other.name)
         && age == other.age
@@ -82,7 +82,7 @@ For the manually-written Java type we add a new field, getter, and constructor p
    }
    @Override public boolean equals(@Nullable Object o) {
      if (o == this) return true;
-     if (!(o instance Person)) return false;
+     if (!(o instanceof Person)) return false;
      Person other = (Person) o;
      return name.equals(other.name)
 +        && Objects.equals(nickname, other.nickname)
