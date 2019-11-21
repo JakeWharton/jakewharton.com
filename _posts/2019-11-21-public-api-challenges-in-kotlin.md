@@ -218,7 +218,13 @@ You can implement the `componentN()` functions yourself to support destructuring
 The `copy` method can also be written manually, but evolving it compatibly is tricky. The simplest way is to maintain all of the old versions of the function but mark them as `@Deprecated(level=HIDDEN)`. This will keep their methods in the bytecode for old callers, but prevent new users from calling anything but the latest version.
 
 ```kotlin
-class Person(..) {
+class Person(
+  val name: String,
+  val nickname: String?,
+  val age: Int
+) {
+  // ...
+
   @Deprecated("", level = HIDDEN) // For binary compatibility.
   fun copy(name: String = this.name, age: Int = this.age) =
       copy(name = name, age = age) // Calls the function below.
