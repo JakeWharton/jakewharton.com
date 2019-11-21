@@ -321,7 +321,7 @@ A builder is usually a mutable(ish) version of an immutable type that also is re
  }
 ```
 
-Unfortunately, this is a binary-incompatible change. The return type of the generated setters are now `void` instead of `Builder`.
+Unfortunately, doing so would be incorrect. The return type of the generated setters are now `void` instead of `Builder`.
 
 Without a language change to allow property setters to return values, we are forced to use setter functions. I tend to keep the public `var` but hide its `void`-returning setter from Java with the `@JvmSynthetic` annotation. This allows Kotlin users to still get full usage of the property for reading and writing.
 
@@ -345,12 +345,12 @@ Without a language change to allow property setters to return values, we are for
  }
 ```
 
-There is no annotation to hide the setter functions from Kotlin callers. They're far better served by mutating the properties in an `apply { }` block.
+There is no annotation to hide the setter functions from Kotlin callers. While not essential, they're far better served by mutating the properties in an `apply { }` block.
 
 
 #### Constructor
 
-Speaking of Kotlin callers, by virtue of making the primary constructor private we've removed the idiomatic means of creating a `Person` for Kotlin. Instead of a builder, Kotlin prefers default parameter values and named arguments. The `@JvmSynthetic` annotation can't be used to hide constructors from Java, so we need to purse a different approach.
+By virtue of making the primary constructor private we've removed the idiomatic means of creating a `Person` for Kotlin. Instead of a builder, Kotlin prefers default parameter values and named arguments. The `@JvmSynthetic` annotation can't be used to hide constructors from Java, so we need to purse a different approach.
 
 There is a convention of defining a top-level function whose name is the same as a type which we can use to replicate the constructor.
 
