@@ -10,6 +10,7 @@ date: 2019-12-04
 type: Technical
 
 title: "What's new in Java 19: The end of Kotlin?"
+speakerdeck: 82966aa583154c1297122a6966a82453
 ---
 
 Kotlin's introduction was a breath of fresh air at a time when the pace of innovation in Java felt glacial. Since that time, development of Java has rapidly increased with an emphasis on fixing the pain points of the language and the efficiency of data representation in the VM. Will Kotlin still have a place in the JVM language ecosystem in a few years?
