@@ -275,7 +275,7 @@ Class #0            -
   Class descriptor  : 'LMain;'
 ```
 
-As D8 or R8 are compiling your code and performing rewrites to the `j$` packages, they record the types and APIs that are rewritten. This produces a set of shrinker rules that are specific to the backported types. Currently (i.e., for AGP 4.0.0-alpha06) these rules are located at `build/intermediates/desugar_lib_project_keep_rules/release/out/4` and for this example contains only the `LocalDateTime.now()` reference.
+As D8 or R8 are compiling your code and performing rewrites to the `j$` packages, they record the types and APIs that are being rewritten. This produces a set of shrinker rules that are specific to the backported types. Currently (i.e., for AGP 4.0.0-alpha06) these rules are located at `build/intermediates/desugar_lib_project_keep_rules/release/out/4` and for this example contains only the `LocalDateTime.now()` reference.
 
 ```
 -keep class j$.time.LocalDateTime {
