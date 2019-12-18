@@ -267,12 +267,13 @@ In this example the release APK is minified using R8 which also minifies the bac
 
 #### Second Dex
 
-A release build will cause D8 or R8 to produce the minimum number of dex files required, and that's actually still the case here. D8 and R8 are responsible for producing the dex files for user code and your declared libraries. This means that only the `Main` type will be present in the first dex which we can confirm by dumping its types.
+A release build will cause D8 or R8 to produce the minimum number of dex files required, and that's actually still the case here. D8 and R8 are responsible for producing the dex files for user code and your declared libraries. This means that only the `Main` type will be present in the first dex which we can confirm by dumping its members.
 
 ```
-$ unzip app-min-25.apk classes.dex && dexdump -d classes.dex | grep -A 1 'Class #'
-Class #0            -
-  Class descriptor  : 'LMain;'
+$ unzip app-min-25.apk classes.dex && \
+    diffuse members --dex --declared classes.dex
+com.example.Main <init>()
+com.example.Main main(String[])
 ```
 
 As D8 or R8 are compiling your code and performing rewrites to the `j$` packages, they record the types and APIs that are being rewritten. This produces a set of shrinker rules that are specific to the backported types. Currently (i.e., for AGP 4.0.0-alpha06) these rules are located at `build/intermediates/desugar_lib_project_keep_rules/release/out/4` and for this example contains only the `LocalDateTime.now()` reference.
@@ -288,7 +289,8 @@ All of the available backported types have been pre-compiled from OpenJDK source
 Dumping the L8-minified second dex file shows a set of types and APIs that have been entirely obfuscated except for the `LocalDateTime.now()` API that the application is referencing.
 
 ```
-$ unzip app-min-25.apk classes2.dex && diffuse members --dex classes2.dex | grep -C 6 'LocalDateTime.now'
+$ unzip app-min-25.apk classes2.dex && \
+    diffuse members --dex classes2.dex | grep -C 6 'LocalDateTime.now'
 j$.time.LocalDateTime c(s) → long
 j$.time.LocalDateTime compareTo(Object) → int
 j$.time.LocalDateTime d() → h
