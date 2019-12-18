@@ -318,7 +318,7 @@ By virtue of always requiring at least a second dex, you either need have a mini
 
 #### Backporting methods on backported types
 
-In addition to backporting methods on the types that have been around since API 1 like `Long`, D8 and R8 will also backport newer methods on these backportable types like `Optional`. These use the same template mechanism as detailed earlier, but will only available when your minimum API level is high enough to access the target type or you have core library desugaring enabled.
+In addition to backporting methods on the types that have been around since API 1 like `Long`, D8 and R8 will also backport newer methods on these backportable types like `Optional`. These use the same template mechanism as detailed earlier, but will only be available when your minimum API level is high enough to access the target type or you have core library desugaring enabled.
 
 For `Stream` and the four different optional types, D8 and R8 will backport 18 methods from Java 9, 10, and 11. The full list of those APIs can be found [here](/static/files/d8_api_desugar_list_on_desugared_types.txt).
 
