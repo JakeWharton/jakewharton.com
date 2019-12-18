@@ -111,9 +111,7 @@ Running D8 on the Java bytecode (with a minimum API level of less than 24) shows
  ⋮
 ```
 
-I'm not sure how you expected `Long.hashCode` to be desugared, but I'm guessing it wasn't to a class named `$r8$backportedMethods$utility$Long$1$hashCode`! Unlike `Objects.requireNonNull` which was rewritten to `getClass()` to produce the same observable behavior, `Long.hashCode` has an implementation which cannot be replicated with a trivial rewrite[^1].
-
-[^1]: This is never _stricly_ true as you could emit the implementation directly at each call site, but doing so becomes prohibitive in terms of APK size.
+I'm not sure how you expected `Long.hashCode` to be desugared, but I'm guessing it wasn't to a class named `$r8$backportedMethods$utility$Long$1$hashCode`! Unlike `Objects.requireNonNull` which was rewritten to `getClass()` to produce the same observable behavior, `Long.hashCode` has an implementation which cannot be replicated with a trivial rewrite.
 
 ### Backporting methods
 
