@@ -100,7 +100,7 @@ The compiler is free to call `Long.hashCode` because we told it that we were tar
 
 Normally this would not be a problem for Android since the Kotlin compiler targets Java 6 by default. Unfortunately, the community push to target Java 8 for its language features interacted poorly with a decision to have the Kotlin compiler respect the specified target of your Java compiler in Kotlin 1.3. As a result, Android developers started seeing `NoSuchMethodError`s for these `hashCode` calls because they were only available in API 24 and newer.
 
-While the behaior of the Kotlin compiler was reverted for Android projects, there still was a potential for libraries consumed by Android projects to be targeting Java 8 and to reference these methods. The D8 team decided to step in and mitigate this problem by desugaring the `hashCode` APIs.
+While the behavior of the Kotlin compiler was reverted for Android projects, there still was a potential for libraries consumed by Android projects to be targeting Java 8 and to reference these methods. The D8 team decided to step in and mitigate this problem by desugaring the `hashCode` APIs.
 
 Running D8 on the Java bytecode (with a minimum API level of less than 24) shows the desugaring.
 
