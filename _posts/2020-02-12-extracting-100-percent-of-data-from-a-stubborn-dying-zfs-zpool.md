@@ -82,7 +82,7 @@ I decided this was unfortunate, but doable. I would work from my basement next t
 
 After one day of working next to the machine I knew I needed to find a better solution. That day it had locked up 20-30 times which was triple what I had estimated for one day. Not only were the occurrences more frequent, but it took me a while to notice and using a keyboard attached to the server to restart the transfer was tedious.
 
-In order for this transfer to complete with my sanity in tact I needed to somehow automate the process. There were two problems to solve: figuring out when `rsync` was hung and performing a hard reboot.
+In order for this transfer to complete with my sanity intact I needed to somehow automate the process. There were two problems to solve: figuring out when `rsync` was hung and performing a hard reboot.
 
 
 ### Automating Detection
