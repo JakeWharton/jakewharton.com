@@ -9,7 +9,7 @@ tags:
 
 In 2010 I built a home server with five 2TB drives. It ran Solaris and ZFS for the redundancy and data checksumming to ensure no data could be lost or corrupted. Just 16 months later five 3TB drives were added to the pool. This computer took the 2600-mile trip to live in San Francisco with me. It then endured the 2600-mile return trip when I left.
 
-Having sat unplugged for five years, I recently powered the server back on for new workloads. But relying on 10 ten-year-old hard drives in 2020 is asking for cascading failure. And not only were the drives old, they've experienced physical trauma. So instead I built a new server and endevoured to migrate the data.
+Having sat unplugged for five years, I recently powered the server back on for new workloads. But relying on 10 ten-year-old hard drives in 2020 is asking for cascading failure. And not only were the drives old, they've experienced physical trauma. So instead I built a new server and endeavored to migrate the data.
 
 During the transfer the drives exhibited consistent read and write failures as expected, but ZFS was able to transparently mitigate them. Occasionally, though, the pool would lock up in a way that could only be fixed with a hard reboot. These lock ups sent me on a weird journey of software and hardware orchestration to complete the data transfer.
 
@@ -17,7 +17,7 @@ During the transfer the drives exhibited consistent read and write failures as e
 
 During transfer of the data, progress would stall randomly in a way that seemingly could not be killed. CTRL+C had no effect. No `kill` signal had an effect. Even last-resort `shutdown -r now`s did nothing.
 
-The system was oddly otherwise responsive. You could SSH in from another tab and poke around. `ps` showed that the transfer process was in the "D+" state which was uninterruptable sleep in the foreground.
+The system was oddly otherwise responsive. You could SSH in from another tab and poke around. `ps` showed that the transfer process was in the "D+" state which was uninterruptible sleep in the foreground.
 
 ```
 jake     21749  1.1  0.0   8400  2124 pts/0    D+   23:42   0:00 rsync ...
@@ -80,7 +80,7 @@ While seemingly random, I estimated a 100 hard reboots would be all that was nee
 
 I decided this was unfortunate, but doable. I would work from my basement next to the machine which was hooked up to display on a TV. Whenever I noticed it was locked up, I would hard reboot the machine, wait for it to boot, and then resume the transfer by typing on its keyboard. In two weeks it would be over with.
 
-After one day of working next to the machine I knew I needed to find a better solution. That day it had locked up 20-30 times which was triple what I had estimated for one day. Not only were the occurences more frequent, but it took me a while to notice and using a keyboard attached to the server to restart the transfer was tedious.
+After one day of working next to the machine I knew I needed to find a better solution. That day it had locked up 20-30 times which was triple what I had estimated for one day. Not only were the occurrences more frequent, but it took me a while to notice and using a keyboard attached to the server to restart the transfer was tedious.
 
 In order for this transfer to complete with my sanity in tact I needed to somehow automate the process. There were two problems to solve: figuring out when `rsync` was hung and performing a hard reboot.
 
