@@ -11,7 +11,7 @@ In 2010 I built a home server with five 2TB drives. It ran Solaris and ZFS for t
 
 Having sat unplugged for five years, I recently powered the server back on for new workloads. But relying on 10 ten-year-old hard drives in 2020 is asking for cascading failure. And not only were the drives old, they've experienced physical trauma. So instead I built a new server and endeavored to migrate the data.
 
-During the transfer the drives exhibited consistent read and write failures as expected, but ZFS was able to transparently mitigate them. Occasionally, though, the pool would lock up in a way that could only be fixed with a hard reboot. These lock ups sent me on a weird journey of software and hardware orchestration to complete the data transfer.
+During the transfer the drives exhibited consistent read failures as expected, but ZFS was able to transparently mitigate them. Occasionally, though, the pool would lock up in a way that could only be fixed with a hard reboot. These lock ups sent me on a weird journey of software and hardware orchestration to complete the data transfer.
 
 ### Symptoms
 
