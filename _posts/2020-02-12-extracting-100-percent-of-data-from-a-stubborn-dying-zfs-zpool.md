@@ -23,7 +23,7 @@ The system was oddly otherwise responsive. You could SSH in from another tab and
 jake     21749  1.1  0.0   8400  2124 pts/0    D+   23:42   0:00 rsync ...
 ```
 
-That explained why the process wouldn't die. The `dmsg` output also confirmed the problem happened deep in the I/O stack.
+That explained why the process wouldn't die. The `dmesg` output also confirmed the problem happened deep in the I/O stack.
 
 ```
 [ 3626.101527] INFO: task rsync:30680 blocked for more than 120 seconds.
