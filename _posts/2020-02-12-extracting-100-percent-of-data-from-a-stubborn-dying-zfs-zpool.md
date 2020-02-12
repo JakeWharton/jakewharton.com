@@ -176,7 +176,7 @@ do
 done
 ```
 
-Now when IFTTT was delayed in delivering the `power_off` event the script would wait to confirm the machine powered off. This would sometimes spike as high as 10 minutes. But whenever it did happen, 5 seconds later the `power_on` event would be sent and the machine would start coming back up. After 50 seconds it confirms SSH availability before triggering `rsync`.
+Now when IFTTT was delayed in delivering the `power_off` event the script would wait to confirm the machine powered off. This would sometimes spike as high as 10 minutes. But whenever it eventually triggered, 5 seconds later the `power_on` event would be sent and the machine would start coming back up. After 50 seconds it confirms SSH availability before restarting the `rsync`.
 
 Sadly I didn't capture a video of this in action. I did capture some of the output to excitedly share with some friends as they watched me go down this rabbit hole though.
 
