@@ -193,12 +193,12 @@ Other/backup/presentations/...
           1.45G  95%   81.64MB/s    0:00:05
 ```
 
-I let this script run for two days and it managed to complete the transfer of all files. IFTTT reports that the `power_on` and `power_off` events were each triggered 151 times! A few hours and a $10 gift saved me from two weeks of doing this myself.
+I let this script run for two days and it managed to complete the transfer of all files. IFTTT reports that the `power_on` and `power_off` events were each triggered 151 times! A few hours of scripting and a $10 gift saved me from two weeks of doing this myself.
 
 
 ### Final Thoughts
 
-Had I know the drives would be so much trouble I would have taken a totally different approach. A better option would have been to run `dd` on the drives to copy their raw content to 2TB and 3TB files which would do a single pass across the platters. I think this would have been less likely to cause a freeze than the random access that `rsync` was doing. Then I could mount these files as storage on the new machine, import them as a ZFS pool, and do a local `zfs send | zfs recv` to get the data out.
+Had I known the drives would be so much trouble I would have taken a totally different approach. A better option would have been to run `dd` on the drives to copy their raw content to 2TB and 3TB files which would do a single pass across the platters. I think this would have been less likely to cause a freeze than the random access that `rsync` was doing. Then I could mount these files as storage on the new machine, import them as a ZFS pool, and do a local `zfs send | zfs recv` to get the data out.
 
 I chose to use `rsync` over `zfs send | zfs recv` because I was unable to get a snapshot to complete before locking up. Once the initial transfer completed, I did a second pass using this script where `rsync` did a checksum of the file content on both ends (normally it only compares size and date). This found a few inconsistencies and re-transfered about 100GB of data.
 
