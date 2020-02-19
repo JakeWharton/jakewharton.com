@@ -42,7 +42,7 @@ I run `rclone` hourly using the [bcardiff/docker-rclone][2] Docker container ont
 
 While Google Photos does have an API, it [does not provide access to the original image](https://issuetracker.google.com/issues/112096115). This is some bullshit. I pay for Google Drive and Google Photos storage but I can only access original files for Drive. Some bullshit.
 
-Thankfully, after [tweeting about said bullshit][3] I was pointed at the [gphotos-cdp][4] too (built by some _very_ smart people). This uses the Chrome DevTools protocol to drive the Google Photos website and donwload the original photos one-by-one. This is awful and awesome and scary and it totally works!
+Thankfully, after [tweeting about said bullshit][3] I was pointed at the [gphotos-cdp][4] tool (built by some _very_ smart people). This uses the Chrome DevTools protocol to drive the Google Photos website and donwload the original photos one-by-one. This is awful and awesome and scary and it totally works!
 
  [3]: https://twitter.com/JakeWharton/status/1222017202662125568
  [4]: http://github.com/perkeep/gphotos-cdp
