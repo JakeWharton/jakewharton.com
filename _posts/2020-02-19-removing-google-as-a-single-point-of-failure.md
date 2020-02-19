@@ -253,7 +253,7 @@ services:
       - "CHECK_URL=https://hc-ping.com/..."
 ```
 
-All of the containers store their configuration in `${USERDIR}/docker` which is in my home directory. This folder is mounted as a ZFS filesystem on a partition of the OS drive. It has a znapzend snapshot policy, is replicated into `/tanker/backup/home`, and synchronized to rsync.net. In the event of this machine failing or being destroyed it should be fairly easy to set up a replacement.
+All of the containers store their configuration in `${USERDIR}/docker` which is in my home directory. This folder is mounted as a ZFS filesystem on a partition of the OS drive. It has a znapzend snapshot policy, is replicated into `/tanker/backup/home`, and is synchronized to rsync.net. In the event of this machine failing or being destroyed it should be fairly easy to set up a replacement.
 
 ---
 
