@@ -85,7 +85,7 @@ I currently use [znapzhot][6] to recursively create automatic snapshots of all t
  * Daily snapshots retained for one month.
  * Monthly snapshots retained for one year.
 
-This policy is a hedge against any deleted or changed file. The simplicity `cd`-ing into the hidden `.zfs` directory means these older copies are easily browsed, if ever needed.
+This policy is a hedge against any deleted or changed file. The simplicity of `cd`-ing into the hidden `.zfs` directory means these older copies are easily browsed, if ever needed.
 
 ### Data Replication
 
