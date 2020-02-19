@@ -14,7 +14,7 @@ Now I trust Google _completely_ in their ability to correctly retain my data. Bu
 This year I've embarked on a mission to reclaim ownership of my data. This does not mean that I'm going to stop using Google products. Quite the opposite. GMail, Google Photos, and Google Drive will remain the source-of-truth for all of the things I listed above. What's different is that should Google disappear tomorrow (or just my account) I would lose no data.
 
 
-### Get That Data
+### Get Your Data
 
 #### Step 1: Takeout
 
