@@ -101,7 +101,7 @@ So far I have been serving read-only copies of my "tanker/backup" folder using N
 
 NextCloud is a generic file host that offers document editing, photo viewing, and video playback in addition to just serving raw files. It offers many similar features to Google Drive. For example, if you do not want to set up the gphotos-cdp tool to back up your photos, you can run the NextCloud app on your phone which can automatically synchronize new photos to your server.
 
-In order to expose NextCloud to the internet, you need, at minimum, knoweldge of your IP address. While I do have business internet at home, I don't have a static IP. Instead, I use the [oznu/cloudflare-ddns](https://github.com/oznu/docker-cloudflare-ddns) Docker container to update a Cloudflare DNS A record on one of my domains.
+In order to expose NextCloud to the internet, you need, at minimum, knowledge of your IP address. While I do have business internet at home, I don't have a static IP. Instead, I use the [oznu/cloudflare-ddns](https://github.com/oznu/docker-cloudflare-ddns) Docker container to update a Cloudflare DNS A record on one of my domains.
 
 Instead of exposing NextCloud directly to the internet, I use the [traefik](https://containo.us/traefik/) Docker container as a reverse proxy. It takes care of talking to Let's Encrypt to keep a valid SSL certificate in rotation as well as routing traffic for the domain to the NextCloud container.
 
