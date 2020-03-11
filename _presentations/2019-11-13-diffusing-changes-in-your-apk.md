@@ -11,6 +11,7 @@ type: Technical
 
 title: "Diffusing Changes in Your APK"
 speakerdeck: 7cf9abccac794263b13d96fb357ecbc2
+youtube: 5a-sRoPVEZk
 ---
 
 Nearly every change to your project affects the final APK is some way. Whether adding a method, removing a class, updating a dependency, changing the Android Gradle plugin version, importing new translations, or refactoring a layout XML, all of these will change the size of your APK.
