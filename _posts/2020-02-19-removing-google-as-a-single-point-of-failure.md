@@ -11,14 +11,14 @@ I want to remove Google as a single point of failure in my life. They have two d
 
 Now I trust Google _completely_ in their ability to correctly retain my data. But I think it's clear that over the last 5 years the company has lost something intrinsically important in the way it operates. I no longer trust them not to permanently lock me out of my account. And I say this as a current Google employee.
 
-This year I've embarked on a mission to reclaim ownership of my data. This does not mean that I'm going to stop using Google products. Quite the opposite. GMail, Google Photos, and Google Drive will remain the source-of-truth for all of the things I listed above. What's different is that should Google disappear tomorrow (or just my account) I would lose no data.
+This year I've embarked on a mission to reclaim ownership of my data. This does not mean that I'm going to stop using Google products. Quite the opposite. Gmail, Google Photos, and Google Drive will remain the source-of-truth for all of the things I listed above. What's different is that should Google disappear tomorrow (or just my account) I would lose no data.
 
 
 ### Get Your Data
 
 #### Step 1: Takeout
 
-The first thing you need to do **today** is visit [takeout.google.com](https://takeout.google.com/) and export your GMail, Photos, and Drive data (and anything else you want). This will send you links to a set of 50GB `.tar.gz` files of your data that you can download.
+The first thing you need to do **today** is visit [takeout.google.com](https://takeout.google.com/) and export your Gmail, Photos, and Drive data (and anything else you want). This will send you links to a set of 50GB `.tar.gz` files of your data that you can download.
 
 That is, provided it works. It took me 5 attempts of exporting just my Photos data to have one succeed. Persistence pays off, though, so don't give up even though this is a slow process. Get. Your. Data.
 
@@ -52,9 +52,9 @@ In an effort to automate this, I wrapped the tool up in a Docker container as [j
  [5]: https://github.com/JakeWharton/docker-gphotos-sync
 
 
-#### Step 4: GMail Sync
+#### Step 4: Gmail Sync
 
-I looked into a bunch of tools to do backup GMail but I couldn't find one that was still maintained and still worked. This is bad. Takeout is a start for this, but I want something more real-time.
+I looked into a bunch of tools to do backup Gmail but I couldn't find one that was still maintained and still worked. This is bad. Takeout is a start for this, but I want something more real-time.
 
 Anyone have a solution here? Please let me know!
 
@@ -259,6 +259,6 @@ All of the containers store their configuration in `${USERDIR}/docker` which is 
 
 So far I'm pretty happy with this setup for backing up my Google Drive and Photos content. The apps for Drive and Photos are best-in-class and so I prefer to keep using them as the source of truth as long as possible. It's nice to know that NextCloud could step in here if needed, but hopefully it never comes to that.
 
-GMail backups remain a problem to be solved. It's also a _huge_ problem that I cannot take control of my email address if it were needed. The GMail webapp and mobile app also haven't seen innovation in a decade and increasingly feel like legacy software. The thought of migrating my email is daunting, but it feels like it's looming.
+Gmail backups remain a problem to be solved. It's also a _huge_ problem that I cannot take control of my email address if it were needed. The Gmail webapp and mobile app also haven't seen innovation in a decade and increasingly feel like legacy software. The thought of migrating my email is daunting, but it feels like it's looming.
 
 I continue to beleive that trusting Google with your data is a safe bet, but it is not a sufficient backup strategy by itself. Take control of your data.
