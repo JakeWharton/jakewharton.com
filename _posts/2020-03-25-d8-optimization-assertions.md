@@ -109,7 +109,7 @@ Eliminating a runtime check which always returns false is an easy win, but the S
 
 ### Tomorrow's behavior
 
-The version of D8 in AGP 4.1 slightly changes the thinking around Java `assert`. Instead of assuming that the runtime check will always fail at runtime (which it _still_ does), it pretends to compute the check at compile-time based on whether your build config is debuggable.
+The version of D8 in AGP 4.1 slightly changes the thinking around Java `assert`. Instead of assuming that the runtime check will always fail at runtime (which it _still_ does), it computes the check at compile-time based on whether your build is debuggable.
 
 In practice, this means that any debug variant will replace the assertions-enabled check at compile-time with `true`.
 
