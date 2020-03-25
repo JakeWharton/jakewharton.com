@@ -40,7 +40,7 @@ class IdGenerator {
 
 This class creates unique IDs and guarantees they're unique by only allowing calls from the main thread. If this class was called concurrently from multiple threads you might see duplicate values. Sure it's a little contrived and there's things like `@MainThread` which is checked by Lint but we're focusing on `assert` so roll with it.
 
-The [Null Data Flow Analysis][ndfa] post introduced the SSA form that R8 uses to eliminate branches of code which is can prove will never be executed. The SSA for the `next()` method when parsed from Java bytecode looks _very_ roughly like this:
+The [Null Data Flow Analysis][ndfa] post introduced the SSA form that R8 uses to eliminate branches of code which it can prove will never be executed. The SSA for the `next()` method when parsed from Java bytecode looks _very_ roughly like this:
 
  [ndfa]: /r8-optimization-null-data-flow-analysis-part-1/
 
