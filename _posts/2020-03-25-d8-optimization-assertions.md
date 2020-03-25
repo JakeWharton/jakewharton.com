@@ -20,7 +20,7 @@ assert <bool-expression> : <expression>;
 ```
 The first expression will only be evaluated at runtime if the `-ea` (enable assertions) flag is set on the JVM. The second expression, if present, is used as the argument to the `AssertionError` constructor that's thrown if the first expression returns false.
 
-As an Android developer you might not be too familiar with `assert`. This is because every Android app runs on a VM which is forked from a shared "zygote" process which has assertions disabled. Thus, even if you put an `assert` in your code, there is no way to turn them it on even if you want them.
+As an Android developer you might not be too familiar with `assert`. This is because every Android app runs on a VM which is forked from a shared "zygote" process which has assertions disabled. Thus, even if you put an `assert` in your code, there is no way to actually enable it.
 
 So why bother talking about it? Well it turns out they're about to become useful on Android for the first time!
 
