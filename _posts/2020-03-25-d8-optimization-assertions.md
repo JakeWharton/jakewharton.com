@@ -170,7 +170,7 @@ Sending `IdGenerator` through D8 with the `--force-enable-assertions` flag that 
   ⋮
 ```
 
-Our debug build still tests the invariant at runtime but the release build completely eliminates the check. This behavior is similar to the JVM where unit tests turn on the `-ea` flag whereas production does not.
+Our debug build still tests the invariant at runtime but the release build completely eliminates the check. This behavior is now similar to the JVM where unit tests turn on the `-ea` flag whereas production does not.
 
 (If you're wondering why the code which throws the exception was moved to the bottom of the method check out the [Optimizing Bytecode by Manipulating Source Code](/optimizing-bytecode-by-manipulating-source-code/) post.)
 
