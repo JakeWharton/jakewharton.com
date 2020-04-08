@@ -9,7 +9,7 @@ tags:
 
 When writing multiplatform code, Kotlin's three compiler backends each have different memory models which must be considered.
 
-JavaScript is single-threaded so you really can do no wrong. The JVM model is arguably too permissive where you can do incorrect things and have them work 99.9% of the time. For native, Kotlin enforces invariants which helps prevent you from those 0.1% bugs that crop up in the JVM.
+JavaScript is single-threaded so you really can do no wrong. The JVM model is arguably too permissive where you can do incorrect things and have them work 99.9% of the time. When targeting native, Kotlin enforces some invariants which helps prevent you from those 0.1% bugs that crop up in the JVM.
 
 I've been porting the [AndroidX collection library][collection] to Kotlin multiplatform to experiment with binary compatibility, performance, tooling, and the different memory models. The library consists of mutable, single-threaded data structures. This should mean the different memory models never come into play. But weirdly they do, and let's look at how.
 
@@ -18,17 +18,17 @@ I've been porting the [AndroidX collection library][collection] to Kotlin multip
 
 ### On Deck
 
-The Kotlin standard library contains general-purpose collections like lists, sets, and maps in both mutable and read-only form. Kotlin&nbsp;1.3.70 introduced [`ArrayDeque`][deque], a "double-ended queue" which efficiently handles stacks and queues. 
+The Kotlin standard library contains general-purpose collections like lists, sets, and maps in both mutable and read-only form. Kotlin&nbsp;1.3.70 added another collection, [`ArrayDeque`][deque], a "double-ended queue" for efficient stacks and queues. 
 
  [deque]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/
 
-During the 1.3.70 EAP, Kevin Galligan opened [an issue][deque-issue] where the collection could _only_ be instantiated on the main thread and not a background thread when targing Kotlin/Native. At the time I didn't read into it, but as I was porting these collections it came to mind.
+During the 1.3.70 EAP, Kevin Galligan opened [an issue][deque-issue] where `ArrayDeque` could _only_ be instantiated on the main thread and not a background thread when targing Kotlin/Native. At the time I didn't read into it, but as I was porting these collections it came to mind.
 
  [deque-issue]: https://github.com/JetBrains/kotlin-native/issues/3876
 
-The underlying cause was that the implementation relied on a top-level `val` for a shared, empty array when the collection was empty. Arrays are fixed-lemgth, so an empty array becomes immutable and thus can be shared by all empty collections. But that seems fine?
+The underlying cause was that the implementation relied on a top-level `val` for a shared, empty array when the collection was empty. Arrays are fixed-length, so an empty array is effectively immutable and thus can be shared by all empty collections. But that seems fine?
 
-It _is_ fine for Kotlin/JS and Kotlin/JVM but Kotlin/Native is different here. By default, Kotlin/Native only allows the main thread to access top-level `val`s. If you want to access the value from multiple threads (potentially concurrently) you must choose whether you want thread-local or shared-but-immutable behavior with an annotation.
+It _is_ fine for Kotlin/JS and Kotlin/JVM but Kotlin/Native is different here. By default, Kotlin/Native only allows the main thread to access top-level `val`s. If you want to access the value from multiple threads (potentially concurrently) you must choose whether you want thread-local or shared-but-immutable behavior with an annotation. `ArrayDeque`'s empty array was missing this annotation.
 
 As it turns out, my collections had the exact same issue! Each started with a shared, empty array and only allocated its own storage when the first element arrived. I had tests, but the tests were only exercising the type on the main thread. It's an easy fix, just add `@SharedImmutable`, but how do I prevent regression and future problems of this nature?
 
@@ -69,14 +69,14 @@ Running without `@SharedImmutable` now causes the test to correctly fail. Say go
 
 ### Multiplatform
 
-For multiplatform libraries, like my collection library, the tests are written in platform-agnostic "common" Kotlin with no access to the Kotlin/Native-specific `Worker` API. We can instead rely on the actual/expect language feature of multiplatform Kotlin to make this work.
+For multiplatform libraries, like my collection library, the tests are written in platform-agnostic "common" Kotlin with no access to the Kotlin/Native-specific `Worker` API. We can instead rely on the expect/actual language feature of multiplatform Kotlin to make this work.
 
-In `src/commonTest/kotlin/` the `threadedTest` function is changed to be an `expect fun`:
+In `src/commonTest/kotlin/` the `threadedTest` function is declared as an `expect fun`:
 ```kotlin
 expect fun threadedTest(body: () -> Unit)
 ```
 
-The native-specific implementation is moved to `src/nativeTest/kotlin/`:
+The native-specific implementation is put in `src/nativeTest/kotlin/`:
 ```kotlin
 actual fun threadedTest(body: () -> Unit) {
   // Same as Kotlin/Native code from previous section.
@@ -89,6 +89,8 @@ actual inline fun threadedTest(body: () -> Unit) = body()
 ```
 
 For the JVM in `src/jvmTest/kotlin/` you're free to either inline it away like JavaScript or use the `Thread` APIs to invoke it twice. Since the memory models of the JVM and Android give no special treatment to the main thread there's really no reason to run it twice.
+
+Now our test from the previous section can live in `src/commonTest/kotlin/` and wrap itself in `threadedTest`. On JS and JVM the test will run normally and only on native targets will it run twice.
 
 ---
 
