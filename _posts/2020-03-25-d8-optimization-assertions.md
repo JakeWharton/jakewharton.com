@@ -90,7 +90,7 @@ digraph G {
 
 We can confirm this by sending the Java source through the compilation pipeline:
 ```bash
-$ javac IdGenerator.java
+$ javac -bootclasspath $ANDROID_HOME/platforms/android-29/android.jar IdGenerator.java
 $ java -jar $R8_HOME/build/libs/d8.jar \
       --lib $ANDROID_HOME/platforms/android-29/android.jar \
       --output . \
@@ -146,7 +146,7 @@ digraph G {
 Sending `IdGenerator` through D8 with the `--force-enable-assertions` flag that AGP automatically adds for debug variants shows this in Dalvik bytecode:
 ```diff
  $ java -jar $R8_HOME/r8/build/libs/d8.jar \
-        --lib $ANDROID_HOME/platforms/android-29/android.jar \
+       --lib $ANDROID_HOME/platforms/android-29/android.jar \
 +      --force-enable-assertions \
        --output . \
        IdGenerator.class
