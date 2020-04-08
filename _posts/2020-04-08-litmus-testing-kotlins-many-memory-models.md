@@ -88,7 +88,7 @@ For JavaScript in `src/jsTest/kotlin/` we don't need threading so its implementa
 actual inline fun threadedTest(body: () -> Unit) = body()
 ```
 
-For the JVM in `src/jvmTest/kotlin/` you're free to either inline it away like JavaScript or use the `Thread` APIs to invoke it twice. Since the memory models of the JVM and Android give no special treatment to the main thread there's really no reason to run it twice.
+For the JVM in `src/jvmTest/kotlin/` you're free to either inline it away like JavaScript or use the `Thread` APIs to invoke `body` twice. Since the memory models of the JVM and Android give no special treatment to the main thread there's really no reason to run it twice.
 
 Now our test from the previous section can live in `src/commonTest/kotlin/` and wrap itself in `threadedTest`. On JS and JVM the test will run normally and only on native targets will it run twice.
 
