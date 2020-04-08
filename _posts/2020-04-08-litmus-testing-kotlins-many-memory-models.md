@@ -22,7 +22,7 @@ The Kotlin standard library contains general-purpose collections like lists, set
 
  [deque]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/
 
-During the 1.3.70 EAP, Kevin Galligan opened [an issue][deque-issue] where `ArrayDeque` could _only_ be instantiated on the main thread and not a background thread when targing Kotlin/Native. At the time I didn't read into it, but as I was porting these collections it came to mind.
+During the 1.3.70 EAP, Kevin Galligan opened [an issue][deque-issue] where `ArrayDeque` could _only_ be instantiated on the main thread and not a background thread when targeting Kotlin/Native. At the time I didn't read into it, but as I was porting these collections it came to mind.
 
  [deque-issue]: https://github.com/JetBrains/kotlin-native/issues/3876
 
@@ -94,7 +94,7 @@ Now our test from the previous section can live in `src/commonTest/kotlin/` and 
 
 ---
 
-The memory model of Kotlin/Native helps eliminate bugs that would probabilistically occur on more permissive platforms like the JVM. With the constraints of its memory model being runtime checked, running your unit tests on both the main thread and a background thread prevent bugs like the one which occured with `ArrayDeque`.
+The memory model of Kotlin/Native helps eliminate bugs that would probabilistically occur on more permissive platforms like the JVM. With the constraints of its memory model being runtime checked, running your unit tests on both the main thread and a background thread prevent bugs like the one which occurred with `ArrayDeque`.
 
 I filed [an issue][test-annotation] on the Kotlin/Native repo asking for some kind of built-in mechanism to support this use case. And ideally it would be something that you could apply to a whole class rather than having to remember to do it for each function.
 
