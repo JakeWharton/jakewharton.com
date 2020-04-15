@@ -111,7 +111,7 @@ This future-proofed the app to ensure that its models could continue to be share
 
 ### Simple RPCs
 
-The Cast app started as a stateless rendering of the game model but it lacked some of the Android app's flare. Instead of sending only the bare model, the Android app was changed to send an event. This allowed showing animations on the Cast display after an action. Each event contained a copy of the game model as well as any other information about the event.
+The Cast app started as a stateless rendering of the game model but it lacked some of the Android app's flair. Instead of sending only the bare model, the Android app was changed to send an event. This allowed showing animations on the Cast display after an action. Each event contained a copy of the game model as well as any other information about the event.
 
 ```kotlin
 @Serializable
