@@ -94,8 +94,8 @@ This walks the object properties as if it were JSON and passes them through the 
 ```diff
  @Serializable
  class Game(
--   val players: Array<Player>)
-+   val players: List<Player>)
+-   val players: Array<Player>
++   val players: List<Player>
  )
  @Serializable
  class Player(
