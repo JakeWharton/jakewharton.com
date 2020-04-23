@@ -460,7 +460,7 @@ The output of D8 and R8 also tell us that `value / 2` and `value >> 1` cost the 
 000158: e000 0101                    |0000: shl-int/lit8 v0, v1, #int 1 // #01
 ```
 
-These will also diverge in bytecode size when the literal reaches 32,768, but because of the behavior around negatives replacing a power-of-two division with a right shift is never safe. We could do the replacement if the value was guaranteed to be non-negative but D8 and R8 do not track the possible ranges of integer values at this time.
+These will also diverge in bytecode size when the literal reaches 32,768. Unconditionally replacing a power-of-two division with a right shift is never safe because of the behavior around negatives. We could do the replacement if the value was guaranteed to be non-negative, but D8 and R8 do not track the possible ranges of integer values at this time.
 
 
 ### Does unsigned number power-of-two division use shift?
