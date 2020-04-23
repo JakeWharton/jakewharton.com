@@ -369,7 +369,7 @@ class DivideOrShiftTest {
   @JvmField @Rule val benchmark = BenchmarkRule()
 
   @Test fun divide() {
-    val value = "-4".toInt() // Ensure not a constant.
+    val value = "4".toInt() // Ensure not a constant.
     var result = 0
     benchmark.measureRepeated {
       result = value / 2
@@ -378,7 +378,7 @@ class DivideOrShiftTest {
   }
 
   @Test fun shift() {
-    val value = "-4".toInt() // Ensure not a constant.
+    val value = "4".toInt() // Ensure not a constant.
     var result = 0
     benchmark.measureRepeated {
       result = value shr 1
