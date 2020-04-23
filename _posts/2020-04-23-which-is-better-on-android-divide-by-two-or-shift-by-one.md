@@ -573,7 +573,7 @@ Class #0            -
 00013c: 0f06                         |000c: return v6
 ```
 
-Kotlin has its own unsigned integer division implementation which was inlined into our function. It converts the input argument and the literal to longs, performs long division, and then converts back to int. When we eventually run them through ART they're just translated to equivalent x86 so we're going to leave them behind. The opportunity for optimization here was already missed.
+Kotlin has its own unsigned integer division implementation which was inlined into our function. It converts the input argument and the literal to longs, performs long division, and then converts back to int. When we eventually run them through ART they're just translated to equivalent x86 so we're going to leave this function behind. The opportunity for optimization here was already missed.
 
 For the Java version, R8 failed to replace the `divideUnsigned` call with a shift. I've filed [issue 154712996](https://issuetracker.google.com/issues/154712996) to track this for D8 and R8.
 
