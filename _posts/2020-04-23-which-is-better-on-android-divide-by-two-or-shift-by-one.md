@@ -465,7 +465,7 @@ These will also diverge in bytecode size when the literal reaches 32,768. Uncond
 
 ### Does unsigned number power-of-two division use shift?
 
-Java bytecode lacks unsigned numbers, but you can emulate them by using the signed counterparts. In Java there are static helper methods for operating on signed types as unsigned values and Kotlin offers types like `UInt` do similar things but abstracted behind a type. It's conceivable then that when using division by a power-of-two that it could be rewritten as a shift.
+Java bytecode lacks unsigned numbers, but you can emulate them by using the signed counterparts. In Java there are static helper methods for operating on signed types as unsigned values. Kotlin offers types like `UInt` which does similar things but completely abstracted behind a type. It's conceivable then that when using division by a power-of-two that it could be rewritten as a shift.
 
 We can use Kotlin to model both of these cases.
 ```kotlin
