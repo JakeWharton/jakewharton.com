@@ -388,7 +388,7 @@ class DivideOrShiftTest {
 }
 ```
 
-I don't have any x86 devices but I do have an ARM-based Pixel 3 running Android 10. I ran these benchmarks (with my finger down on the screen to keep the CPU clocks running at full-power) and came up with these results:
+I don't have any x86 devices but I do have an ARM-based Pixel 3 running Android 10. Here are the results:
 
 ```
 android.studio.display.benchmark=4 ns DivideOrShiftTest.divide
