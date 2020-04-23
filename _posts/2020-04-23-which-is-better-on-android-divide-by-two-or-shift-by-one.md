@@ -526,7 +526,7 @@ public final class ExampleKt {
 }
 ```
 
-The `Integer.divideUnsigned` method is available as of Java 8 so it's used instead of the Kotlin stdlib function when you target 1.8 or newer. Since this makes both function bodies identical, let's revert back to the old output just to see what happens with it in comparison.
+The `Integer.divideUnsigned` method is available as of Java 8 so it's prefered when targeting 1.8 or newer. Since this makes both function bodies identical, let's revert back to the old output just to see what happens with it in comparison.
 
 Next up is R8. Notably different from when it was invoked above is that we include the Kotlin stdlib as an input and we also pass `--min-api 24` since `Integer.divideUnsigned` is only available on API 24 and newer.
 
