@@ -49,7 +49,7 @@ This Java can be compiled with `javac` from JDK 14 and the resulting bytecode ca
 
 ```
 $ javac Example.java
-$ javap Example
+$ javap -c Example
 Compiled from "Example.java"
 class Example {
   static int multiply(int);
