@@ -306,7 +306,7 @@ First, `multiply` and `shiftLeft` now have the exact same implementation. They b
 
 Next, while `divide` and `shiftRight` are not the same, they do share the use of `sar` for a right bitwise shift of&nbsp;1. The four additional instructions in `divide` that precede `sar` handle the case when the input is negative by adding 1 to the value[^1].
 
- [^1]: -3 in binary is 0x11111101. If we attempt to divide by 2 by solely performing the right shift the result is 0x11111110 which is -2, an incorrect result. By adding 1 to -3 first we get -2 which in binary is 0x11111110. Shifted right we get 0x11111111 which is -1, the correct result.
+ [^1]: -3 in binary is 0b11111101. If we attempt to divide by 2 by solely performing the right shift the result is 0b11111110 which is -2, an incorrect result. By adding 1 to -3 first we get -2 which in binary is 0b11111110. Shifted right we get 0b11111111 which is -1, the correct result.
 
      In terms of the actual instructions:
 
