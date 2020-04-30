@@ -23,7 +23,7 @@ Here's two Kotlin classes and some lambda usage that we can experiment with.
 class Employee(
   val id: String,
   val joined: LocalDate,
-  val managerId: String
+  val managerId: String?
 )
 
 class EmployeeRepository(val allEmployees: () -> Sequence<Employee>) {
