@@ -135,8 +135,18 @@ header ul a span {
   max-width: 100%;
 }
 .content .footnotes {
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 12px;
+}
+.content .footnotes:before {
+  content: "Footnotes:";
+  margin-bottom: 10px;
+  display: block;
+  font-style: italic;
+}
+/* Not the foot note items themselves, but any list items contained inside. */
+.content .footnotes ol li li {
+  margin-bottom: 10px;
 }
 
 p.date {
