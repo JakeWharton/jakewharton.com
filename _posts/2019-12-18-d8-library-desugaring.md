@@ -336,7 +336,7 @@ Main.java:7: Error: Call requires API level 26 (current min is 25): java.time.Lo
 
 This ensures you don't errantly use an unsupported type or API, but it does not help for discoverability.
 
-For now the best list of backported types is in the [Android Studio preview features](https://developer.android.com/studio/preview/features#j8-desugar) and the best list of backported APIs on existing types are the two lists in this post ([1](/static/files/d8_api_desugar_list.txt), [2](/static/files/d8_api_desugar_list_on_desugared_types.txt)). Hopefully in the future these will be more discoverable, though.
+For now the best list of backported types is in the [Android Studio 4.0 feature list](https://developer.android.com/studio/releases/gradle-plugin#j8-library-desugaring) and the best list of backported APIs on existing types are the two lists in this post ([1](/static/files/d8_api_desugar_list.txt), [2](/static/files/d8_api_desugar_list_on_desugared_types.txt)). Hopefully in the future these will be more discoverable, though.
 
 ---
 
