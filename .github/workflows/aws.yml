@@ -1,0 +1,33 @@
+name: AWS Deploy
+
+on:
+  push:
+    branches:
+      - gh-pages # TODO change to 'live' or something
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: echo "::set-output name=RUBY_VERSION::$(cat .ruby-version)"
+        id: rbenv
+
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
+
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec jekyll build
+
+      - uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-2'
+          SOURCE_DIR: '_site'
