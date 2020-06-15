@@ -17,4 +17,14 @@ collections:
 
   podcasts:
 
-exclude: ['node_modules', 'scripts', 'vendor']
+exclude:
+  - 'node_modules'
+  - 'scripts'
+  - 'vendor'
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - README.md
+  - LICENSE.txt
+  - CNAME
