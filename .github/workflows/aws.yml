@@ -29,3 +29,4 @@ jobs:
           aws-region: us-east-2
 
       - run: aws s3 sync ./_site/ s3://jakewharton.com --delete
+      - run: aws cloudfront create-invalidation --paths '/*' --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }}
