@@ -324,7 +324,7 @@ Done. Took 57 milliseconds.
 
 Considerably faster than taking hours! Only 652 valid candidates out of 20,922,789,888,000 possible permutations. You can check out the full list [here](/static/files/picnic_valid_corners.txt).
 
-If we look at output #1 above, this table is _technically_ invalid since it contains an orphan corner in the upper right. There is no way to create such a corner by setting borders on table cells. However, purely from a segment-validation standpoint, it is valid. Visual inspection of the candidates makes it seem like about 15-25% suffer from this case.
+If we look at output #1 above, this table is _technically_ invalid since it contains an orphan corner in the upper right. There is no way to create such a corner by setting borders on table cells. However, purely from a segment-validation standpoint it is valid. Visual inspection of the candidates makes it seem like about 15-25% suffer from this case.
 
 I'm out of time on this post, so finding the true number of valid configurations expressible by table cell borders will have to be an exercise left to the reader.
 
