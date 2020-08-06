@@ -332,4 +332,4 @@ I'm out of time on this post, so finding the true number of valid configurations
 
 Creating [Picnic][picnic] was a fun rabbit hole to fall into for a few days last year. Aside from the challenges of corners, it implements the CSS specification for measuring and laying out tables and supports row and column spans, vertical and horizontal text alignment, and vertical and horizontal cell padding.
 
-If you ever need to display a command-line table and have written an HTML table in your life it should be very approachable.
+If you ever need to display a command-line table and have written an HTML table in your life it should be very approachable with Picnic.
