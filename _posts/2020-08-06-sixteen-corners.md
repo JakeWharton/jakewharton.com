@@ -30,7 +30,7 @@ Wall border calculation is straightforward. For a vertical wall, a vertical pipe
 
  [^1]: It's actually little more complicated than this. If none of the rows want to draw a border between the two cells in these columns then the border width will be zero and won't occupy any space.
 
-Corner calculation is a bit more involved. A corner has four potential lines for the four cardinal directions that may be drawn. Each of the four adjacent cells participate in determining whether two of the corner's edges are shown.
+Corner calculation is a bit more involved. A corner has four potential segments for the four cardinal directions that may be drawn. Each of the four adjacent cells participate in determining whether two of the corner's edges are shown.
 
 ### Corner Characters
 
