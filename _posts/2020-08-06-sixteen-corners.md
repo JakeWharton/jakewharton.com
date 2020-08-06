@@ -253,7 +253,7 @@ There are three constraints for placing a corner at the current index that must 
 
     For example, if `╶` is at index 0 then `├` is invalid for index 4 since they do not agree about the presence of a vertical segment.
 
-In the same we four booleans were used as bits to create the numbers [0,15] in the first section, we can invert that operation to extract the four booleans from the numbers to perform validation.
+In the same way four booleans were used as bits to create the numbers [0,15] in the first section, we can invert that operation to extract the four booleans from the numbers to perform validation.
 
 ```kotlin
 fun Int.hasDownSegment() = (0b0001 and this) != 0
