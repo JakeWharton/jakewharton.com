@@ -69,7 +69,7 @@ Removing all these files yields a new binary size of 1513414 bytes (\~1.44MiB), 
 
 #### Using R8
 
-R8 is the code optimizer and obfuscator for Android builds. While it's normally used to optimize and obfuscate Java classfiles during to the Dalvik executable format, it also supports outputting Java classfiles. In order to use it, we need to specify the entry point to the tool using ProGuard's configuration syntax.
+R8 is the code optimizer and obfuscator for Android builds. While it's normally used to optimize and obfuscate Java classfiles during conversion to the Dalvik executable format, it also supports outputting Java classfiles. In order to use it, we need to specify the entry point to the tool using ProGuard's configuration syntax.
 
 ```
 -dontobfuscate
