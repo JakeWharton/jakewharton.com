@@ -65,7 +65,7 @@ Listing the files in the `.jar` using `unzip -l` shows that aside from `.class`,
 
 We can filter these out of the binary along with `module-info.class` which is used for Java 9's module system and files in `META-INF/maven/` which propagate information about projects built with the Maven tool.
 
-Removing all these files yields a new binary size of just 1513414 bytes (\~1.44MiB), an 11% reduction in size.
+Removing all these files yields a new binary size of 1513414 bytes (\~1.44MiB), an 11% reduction in size.
 
 #### Using R8
 
@@ -82,7 +82,7 @@ R8 is the code optimizer and obfuscator for Android builds. While it's normally 
 
 In addition to the entrypoint, obfuscation is disabled, and we retain the source file and line number attributes so that any exceptions which occur will still be understandable.
 
-Passing the fat `.jar` through R8 produces a new minified `.jar` which can then be made executable. The resulting binary is now 41680 bytes (\~41KiB), an 98% reduction in size. Nice!
+Passing the fat `.jar` through R8 produces a new minified `.jar` which can then be made executable. The resulting binary is now just 41680 bytes (\~41KiB), a 98% reduction in size. Nice!
 
 Since we are producing a binary and not a library, the `-allowaccessmodification` option will make optimizations like class merging and inlining more effective by allowing hidden members to be made public. Adding this produces a binary of 37630 bytes (\~37KiB).
 
