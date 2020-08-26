@@ -55,7 +55,7 @@ You can learn more about the tool and see another example [in its README][dtd].
 
 This tool needs to be checked into our repo and run on CI. Having successfully built [adb-event-mirror](https://github.com/JakeWharton/adb-event-mirror/) using Kotlin script the first version of this tool also used Kotlin script. While it worked and was tiny, `kotlinc` is not installed on the CI machines. We rely on the Kotlin Gradle plugin to compile Kotlin, not a standalone binary.
 
-You can locally redirect the Kotlin script cache directory to capture the compiled jar, but it still depends on the Kotlin script artifact which is large, have lots of dependencies, and are still quite dynamic. It was clear this wasn't the right path, but I filed [KT-41304](https://youtrack.jetbrains.com/issue/KT-41304) to hopefully make producing a fat `.jar` of a script easier in the future.
+You can locally redirect the Kotlin script cache directory to capture the compiled jar, but it still depends on the Kotlin script artifact which is large, has lots of dependencies, and are still quite dynamic. It was clear this wasn't the right path, but I filed [KT-41304](https://youtrack.jetbrains.com/issue/KT-41304) to hopefully make producing a fat `.jar` of a script easier in the future.
 
 I switched to a classic Kotlin Gradle project and produced a fat `.jar` with the `kotlin-stdlib` dependency included. After prepending a script to [make the jar self-executing](https://skife.org/java/unix/2011/06/20/really_executable_jars.html), the binary clocked in 1699978 bytes (or \~1.62MiB). Not bad, but we can do better!
 
@@ -122,7 +122,7 @@ Switching from `java.io.File` to `java.nio.path.Path` means we can use a built-i
 -    val old = args[0].let(::File).readText()
 -    val new = args[1].let(::File).readText()
 +    val old = args[0].let(Paths::get).let(Paths::readString)
-+    val new = args[0].let(Paths::get).let(Paths::readString)
++    val new = args[1].let(Paths::get).let(Paths::readString)
 ```
 
 With these changes the binary drops to 30914 bytes (\~30KiB).
@@ -191,7 +191,7 @@ public static final Set findDependencyPaths(String var0) {
   Intrinsics.checkNotNullParameter(var10000, "$this$asList");
 ```
 
-These `Intrinsics` calls enforce the nullability invariants of the type system on function parameters, but after inlining all but the first one is redundant. Duplicate calls like this appear all over the code. This is [an R8 bug](https://issuetracker.google.com/issues/139276374) caused by Kotlin renaming these intrinsic methods and R8 not updating to properly track that change.
+These `Intrinsics` calls enforce the nullability invariants of the type system on function parameters, but after inlining all but the first one are redundant. Duplicate calls like this appear all over the code. This is [an R8 bug](https://issuetracker.google.com/issues/139276374) caused by Kotlin renaming these intrinsic methods and R8 not updating to properly track that change.
 
 With these two issues fixed, it's likely the binary will drop into single-digit KiBs producing a high-99 percent reduction from the original fat `.jar`.
 
