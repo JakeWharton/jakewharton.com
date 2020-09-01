@@ -147,7 +147,7 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
           (string8) "res/eA.xml"
 ```
 
-All three occurrences of the path in the APK are now shorter which results in the 36 byte savings. And while 36 bytes is a very small number, remember that the entire binary is only 2118 bytes. A 36-byte savings is a 1.7% size reduction!
+All three occurrences of the path in the APK are now shorter which results in the 36 byte savings. And while 36 bytes is a very small number, remember that the entire binary is only 2,118 bytes. A 36-byte savings is a 1.7% size reduction!
 
 
 ### Real-world examples
@@ -158,7 +158,7 @@ The resources of a real application number far more than just one. What does thi
 
 Nick Butcher's [Plaid](https://github.com/android/plaid) app has 734 resource files. In addition to their quantity, the names of the resource files are more descriptive (which is a fancy way of saying they're longer). Instead of `home_view`, Plaid contains names like `searchback_stem_search_to_back.xml`, `attrs_elastic_drag_dismiss_frame_layout`, and `designer_news_story_description.xml`.
 
-After updating the project to AGP 4.2, I used `diffuse` to compare a build without resource shrinking to one with it enabled:
+After updating the project to AGP 4.2, I used `diffuse` to compare a build without resource optimization to one with it enabled:
 ```
           │            compressed             │           uncompressed
           ├───────────┬───────────┬───────────┼───────────┬───────────┬───────────
@@ -179,7 +179,7 @@ Resource optimization netted a 0.76% savings on APK size. The native library siz
 
 #### SeriesGuide
 
-Uwe Trottmann's [SeriesGuide](https://github.com/UweTrottmann/SeriesGuide) app has 1044 resource files. Unlike Plaid, it is also free of native libraries which should increase the impact of the optimization.
+Uwe Trottmann's [SeriesGuide](https://github.com/UweTrottmann/SeriesGuide) app has 1044 resource files. Unlike Plaid, it is free of native libraries which should increase the impact of the optimization.
 
 Once again I updated the project to AGP 4.2 and used `diffuse` to compare two builds:
 ```
@@ -226,11 +226,8 @@ Once again we hit the 2.0% mark for APK size reduction!
 All four examples so far have not used signed APKs. There are multiple versions of APK signing, and if your `minSdkVersion` is lower than 24 you are required include version 1 (V1) when signing. V1 signing uses [Java's `.jar` 
 signing specification](https://docs.oracle.com/javase/tutorial/deployment/jar/intro.html) which signs each file individually as a text entry in the `META-INF/MANIFEST.MF` file.
 
-After creating and configuring a keystore for the original single-layout app, dumping the manifest file shows these signatures:
+After creating and configuring a keystore for the original single-layout app, dumping the manifest file with `unzip -c build/outputs/apk/release/app-release.apk META-INF/MANIFEST.MF` shows these signatures:
 ```
-$ unzip -c build/outputs/apk/release/app-release.apk META-INF/MANIFEST.MF
-Archive:  build/outputs/apk/release/app-release.apk
-  inflating: META-INF/MANIFEST.MF
 Manifest-Version: 1.0
 Built-By: Signflinger
 Created-By: Android Gradle 4.2.0-alpha08
