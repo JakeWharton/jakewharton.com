@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
+      - run: gem install bundler
 
       - run: bundle install --path vendor/bundle
       - run: bundle exec jekyll build
