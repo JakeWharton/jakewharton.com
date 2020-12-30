@@ -39,7 +39,7 @@ changing their programming paradigm from imperative to declarative.
 Separately, the toolkit team was about to ramp up on unbundling as many UI widgets as possible from
 the OS. This followed on the success of `ViewPager`, `RecyclerView`, and what was learned from
 the AppCompat and Design libraries. By removing a ton of OEM touchpoints and normalizing behavior
-across all versions of Android, the effort required to build a good UI would be reduced.
+across all versions of Android, the work required to build a good UI would be reduced.
 
 Over time these efforts became inescapably linked.
 
