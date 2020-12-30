@@ -3,3 +3,4 @@ vendor/
 .bundle
 node_modules/
 capture/
+.idea/
