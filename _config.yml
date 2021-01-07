@@ -17,6 +17,9 @@ collections:
 
   podcasts:
 
+include:
+  - '.well-known'
+
 exclude:
   - 'node_modules'
   - 'scripts'
