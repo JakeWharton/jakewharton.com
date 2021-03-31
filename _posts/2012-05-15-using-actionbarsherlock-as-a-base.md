@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/using-actionbarsherlock-as-a-base-7be94855009f
+blog_link: https://medium.com/square-corner-blog/using-actionbarsherlock-as-a-base-7be94855009f
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

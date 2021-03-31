@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/hello-picasso-2-3-a13e23348bef
+blog_link: https://medium.com/square-corner-blog/hello-picasso-2-3-a13e23348bef
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/an-optionals-place-in-kotlin-17d7b271eefe
+blog_link: https://medium.com/square-corner-blog/an-optionals-place-in-kotlin-17d7b271eefe
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

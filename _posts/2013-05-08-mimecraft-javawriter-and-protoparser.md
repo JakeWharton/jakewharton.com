@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/mimecraft-javawriter-and-protoparser-7a3feaa11d69
+blog_link: https://medium.com/square-corner-blog/mimecraft-javawriter-and-protoparser-7a3feaa11d69
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:
