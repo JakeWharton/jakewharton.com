@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/generating-kotlin-code-with-kotlinpoet-119dc20f74d4
+blog_link: https://developer.squareup.com/blog/generating-kotlin-code-with-kotlinpoet/
 permalink: '' # Disable HTML generation
 
 categories: post
@@ -61,4 +61,4 @@ Generating Kotlin also comes with an advantage over generating Java: JavaScript 
 
 [KotlinPoet](http://github.com/square/kotlinpoet) is currently an early-access release. Not every language feature and syntax is covered yet, but it’s enough to get started and make public. We’re looking forward to seeing what you build with this library!
 
-This post concludes Square’s “[Square Open Source ♥s Kotlin](https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17)” series.
+This post concludes Square’s “[Square Open Source ♥s Kotlin](https://developer.squareup.com/blog/square-open-source-s-kotlin series.

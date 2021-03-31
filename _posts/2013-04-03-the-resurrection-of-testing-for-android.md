@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/the-resurrection-of-testing-for-android-82e3e0c35b41
+blog_link: https://developer.squareup.com/blog/the-resurrection-of-testing-for-android
 permalink: '' # Disable HTML generation
 
 categories: post

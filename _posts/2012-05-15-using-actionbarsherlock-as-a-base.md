@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/using-actionbarsherlock-as-a-base-7be94855009f
+blog_link: https://developer.squareup.com/blog/using-actionbarsherlock-as-a-base
 permalink: '' # Disable HTML generation
 
 categories: post

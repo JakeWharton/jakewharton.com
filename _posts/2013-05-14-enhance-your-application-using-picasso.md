@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/enhance-your-application-using-picasso-4b2991436b6a
+blog_link: https://developer.squareup.com/blog/enhance-your-application-using-picasso
 permalink: '' # Disable HTML generation
 
 categories: post

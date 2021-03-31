@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/an-optionals-place-in-kotlin-17d7b271eefe
+blog_link: https://developer.squareup.com/blog/an-optionals-place-in-kotlin
 permalink: '' # Disable HTML generation
 
 categories: post
@@ -46,6 +46,6 @@ interface MyApiService {
 }
 ```
 
-Today’s [Retrofit 2.3.0](https://github.com/square/retrofit/blob/master/CHANGELOG.md#version-230-2017-05-13) release contains the same JSR 305 annotations for explicit nullability in Java and Kotlin as [our recent Okio and OkHttp releases](https://medium.com/square-corner-blog/rolling-out-nullable-42dd823fbd89). As we’ve seen above, though, just having these annotations​ or a type system that can model nullability sometimes is not enough. For these cases, in Java and Kotlin alike, the use of `Optional` has its place.
+Today’s [Retrofit 2.3.0](https://github.com/square/retrofit/blob/master/CHANGELOG.md#version-230-2017-05-13) release contains the same JSR 305 annotations for explicit nullability in Java and Kotlin as [our recent Okio and OkHttp releases](https://developer.squareup.com/blog/rolling-out-nullable). As we’ve seen above, though, just having these annotations​ or a type system that can model nullability sometimes is not enough. For these cases, in Java and Kotlin alike, the use of `Optional` has its place.
 
-This post is part of Square’s “[Square Open Source ♥s Kotlin](https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17)” series.
+This post is part of Square’s “[Square Open Source ♥s Kotlin](https://developer.squareup.com/blog/square-open-source-s-kotlin series.
