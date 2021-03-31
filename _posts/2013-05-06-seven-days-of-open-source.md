@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/seven-days-of-open-source-7a6270f5346b
+blog_link: https://medium.com/square-corner-blog/seven-days-of-open-source-7a6270f5346b
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

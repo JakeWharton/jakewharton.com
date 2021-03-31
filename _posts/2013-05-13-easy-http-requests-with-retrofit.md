@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/easy-http-requests-with-retrofit-8c6d45c9bd43
+blog_link: https://medium.com/square-corner-blog/easy-http-requests-with-retrofit-8c6d45c9bd43
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

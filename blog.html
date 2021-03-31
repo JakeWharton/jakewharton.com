@@ -8,7 +8,7 @@ tab: posts
 {% for post in site.categories.post %}
   <li class="presentation">
     <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
-    <a href="{% if post.external %}{{ post.permalink }}{% else %}{{ post.url }}{% endif %}">{% if post.external %}⇖ {% endif %}{{ post.title }}</a>
+    <a href="{% if post.external %}{{ post.blog_link }}{% else %}{{ post.url }}{% endif %}">{% if post.external %}⇖ {% endif %}{{ post.title }}</a>
     {% if post.external %}<small>{{ post.blog }}</small>{% endif %}
   </li>
 {% endfor %}

@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/generating-kotlin-code-with-kotlinpoet-119dc20f74d4
+blog_link: https://medium.com/square-corner-blog/generating-kotlin-code-with-kotlinpoet-119dc20f74d4
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

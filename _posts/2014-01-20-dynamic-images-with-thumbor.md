@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87
+blog_link: https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17
+blog_link: https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:

@@ -4,7 +4,8 @@ layout: post
 
 external: true
 blog: Square Corner
-permalink: https://medium.com/square-corner-blog/better-parameterized-tests-with-burst-6f17560013a
+blog_link: https://medium.com/square-corner-blog/better-parameterized-tests-with-burst-6f17560013a
+permalink: '' # Disable HTML generation
 
 categories: post
 tags:
