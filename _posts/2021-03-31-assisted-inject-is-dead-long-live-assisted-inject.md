@@ -1,5 +1,5 @@
 ---
-title: "AssistedInject is dead, long live AssistedInject"
+title: "AssistedInject is dead, long live AssistedInject!"
 layout: post
 
 external: true
