@@ -19,7 +19,7 @@ layout: null
    <link href="{% if post.external %}{{ post.blog_link }}{% else %}{{ site.url }}{{ post.url }}{% endif %}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html">{% if post.external %}This post was published externally on {{ post.blog }}. Read it at <a href="{{ post.blog_link }}">{{ post.blog_link }}</a>{% else %}{{ post.content | xml_escape }}{% endif %}</content>
+   <content type="html">{% if post.external %}This post was published externally on {{ post.blog }}. Read it at <a href="{{ post.blog_link }}">{{ post.blog_link }}</a>.{% else %}{{ post.content | xml_escape }}{% endif %}</content>
  </entry>
  {% endfor %}
 
