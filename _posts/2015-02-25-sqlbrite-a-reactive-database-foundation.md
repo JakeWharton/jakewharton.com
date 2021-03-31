@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/sqlbrite-a-reactive-database-foundation-40e3a617866d
+blog_link: https://developer.squareup.com/blog/sqlbrite-a-reactive-database-foundation
 permalink: '' # Disable HTML generation
 
 categories: post

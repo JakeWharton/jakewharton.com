@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/square-open-source-loves-kotlin-c57c21710a17
+blog_link: https://developer.squareup.com/blog/square-open-source-loves-kotlin
 permalink: '' # Disable HTML generation
 
 categories: post
@@ -13,7 +13,7 @@ tags:
 - "Square Open Source ♥s Kotlin"
 ---
 
-Consumers of Square’s open source libraries may remember our “[Seven Days of Open Source](https://medium.com/square-corner-blog/seven-days-of-open-source-7a6270f5346b)” prior to Google I/O 2013. We released major versions of some of our projects in the days leading up to the event. This culminated in us also having a booth inside the developer space at I/O and getting to meet and chat with you all about those projects and others.
+Consumers of Square’s open source libraries may remember our “[Seven Days of Open Source](https://developer.squareup.com/blog/seven-days-of-open-source prior to Google I/O 2013. We released major versions of some of our projects in the days leading up to the event. This culminated in us also having a booth inside the developer space at I/O and getting to meet and chat with you all about those projects and others.
 
 While we don’t have seven projects to release this year, we do have a few days of blog posts and releases centered around a common theme: **Kotlin**!
 
@@ -25,8 +25,8 @@ We’re committed to Kotlin at Square. These changes should help improve the dev
 
 Be sure to check back each day for updates!
 
-* **Friday (5/12):** [Rolling out @Nullable](https://medium.com/square-corner-blog/rolling-out-nullable-42dd823fbd89)
-* **Saturday (5/13):** [Non-null is the Default](https://medium.com/square-corner-blog/non-null-is-the-default-58ffc0bb9111)
-* **Sunday (5/14):** [An Optional's place in Kotlin](https://medium.com/square-corner-blog/an-optionals-place-in-kotlin-17d7b271eefe)
-* **Monday (5/15):** [Kotlin's a great language for JSON](https://medium.com/square-corner-blog/kotlins-a-great-language-for-json-fcd6ef99256b)
-* **Tuesday (5/16):** [Generating Kotlin code with KotlinPoet](https://medium.com/square-corner-blog/generating-kotlin-code-with-kotlinpoet-119dc20f74d4)
+* **Friday (5/12):** [Rolling out @Nullable](https://developer.squareup.com/blog/rolling-out-nullable)
+* **Saturday (5/13):** [Non-null is the Default](https://developer.squareup.com/blog/non-null-is-the-default)
+* **Sunday (5/14):** [An Optional's place in Kotlin](https://developer.squareup.com/blog/an-optionals-place-in-kotlin)
+* **Monday (5/15):** [Kotlin's a great language for JSON](https://developer.squareup.com/blog/kotlins-a-great-language-for-json)
+* **Tuesday (5/16):** [Generating Kotlin code with KotlinPoet](https://developer.squareup.com/blog/generating-kotlin-code-with-kotlinpoet)

@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/surfacing-hidden-change-to-pull-requests-6a371266e479
+blog_link: https://developer.squareup.com/blog/surfacing-hidden-change-to-pull-requests
 permalink: '' # Disable HTML generation
 
 categories: post

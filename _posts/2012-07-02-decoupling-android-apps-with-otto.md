@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Square Corner
-blog_link: https://medium.com/square-corner-blog/decoupling-android-app-communication-with-otto-a37c22b79990
+blog_link: https://developer.squareup.com/blog/decoupling-android-app-communication-with-otto
 permalink: '' # Disable HTML generation
 
 categories: post
