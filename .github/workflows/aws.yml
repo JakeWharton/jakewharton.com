@@ -11,15 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - run: echo "::set-output name=RUBY_VERSION::$(cat .ruby-version)"
-        id: rbenv
-
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: "${{ steps.rbenv.outputs.RUBY_VERSION }}"
+      - uses: ruby/setup-ruby@v1
       - run: gem install bundler
-
       - run: bundle install --path vendor/bundle
       - run: bundle exec jekyll build
 
