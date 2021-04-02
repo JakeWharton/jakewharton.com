@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/seven-days-of-open-source
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

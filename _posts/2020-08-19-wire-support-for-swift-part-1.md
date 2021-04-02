@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Cash App Code Blog
 blog_link: https://cashapp.github.io/2020-08-19/wire-support-for-swift-part-1
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

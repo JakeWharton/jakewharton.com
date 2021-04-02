@@ -1,4 +1,4 @@
-url: "http://jakewharton.com"
+url: "https://jakewharton.com"
 
 highlighter: rouge
 permalink: /:title/
@@ -7,7 +7,6 @@ markdown: kramdown
 future: true
 
 plugins:
-  - jekyll-feed
   - jekyll-redirect-from
 
 collections:

@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/an-optionals-place-in-kotlin
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

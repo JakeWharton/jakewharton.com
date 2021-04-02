@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Cash App Code Blog
 blog_link: https://cashapp.github.io/2021-03-31/assisted-inject-is-dead-long-live-assisted-inject
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

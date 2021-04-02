@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/generating-kotlin-code-with-kotlinpoet/
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

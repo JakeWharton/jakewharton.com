@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/easy-http-requests-with-retrofit
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

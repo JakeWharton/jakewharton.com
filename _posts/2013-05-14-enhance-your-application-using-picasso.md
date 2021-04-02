@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/enhance-your-application-using-picasso
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

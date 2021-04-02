@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/web-sockets-now-shipping-in-okhttp-3-5
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700" type="text/css">
     <link rel="stylesheet" href="/static/app.css" type="text/css">
     <link rel="stylesheet" href="/static/syntax.css" type="text/css">
-    {% feed_meta %}
+    <link type="application/atom+xml" rel="alternate" href="{{ site.url }}/atom.xml" />
     <meta name="theme-color" content="#111111">
-
+    {% if page.external %}<meta name="robots" content="noindex nofollow">
+{% endif %}
     <meta name="og:type" content="article">
     <meta name="og:title" content="{{ page.title }} – Jake Wharton">
     <meta name="og:description" content="{{ page.lead }}">

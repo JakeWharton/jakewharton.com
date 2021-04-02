@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/hello-picasso-2-3
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:

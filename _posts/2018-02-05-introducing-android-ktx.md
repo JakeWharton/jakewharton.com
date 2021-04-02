@@ -5,7 +5,6 @@ layout: post
 external: true
 blog: Android Developers Blog
 blog_link: https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html
-permalink: '' # Disable HTML generation
 
 categories: post
 tags:
