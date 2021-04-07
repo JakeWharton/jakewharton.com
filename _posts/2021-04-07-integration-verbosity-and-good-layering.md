@@ -47,7 +47,7 @@ RecylerView requires at minimum an adapter subtype and to choose and configure a
 The layer at which these tools operate is sufficiently general such that their good design requires them to hoist a bunch of decisions to their caller.
 
 If Dagger was more opinionated about integration with Android it's hard to imagine Hilt could have been built as it is today.
-If SQLDelight was more opinionated about talking to SQLite on Android it's hard to imagine it could support talking to SQLite, MySQL, or Postgres on any platform.
+If SQLDelight was more opinionated about talking to SQLite on Android it's hard to imagine it could support talking to SQLite, MySQL, or Postgres on any platform as it does today.
 If RecyclerView was more opinionated about layout managers or adapters it's hard to imagine ViewPager 2 could have been built as it is today.
 
 I certainly bear many scars of layering mistakes in my library past.
