@@ -68,9 +68,9 @@ You're forced to bring a serialization format converter and configure it on each
 
 You can usually spot these types of problems in libraries because they start to accumulate weird
 ceremony in order to support different use-cases like testing[^1]. It can be tempting as a library
-author to over-correct away from exposing verbosity. By reducing required configuration options and
-the use of inversion of control you make the happy path happy, but alternative use-cases and
-alternative integrations much harder.
+author to over-correct away from exposing verbosity. By removing required configuration options and
+reducing the use of inversion of control you make the happy path happy, but alternative use-cases
+and alternative integrations become much harder.
 
  [^1]: Um, this sentence is somewhat ridiculous, right? Testing is not a _different_ use case. It's a primary use case! I hope libraries come to mind here. Many do for me when I wrote it.
 
