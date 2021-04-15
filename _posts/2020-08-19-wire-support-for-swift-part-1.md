@@ -4,7 +4,7 @@ layout: post
 
 external: true
 blog: Cash App Code Blog
-blog_link: https://cashapp.github.io/2020-08-19/wire-support-for-swift-part-1
+blog_link: https://code.cash.app/wire-support-for-swift-part-1
 
 categories: post
 tags:
