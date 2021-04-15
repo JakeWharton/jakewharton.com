@@ -58,8 +58,8 @@ We have migrated our Cash App Android codebase and will be migrating others in t
 If you were using the `@Burst` annotation for field binding (common for Java tests), replace it with `@TestParameter`
 
 ```diff
--@RunWith(BurstJUnit4::class)
-+@RunWith(TestParameterInjector::class)
+-@RunWith(BurstJUnit4.class)
++@RunWith(TestParameterInjector.class)
  class DrinkSodaTest {
 -  @Burst Soda soda;
 +  @TestParameter Soda soda;
