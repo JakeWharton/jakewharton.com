@@ -159,4 +159,4 @@ You can see the result reflected on [the Docker Hub listing](https://hub.docker.
 
 The full and final `Dockerfile` can be found [here](https://github.com/JakeWharton/NormallyClosed/blob/a21e4de89ef90417a99cadf75c2b6297eda35735/Dockerfile) for reference. The repository also contains GitHub Actions setup for building the standalone binaries as well as the multi-architecture Docker container.
 
-Hopefully this helps someone! It was a couple nights of piecing together all the steps for me. And hey if you have a garage door and a spare Pi lying around, maybe try out [Normally Closed](https://github.com/JakeWharton/NormallyClosed)!
+Hopefully this helps someone! It was a couple nights of piecing together all the steps for me. And hey if you have a garage door and a spare Pi lying around maybe try out [Normally Closed](https://github.com/JakeWharton/NormallyClosed)!
