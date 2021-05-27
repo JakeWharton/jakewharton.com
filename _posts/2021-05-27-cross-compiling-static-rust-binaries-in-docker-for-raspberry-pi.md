@@ -85,7 +85,7 @@ Adding a second architecture complicates things significantly. Docker does suppo
 
 However, unlike the buildx examples, we cannot naively run `docker buildx build --platform linux/arm/v7,linux/arm/v6 .` and have it just work. For one, the Rust container is not available for those architectures. But even if it were, we still need to specify the custom compilation target per architecture due to our desire to use musl.
 
-The first step towards making this work is having the Rust container always use the architecture of the machine on which it is running. This is similar to having run Cargo directly before, and it works because Rust is already allowing us to cross-compile to ARM.
+The first step towards making this work is having the Rust container always use the architecture of the machine on which it is running. This is similar to having run Cargo directly on our machine before, and it works because Rust is already allowing us to cross-compile to ARM.
 
 ```diff
 -FROM rust:1.52.1 AS rust
