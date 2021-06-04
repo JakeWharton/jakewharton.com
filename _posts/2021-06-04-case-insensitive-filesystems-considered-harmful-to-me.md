@@ -44,7 +44,8 @@ fun testInsertOnMultipleLevels() = compositionTest {
 
   fun Item(number: Int, numbers: List<Int>) {
     Linear {
-      // This lambda is the source!
+      // --> This lambda is the source! <--
+      // …code…
     }
   }
 
@@ -64,7 +65,7 @@ fun testInsertOnMultipleLevels() = compositionTest {
 
   fun Item(number: Int, numbers: List<Int>) {
     Linear {
-      // This lambda is the source!
+      // …code…
     }
   }
 
