@@ -7,7 +7,7 @@ categories: post
 
 Having been burned by case-insensitive filesystem bugs one too many times, I long ago switched my development folder to a case-sensitive filesystem partition on my otherwise case-insensitive Mac. Unfortunately this can actually work against me as I interact with the computers of coworkers and service providers which use the default. Well I was burned again, and this is the tale!
 
-I've been working on two projects based on [Jetpack Compose][1][^1] which require me to recompile its sources. Despite building them unmodified, I still run its tests against my compiled version to ensure this core functionality of my project runs as expected. However, both of my projects recently started experiencing test failures on CI, and it was the same, single test which was failing on both projects. 
+I've been working on two projects based on [Jetpack Compose][1][^1] which require me to recompile its sources. Despite building them unmodified, I still run its tests against my compiled version to ensure this core functionality of my project behaves as expected. However, both of my projects recently started experiencing test failures on CI, and it was the same, single test which was failing on both projects. 
 
  [1]: https://developer.android.com/jetpack/compose
  [^1]: Obligatory: [I mean Compose and **NOT** Compose UI][2]!
