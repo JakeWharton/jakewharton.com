@@ -7,7 +7,7 @@ categories: post
 
 Having been burned by case-insensitive filesystem bugs one too many times, I long ago switched my development folder to a case-sensitive filesystem partition on my otherwise case-insensitive Mac. Unfortunately this can actually work against me as I interact with the computers of coworkers and service providers which use the default. Well I was burned again, and this is the tale!
 
-I've been working on two projects based on [Jetpack Compose][1][^1] which require me to recompile its sources. Despite building them unmodified, I still run its tests against my compiled version to ensure this core functionality of my project behaves as expected. However, both of my projects recently started experiencing test failures on CI, and it was the same, single test which was failing on both projects. 
+I've been working on two projects based on [Jetpack Compose][1][^1] which require me to recompile its sources. Despite building them unmodified, I still run its tests against my compiled version to ensure this core functionality of my project behaves as expected. However, both of my projects recently started experiencing test failures on CI, and it was the same, single test failing on both projects.
 
  [1]: https://developer.android.com/jetpack/compose
  [^1]: Obligatory: [I mean Compose and **NOT** Compose UI][2]!
@@ -55,7 +55,7 @@ fun testInsertOnMultipleLevels() = compositionTest {
 
 The anonymous lambda passed to `compositionTest` becomes `$1`, the nested `Item` function becomes `$Item`, and the lambda passed to `Linear` becomes another `$1` producing the final class name of `CompositionTests$testInsertOnMultipleLevels$1$Item$1`.
 
-This seems all fine, though. So how could the name of the class for the function change casing from `Item` to `item`?
+This all seems fine, though. So how could the name of the class for the function change casing from `Item` to `item`?
 
 Thankfully, with the investigative powers of [Isaac Udy](https://medium.com/@isaac.udy_90859) helping, we stumbled upon more code further down the function:
 
@@ -92,7 +92,7 @@ To be clear, the problematic steps are this:
  4. The Kotlin compiler generates the class `CompositionTests$testInsertOnMultipleLevels$1$item$1`.
  5. The Kotlin compiler opens the `CompositionTests$testInsertOnMultipleLevels$1$item$1.class` file (but the filesystem sees `CompositionTests$testInsertOnMultipleLevels$1$Item$1.class` as an existing match and opens it as an existing file), writes the bytecode for `CompositionTests$testInsertOnMultipleLevels$1$item$1`, and closes the file.
 
-When the project builds on my machine the non-standrd, case-sensitive filesystem sees those as separate files and the failure does not occur. On MacOS- and Windows-based CI workers with their filesystem defaults, however, they're seen as the same and merged. This is what leads to the class name of the second appearing in the file name of the first.
+When the project builds on my machine the non-standard, case-sensitive filesystem sees those as separate files and the failure does not occur. On MacOS- and Windows-based CI workers with their filesystem defaults, however, they're seen as the same and one overwrites the other. This is what leads to the class name of the second appearing in the file name of the first.
 
 The fix here is easy: rename one of the functions to produce different names. And in an ironic twist of timing, JetBrains [made the exact fix][4] to Compose just 12 hours ago.
 
@@ -142,7 +142,7 @@ $ ls Complex*
 Complex.kt	ComplexKt$complex$1$Nested$1.class	ComplexKt$complex$1.class	ComplexKt.class
 ```
 
-I have filed [KT-47123](https://youtrack.jetbrains.com/issue/KT-47123) to advocate that the compiler should automatically avoid this from happening.
+I have filed [KT-47123](https://youtrack.jetbrains.com/issue/KT-47123) to advocate that the compiler should automatically prevent this from happening.
 
 Hey Java users you're not totally immune either!
 
@@ -156,4 +156,4 @@ $ ls Hey*
 Hey.class	Hey.java
 ```
 
-I'm confident that _this_ year will finally be the year of the Linux desktop to solve all these problems with its case-sensitive-by-default filesystems, right?. But until then, having tools which are smarter about filesystem interaction in a world where both case-sensitive and case-insensitive variants exist would go a long way to reducing developer's headaches like this.
+I'm confident that _this_ year will finally be the year of the Linux desktop to solve all these problems with its case-sensitive-by-default filesystems, right? But until then, having tools which are smarter about filesystem interaction in a world where both case-sensitive and case-insensitive variants exist would go a long way to reducing developer headaches like this.
