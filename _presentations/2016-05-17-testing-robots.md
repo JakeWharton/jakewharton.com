@@ -11,7 +11,7 @@ type: Technical
 
 title: Testing Robots
 speakerdeck: 7410777622564b13a0cd0d90f6fb5468
-video: https://realm.io/news/kau-jake-wharton-testing-robots/
+youtube: 7Y3qIIEyP5c
 
 redirect_from:
 - /presentation/2016-05-17-kotlin-night/
