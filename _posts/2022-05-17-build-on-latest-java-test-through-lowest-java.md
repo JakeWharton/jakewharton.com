@@ -77,9 +77,11 @@ testJdk8 - Runs the test suite on JDK 8
 testJdk9 - Runs the test suite on JDK 9
 ```
 
-For projects using [multi-release jars](https://openjdk.java.net/jeps/238), this compilation and testing setup is essential since the source sets require compiling with newer versions but testing across a version range.
+For projects using [multi-release jars](https://openjdk.java.net/jeps/238), this compilation and testing setup is essential since the source sets require compiling with newer versions but testing through a lower version bound.
 
-So if adding Java versions to a CI matrix is something you've also been doing (or if you haven't), consider switching to compile with a single Java version and instead varying your test execution instead.
+So if adding Java versions to a CI matrix is something you've been doing, consider switching to compile with a single Java version and instead varying your test execution instead. And if you only build and test on a single version today, adding this can ensure correctness on all versions that you support.
+
+Not every project needs to test on multiple versions. If your code is mostly algorithmic you won't gain much from doing this. But if you vary behavior based on Java version, conditionally leverage APIs on newer versions, or interact with non-public APIs then this is a best practice.
 
 ---
 
