@@ -85,4 +85,4 @@ Not every project needs to test on multiple versions. If your code is mostly alg
 
 ---
 
-P.S. Are you an Android developer? You probably keep your `compileSdk` high, you `minSdk` low(-ish), and execute instrumentation tests on a few versions between those two. Great news, you're already following this advice as it's always been the norm!
+P.S. Are you an Android developer? You probably keep your `compileSdk` high, your `minSdk` low(-ish), and execute instrumentation tests on a few versions between those two. Great news, you're already following this advice as it's always been the norm!
