@@ -34,7 +34,7 @@ First, CI only has to build on a single version. We choose the latest because Ja
 +    java-version: 18
 ```
 
-Second, unchanged from before, we still target whichever Java version is the lowest supported through either the `-release` flag or `sourceCompatibility`/`targetCompatibility` [per the Gradle docs](https://docs.gradle.org/7.4/userguide/building_java_projects.html#sec:java_cross_compilation).
+Second, unchanged from before, we still target whichever Java version is the lowest supported through either the `--release` flag or `sourceCompatibility`/`targetCompatibility` [per the Gradle docs](https://docs.gradle.org/7.4/userguide/building_java_projects.html#sec:java_cross_compilation).
 
 And finally, we set up tests to run on every supported version.
 
