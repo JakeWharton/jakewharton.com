@@ -8,6 +8,8 @@ listing: https://nyc.droidcon.com/jake-wharton/
 date: 2022-09-01
 
 type: Technical
+additional_presenters:
+- Jesse Wilson
 
 title: "Native UI with multiplatform Compose"
 ---
@@ -21,3 +23,5 @@ This session will introduce Redwood by:
 - Demonstrate its differentiating features in samples and production usage
 - Document the internal architecture of how it works
 - Using it to update screens outside of the app store process
+
+_Presented with Jesse Wilson_
