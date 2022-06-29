@@ -2,7 +2,7 @@
 layout: presentation
 
 event: Droidcon
-location: New York, NY, USA
+location: New York City, NY, USA
 homepage: https://nyc.droidcon.com
 listing: https://nyc.droidcon.com/jake-wharton/
 date: 2022-09-01
