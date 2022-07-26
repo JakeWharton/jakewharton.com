@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
-      - run: gem install bundler
-      - run: bundle install --path vendor/bundle
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - run: bundle exec jekyll build
 
       - uses: aws-actions/configure-aws-credentials@v1
