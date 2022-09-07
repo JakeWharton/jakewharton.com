@@ -12,6 +12,7 @@ additional_presenters:
 - Jesse Wilson
 
 title: "Dynamic Code with Zipline"
+speakerdeck: b9dc9be31039467f98ac1505bb9f54a7
 ---
 
 As products grow, teams tend to move business logic to the backend. Keeping clients dumb avoids duplication and allows behavior changes without app releases. But it comes with significant downsides: limited interactivity, difficult development, and inflexible APIs.
