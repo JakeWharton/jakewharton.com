@@ -4,14 +4,14 @@ layout: post
 
 categories: post
 tags:
-- Android
-- ActionBarSherlock
+  - Android
+  - ActionBarSherlock
 
 lead: I have never formally introduced ActionBarSherlock in a blog post.
 source: http://actionbarsherlock.com
 
 redirect_from:
-- /post/13619849069/actionbarsherlock-a-love-story-part-1
+  - /post/13619849069/actionbarsherlock-a-love-story-part-1
 ---
 
 The library has been out for nearly 9 months already and has [seen 22 releases](https://github.com/JakeWharton/ActionBarSherlock/tags) across 3 major versions. Fast approaching is the next major release, version 4.0. This will bring the full functionaity of Ice Cream Sandwich’s action bar to all relevant APIs and will be what I consider the first true release. I’m going to be writing a series of posts which talks about some various development decisions and the reasoning behind them as well as a bit of the history of the library. The series will culminate in the formal announcement and release of v4.0 some time in the near future. So strap in and hold on, with this first post I’m just going to tear off the band-aid…
