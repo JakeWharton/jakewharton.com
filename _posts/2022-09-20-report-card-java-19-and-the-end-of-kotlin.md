@@ -104,7 +104,7 @@ if (o instanceof Integer i) {
 **Grade: A** 🟢
 
 [Delivered in Java 16](https://openjdk.org/jeps/394) for `instanceof`.
-[Third preview in Java 19](https://openjdk.org/jeps/427) for use a `switch`.
+[Third preview in Java 19](https://openjdk.org/jeps/427) for use in a `switch`.
 
 
 ### Record patterns
