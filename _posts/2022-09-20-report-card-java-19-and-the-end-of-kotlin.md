@@ -101,7 +101,7 @@ if (o instanceof Integer i) {
 }
 ```
 
-**Gradle: A** 🟢
+**Grade: A** 🟢
 
 [Delivered in Java 16](https://openjdk.org/jeps/394) for `instanceof`.
 [Third preview in Java 19](https://openjdk.org/jeps/427) for use a `switch`.
@@ -118,7 +118,7 @@ switch (alice) {
 }
 ```
 
-**Gradle: C** 🟠
+**Grade: C** 🟠
 
 [First preview in Java 19](https://openjdk.org/jeps/405)
 
@@ -140,7 +140,7 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 }
 ```
 
-**Gradle: B** 🟡
+**Grade: B** 🟡
 
 [First preview in Java 19](https://openjdk.org/jeps/425).
 
