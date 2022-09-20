@@ -131,7 +131,7 @@ All of your blocking calls with none of the blocking.
 
 ```java
 try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-  for (int count = 10; count >= 10; count--) {
+  for (int count = 10; count > 0; count--) {
     executor.submit(() -> {
       Thread.sleep(100 * count);
       System.out.println(count)
