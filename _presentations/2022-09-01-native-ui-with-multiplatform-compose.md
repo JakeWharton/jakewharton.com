@@ -13,6 +13,7 @@ additional_presenters:
 
 title: "Native UI with multiplatform Compose"
 speakerdeck: b4142c18dcc147ae9c0de8a8655b05b0
+vimeo: 754042668
 ---
 
 Compose is a delightful way to build UI in Kotlin, but Compose UI doesn't always make sense (or exist) on platforms like the web and iOS. React Native uses the native UI toolkit of each platform, but requires JavaScript and is always chasing compatibility with each platform's new features.
