@@ -18,11 +18,14 @@ collections:
 
 include:
   - '.well-known'
+  - '_redirects'
 
 exclude:
   - 'node_modules'
   - 'scripts'
   - 'vendor'
+  - out
+  - capture
   - Gemfile
   - Gemfile.lock
   - package.json
