@@ -21,7 +21,7 @@ class Main {
 My laptop is an M1 Mac and I have downloaded the Azul Zulu JDK 19 build for it.
 With the JDK I can both compile Java and then run the resulting program.
 ```
-$ mkdir -p out
+$ mkdir out
 $ zulu19.30.11-ca-jdk19.0.1-macosx_aarch64/bin/javac -d out in/Main.java
 $ zulu19.30.11-ca-jdk19.0.1-macosx_aarch64/bin/java -cp out Main
 Hello, world!
