@@ -87,7 +87,7 @@ bash: zulu-hello-jre/bin/java: cannot execute binary file: Exec format error
 ```
 
 Nope!
-While the Java bytecode we compiled is platform independent the JRE is specific to each platform.
+While the Java bytecode we compiled is platform independent, the JRE is specific to each platform and my server runs Linux x64.
 
 Thankfully, `jlink` can operate on JDKs for different platforms.
 Let's download the Linux x64 JDK and point `jlink` at its Java modules.
