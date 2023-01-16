@@ -33,6 +33,7 @@ $ zulu19.30.11-ca-jre19.0.1-macosx_aarch64/bin/java -cp out Main
 Hello, world!
 ```
 Note the slight change in folder name ("jdk" → "jre").
+
 If we were shipping this to end-users, this would be a win for binary size.
 ```
 $ du -hs zulu*
