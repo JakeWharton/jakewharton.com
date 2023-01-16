@@ -90,7 +90,7 @@ Nope!
 While the Java bytecode we compiled is platform independent, the JRE is specific to each platform and my server runs Linux x64.
 
 Thankfully, `jlink` can operate on JDKs for different platforms.
-Let's download the Linux x64 JDK and point `jlink` at its Java modules.
+Let's download the Linux x64 JDK and point `jlink` at its Java modules using `--module-path`.
 
 ```
 $ zulu19.30.11-ca-jdk19.0.1-macosx_aarch64/bin/jlink \
