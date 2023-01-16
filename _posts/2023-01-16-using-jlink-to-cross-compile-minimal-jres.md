@@ -117,7 +117,7 @@ Does it work on the client?
 $ tar -czf hello-linux.tgz zulu-hello-jre-linux-x64 out
 
 $ scp hello-linux.tgz jw@server:
-hello.tgz            100%   14MB   2.0MB/s   00:07
+hello.tgz            100%   16MB   2.1MB/s   00:08
 
 $ ssh jw@server "tar xzf hello-linux.tgz && zulu-hello-jre-linux-x64/bin/java -cp out Main"
 Hello, world!
