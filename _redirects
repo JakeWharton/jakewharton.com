@@ -1,2 +1,3 @@
 /feed.xml	/atom.xml
 /.well-known/webfinger	https://mastodon.jakewharton.com/.well-known/webfinger
+/@jw  https://mastodon.jakewharton.com/@jw  302
