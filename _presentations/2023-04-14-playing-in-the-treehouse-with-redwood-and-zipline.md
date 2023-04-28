@@ -11,6 +11,7 @@ type: Technical
 
 title: "Playing in the Treehouse with Redwood and Zipline"
 speakerdeck: 693336bdd82f4cfc8c5e1a8605e66af7
+youtube: G4LK_euTadU
 ---
 
 Redwood is Cash App's multiplatform Compose library which targets the native UI toolkit of each platform while still sharing presentation logic. This means our app's existing Android views and iOS UIViews can be powered by common Compose and still offer a path to Compose UI and Swift UI.
