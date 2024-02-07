@@ -55,16 +55,18 @@ MutableList(users.size) { users[it].name }
 
 Use this to initialize element default values, compute elements based on the index, or derive data from another source.
 
-In the case of deriving data, the source needs to support random access in order to actually result in a more efficient computation. If you use a list backed by an alternate structure (linked, persistent, etc.) performance will be abysmal.[^1]
+In the case of deriving data, the source needs to support random access in order to actually result in a more efficient computation.[^1] If you use a list backed by an alternate structure (linked, persistent, etc.) performance will be abysmal.
 
 [^1]: You might be aware of Compose UI's _horribly_-named ["fast" collection functions](https://developer.android.com/reference/kotlin/androidx/compose/ui/util/package-summary#(kotlin.collections.List).fastMap(kotlin.Function1)) which also use this strategy.
 
 ```
 Benchmark                                       Score     Error   Units
+--------------------------------------------- ---------- -------- -----
 NamesJoinToString.map                         126.582 ±  38.237   ns/op
 NamesJoinToString.map:·gc.alloc.rate.norm     232.000 ±   0.001    B/op
 NamesJoinToString.lambda                       73.586 ±   1.960   ns/op
 NamesJoinToString.lambda:·gc.alloc.rate.norm  168.000 ±   0.001    B/op
+
 NamesToTypedArray.map                          78.444 ±  22.427   ns/op
 NamesToTypedArray.map:·gc.alloc.rate.norm     120.000 ±   0.001    B/op
 NamesToTypedArray.lambda                       10.326 ±   0.129   ns/op
