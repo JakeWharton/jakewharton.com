@@ -39,8 +39,8 @@ we can use
 ```kotlin
 Array(users.size) { users[it].name }
 ```
-This again trades the intermediate iterator and collection of `map` for an indexed loop.
-This is also available with primitive arrays
+This again trades the intermediate iterator and collection within `map` for an indexed loop.
+Primitive array versions are also available.
 ```kotlin
 IntArray(users.size) { users[it].age }
 ```
