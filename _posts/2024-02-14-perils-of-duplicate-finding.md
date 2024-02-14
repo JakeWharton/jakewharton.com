@@ -173,22 +173,22 @@ Pretty, pretty, pretty good.
 Performance is not really a concern in my usage, but let's look anyway.
 
 ```
-Benchmark                                          Score      Error   Units
------------------------------------------------  -----------  -------  -----
-IntDupes.map                                       94.015 ±    0.469   ns/op
-IntDupes.map:·gc.alloc.rate.norm                  776.000 ±    0.001    B/op
+Benchmark                                       Score      Error   Units
+----------------------------------------------  ---------  ------  -----
+IntDupes.map                                     94.015 ±   0.469  ns/op
+IntDupes.map:·gc.alloc.rate.norm                776.000 ±   0.001   B/op
 
-IntDupes.mutableListRemove                        155.744 ±   17.829   ns/op
-IntDupes.mutableListRemove:·gc.alloc.rate.norm    560.000 ±    0.001    B/op
+IntDupes.mutableListRemove                      155.744 ±  17.829  ns/op
+IntDupes.mutableListRemove:·gc.alloc.rate.norm  560.000 ±   0.001   B/op
 
-IntDupes.partition                                135.693 ±   18.976   ns/op
-IntDupes.partition:·gc.alloc.rate.norm            544.000 ±    0.001    B/op
+IntDupes.partition                              135.693 ±  18.976  ns/op
+IntDupes.partition:·gc.alloc.rate.norm          544.000 ±   0.001   B/op
 
-IntDupes.filterNot                                 97.748 ±    1.055   ns/op
-IntDupes.filterNot:·gc.alloc.rate.norm            504.000 ±    0.001    B/op
+IntDupes.filterNot                               97.748 ±   1.055  ns/op
+IntDupes.filterNot:·gc.alloc.rate.norm          504.000 ±   0.001   B/op
 
-IntDupes.filterNotTo                               39.904 ±    0.331   ns/op
-IntDupes.filterNotTo:·gc.alloc.rate.norm          432.000 ±    0.001    B/op
+IntDupes.filterNotTo                             39.904 ±   0.331  ns/op
+IntDupes.filterNotTo:·gc.alloc.rate.norm        432.000 ±   0.001   B/op
 ```
 
 So the `filterNotTo` winds up being the fastest and allocates the fewest bytes.
