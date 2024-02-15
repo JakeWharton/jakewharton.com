@@ -163,7 +163,7 @@ This can save you from having to add a `toSomething()` after an operation by ins
 
 ```kotlin
 val dupes: Set<Int> =
-    ints.filterNotTo(HashSet(), HashSet<Int>::add)
+    ints.filterNotTo(HashSet(), HashSet<Int>()::add)
 ```
 
 Pretty, pretty, pretty good.
