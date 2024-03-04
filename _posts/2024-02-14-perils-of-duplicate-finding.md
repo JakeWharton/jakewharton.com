@@ -142,7 +142,7 @@ We use `filterNot` because we want to keep elements where `MutableSet.add` retur
 Visually this is pretty decent.
 
 The use of `HashSet<Int>()::add` is what's known as a _bound_ reference.
-We are specifying a function reference of `MutableSet::add` as our `filterNot` lambda, but bound to an instance of `MutableSet` which we are creating on-the-fly.
+We are specifying a function reference of `MutableSet::add` as our `filterNot` lambda, but bound to an instance of `HashSet` which we are creating on-the-fly.
 This is an equivalent version of the above code.
 
 ```kotlin
