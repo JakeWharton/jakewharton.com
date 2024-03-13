@@ -80,7 +80,7 @@ Further down the output, however, the offending reference can also be seen.
 
 The reason this can happen is that the Java bytecode version is independent from the set of JDK APIs that you can reference.
 This is not unique to Kotlin.
-`javac`'s' `-target` flag behaves the same way as you can see [in this Godbolt sample](https://java.godbolt.org/z/rKWv4K9jG).
+`javac`'s `-target` flag behaves the same way, as you can see [in this Godbolt sample](https://java.godbolt.org/z/rKWv4K9jG).
 
 This can be fixed with `javac` by specifying the `-bootclasspath` argument and pointing at the `rt.jar` from a JDK 8 install.
 The JDK 21 compiler emits a warning telling us to do this when target _any_ bytecode version other than the default:
@@ -88,7 +88,7 @@ The JDK 21 compiler emits a warning telling us to do this when target _any_ byte
 > warning: [options] bootstrap class path not set in conjunction with -source 8
 
 Starting with Java 9, `javac` has a new flag, `--release`, which sets the `-source`, `-target`, and `-bootclasspath` flags automatically to the same version (and doesn't require having the old JDK available).
-If we switch that Java sample to use `--release` [it now fails to compile](https://java.godbolt.org/z/bP6baz9GT)!
+If we switch the Java sample to use `--release` [it now fails to compile](https://java.godbolt.org/z/bP6baz9GT)!
 
 Kotlin 1.7 brought a new flag to `kotlinc` (Kotlin's JVM compiler) which acts just like `javac`'s `--release`: `-Xjdk-version`.
 As far as I can tell, this has flown massively under the radar but is an essential piece to the cross-compilation toolkit.
