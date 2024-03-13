@@ -24,7 +24,7 @@ java.lang.NoSuchMethodError: No interface method removeFirst()Ljava/lang/Object;
     at android.app.ActivityThread.main(ActivityThread.java:7868)
 ```
 
-The offending code is written in Kotlin, and looks like this:
+[The offending code](https://github.com/cashapp/redwood/blob/2db41653e3887387b8c8468cb3f01d0c326eb39d/redwood-lazylayout-widget/src/commonMain/kotlin/app/cash/redwood/lazylayout/widget/LazyListUpdateProcessor.kt#L165) is written in Kotlin, and looks like this:
 
 ![val widget = edit.widgets.removeFirst()](/static/post-image/removeFirst.png)
 
