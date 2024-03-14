@@ -90,7 +90,7 @@ The JDK 21 compiler emits a warning telling us to do this when target _any_ byte
 Starting with Java 9, `javac` has a new flag, `--release`, which sets the `-source`, `-target`, and `-bootclasspath` flags automatically to the same version (and doesn't require having the old JDK available).
 If we switch the Java sample to use `--release` [it now fails to compile](https://java.godbolt.org/z/bP6baz9GT)!
 
-Kotlin 1.7 brought a new flag to `kotlinc` (Kotlin's JVM compiler) which acts just like `javac`'s `--release`: `-Xjdk-version`.
+Kotlin 1.7 brought a new flag to `kotlinc` (Kotlin's JVM compiler) which acts just like `javac`'s `--release`: `-Xjdk-release`.
 As far as I can tell, this has flown massively under the radar but is an essential piece to the cross-compilation toolkit.
 
 Let's configure our JVM target's compilation to use this flag and see what changes.
