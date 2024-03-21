@@ -21,7 +21,8 @@ If you read the [Gradle docs](https://docs.gradle.org/current/userguide/building
 > We recommend that you always specify the Java toolchain
 
 ...you wouldn't be blamed for thinking Java toolchains are the way to go!
-However, [Gradle toolchains](https://docs.gradle.org/current/userguide/toolchains.html) are rarely a good idea. Let's look at why.
+
+However, Java toolchains are rarely a good idea. Let's look at why.
 
 ### Bad docs
 
