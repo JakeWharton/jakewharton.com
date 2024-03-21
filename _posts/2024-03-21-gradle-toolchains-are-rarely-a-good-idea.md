@@ -52,6 +52,8 @@ Now is the Java compiler in JDK 22 completely bug-free? No. But is using the Jav
 
 Oracle and other large JVM shops devote lots of person-hours to making the JVM faster. We have newer garbage collectors that use less memory and consume less CPU. Work that happened on startup gets deferred to first-use to try and spread the cost out over the lifetime of the process. Algorithms and in-memory representations are specialized for common cases.
 
+A language compiler is basically a worst-case scenario for the JVM. Endless string manipulation, object creation, and so so many maps. These areas receive many improvements over the years. My favorite of which is that strings which are ASCII-based suddenly occupy half as much memory in Java 9 than in Java 8. You know what's often entirely ASCII? Java and Kotlin source code!
+
 ### Not needed for cross-compilation
 
 Using the Java compiler from JDK 8 I can set `-source` and `-target` to "1.7" to compile a class that works on a Java 7 JVM. This does not prevent me from using Java 8 APIs, however. You have to add `-bootclasspath` with a pointer to a JDK 7 runtime (`rt.jar`) so that the compiler knows what APIs are available in Java 7. You could alternatively use a tool like [Animal Sniffer](https://www.mojohaus.org/animal-sniffer/) to validate that no APIs newer than Java 7 were used. In this world, just compiling with JDK 7 to target Java 7 might actually just be easier.
@@ -64,9 +66,9 @@ All those JDKs needlessly take up space in your home directory. Each JDK is a fe
 
 ### Not the Gradle JVM
 
-Toolchains are only used for tasks that invoke creating a new JVM. That means compilation (of Java or Kotlin) and running unit tests. They do not control the JVM that is used for running the actual Gradle build or any of the plugins therein. If you have requirements there, or in other JVM-based tools which are invoked by the Gradle build, the toolchain does not help you.
+Toolchains are only used for tasks that create a new JVM. That means compilation (of Java or Kotlin) and running unit tests. They do not control the JVM that is used for running the actual Gradle build or any of the plugins therein. If you have minimum requirements there, or in other JVM-based tools which are invoked by the Gradle build, the toolchain does not help you.
 
-If your build already has a minimum JDK requirement then why force installation of old JDKs given the newer one is already available on disk, can cross-compile perfectly, has fewer compiler bugs, builds faster, and respects system CPU and memory limits more effectively. 
+If your build already has a minimum JDK requirement then why force installation of old JDKs given the newer one is already available on disk, can cross-compile perfectly, has fewer compiler bugs, builds faster, and respects system CPU and memory limits more effectively?
 
 ### Not all bad
 
