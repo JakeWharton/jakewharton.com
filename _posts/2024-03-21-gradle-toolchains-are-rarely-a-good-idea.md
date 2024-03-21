@@ -25,7 +25,7 @@ However, [Gradle toolchains](https://docs.gradle.org/current/userguide/toolchain
 
 ### Bad docs
 
-Last week I released a new version of [Retrofit](https://github.com/square/retrofit) which uses a JVM toolchain to target Java 8. Its use of toolchains was contributed a while ago, and I simply forgot to remove it. As a consequence, [its Javadoc](https://square.github.io/retrofit/2.x/retrofit/) was built using JDK 8 and is thus not searchable. Searchable Javadoc came in [JEP 225](https://openjdk.org/jeps/225) with JDK 9.
+Last week I released a new version of [Retrofit](https://github.com/square/retrofit) which uses a Java toolchain to target Java 8. Its use of toolchains was contributed a while ago, and I simply forgot to remove it. As a consequence, [its Javadoc](https://square.github.io/retrofit/2.x/retrofit/) was built using JDK 8 and is thus not searchable. Searchable Javadoc came in [JEP 225](https://openjdk.org/jeps/225) with JDK 9.
 
 The next release of Retrofit will be made without a toolchain and with the latest JDK. Its docs will have all the Javadoc advancements from the last 10 years including search and better modern HTML/CSS.
 
@@ -37,7 +37,7 @@ Both of those changes were backported to the 8 and 11 branches, but since Gradle
 
 Not to stray too far off-topic, but if you installed it with SDKMAN! or similar JDK management tools there's a good chance it's wildly out of date. I keep all my JDKs up-to-date by installing them through [a Homebrew tap](https://github.com/mdogan/homebrew-zulu) which itself updates automatically using the Azul Zulu API. As long as I do a `brew upgrade` every so often, each major JDK release that I have installed will be updated.
 
-Without a JVM toolchain, a modern JDK (even an outdated patch release of one) will honor resource limits and perform much better in containerized environments.
+Without a Java toolchain, a modern JDK (even an outdated patch release of one) will honor resource limits and perform much better in containerized environments.
 
 ### Compiler bugs
 
