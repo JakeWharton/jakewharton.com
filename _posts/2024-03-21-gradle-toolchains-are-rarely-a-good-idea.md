@@ -12,15 +12,15 @@ tags:
 
 The [last post](/kotlins-jdk-release-compatibility-flag/) featured some Kotlin code inadvertently targeting a new Java API when the build JDK was bumped to 21. This can be solved with the `-Xjdk-release` Kotlin compiler flag, or by using Gradle toolchains to build with an old JDK.
 
-If you read the [Gradle docs](https://docs.gradle.org/current/userguide/building_java_projects.html#sec:java_cross_compilation)...
+If you read the [Gradle docs](https://docs.gradle.org/current/userguide/building_java_projects.html#sec:java_cross_compilation)…
 
 > Using Java toolchains is a preferred way to target a language version
 
-...or the [Android docs](https://developer.android.com/build/jdks#toolchain)
+…or the [Android docs](https://developer.android.com/build/jdks#toolchain)…
 
 > We recommend that you always specify the Java toolchain
 
-...you wouldn't be blamed for thinking Java toolchains are the way to go!
+…you wouldn't be blamed for thinking Java toolchains are the way to go!
 
 However, Java toolchains are rarely a good idea. Let's look at why.
 
