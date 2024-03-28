@@ -93,7 +93,7 @@ This behavior is not user-friendly. You can always force a specific version by d
 
 So Maven has some nonsensical dependency resolution semantics. Why should you, a Gradle user, even care?
 
-In the examples above, the version mismatches were demonstrated using peer dependencies on the Maven project. But disagreements can occur within the transitive graph of a single, Gradle-built library.
+In the examples above, the version mismatches were demonstrated using peer dependencies on the Maven project. But disagreements can occur within the transitive graph of a single Gradle-built library.
 
 If I am the author of library `A` from above, I only have a dependency on library `B` and it has a dependency on library `C`.
 
@@ -118,7 +118,7 @@ I have just unknowingly created a time bomb for all of my Maven consumers.
 
 Is this a frequent problem? Seems like no. Is this a real problem? Absolutely.
 
-OkHttp 4.12 [ships with two dependencies](https://repo1.maven.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.pom): Okio 3.6 and the Kotlin stdlib 1.8.21. Okio, however, [depends on](https://repo1.maven.org/maven2/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.pom) Kotlin stdlib 1.9.10.
+OkHttp 4.12 [ships with two dependencies](https://repo1.maven.org/maven2/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.pom): Okio 3.6 and the Kotlin stdlib 1.8.21. Okio 3.6, however, [depends on](https://repo1.maven.org/maven2/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.pom) Kotlin stdlib 1.9.10.
 
 ```
 OkHttp v4.12.0
