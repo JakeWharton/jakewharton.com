@@ -152,6 +152,37 @@ A Maven project with an OkHttp 4.12 dependency will now fail like this:
 
 Now a Maven consumer can temporarily resolve the conflict, and go and ask the library maintainer to correct this configuration.
 
+### Ignoring the problem with Gradle
+
+Since Gradle is going to resolve to the newest version of a dependency, your tests end up running with the newest version rather than the declared version. As such, you can tell Gradle to replace your declared version with the resolved version when publishing.
+
+This behavior is not Gradle's default, so we must choose it when setting up publishing. The [Gradle docs](https://docs.gradle.org/current/userguide/publishing_maven.html#publishing_maven:resolved_dependencies) has an example:
+
+```groovy
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      versionMapping {
+        usage('java-api') {
+          fromResolutionOf('runtimeClasspath')
+        }
+        usage('java-runtime') {
+          fromResolutionResult()
+        }
+      }
+    }
+  }
+}
+```
+
+There's very little harm in doing this, and it will prevent the Maven issue completely. Nice!
+
+The tradeoff is that it somewhat undermines the versions you declare. Keep in mind, though, even if you declare a dependency version and resolve to that same version, a downstream consumer may resolve a newer version or force an older version.
+
+For me, I want the versions which I declare to be those which are resolved, at least local to my project. So this solution isn't going to work, but it might for your projects.
+
+(Thanks to [Paul Merlin](https://mastodon.social/@eskatos/112174733070682832) for suggesting this solution which was added after initial publishing)
+
 ### Trying to fix with Gradle
 
 I'm going to outright dismiss "just don't use Maven" as a potential fix. There are lots of reasons not to use Maven that one can explore elsewhere. Ultimately it remains in widespread use, and you can either be sympathetic to those users or not.
