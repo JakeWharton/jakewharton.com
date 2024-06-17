@@ -11,6 +11,7 @@ type: Technical
 
 title: "Compose UI for... a light switch?"
 speakerdeck: 5aed3fa4641f4c438ecf8f5ab236702d
+youtube: D0P5Lb-2uCY
 ---
 
 It runs on Android, iOS, desktop, and the web, but in this talk we'll cover how to get Compose UI running on a smart light switch built on embedded Linux.
