@@ -73,4 +73,4 @@ customManagers: [
 Commit, push, and wait for Renovate to send you a PR[^4].
 Now your CI build automatically tracks the latest JDK.
 
-[^4] Here's an example sequence of PRs which did this migration: [Switch to `.java-version`](https://github.com/cashapp/turbine/pull/374/files), [add custom Renovate config](https://github.com/cashapp/turbine/pull/376/files), and [Renovate's automatic JDK bump](https://github.com/cashapp/turbine/pull/377).
+[^4]: Here's an example sequence of PRs which did this migration: [Switch to `.java-version`](https://github.com/cashapp/turbine/pull/374/files), [add custom Renovate config](https://github.com/cashapp/turbine/pull/376/files), and [Renovate's automatic JDK bump](https://github.com/cashapp/turbine/pull/377).
