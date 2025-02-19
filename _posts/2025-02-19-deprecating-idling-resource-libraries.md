@@ -37,7 +37,7 @@ I've been sitting on these deprecations and this blog post for a few years now.
 Telling you to switch to a new technique without actually demonstrating it is not great.
 Turns out that around the same time [Google was also changing their tune](https://medium.com/androiddevelopers/alternatives-to-idling-resources-in-compose-tests-8ae71f9fc473) on idling resources.
 That guidance has since been promoted to [the official documentation](https://developer.android.com/training/testing/instrumented-tests/stability#prevent-synchronization) as well.
-These links above demonstrate how to wait on conditions using new built-in Compose testing APIs.
+These links demonstrate how to wait on conditions using new built-in Compose testing APIs.
 
 ![Flow chart showing 'click on button' pointing to 'is the condition met'. Its 'no' branch recurses onto itself. The 'yes' branch points to 'Assert text is displayed'. (Image courtesy developer.android.com)](/static/post-image/condition-wait.png)
 
