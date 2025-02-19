@@ -45,8 +45,8 @@ For View-based layouts, you can write a custom `ViewAction` that loops on yieldi
 Yes I know I'm still not _really_ demonstrating how to do this for views.
 Sorry!
 
-Both of these libraries are stable and reliable.
+Both of these idling resource libraries are stable and reliable.
 They haven't needed any commits or releases in years.
 If you are relying on them today then absolutely nothing is changing for you.
-The deprecation is a signal to new users that this is not the recommended approach.
+Deprecation is a signal to new users that this is not the recommended approach.
 And it's a nudge to existing users that they can migrate at their own pace to a superior solution.
