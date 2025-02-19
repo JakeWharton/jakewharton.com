@@ -18,3 +18,5 @@ redirect_from:
 ---
 
 Libraries like Espresso allow UI tests to have stable interactions with your app, but without discipline these tests can become hard to manage and require frequent updating. This talk will cover how the so-called robot pattern allows you to create stable, readable, and maintainable tests with the aid of Kotlin's language features. The concepts from this talk will be applicable to all platforms, not just Android.
+
+_Note: The video appears to have been made private without explanation. If you would like access, please contact me and I will share a link to a private backup._
