@@ -190,7 +190,7 @@ For native builds which run as a Gradle task, you can consume the associated `Ja
 Alternative languages which target Java bytecode usually have equivalent markers to bind to native functions, such as Kotlin's `external` modifier.
 Unsurprisingly, when writing Kotlin we cannot use `java -h` because we don't have any Java!
 
-There remains a [long-standing feature request](https://youtrack.jetbrains.com/issue/KT-35127) for the `kotlinc` to generating these headers like `javac`.
+There remains a [long-standing feature request](https://youtrack.jetbrains.com/issue/KT-35127) for `kotlinc` to generating these headers like `javac`.
 Until then, there are three approaches to solving this problem: just write Java, use `javah`, or write our own tool.
 
 #### Just write Java
