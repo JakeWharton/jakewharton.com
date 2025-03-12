@@ -178,7 +178,7 @@ It automatically configures your `javac` with the `-h` flag so you don't really 
 └── things.c
 ```
 
-This is the result after moving `Example.java` into `src/main/java/`, running `echo "apply plugin: 'java-library'" > build.gradle`, and invoking `./gradlew assemble`
+This is the result after moving `Example.java` into `src/main/java/`, writing `apply plugin: 'java-library'` in `build.gradle`, and invoking `./gradlew assemble`
 
 If your native build occurs outside Gradle, the `compileJava` task should be run first, then the external native build, and finally (with the native binaries put somewhere like `src/main/resources/`) the full `assemble` or `build` task can be run.
 
@@ -314,7 +314,6 @@ This embeds your FFM-flavored class files inside the `META-INF/versions/22/` dir
 
 With the ownership reversed, there is no chance of changes to Java breaking the native code. Instead, changes to the native code will now break the Java compilation.
 ```diff
-```h
  #ifndef things_h
  #define things_h
  
