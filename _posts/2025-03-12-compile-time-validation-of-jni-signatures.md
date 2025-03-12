@@ -52,7 +52,7 @@ Once they're correct you can mostly just leave them untouched.
 However, it's a class of problem that would be nice to eliminate completely.
 Especially if within your projects they _do_ change frequently.
 
-## JNI header generation
+### JNI header generation
 
 When compiling native code, a header represents a series of functions implemented somewhere else.
 It allows consumers of a library to compile against its API without requiring the full implementation.
@@ -145,7 +145,7 @@ It's not the most amazing message that I have seen.
 But it did fail compilation!
 Fixing the problem is now a matter of comparing the two signatures and updating the C file as needed.
 
-### Gradle does this automatically
+#### Gradle does this automatically
 
 Do you use Gradle?
 Good news!
@@ -185,7 +185,7 @@ If your native build occurs outside Gradle, the `compileJava` task should be run
 For native builds which run as a Gradle task, you can consume the associated `JavaCompile` task's `options.headerOutputDirectory` property which becomes an additional include directory. 
 
 
-## Kotlin (and other JVM languages)
+### Kotlin (and other JVM languages)
 
 Alternative languages which target Java bytecode usually have equivalent markers to bind to native functions, such as Kotlin's `external` modifier.
 Unsurprisingly, when writing Kotlin we cannot use `java -h` because we don't have any Java!
@@ -193,7 +193,7 @@ Unsurprisingly, when writing Kotlin we cannot use `java -h` because we don't hav
 There remains a [long-standing feature request](https://youtrack.jetbrains.com/issue/KT-35127) for the `kotlinc` to generating these headers like `javac`.
 Until then, there are three approaches to solving this problem: just write Java, use `javah`, or write our own tool.
 
-### Just write Java
+#### Just write Java
 
 Since JNI methods are only stubs, continuing to write them in Java is not too painful.
 The Kotlin compiler supports bidirectional references from Java-to-Kotlin and Kotlin-to-Java.
@@ -216,7 +216,7 @@ All you need to do is create the Java file, and you're good to go!
 Finally, writing JNI stubs in Java helps avoid the need to understand how Kotlin (or any other language) maps its features to the underlying bytecode.
 You no longer need to worry about how `object`s, `internal fun`s, or `value class` parameters get converted.
 
-### Use old `javah` tool
+#### Use old `javah` tool
 
 Prior to the `javac`'s `-h` flag producing headers, the JDK contained a standalone `javah` tool which parsed Java `.class` files.
 This means that any other language which targeted Java bytecode and used its `ACC_NATIVE` flag could generate headers.
@@ -243,7 +243,7 @@ Usage:
   …
 ```
 
-### Write your own tool
+#### Write your own tool
 
 With the [ASM](https://asm.ow2.io/) library or Java's [new Class-File API](https://openjdk.org/jeps/484), parsing these files to find native methods is possible.
 Once found, the mapping to their native signature can be done with a [well-documented formula](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/design.html#resolving_native_method_names).
@@ -253,7 +253,7 @@ There was [a repo](https://github.com/Glavo/gjavah) which attempted this, but it
 When the JDK removed the `javah` tool, the Scala community forked that library to create their [sbt-jni](https://github.com/sbt/sbt-jni/) plugin.
 But to my knowledge there is no other general-purpose tool for other languages which fulfills this need today. 
 
-## Java 22 and FFM
+### Java 22 and FFM
 
 JNI is generally avoided unless extenuating circumstances demand its use.
 It remains a challenging system even with compile-time validation due to performance concerns, multiple memory spaces, and almost no safety or security.
