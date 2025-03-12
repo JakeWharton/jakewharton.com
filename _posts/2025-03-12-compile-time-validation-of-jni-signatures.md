@@ -263,7 +263,7 @@ Starting last year with Java 22, the new [Foreign Function & Memory API](https:/
 FFM inverts ownership of the stubs, generating the Java sources from native headers using the [jextract](https://github.com/openjdk/jextract) tool.
 
 If I manually write a `things.h` file with a regular C API that can be fed into `jextract`. 
-```h
+```c
 #ifndef things_h
 #define things_h
 
