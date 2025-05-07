@@ -12,7 +12,7 @@ Parallelization can lead to huge speedups for PRs.
 Job grouping makes it easier to conditionally enable or disable multiple steps.
 Each time you add a new job, however, you have to mark it as required in branch protection to prevent failing PRs from accidentally merging.
 
-Being a clever person, you might create a single final job which lists all the other jobs as required, and then mark that as a single required job.
+Being a clever person, you might create a final job which lists all the other jobs as required, and then mark that as the single required job.
 
 ```yaml
 jobs:
