@@ -16,7 +16,7 @@ Being a clever person, you might create a single final job which lists all the o
 
 ```yaml
 jobs:
-  …
+  # …
 
   final-status:
     needs:
@@ -24,7 +24,7 @@ jobs:
       - unit-tests
       - emulator-tests
       - screenshot-tests
-    …
+    # …
 ```
 
 Unfortunately, this does not work in practice.
