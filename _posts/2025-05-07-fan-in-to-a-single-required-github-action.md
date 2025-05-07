@@ -1,5 +1,5 @@
 ---
-title: 'Fanning-in to a single required GitHub Action'
+title: 'Fan-in to a single required GitHub Action'
 layout: post
 
 categories: post
