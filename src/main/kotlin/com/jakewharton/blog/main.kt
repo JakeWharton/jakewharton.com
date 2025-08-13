@@ -431,7 +431,7 @@ private class HeaderIdNodeRenderer(
 		}
 
 		html.tag("/h${heading.level}")
-		html.raw("\n\n") // Temporarily matching Jekyll output.
+		html.raw("\n")
 	}
 }
 
