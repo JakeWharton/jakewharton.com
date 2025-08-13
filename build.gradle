@@ -17,6 +17,7 @@ application {
 dependencies {
 	implementation(libs.commonmark.core)
 	implementation(libs.commonmark.ext.footnotes)
+	implementation(libs.commonmark.ext.headingAnchor)
 	implementation(libs.commonmark.ext.strikethrough)
 	implementation(libs.snakeyaml)
 	implementation(libs.liqp)

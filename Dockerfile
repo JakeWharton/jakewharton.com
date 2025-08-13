@@ -14,9 +14,10 @@ WORKDIR /app
 
 # Get the Gradle wrapper and cache the Gradle distribution first.
 COPY gradlew settings.gradle ./
-COPY gradle ./gradle
+COPY gradle/wrapper ./gradle/wrapper
 RUN ./gradlew --version
 
+COPY gradle/libs.versions.toml ./gradle/libs.versions.toml
 COPY build.gradle ./
 COPY src ./src
 RUN ./gradlew installDist

@@ -33,6 +33,7 @@ import liqp.parser.Flavor
 import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
+import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
 import org.commonmark.node.FencedCodeBlock
 import org.commonmark.node.Heading
 import org.commonmark.node.Node
@@ -62,6 +63,7 @@ private class MainCommand(
 
 	private val mdExtensions = listOf(
 		FootnotesExtension.create(),
+		HeadingAnchorExtension.create(),
 		StrikethroughExtension.create(),
 	)
 	private val mdParser = Parser.Builder()
@@ -69,7 +71,6 @@ private class MainCommand(
 		.build()
 	private val mdRenderer = HtmlRenderer.builder()
 		.nodeRendererFactory(::RogueHighlightingNodeRenderer)
-		.nodeRendererFactory(::HeaderIdNodeRenderer)
 		.extensions(mdExtensions)
 		.build()
 
@@ -404,33 +405,6 @@ private class RogueHighlightingNodeRenderer(
 		html.tag("/pre")
 		html.tag("/div")
 		html.tag("/div")
-	}
-}
-
-private class HeaderIdNodeRenderer(
-	private val context: HtmlNodeRendererContext,
-) : NodeRenderer {
-	private val html = context.writer
-
-	override fun getNodeTypes(): Set<Class<out Node>> {
-		return setOf(Heading::class.java)
-	}
-
-	override fun render(node: Node) {
-		val heading = node as Heading
-		html.tag("h${heading.level}")
-
-		var renderNode = heading.firstChild
-		while (true) {
-			context.render(renderNode)
-			if (renderNode === heading.lastChild) {
-				break
-			}
-			renderNode = renderNode.next
-		}
-
-		html.tag("/h${heading.level}")
-		html.raw("\n")
 	}
 }
 
