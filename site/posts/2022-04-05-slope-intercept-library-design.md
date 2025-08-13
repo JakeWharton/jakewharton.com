@@ -62,15 +62,15 @@ final class AppModule {
 
 final class App {
   private Database database;
-  
+
   @Inject App(Database database) {
     this.database = database;
   }
-  
+
   void run() {
     System.out.println(database.getUsers());
   }
-  
+
   public static void main(String... args) {
     AppComponent.create().app().run();
   }
@@ -95,7 +95,7 @@ Can some parameter be specified globally or should it be passed with each call? 
 
 As answers to those questions are being determined, you can start to look at the library as a whole. Can multiple parameters become a composite type? Do certain parameters imply defaults for the others? Are too many concepts being pushed into global configuration rather than local?
 
-And finally, you can compare your design against others to determine if you're comfortable with its approximate slope and intercept. Picasso was built to combat image loading libraries whose complexity was that of Dagger. With the initial design I missed the mark and over-corrected to be too simple. Being closer to Retrofit would have been a much more comfortable place for the long-term health of the library. 
+And finally, you can compare your design against others to determine if you're comfortable with its approximate slope and intercept. Picasso was built to combat image loading libraries whose complexity was that of Dagger. With the initial design I missed the mark and over-corrected to be too simple. Being closer to Retrofit would have been a much more comfortable place for the long-term health of the library.
 
 ### Layering
 

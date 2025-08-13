@@ -17,7 +17,7 @@ In the years since their release, I have become disillusioned with the idling re
 
 Like using `R.id` to target views, idling resources expose the internals of your application to the testing framework in a way that no real user can match.
 The point of building tests in [the robot pattern](/testing-robots/) was to describe interaction at a high-level.
-If you can't read a UI test to someone over the phone interacting with the real app then it probably encodes implementation detail. 
+If you can't read a UI test to someone over the phone interacting with the real app then it probably encodes implementation detail.
 
 > "Okay dad, now wait for OkHttp's `Dispatcher` to report itself as idle before clicking 'continue'."
 

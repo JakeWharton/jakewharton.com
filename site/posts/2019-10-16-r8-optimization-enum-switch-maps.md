@@ -61,7 +61,7 @@ $ java -cp . Main
 informal
 ```
 
-If the bytecode was only relying on the value of `ordinal()`, this code would have produced "formal". 
+If the bytecode was only relying on the value of `ordinal()`, this code would have produced "formal".
 
 ### Into The Bytecode
 

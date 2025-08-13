@@ -1,0 +1,59 @@
+name: site
+
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+  push:
+    branches:
+      - 'trunk'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      message: ${{ steps.message.outputs.message }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: docker build -t jw .
+      - run: docker run --volume="$PWD/site:/blog" jw /blog
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/out
+          if-no-files-found: error
+
+      - id: message
+        run: git log "--format=message=%h %s" -n 1 $GITHUB_SHA >> "$GITHUB_OUTPUT"
+
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository == 'JakeWharton/jakewharton.com' }}
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: package*json
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-node@v4
+      - run: npm ci
+
+      - uses: actions/download-artifact@v5
+        with:
+          name: site
+          path: out
+
+      - name: Preview deploy
+        if: ${{ github.ref != 'refs/heads/trunk' }}
+        run: node_modules/.bin/netlify deploy --no-build --site jakewharton-com --dir out --message "${{ needs.build.outputs.message }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: Production deploy
+        if: ${{ github.ref == 'refs/heads/trunk' }}
+        run: node_modules/.bin/netlify deploy --no-build --site jakewharton-com --dir out --message "${{ needs.build.outputs.message }}" --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

@@ -19,7 +19,7 @@
     <meta name="og:description" content="{{ page.lead }}">
     <meta name="og:site_name" content="Jake Wharton">
     <meta name="og:url" content="{{ site.url }}{{ page.url }}">
-    {% if page.image %}
+    {% if page contains "image" %}
     <meta name="og:image" content="{{ site.url }}{{ page.image }}">
     {% else %}
     <meta name="og:image" content="{{ site.url }}/static/default_image.png">
@@ -31,7 +31,7 @@
     <meta name="twitter:domain" content="jakewharton.com">
     <meta name="twitter:title" content="{{ page.title }} – Jake Wharton">
     <meta name="twitter:description" content="{{ page.lead }}">
-    {% if page.image %}
+    {% if page contains "image" %}
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
     {% else %}
     <meta name="twitter:image" content="{{ site.url }}/static/default_image.png">
