@@ -9,9 +9,10 @@ import com.github.ajalt.clikt.parameters.types.path
 import java.nio.file.FileSystem
 import java.nio.file.FileSystems
 import java.nio.file.Path
+import java.time.Clock
 import java.time.LocalDate
 import java.time.OffsetDateTime
-import java.time.ZoneId
+import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter.ISO_LOCAL_DATE
 import java.time.format.DateTimeFormatter.ISO_OFFSET_DATE_TIME
 import java.time.format.DateTimeFormatterBuilder
@@ -35,7 +36,6 @@ import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
 import org.commonmark.node.FencedCodeBlock
-import org.commonmark.node.Heading
 import org.commonmark.node.Node
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.NodeRenderer
@@ -44,12 +44,14 @@ import org.commonmark.renderer.html.HtmlRenderer
 import org.yaml.snakeyaml.Yaml
 
 fun main(vararg args: String) {
-	val defaultFs = FileSystems.getDefault()!!
-	MainCommand(defaultFs).main(args)
+	val systemFs = FileSystems.getDefault()!!
+	val systemClock = Clock.systemUTC()!!
+	MainCommand(systemFs, systemClock).main(args)
 }
 
 private class MainCommand(
 	private val fs: FileSystem,
+	private val clock: Clock,
 ) : CliktCommand(name = "jakewharton.com") {
 	private val rootDir by argument("DIR")
 		.path(mustExist = true, canBeFile = false, fileSystem = fs)
@@ -133,7 +135,7 @@ private class MainCommand(
 
 		val siteData = mapOf(
 			"url" to "https://jakewharton.com",
-			"time" to OffsetDateTime.now().format(dateTimeFormat),
+			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
 			"podcasts" to podcasts.sortedByDescending { it["date"] as String },
 			"posts" to posts.sortedByDescending { it["date"] as String },
 			"presentations" to presentations.sortedByDescending { it["date"] as String },
@@ -205,7 +207,7 @@ private class MainCommand(
 					put(
 						"date",
 						LocalDate.parse(date)
-							.atStartOfDay(ZoneId.systemDefault())
+							.atStartOfDay(ZoneOffset.UTC)
 							.toOffsetDateTime()
 							.format(dateTimeFormat),
 					)
