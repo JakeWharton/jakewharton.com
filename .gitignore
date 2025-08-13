@@ -1,6 +1,5 @@
-_site
-vendor/
-.bundle
-node_modules/
-capture/
-.idea/
+/.gradle
+/.idea
+/.kotlin
+/build
+/node_modules

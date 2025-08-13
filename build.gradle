@@ -1,0 +1,25 @@
+buildscript {
+	dependencies {
+		classpath(libs.kotlinGradlePlugin)
+	}
+	repositories {
+		mavenCentral()
+	}
+}
+
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'application'
+
+application {
+	mainClass = 'com.jakewharton.blog.Main'
+}
+
+dependencies {
+	implementation(libs.commonmark.core)
+	implementation(libs.commonmark.ext.footnotes)
+	implementation(libs.commonmark.ext.strikethrough)
+	implementation(libs.snakeyaml)
+	implementation(libs.liqp)
+	implementation(libs.clikt)
+	implementation(libs.commonsText)
+}

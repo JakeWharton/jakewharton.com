@@ -24,13 +24,13 @@ Despite the recent fanfare, desugaring APIs is not a actually a new feature of D
 Certain code patterns will cause the Java compiler to synthesize an explicit null check.
 
 ```java
-class Counter { 
-  final int count = 0; 
-} 
-class Main { 
-  void doSomething(Counter counter) { 
+class Counter {
+  final int count = 0;
+}
+class Main {
+  void doSomething(Counter counter) {
     int count = counter.count;
-  } 
+  }
 }
 ```
 
@@ -309,7 +309,7 @@ j$.time.a c() → long
 L8 is purpose-built for processing this special dex file. Previously in this series, R8 [was introduced](/r8-optimization-staticization/) as...
 
 > ...a version of D8 that also performs optimization. It’s not a separate tool or codebase, just the same tool operating in a more advanced mode.
- 
+
 Well L8 is a version of R8 that optimizes the JDK desugar dex file. It's not a separate tool or codebase, just the same tool operating in a more advanced mode.
 
 It may not be clear why the explicit extra dex is needed rather than consuming the desugared JDK types like any other library and allowing them to be processed normally by R8. First of all, Google probably doesn't want me talking about it which should itself be somewhat of an indication why the extra ceremony is needed. For more information you can consult the OpenJDK source code license, specifically the very end. Sorry if that's not enough information, but I suspect that's all I'm allowed to say.
@@ -326,7 +326,7 @@ For `Stream` and the four different optional types, D8 and R8 will backport 18 m
 
 As a developer wanting to write code using these APIs, how do you know which ones are available for backport? Currently there's not a great way to know about them all.
 
-To start with, once you enable `coreLibraryDesugaring` the IDE and Lint will start allowing you to use the new types and new APIs when supported. Running Lint on this example will produce no errors despite the minimum supported API being below 26 which `LocalDateTime` would otherwise require. When library desugaring is disabled, though, the `NewApi` check fails as it normally would. 
+To start with, once you enable `coreLibraryDesugaring` the IDE and Lint will start allowing you to use the new types and new APIs when supported. Running Lint on this example will produce no errors despite the minimum supported API being below 26 which `LocalDateTime` would otherwise require. When library desugaring is disabled, though, the `NewApi` check fails as it normally would.
 
 ```
 Main.java:7: Error: Call requires API level 26 (current min is 25): java.time.LocalDateTime#now [NewApi]

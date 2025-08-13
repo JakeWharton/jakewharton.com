@@ -1,36 +1,23 @@
-jakewharton.com
-===============
+# jakewharton.com
 
 Blog posts, presentations, podcasts, and other things...
 
 
-Development
-===========
+# Development
 
-Ensure you have the correct version of Ruby installed (per `.ruby-version`). Also ensure you have the Bundler gem installed.
+You can build locally with `./gradlew installDist` and run from `build/install/jakewharton.com/bin/jakewharton.com`.
+The `rouge` Ruby gem will need installed and its `rougify` binary on the PATH.
 
+Alternatively, there is a `Dockerfile` which wraps up everything necessary.
 
-One-time setup
---------------
+```
+❯ docker build .
 
-    bundle install --path vendor/bundle
-
-_Note: If you're on Mac OS and this fails installing nokogiri, run `brew unlink xz`, install, and then `brew link xz`._
-
-Running the site
-----------------
-
-Local development:
-
-    bundle exec jekyll serve
-
-Update GitHub Pages gem:
-
-    bundle update github-pages
+❯ docker run --volume="$PWD/site:/blog" <hash> /blog
+```
 
 
-License
-=======
+# License
 
 The content of the site (blog posts, presentation slides, etc.) are licensed as [Creative Commons CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
 

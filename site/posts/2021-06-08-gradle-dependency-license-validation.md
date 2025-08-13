@@ -50,7 +50,7 @@ However, once you start tugging on this rope, other interesting problems start t
 
 The [SPDX License List](https://spdx.org/licenses/) gives us the tools to solve both #1 and #2. By using its list of standard license URLs and adding additional variants from the wild, each license can be normalized to a SPDX identifier. This identifier is short (such as "Apache-2.0") and very similar to what we're already displaying.
 
-With each license now mapped to a SPDX identifier, solving #3 is as simple as creating an allow-list of identifiers and failing the build if a disallowed license shows up. 
+With each license now mapped to a SPDX identifier, solving #3 is as simple as creating an allow-list of identifiers and failing the build if a disallowed license shows up.
 
 Finally, let's not forget our original goal was automating the data behind the open source screen. The normalized license data can be serialized as JSON and either be bundled directly or further manipulated before displaying.
 
