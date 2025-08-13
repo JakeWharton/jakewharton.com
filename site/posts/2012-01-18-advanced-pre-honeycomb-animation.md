@@ -8,7 +8,6 @@ tags:
 - NineOldAndroids
 
 lead: Translation, scale, and other transformations were introduced in Honeycomb but can still be easily used on previous platforms.
-source: http://nineoldandroids.com
 ---
 
 The lovely new [animation framework][1] in Android 3.0 came with some additional

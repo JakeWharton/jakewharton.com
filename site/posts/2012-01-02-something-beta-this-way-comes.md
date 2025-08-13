@@ -8,7 +8,6 @@ tags:
 - ActionBarSherlock
 
 lead: The ActionBarSherlock 4.0 betas are here. Go break things!
-source: http://beta.abs.io/
 ---
 
 Some implementation details…

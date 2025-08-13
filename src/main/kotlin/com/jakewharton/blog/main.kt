@@ -238,7 +238,6 @@ private class MainCommand(
 					consumeAndPutOptionalFrontMatter(frontMatter, "video") // TODO validate URL 200s
 					frontMatter.remove("additional_presenters") // TODO handle this
 					frontMatter.remove("date") // TODO delete all of these
-					frontMatter.remove("source") // TODO delete all of these
 				}
 
 				if (frontMatter.isNotEmpty()) {

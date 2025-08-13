@@ -9,7 +9,6 @@ tags:
 
 lead: After months of development and amazing feedback from developers the first official release of version 4 is available.
 image: /static/post-image/actionbarsherlock-logo.png
-source: http://actionbarsherlock.com
 ---
 
 It's been approximately three months since the Android 4.0 Ice Cream Sandwich source code landed on the Android Open Source Projects's servers. Since then I have spent countless nights developing what I described in an [earlier blog post][1] as the "first true release" of ActionBarSherlock: version 4.0. As of 11:57:57PM PST I have finally tagged and released this new revolutionary version of the library into the wild for your consumption.

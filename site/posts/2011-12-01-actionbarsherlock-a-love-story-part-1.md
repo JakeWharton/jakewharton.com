@@ -8,7 +8,6 @@ tags:
   - ActionBarSherlock
 
 lead: I have never formally introduced ActionBarSherlock in a blog post.
-source: http://actionbarsherlock.com
 
 redirect_from:
   - /post/13619849069/actionbarsherlock-a-love-story-part-1
