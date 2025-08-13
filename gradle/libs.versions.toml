@@ -7,6 +7,6 @@ commonmark-core = { module = "org.commonmark:commonmark", version.ref = "commonm
 commonmark-ext-footnotes = { module = "org.commonmark:commonmark-ext-footnotes", version.ref = "commonmark" }
 commonmark-ext-strikethrough = { module = "org.commonmark:commonmark-ext-gfm-strikethrough", version.ref = "commonmark" }
 liqp = "nl.big-o:liqp:0.9.2.3"
-clikt = "com.github.ajalt.clikt:clikt:3.4.0"
+clikt = "com.github.ajalt.clikt:clikt:3.5.4"
 snakeyaml = "org.yaml:snakeyaml:1.33"
 commonsText = "org.apache.commons:commons-text:1.14.0"
