@@ -4,7 +4,6 @@ layout: presentation
 event: "Square Presents: Android Spring Cleaning"
 location: New York City, NY, USA
 homepage: https://www.showclix.com/event/square-new-york-presents
-date: 2016-03-10
 
 type: Technical
 

@@ -5,7 +5,6 @@ event: Droidcon
 location: Toronto, Canada
 homepage: https://www.to.droidcon.com/
 listing: https://www.to.droidcon.com/
-date: 2019-11-13
 
 type: Technical
 

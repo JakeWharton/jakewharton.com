@@ -4,7 +4,6 @@ layout: presentation
 event: Netflix Open Source Meetup
 location: Santa Clara, CA, USA
 homepage: http://www.meetup.com/Netflix-Open-Source-Platform/events/184153592/
-date: 2014-07-09
 
 type: Technical
 

@@ -195,13 +195,15 @@ private class MainCommand(
 					val title = frontMatter.remove("title") ?: error("Missing title")
 					put("title", title)
 
+					val date = name.take(10)
 					val slug = name.substring(11)
+
 					put("url", "/$slug/")
 					put("id", "/$slug")
 
 					put(
 						"date",
-						LocalDate.parse(name.substring(0, 10))
+						LocalDate.parse(date)
 							.atStartOfDay(ZoneId.systemDefault())
 							.toOffsetDateTime()
 							.format(dateTimeFormat),
@@ -212,9 +214,8 @@ private class MainCommand(
 					consumeAndPutOptionalFrontMatter(frontMatter, "redirect_from")
 
 					// Podcast
-					consumeAndPutOptionalFrontMatter(frontMatter, "name")
-					consumeAndPutOptionalFrontMatter(frontMatter, "episode")
-					consumeAndPutOptionalFrontMatter(frontMatter, "link")
+					consumeAndPutOptionalFrontMatter(frontMatter, "name") // TODO required
+					consumeAndPutOptionalFrontMatter(frontMatter, "link") // TODO required
 
 					// Posts
 					consumeAndPutOptionalFrontMatter(frontMatter, "external")
@@ -237,7 +238,6 @@ private class MainCommand(
 					consumeAndPutOptionalFrontMatter(frontMatter, "speakerdeck") // TODO validate URL 200s
 					consumeAndPutOptionalFrontMatter(frontMatter, "video") // TODO validate URL 200s
 					frontMatter.remove("additional_presenters") // TODO handle this
-					frontMatter.remove("date") // TODO delete all of these
 				}
 
 				if (frontMatter.isNotEmpty()) {

@@ -5,7 +5,6 @@ event: KotlinConf
 location: Copenhagen, Denmark
 homepage: https://www.kotlinconf.com/
 listing: https://www.kotlinconf.com/
-date: 2019-12-04
 
 type: Technical
 

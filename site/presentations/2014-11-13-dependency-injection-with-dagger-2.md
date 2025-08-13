@@ -4,7 +4,6 @@ layout: presentation
 event: Devoxx
 location: Antwerp, Belgium
 homepage: http://www.devoxx.be/
-date: 2014-11-13
 
 type: Technical
 

@@ -5,7 +5,6 @@ event: Chicago Roboto
 location: Chicago, IL, USA
 homepage: http://chicagoroboto.com/
 listing: http://chicagoroboto.com/sessions/death-taxes-and-http/
-date: 2017-04-20
 
 type: Keynote
 additional_presenters:

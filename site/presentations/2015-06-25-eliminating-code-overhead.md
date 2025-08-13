@@ -4,7 +4,6 @@ layout: presentation
 event: "Square Presents: Streamlining Android Apps"
 location: San Francisco, CA, USA
 homepage: https://corner.squareup.com/2015/06/streamlining-android-apps.html
-date: 2015-06-25
 
 type: Technical
 

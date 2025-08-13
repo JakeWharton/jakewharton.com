@@ -5,7 +5,6 @@ event: GOTO Conference
 location: Copenhagen, Denmark
 homepage: http://gotocon.com/cph-2016/
 listing: http://gotocon.com/cph-2016/
-date: 2016-10-03
 
 type: Technical
 

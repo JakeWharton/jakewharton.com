@@ -5,7 +5,6 @@ event: Emerging Technologies Conference
 location: Philadelphia, PA, USA
 homepage: http://2017.phillyemergingtech.com/
 listing: http://2017.phillyemergingtech.com/
-date: 2017-04-18
 
 type: Keynote
 

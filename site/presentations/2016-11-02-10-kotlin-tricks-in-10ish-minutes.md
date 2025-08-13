@@ -3,7 +3,6 @@ layout: presentation
 
 event: Square Presents
 location: New York, NY, USA
-date: 2016-11-02
 homepage: https://twitter.com/SquareCareers/status/785877056944877569
 
 type: Technical

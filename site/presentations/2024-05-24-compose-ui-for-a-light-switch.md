@@ -5,7 +5,6 @@ event: KotlinConf
 location: Copenhagen, Denmark
 homepage: https://kotlinconf.com/
 listing: https://kotlinconf.com/speakers/3eabdd46-6cb5-4083-9eb8-1ad9a3b7a5eb/
-date: 2024-05-24
 
 type: Technical
 

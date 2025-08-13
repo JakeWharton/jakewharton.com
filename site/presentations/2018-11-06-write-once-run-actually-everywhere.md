@@ -5,7 +5,6 @@ event: QCon
 location: San Francisco, CA, USA
 homepage: https://qconsf.com/
 listing: https://qconsf.com/sf2018/presentation/kotlin-write-once-run-actually-everywhere
-date: 2018-11-06
 
 type: Technical
 title: "Kotlin: Write Once, Run (Actually) Everywhere"

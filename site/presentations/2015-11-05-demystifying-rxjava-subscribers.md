@@ -4,7 +4,6 @@ layout: presentation
 event: Øredev
 location: Malmö, Sweden
 homepage: http://oredev.org/
-date: 2015-11-05
 
 type: Technical
 

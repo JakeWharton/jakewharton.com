@@ -4,7 +4,6 @@ layout: presentation
 event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/
-date: 2015-08-27
 
 type: Technical
 

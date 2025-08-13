@@ -3,7 +3,6 @@ layout: presentation
 
 event: Square Android Tech Talks
 location: Waterloo, Canada
-date: 2014-09-23
 
 type: Technical
 

@@ -5,7 +5,6 @@ event: DPE Summit
 location: San Francisco, CA, USA
 homepage: https://dpesummit.com/
 listing: https://dpesummit.com/speakers2023/jake-wharton/
-date: 2023-09-21
 
 type: Technical
 

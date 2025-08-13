@@ -5,7 +5,6 @@ event: Google I/O
 location: Mountain View, CA, USA
 homepage: http://google.com/io
 listing: http://google.com/io
-date: 2017-05-19
 
 type: Technical
 additional_presenters:

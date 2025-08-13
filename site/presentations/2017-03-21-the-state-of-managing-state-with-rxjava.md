@@ -5,7 +5,6 @@ event: Devoxx
 location: San Jose, CA, USA
 homepage: http://devoxx.us/
 listing: http://devoxx.us/
-date: 2017-03-21
 
 type: Technical
 

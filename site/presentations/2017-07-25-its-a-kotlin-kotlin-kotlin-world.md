@@ -5,7 +5,6 @@ event: Londroid
 location: London, England
 homepage: https://www.meetup.com/android/
 listing: https://www.meetup.com/android/events/241396146/
-date: 2017-07-25
 
 type: Technical
 

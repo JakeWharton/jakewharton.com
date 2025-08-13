@@ -5,7 +5,6 @@ event: Google I/O
 location: Mountain View, CA, USA
 homepage: http://google.com/io
 listing: http://google.com/io
-date: 2018-05-10
 
 type: Technical
 title: "Android KTX"

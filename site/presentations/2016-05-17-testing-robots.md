@@ -5,7 +5,6 @@ event: Kotlin Night
 location: San Francisco, CA, USA
 homepage: http://info.jetbrains.com/Kotlin-Night-2016.html
 listing: http://info.jetbrains.com/Kotlin-Night-2016.html
-date: 2016-05-17
 
 type: Technical
 

@@ -5,7 +5,6 @@ event: GDG DevFest
 location: Mountain View, CA, USA
 homepage: https://devfest2016.gdgsv.com/
 listing: https://devfest2016.gdgsv.com/
-date: 2016-11-13
 
 type: Technical
 

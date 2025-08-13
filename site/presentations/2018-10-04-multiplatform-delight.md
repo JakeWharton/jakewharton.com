@@ -5,7 +5,6 @@ event: KotlinConf
 location: Amsterdam, Netherlands
 homepage: https://www.kotlinconf.com/
 listing: https://www.kotlinconf.com/
-date: 2018-10-04
 
 type: Technical
 additional_presenters:

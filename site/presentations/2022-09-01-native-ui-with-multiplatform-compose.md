@@ -5,7 +5,6 @@ event: Droidcon
 location: New York City, NY, USA
 homepage: https://nyc.droidcon.com
 listing: https://nyc.droidcon.com/jake-wharton/
-date: 2022-09-01
 
 type: Technical
 additional_presenters:

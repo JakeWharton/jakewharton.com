@@ -5,7 +5,6 @@ event: Droidcon
 location: San Francisco, CA, USA
 homepage: https://sf.droidcon.com/
 listing: https://sf.droidcon.com/
-date: 2017-11-05
 
 type: Technical
 additional_presenters:

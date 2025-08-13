@@ -4,7 +4,6 @@ layout: presentation
 event: Droidcon
 location: London, England
 homepage: http://droidcon.co.uk/
-date: 2015-10-30
 
 type: Technical
 

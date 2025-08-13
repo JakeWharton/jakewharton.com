@@ -5,7 +5,6 @@ event: Gradle Summit
 location: Palo Alto, CA, USA
 homepage: https://summit.gradle.com/
 listing: https://summit.gradle.com/
-date: 2017-06-22
 
 type: Technical
 
