@@ -58,20 +58,22 @@ private class MainCommand(
 		.path(canBeFile = false, fileSystem = fs)
 		.defaultLazy { rootDir.resolve("out") }
 
-	private val extensions = listOf(
+	private val yaml = Yaml()
+
+	private val mdExtensions = listOf(
 		FootnotesExtension.create(),
 		StrikethroughExtension.create(),
 	)
-	private val parser = Parser.Builder()
-		.extensions(extensions)
+	private val mdParser = Parser.Builder()
+		.extensions(mdExtensions)
 		.build()
-	private val renderer = HtmlRenderer.builder()
+	private val mdRenderer = HtmlRenderer.builder()
 		.nodeRendererFactory(::RogueHighlightingNodeRenderer)
 		.nodeRendererFactory(::HeaderIdNodeRenderer)
-		.extensions(extensions)
+		.extensions(mdExtensions)
 		.build()
 
-	private val templateParser = TemplateParser.Builder()
+	private val liquidParser = TemplateParser.Builder()
 		.withFlavor(Flavor.JEKYLL)
 		.withStrictVariables(true)
 		.withFilter(
@@ -115,7 +117,7 @@ private class MainCommand(
 					.drop(1) // Starts with self.
 					.forEach {
 						val name = it.fileName.toString().substringBeforeLast(".")
-						val template = templateParser.parse(it.toFile())
+						val template = liquidParser.parse(it.toFile())
 						put(name, template)
 					}
 			}
@@ -182,12 +184,11 @@ private class MainCommand(
 
 				val name = it.fileName.toString().substringBeforeLast('.')
 
-				val (yaml, markdown) = it.readText().splitFrontMatter()
+				val (frontMatter, markdown) = it.readText().splitFrontMatter()
 				print(" read…")
-				val frontMatter = (Yaml().load(yaml) as Map<String, Any?>).toMutableMap()
-				val node = parser.parse(markdown)
+				val node = mdParser.parse(markdown)
 				print(" parsed…")
-				val html = renderer.render(node)
+				val html = mdRenderer.render(node)
 				print(" rendered…")
 
 				val model = buildMap {
@@ -317,8 +318,7 @@ private class MainCommand(
 	) {
 		print("Rendering $htmlFile to HTML…")
 
-		val (yaml, content) = htmlFile.readText().splitFrontMatter()
-		val frontMatter = (Yaml().load(yaml) as Map<String, Any?>).toMutableMap()
+		val (frontMatter, content) = htmlFile.readText().splitFrontMatter()
 		val layout = frontMatter.remove("layout")
 		val title = frontMatter.remove("title")
 
@@ -335,7 +335,7 @@ private class MainCommand(
 			"site" to siteData,
 		)
 
-		val intermediate = templateParser.parse(content)
+		val intermediate = liquidParser.parse(content)
 			.render(intermediateData)
 
 		val rendered =
@@ -355,6 +355,18 @@ private class MainCommand(
 		outputFile.parent.createDirectories()
 		outputFile.writeText(rendered)
 		println(" Done")
+	}
+
+	private fun String.splitFrontMatter(): Pair<MutableMap<String, Any?>, String> {
+		if (startsWith("---\n")) {
+			val second = indexOf("---\n", startIndex = 4)
+			if (second != -1) {
+				val frontMatter = (yaml.load(substring(4, second)) as Map<String, Any?>).toMutableMap()
+				val content = substring(second + 4)
+				return frontMatter to content
+			}
+		}
+		return mutableMapOf<String, Any?>() to this
 	}
 }
 
@@ -445,14 +457,4 @@ private fun copyRecursively(rootDir: Path, source: Path, destination: Path) {
 			println(" Done")
 		}
 	}
-}
-
-internal fun String.splitFrontMatter(): Pair<String?, String> {
-	if (startsWith("---\n")) {
-		val second = indexOf("---\n", startIndex = 4)
-		if (second != -1) {
-			return substring(4, second) to substring(second + 4)
-		}
-	}
-	return null to this
 }
