@@ -19,7 +19,7 @@ RUN ./gradlew --version
 
 COPY gradle/libs.versions.toml ./gradle/libs.versions.toml
 COPY build.gradle ./
-COPY src ./src
+COPY src/main ./src/main
 RUN ./gradlew installDist
 
 ENTRYPOINT ["/sbin/tini", "--", "/app/build/install/jakewharton.com/bin/jakewharton.com"]

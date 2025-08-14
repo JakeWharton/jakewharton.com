@@ -149,6 +149,35 @@ header ul a span {
   margin-bottom: 10px;
 }
 
+.content h1 > a.anchor,
+.content h2 > a.anchor,
+.content h3 > a.anchor,
+.content h4 > a.anchor,
+.content h5 > a.anchor,
+.content h6 > a.anchor {
+  visibility: hidden;
+  padding-left: 0.375em;
+  font-style: italic;
+}
+
+.content h1 > a.anchor:before,
+.content h2 > a.anchor:before,
+.content h3 > a.anchor:before,
+.content h4 > a.anchor:before,
+.content h5 > a.anchor:before,
+.content h6 > a.anchor:before {
+  content: '#';
+}
+
+.content h1:hover > a.anchor,
+.content h2:hover > a.anchor,
+.content h3:hover > a.anchor,
+.content h4:hover > a.anchor,
+.content h5:hover > a.anchor,
+.content h6:hover > a.anchor {
+  visibility: visible;
+}
+
 p.date {
   color: var(--date-color);
 }
@@ -229,8 +258,4 @@ img.float-right {
     display: block;
     margin: 1em auto;
   }
-}
-
-.anchorjs-link, .anchorjs-link:hover {
-  text-decoration: none;
 }
