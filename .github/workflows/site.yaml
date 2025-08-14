@@ -8,7 +8,7 @@ on:
       - 'trunk'
 
 jobs:
-  build:
+  compile:
     runs-on: ubuntu-latest
     outputs:
       message: ${{ steps.message.outputs.message }}
@@ -27,11 +27,22 @@ jobs:
       - id: message
         run: git log "--format=message=%h %s" -n 1 $GITHUB_SHA >> "$GITHUB_OUTPUT"
 
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version-file: .github/workflows/.java-version
+      - run: ./gradlew check
+
   publish:
     runs-on: ubuntu-latest
     if: ${{ github.repository == 'JakeWharton/jakewharton.com' }}
     needs:
-      - build
+      - compile
+      - check
     steps:
       - uses: actions/checkout@v5
         with:

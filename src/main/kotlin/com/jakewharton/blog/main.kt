@@ -66,6 +66,9 @@ private class MainCommand(
 	private val mdExtensions = listOf(
 		FootnotesExtension.create(),
 		HeadingAnchorExtension.create(),
+		ClickableHeadingAnchorExtension(
+			supportedHeadingLevels = setOf(3, 4, 5, 6),
+		),
 		StrikethroughExtension.create(),
 	)
 	private val mdParser = Parser.Builder()

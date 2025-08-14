@@ -23,4 +23,7 @@ dependencies {
 	implementation(libs.liqp)
 	implementation(libs.clikt)
 	implementation(libs.commonsText)
+
+	testImplementation(libs.junit)
+	testImplementation(libs.assertk)
 }
