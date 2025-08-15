@@ -36,6 +36,7 @@ import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
+import org.commonmark.node.Node
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 import org.yaml.snakeyaml.Yaml
@@ -125,11 +126,14 @@ private class MainCommand(
 					}
 			}
 
-		val podcastDir = rootDir.resolve("podcasts")
+		val podcasts = rootDir.resolve("podcasts")
+			.asDatedCollection()
+			.map(::parsePodcast)
+			.toList()
+
 		val postDir = rootDir.resolve("posts")
 		val presentationDir = rootDir.resolve("presentations")
 
-		val podcasts = parseCollection(podcastDir)
 		val posts = parseCollection(postDir)
 		val presentations = parseCollection(presentationDir)
 
@@ -174,6 +178,78 @@ private class MainCommand(
 		}
 	}
 
+	private data class DatedEntry(
+		val path: Path,
+		val date: LocalDate,
+		val slug: String,
+		val frontMatter: Map<String, Any?>,
+		val content: Node,
+	)
+
+	private fun Path.asDatedCollection(): Sequence<DatedEntry> {
+		return walk(maxDepth = 1)
+			.drop(1) // Starts with self.
+			.map { file ->
+				val (name, extension) = file.fileName.toString().splitAroundLast('.')
+				check(extension == "md") { "Expected .md, found: $file" }
+
+				val (rawDate, slug) = name.splitAround(10)
+				val date = LocalDate.parse(rawDate)
+
+				val (rawFrontMatter, rawMarkdown) = file.readText().splitFrontMatter()
+				val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any?>)
+				val markdown = mdParser.parse(rawMarkdown)
+
+				DatedEntry(
+					path = this,
+					date = date,
+					slug = slug,
+					frontMatter = frontMatter,
+					content = markdown,
+				)
+			}
+	}
+
+	private fun parsePodcast(entry: DatedEntry): Map<String, Any?> {
+		val frontMatter = entry.frontMatter.toMutableMap()
+		return buildMap {
+			val title = frontMatter.remove("title") ?: error("Missing title: ${entry.path}")
+			val name = frontMatter.remove("name") ?: error("Missing name: ${entry.path}")
+			val link = frontMatter.remove("link") ?: error("Missing link: ${entry.path}")
+			checkFrontMatterIsEmpty(frontMatter, entry)
+
+			put("title", title)
+			put("name", name)
+			put("link", link) // TODO validate 200
+
+			put("content", mdRenderer.render(entry.content))
+
+			val slug = entry.slug
+			put("url", "/$slug/")
+			put("id", "/$slug")
+
+			put(
+				"date",
+				entry.date
+					.atStartOfDay(ZoneOffset.UTC)
+					.toOffsetDateTime()
+					.format(dateTimeFormat),
+			)
+		}
+	}
+
+	private fun checkFrontMatterIsEmpty(
+		frontMatter: Map<String, Any?>,
+		entry: DatedEntry,
+	) {
+		check(frontMatter.isEmpty()) {
+			buildString {
+				appendLine("Unhandled front matter in ${entry.path}:")
+				frontMatter.keys.joinTo(this, prefix = " - ", separator = "\n - ")
+			}
+		}
+	}
+
 	private fun parseCollection(
 		collectionDirectory: Path,
 	): List<Map<String, Any?>> {
@@ -187,7 +263,8 @@ private class MainCommand(
 
 				val name = it.fileName.toString().substringBeforeLast('.')
 
-				val (frontMatter, markdown) = it.readText().splitFrontMatter()
+				val (rawFrontMatter, markdown) = it.readText().splitFrontMatter()
+				val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any?>).toMutableMap()
 				print(" read…")
 				val node = mdParser.parse(markdown)
 				print(" parsed…")
@@ -215,10 +292,6 @@ private class MainCommand(
 					put("layout", frontMatter.remove("layout"))
 
 					consumeAndPutOptionalFrontMatter(frontMatter, "redirect_from")
-
-					// Podcast
-					consumeAndPutOptionalFrontMatter(frontMatter, "name") // TODO required
-					consumeAndPutOptionalFrontMatter(frontMatter, "link") // TODO required
 
 					// Posts
 					consumeAndPutOptionalFrontMatter(frontMatter, "external")
@@ -320,7 +393,8 @@ private class MainCommand(
 	) {
 		print("Rendering $htmlFile to HTML…")
 
-		val (frontMatter, content) = htmlFile.readText().splitFrontMatter()
+		val (rawFrontMatter, content) = htmlFile.readText().splitFrontMatter()
+		val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any?>).toMutableMap()
 		val layout = frontMatter.remove("layout")
 		val title = frontMatter.remove("title")
 
@@ -358,18 +432,16 @@ private class MainCommand(
 		outputFile.writeText(rendered)
 		println(" Done")
 	}
+}
 
-	private fun String.splitFrontMatter(): Pair<MutableMap<String, Any?>, String> {
-		if (startsWith("---\n")) {
-			val second = indexOf("---\n", startIndex = 4)
-			if (second != -1) {
-				val frontMatter = (yaml.load(substring(4, second)) as Map<String, Any?>).toMutableMap()
-				val content = substring(second + 4)
-				return frontMatter to content
-			}
+private fun String.splitFrontMatter(): Pair<String?, String> {
+	if (startsWith("---\n")) {
+		val second = indexOf("---\n", startIndex = 4)
+		if (second != -1) {
+			return substring(4, second) to substring(second + 4)
 		}
-		return mutableMapOf<String, Any?>() to this
 	}
+	return null to this
 }
 
 private fun urlPathToRelativeFilePath(path: String): String {
