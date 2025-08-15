@@ -21,8 +21,10 @@ import java.time.temporal.ChronoField.HOUR_OF_DAY
 import java.time.temporal.ChronoField.MINUTE_OF_HOUR
 import java.time.temporal.ChronoField.SECOND_OF_MINUTE
 import kotlin.collections.get
+import kotlin.io.path.ExperimentalPathApi
 import kotlin.io.path.copyTo
 import kotlin.io.path.createDirectories
+import kotlin.io.path.deleteRecursively
 import kotlin.io.path.isDirectory
 import kotlin.io.path.readText
 import kotlin.io.path.relativeTo
@@ -47,6 +49,7 @@ fun main(vararg args: String) {
 	MainCommand(systemFs, systemClock).main(args)
 }
 
+@OptIn(ExperimentalPathApi::class)
 private class MainCommand(
 	private val fs: FileSystem,
 	private val clock: Clock,
@@ -144,6 +147,8 @@ private class MainCommand(
 			"posts" to posts.sortedByDescending { it["date"] as String },
 			"presentations" to presentations.sortedByDescending { it["date"] as String },
 		)
+
+		outputDir.deleteRecursively()
 
 		copyRecursively(rootDir, rootDir.resolve("static"), outputDir)
 		copyRecursively(rootDir, rootDir.resolve("_redirects"), outputDir)
