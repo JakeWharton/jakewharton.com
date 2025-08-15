@@ -3,6 +3,7 @@
 package com.jakewharton.blog
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.defaultLazy
 import com.github.ajalt.clikt.parameters.types.path
