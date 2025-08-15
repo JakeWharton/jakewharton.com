@@ -296,8 +296,6 @@ private class MainCommand(
 					put("content", html)
 					put("layout", frontMatter.remove("layout"))
 
-					consumeAndPutOptionalFrontMatter(frontMatter, "redirect_from")
-
 					// Posts
 					consumeAndPutOptionalFrontMatter(frontMatter, "external")
 					consumeAndPutOptionalFrontMatter(frontMatter, "blog")
@@ -365,28 +363,6 @@ private class MainCommand(
 		outputFile.parent.createDirectories()
 		outputFile.writeText(rendered)
 
-		pageData["redirect_from"]?.let { redirectFrom ->
-			for (url in redirectFrom as List<String>) {
-				val redirectToUrl = siteData.getValue("url") as String + pageData.getValue("url") as String
-				val redirectFile = outputDir.resolve(urlPathToRelativeFilePath(url))
-				redirectFile.parent.createDirectories()
-				redirectFile.writeText(
-					"""
-            |<!DOCTYPE html>
-            |<html lang="en-US">
-            |  <meta charset="utf-8">
-            |  <title>Redirecting&hellip;</title>
-            |  <link rel="canonical" href="$redirectToUrl">
-            |  <script>location="$redirectToUrl"</script>
-            |  <meta http-equiv="refresh" content="0; url=$redirectToUrl">
-            |  <meta name="robots" content="noindex">
-            |  <h1>Redirecting&hellip;</h1>
-            |  <a href="$redirectToUrl">Click here if you are not redirected.</a>
-            |</html>
-            |""".trimMargin(),
-				)
-			}
-		}
 		println(" Done")
 	}
 

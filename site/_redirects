@@ -2,3 +2,29 @@
 /.well-known/webfinger	https://mastodon.jakewharton.com/.well-known/webfinger
 /@jw  https://mastodon.jakewharton.com/@jw  302
 /@jw/*  https://mastodon.jakewharton.com/@jw/:splat 302
+
+/making-retrofit-2-work-for-you/	/making-retrofit-work-for-you/
+
+/presentation/2013-05-17-android-hacker-night/	/testing-do-it/
+/presentation/2013-11-14-devoxx/	/android-apps-with-dagger-devoxx/
+/presentation/2014-04-22-sf-android-meetup/	/android-apps-with-dagger-sf-android-meetup/
+/presentation/2014-07-09-netflix-meetup/	/retrofit-and-rxjava/
+/presentation/2014-09-20-droidcon-nyc/	/annotation-processing-boilerplate-destruction-droidcon-nyc/
+/presentation/2014-09-23-square-waterloo/index.html	/annotation-processing-boilerplate-destruction-square-waterloo/
+/presentation/2014-11-13-devoxx/	/dependency-injection-with-dagger-2/
+/presentation/2015-04-09-droidcon-mtl-keynote/	/an-open-source-advantage/
+/presentation/2015-04-09-droidcon-mtl/	/a-few-ok-libraries/
+/presentation/2015-06-25-streamlining-android-apps/	/eliminating-code-overhead/
+/presentation/2015-08-27-droidcon-nyc/	/simple-http-with-retrofit-2/
+/presentation/2015-10-30-droidcon-uk/	/advancing-development-with-kotlin/
+/presentation/2015-11-05-oredev/	/demystifying-rxjava-subscribers/
+/presentation/2015-11-06-oredev/	/advancing-android-development-with-the-kotlin-language/
+/presentation/2015-11-07-gdg-devfest/	/advancing-android-development-with-kotlin/
+/presentation/2015-12-01-androidto-keynote/	/a-developers-renaissance/
+/presentation/2015-12-03-androidkw-meetup/	/android-development-with-kotlin/
+/presentation/2016-03-08-ny-android-meetup/	/auto-value-extensions-ny-android-meetup/
+/presentation/2016-03-10-android-spring-cleaning/	/auto-value-extensions-square/
+/presentation/2016-05-17-kotlin-night/	/testing-robots/
+/presentation/2016-07-29-360andev/	/exploring-java-hidden-costs/
+
+/post/13619849069/actionbarsherlock-a-love-story-part-1	/actionbarsherlock-a-love-story-part-1/
