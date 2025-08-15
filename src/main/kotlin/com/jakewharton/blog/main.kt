@@ -179,30 +179,22 @@ private class MainCommand(
 		val path: Path,
 		val date: LocalDate,
 		val slug: String,
-		val frontMatter: Map<String, Any?>,
-		val content: Node,
+		val content: String,
 	)
 
 	private fun Path.asDatedCollection(): Sequence<DatedEntry> {
 		return walk(maxDepth = 1)
 			.drop(1) // Starts with self.
 			.map { file ->
-				val (name, extension) = file.fileName.toString().splitAroundLast('.')
-				check(extension == "md") { "Expected .md, found: $file" }
-
+				val name = file.fileName.toString().substringBeforeLast('.')
 				val (rawDate, slug) = name.splitAround(10)
 				val date = LocalDate.parse(rawDate)
-
-				val (rawFrontMatter, rawMarkdown) = file.readText().splitFrontMatter()
-				val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any?>)
-				val markdown = mdParser.parse(rawMarkdown)
-
+				val content = file.readText()
 				DatedEntry(
 					path = this,
 					date = date,
 					slug = slug,
-					frontMatter = frontMatter,
-					content = markdown,
+					content = content,
 				)
 			}
 	}
@@ -228,7 +220,10 @@ private class MainCommand(
 	}
 
 	private fun parsePodcast(entry: DatedEntry): PodcastAppearance {
-		val frontMatter = entry.frontMatter.toMutableMap()
+		val (rawFrontMatter, rawContent) = entry.content.splitFrontMatter()
+		val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any>).toMutableMap()
+		check(rawContent.isBlank()) { "Content not blank: ${entry.path}" }
+
 		val title = frontMatter.remove("title") as String? ?: error("Missing title: ${entry.path}")
 		val name = frontMatter.remove("name") as String? ?: error("Missing name: ${entry.path}")
 		val link = frontMatter.remove("link") as String? ?: error("Missing link: ${entry.path}")
