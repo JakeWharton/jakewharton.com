@@ -35,11 +35,7 @@ import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
-import org.commonmark.node.FencedCodeBlock
-import org.commonmark.node.Node
 import org.commonmark.parser.Parser
-import org.commonmark.renderer.NodeRenderer
-import org.commonmark.renderer.html.HtmlNodeRendererContext
 import org.commonmark.renderer.html.HtmlRenderer
 import org.yaml.snakeyaml.Yaml
 
@@ -69,13 +65,13 @@ private class MainCommand(
 		ClickableHeadingAnchorExtension(
 			supportedHeadingLevels = setOf(3, 4, 5, 6),
 		),
+		RougeHighlightingExtension,
 		StrikethroughExtension.create(),
 	)
 	private val mdParser = Parser.Builder()
 		.extensions(mdExtensions)
 		.build()
 	private val mdRenderer = HtmlRenderer.builder()
-		.nodeRendererFactory(::RogueHighlightingNodeRenderer)
 		.extensions(mdExtensions)
 		.build()
 
@@ -372,44 +368,6 @@ private class MainCommand(
 			}
 		}
 		return mutableMapOf<String, Any?>() to this
-	}
-}
-
-private class RogueHighlightingNodeRenderer(
-	context: HtmlNodeRendererContext,
-) : NodeRenderer {
-	private val html = context.writer
-
-	override fun getNodeTypes(): Set<Class<out Node>> {
-		return setOf(FencedCodeBlock::class.java)
-	}
-
-	override fun render(node: Node) {
-		val fencedCodeBlock = node as FencedCodeBlock
-		val language = fencedCodeBlock.info
-		if (language.isNotEmpty()) {
-			val process =
-				ProcessBuilder("rougify", "highlight", "-f", "html", "-l", language, "-i", "-")
-					.start()
-			process.outputWriter().use { it.write(fencedCodeBlock.literal) }
-			val highlighted = process.inputReader().readText()
-
-			html.tag("div", mapOf("class" to "language-$language highlighter-rouge"))
-			html.tag("div", mapOf("class" to "highlight"))
-			html.tag("pre", mapOf("class" to "highlight"))
-			html.tag("code")
-			html.raw(highlighted)
-		} else {
-			html.tag("div", mapOf("class" to "highlighter-rouge"))
-			html.tag("div", mapOf("class" to "highlight"))
-			html.tag("pre", mapOf("class" to "highlight"))
-			html.tag("code")
-			html.text(fencedCodeBlock.literal)
-		}
-		html.tag("/code")
-		html.tag("/pre")
-		html.tag("/div")
-		html.tag("/div")
 	}
 }
 
