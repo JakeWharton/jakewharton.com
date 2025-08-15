@@ -34,6 +34,8 @@ import liqp.TemplateContext
 import liqp.TemplateParser
 import liqp.filters.Filter
 import liqp.parser.Flavor
+import okhttp3.HttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
@@ -102,19 +104,6 @@ private class MainCommand(
 		)
 		.build()
 
-	private val dateTimeFormat = DateTimeFormatterBuilder()
-		.parseCaseInsensitive()
-		.append(ISO_LOCAL_DATE)
-		.appendLiteral(' ')
-		.appendValue(HOUR_OF_DAY, 2)
-		.appendLiteral(':')
-		.appendValue(MINUTE_OF_HOUR, 2)
-		.appendLiteral(':')
-		.appendValue(SECOND_OF_MINUTE, 2)
-		.appendLiteral(' ')
-		.appendOffset("+HHMM", "Z")
-		.toFormatter()
-
 	override fun run() {
 		val templates =
 			buildMap<String, Template> {
@@ -133,6 +122,7 @@ private class MainCommand(
 			.asDatedCollection()
 			.map(::parsePodcast)
 			.toList()
+			.sortedByDescending(PodcastAppearance::date)
 
 		val postDir = rootDir.resolve("posts")
 		val presentationDir = rootDir.resolve("presentations")
@@ -143,7 +133,7 @@ private class MainCommand(
 		val siteData = mapOf(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
-			"podcasts" to podcasts.sortedByDescending { it["date"] as String },
+			"podcasts" to podcasts.map(PodcastAppearance::toData),
 			"posts" to posts.sortedByDescending { it["date"] as String },
 			"presentations" to presentations.sortedByDescending { it["date"] as String },
 		)
@@ -217,32 +207,40 @@ private class MainCommand(
 			}
 	}
 
-	private fun parsePodcast(entry: DatedEntry): Map<String, Any?> {
-		val frontMatter = entry.frontMatter.toMutableMap()
-		return buildMap {
-			val title = frontMatter.remove("title") ?: error("Missing title: ${entry.path}")
-			val name = frontMatter.remove("name") ?: error("Missing name: ${entry.path}")
-			val link = frontMatter.remove("link") ?: error("Missing link: ${entry.path}")
-			checkFrontMatterIsEmpty(frontMatter, entry)
-
-			put("title", title)
+	private data class PodcastAppearance(
+		val path: Path,
+		val date: LocalDate,
+		val slug: String,
+		val name: String,
+		val episodeTitle: String,
+		val episodeLink: HttpUrl,
+	) {
+		fun toData(): Map<String, Any> = buildMap {
 			put("name", name)
-			put("link", link) // TODO validate 200
-
-			put("content", mdRenderer.render(entry.content))
-
-			val slug = entry.slug
+			put("title", episodeTitle)
+			put("link", episodeLink.toString())
+			put("date", date
+				.atStartOfDay(ZoneOffset.UTC)
+				.toOffsetDateTime()
+				.format(dateTimeFormat))
 			put("url", "/$slug/")
-			put("id", "/$slug")
-
-			put(
-				"date",
-				entry.date
-					.atStartOfDay(ZoneOffset.UTC)
-					.toOffsetDateTime()
-					.format(dateTimeFormat),
-			)
 		}
+	}
+
+	private fun parsePodcast(entry: DatedEntry): PodcastAppearance {
+		val frontMatter = entry.frontMatter.toMutableMap()
+		val title = frontMatter.remove("title") as String? ?: error("Missing title: ${entry.path}")
+		val name = frontMatter.remove("name") as String? ?: error("Missing name: ${entry.path}")
+		val link = frontMatter.remove("link") as String? ?: error("Missing link: ${entry.path}")
+		checkFrontMatterIsEmpty(frontMatter, entry)
+		return PodcastAppearance(
+			path = entry.path,
+			date = entry.date,
+			slug = entry.slug,
+			name = name,
+			episodeTitle = title,
+			episodeLink = link.toHttpUrl(),
+		)
 	}
 
 	private fun checkFrontMatterIsEmpty(
@@ -416,6 +414,19 @@ private class MainCommand(
 		println(" Done")
 	}
 }
+
+private val dateTimeFormat = DateTimeFormatterBuilder()
+	.parseCaseInsensitive()
+	.append(ISO_LOCAL_DATE)
+	.appendLiteral(' ')
+	.appendValue(HOUR_OF_DAY, 2)
+	.appendLiteral(':')
+	.appendValue(MINUTE_OF_HOUR, 2)
+	.appendLiteral(':')
+	.appendValue(SECOND_OF_MINUTE, 2)
+	.appendLiteral(' ')
+	.appendOffset("+HHMM", "Z")
+	.toFormatter()
 
 private fun String.splitFrontMatter(): Pair<String?, String> {
 	if (startsWith("---\n")) {

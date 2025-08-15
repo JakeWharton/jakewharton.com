@@ -23,6 +23,7 @@ dependencies {
 	implementation(libs.liqp)
 	implementation(libs.clikt)
 	implementation(libs.commonsText)
+	implementation(libs.okhttp)
 
 	testImplementation(libs.junit)
 	testImplementation(libs.assertk)
