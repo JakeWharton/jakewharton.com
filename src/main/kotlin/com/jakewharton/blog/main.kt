@@ -176,7 +176,9 @@ private class MainCommand(
 		renderHtml(rootDir.resolve("atom.xml"), templates, siteData, outputDir.resolve("atom.xml"))
 
 		for (post in posts) {
-			renderPage(outputDir, post, templates, siteData)
+			if (post["external"] != true) {
+				renderPage(outputDir, post, templates, siteData)
+			}
 		}
 		for (presentation in presentations) {
 			renderPage(outputDir, presentation, templates, siteData)
