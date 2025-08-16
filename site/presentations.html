@@ -24,10 +24,10 @@ title: Presentations
 {% for presentation in past_presentations %}
   <li class="presentation">
     <span class="date">{{ presentation.date | date: "%Y-%m-%d" }}</span>
-    {% if presentation.nolink %}
-    {{ presentation.title }}
-    {% else %}
+    {% if presentation.homepage %}
     <a href="{{ presentation.url }}">{{ presentation.title }}</a>
+    {% else %}
+    {{ presentation.title }}
     {% endif %}
     <small>{{ presentation.event }} ({{ presentation.location }})</small>
   </li>

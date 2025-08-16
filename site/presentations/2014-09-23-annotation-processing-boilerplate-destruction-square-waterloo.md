@@ -1,6 +1,8 @@
 ---
 event: Square Android Tech Talks
 location: Waterloo, Canada
+# Need _some_ link or else this presentation won't render...
+homepage: https://medium.com/square-corner-blog/a-pair-of-android-tech-talks-f53072cd8003
 
 title: Annotation Processing Boilerplate Destruction
 speakerdeck: 90bd70b0272b0132f61f6e4a3a25a3f7

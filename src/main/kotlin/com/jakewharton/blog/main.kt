@@ -164,7 +164,7 @@ private class MainCommand(
 		}
 
 		for (presentation in presentations) {
-			if (presentation["nolink"] != true) {
+			if ("homepage" in presentation) {
 				renderPage(outputDir, presentation, presentationTemplate, siteData)
 			}
 		}
@@ -296,7 +296,6 @@ private class MainCommand(
 					// Presentations
 					consumeAndPutOptionalFrontMatter(frontMatter, "event")
 					consumeAndPutOptionalFrontMatter(frontMatter, "location")
-					consumeAndPutOptionalFrontMatter(frontMatter, "nolink")
 					consumeAndPutOptionalFrontMatter(frontMatter, "homepage") // TODO validate URL 200s
 					consumeAndPutOptionalFrontMatter(frontMatter, "vimeo") // TODO validate URL 200s
 					consumeAndPutOptionalFrontMatter(frontMatter, "youtube") // TODO validate URL 200s
