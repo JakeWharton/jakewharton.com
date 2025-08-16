@@ -171,7 +171,9 @@ private class MainCommand(
 			}
 		}
 		for (presentation in presentations) {
-			renderPage(outputDir, presentation, templates, siteData)
+			if (presentation["nolink"] != true) {
+				renderPage(outputDir, presentation, templates, siteData)
+			}
 		}
 	}
 
