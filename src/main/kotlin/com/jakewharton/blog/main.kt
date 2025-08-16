@@ -186,7 +186,7 @@ private class MainCommand(
 				val date = LocalDate.parse(rawDate)
 				val content = file.readText()
 				DatedEntry(
-					path = this,
+					path = file,
 					date = date,
 					slug = slug,
 					content = content,
