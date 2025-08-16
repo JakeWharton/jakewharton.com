@@ -4,8 +4,6 @@ location: London, England
 homepage: http://uk.droidcon.com/
 listing: http://uk.droidcon.com/
 
-type: Technical
-
 title: Making Retrofit Work For You
 speakerdeck: cdac89f5440c4429ae785750564b7ce2
 vimeo: 190861165

@@ -3,8 +3,6 @@ event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/d
 
-type: Technical
-
 title: Annotation Processing Boilerplate Destruction
 speakerdeck: 60c8adc023d9013292341ac2af761010
 youtube: tRmJm2_qytM

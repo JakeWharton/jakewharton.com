@@ -4,8 +4,6 @@ location: San Francisco, CA, USA
 homepage: https://dpesummit.com/
 listing: https://dpesummit.com/speakers2023/jake-wharton/
 
-type: Technical
-
 title: "Releasing faster with Kotlin multiplatform"
 speakerdeck: 4370a555fbe540858e88be6e6f1b0669
 youtube: aSvidgk4vgc

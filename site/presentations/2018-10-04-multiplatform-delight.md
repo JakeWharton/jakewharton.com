@@ -4,7 +4,6 @@ location: Amsterdam, Netherlands
 homepage: https://www.kotlinconf.com/
 listing: https://www.kotlinconf.com/
 
-type: Technical
 additional_presenters:
 - Alec Strong
 

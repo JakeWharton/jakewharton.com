@@ -4,8 +4,6 @@ location: London, England
 homepage: https://www.meetup.com/android/
 listing: https://www.meetup.com/android/events/241396146/
 
-type: Technical
-
 title: It's a Kotlin, Kotlin, Kotlin World
 speakerdeck: fe383b43469f46849318482cabb23809
 youtube: CtZL_IjR5Ww

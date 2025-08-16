@@ -4,7 +4,6 @@ location: San Francisco, CA, USA
 homepage: https://sf.droidcon.com/
 listing: https://sf.droidcon.com/
 
-type: Technical
 additional_presenters:
 - Alec Strong
 

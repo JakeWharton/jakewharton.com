@@ -3,8 +3,6 @@ event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/
 
-type: Technical
-
 title: Simple HTTP with Retrofit 2
 speakerdeck: ba44159d080a4416acb1c62353d98371
 youtube: KIAoQbAu3eA

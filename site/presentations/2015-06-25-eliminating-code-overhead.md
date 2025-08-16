@@ -3,8 +3,6 @@ event: "Square Presents: Streamlining Android Apps"
 location: San Francisco, CA, USA
 homepage: https://corner.squareup.com/2015/06/streamlining-android-apps.html
 
-type: Technical
-
 title: Eliminating Code Overhead
 speakerdeck: f8a0ae75b40f4ab8874278387dead6dc
 youtube: b6zKBZcg5fk

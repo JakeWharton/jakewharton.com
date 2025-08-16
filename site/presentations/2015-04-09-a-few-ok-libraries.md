@@ -3,8 +3,6 @@ event: Droidcon
 location: Montreal, Canada
 homepage: http://www.droidcon.ca/
 
-type: Technical
-
 title: A Few 'Ok' Libraries
 speakerdeck: a1ff81b8a55549e9b96ede49a7887a41
 youtube: WvyScM_S88c

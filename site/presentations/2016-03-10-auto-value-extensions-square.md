@@ -3,8 +3,6 @@ event: "Square Presents: Android Spring Cleaning"
 location: New York City, NY, USA
 homepage: https://www.showclix.com/event/square-new-york-presents
 
-type: Technical
-
 title: AutoValue Extensions
 speakerdeck: cc8417f8ac94409892ab195896d7db6d
 youtube: Kl2xZufgW14

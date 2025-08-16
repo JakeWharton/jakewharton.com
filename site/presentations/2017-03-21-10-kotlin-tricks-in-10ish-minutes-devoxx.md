@@ -4,8 +4,6 @@ location: San Jose, CA, USA
 homepage: http://devoxx.us/
 listing: http://devoxx.us/
 
-type: Technical
-
 title: 10 Kotlin Tricks in 10(ish) Minutes
 speakerdeck: 5761e65632dc4c13bc036d2810bfea07
 youtube: 0sPzDwS55wM

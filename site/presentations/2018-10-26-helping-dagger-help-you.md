@@ -4,7 +4,6 @@ location: London, England
 homepage: http://uk.droidcon.com/
 listing: http://uk.droidcon.com/
 
-type: Technical
 title: Helping Dagger Help You
 speakerdeck: 680f54e783e0428e8f8f0cc74b41bf28
 vimeo: 297365277

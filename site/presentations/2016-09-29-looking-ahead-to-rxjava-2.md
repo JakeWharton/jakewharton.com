@@ -4,8 +4,6 @@ location: New York City, NY, USA
 homepage: http://droidcon.nyc/lineup
 listing: http://droidcon.nyc/lineup
 
-type: Technical
-
 title: Looking Ahead to RxJava 2
 speakerdeck: c9fd308945b548b5b91e9ad8a375f1cf
 youtube: hcxMtomE6fI

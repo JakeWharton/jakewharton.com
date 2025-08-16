@@ -4,8 +4,6 @@ location: Copenhagen, Denmark
 homepage: https://www.kotlinconf.com/
 listing: https://www.kotlinconf.com/
 
-type: Technical
-
 title: "What's new in Java 19: The end of Kotlin?"
 youtube: te3OU9fxC8U
 speakerdeck: 82966aa583154c1297122a6966a82453

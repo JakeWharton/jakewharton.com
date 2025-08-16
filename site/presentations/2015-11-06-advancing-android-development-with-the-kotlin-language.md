@@ -3,8 +3,6 @@ event: Øredev
 location: Malmö, Sweden
 homepage: http://oredev.org/
 
-type: Technical
-
 title: Advancing Android Development with the Kotlin Language
 vimeo: 144877458
 speakerdeck: 515208d71589491b80e8b4b24f27478f

@@ -4,7 +4,6 @@ location: Mountain View, CA, USA
 homepage: http://google.com/io
 listing: http://google.com/io
 
-type: Technical
 additional_presenters:
 - Christina Lee
 

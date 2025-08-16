@@ -4,7 +4,6 @@ location: Chicago, IL, USA
 homepage: http://chicagoroboto.com/
 listing: http://chicagoroboto.com/sessions/death-taxes-and-http/
 
-type: Keynote
 additional_presenters:
 - Jesse Wilson
 

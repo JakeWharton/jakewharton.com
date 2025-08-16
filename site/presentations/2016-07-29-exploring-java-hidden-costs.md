@@ -4,8 +4,6 @@ location: Denver, CO, USA
 homepage: http://360andev.com/
 listing: http://360andev.com/sessions/300-exploring-javas-hidden-costs/
 
-type: Technical
-
 title: Exploring Java Hidden Costs
 speakerdeck: 5ef7038a1106403bb53a34ff4bdedc4e
 youtube: WALV33rWye4

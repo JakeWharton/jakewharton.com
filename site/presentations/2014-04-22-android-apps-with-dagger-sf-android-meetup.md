@@ -3,8 +3,6 @@ event: SF Android Meetup
 location: San Francisco, CA, USA
 homepage: http://www.meetup.com/sfandroid/events/171955222/
 
-type: Technical
-
 title: Android Apps with Dagger
 speakerdeck: 0b0491d0c78f013168aa3a2cd771e4db
 ---

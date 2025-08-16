@@ -3,8 +3,6 @@ event: Devoxx
 location: Antwerp, Belgium
 homepage: http://www.devoxx.be/
 
-type: Technical
-
 title: Dependency Injection with Dagger 2
 speakerdeck: 3b298de04edb0132348e6661b83ad9a0
 youtube: plK0zyRLIP8

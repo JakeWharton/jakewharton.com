@@ -3,8 +3,6 @@ event: Netflix Open Source Meetup
 location: Santa Clara, CA, USA
 homepage: http://www.meetup.com/Netflix-Open-Source-Platform/events/184153592/
 
-type: Technical
-
 title: Retrofit and RxJava
 speakerdeck: 39bd0c30e6fc0131c90a3abb8f5e9337
 youtube: aEuNBk1b5OE

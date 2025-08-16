@@ -4,8 +4,6 @@ location: Copenhagen, Denmark
 homepage: https://kotlinconf.com/
 listing: https://kotlinconf.com/speakers/3eabdd46-6cb5-4083-9eb8-1ad9a3b7a5eb/
 
-type: Technical
-
 title: "Compose UI for... a light switch?"
 speakerdeck: 5aed3fa4641f4c438ecf8f5ab236702d
 youtube: D0P5Lb-2uCY

@@ -2,8 +2,6 @@
 event: Square Android Tech Talks
 location: Waterloo, Canada
 
-type: Technical
-
 title: Annotation Processing Boilerplate Destruction
 speakerdeck: 90bd70b0272b0132f61f6e4a3a25a3f7
 youtube: dOcs-NKK-RA

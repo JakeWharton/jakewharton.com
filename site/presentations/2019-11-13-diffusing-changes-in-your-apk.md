@@ -4,8 +4,6 @@ location: Toronto, Canada
 homepage: https://www.to.droidcon.com/
 listing: https://www.to.droidcon.com/
 
-type: Technical
-
 title: "Diffusing Changes in Your APK"
 speakerdeck: 7cf9abccac794263b13d96fb357ecbc2
 youtube: 5a-sRoPVEZk

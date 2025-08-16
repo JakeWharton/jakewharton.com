@@ -3,7 +3,6 @@ event: Droidcon
 location: Montreal, Canada
 homepage: http://www.droidcon.ca/
 
-type: Keynote
 additional_presenters:
 - Jesse Wilson
 

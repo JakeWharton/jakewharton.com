@@ -4,7 +4,6 @@ location: New York City, NY, USA
 homepage: https://nyc.droidcon.com
 listing: https://nyc.droidcon.com/jake-wharton/
 
-type: Technical
 additional_presenters:
 - Jesse Wilson
 

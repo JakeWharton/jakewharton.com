@@ -3,8 +3,6 @@ event: AndroidKW Meetup
 location: Waterloo, Canada
 homepage: http://www.meetup.com/androidkw/events/226683586/
 
-type: Technical
-
 title: Android Development with Kotlin
 youtube: A2LukgT2mKc
 speakerdeck: e037b83ca89045fe8e388169737419d5

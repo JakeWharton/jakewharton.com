@@ -3,8 +3,6 @@ event: AndroidTO
 location: Toronto, Canada
 homepage: http://androidto.com/
 
-type: Keynote
-
 title: A Developer's Renaissance
 speakerdeck: adb8fedd640f474ca8c8ea76ebff9166
 ---

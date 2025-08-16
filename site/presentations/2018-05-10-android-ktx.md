@@ -4,7 +4,6 @@ location: Mountain View, CA, USA
 homepage: http://google.com/io
 listing: http://google.com/io
 
-type: Technical
 title: "Android KTX"
 speakerdeck: d1ac17e95f724ce29a2d72a372533041
 youtube: st1XVfkDWqk

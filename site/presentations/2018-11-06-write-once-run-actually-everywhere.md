@@ -4,7 +4,6 @@ location: San Francisco, CA, USA
 homepage: https://qconsf.com/
 listing: https://qconsf.com/sf2018/presentation/kotlin-write-once-run-actually-everywhere
 
-type: Technical
 title: "Kotlin: Write Once, Run (Actually) Everywhere"
 speakerdeck: 91dc5a10f38546aebe0acb1822a719e4
 youtube: ei66Fr25Y2M

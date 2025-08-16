@@ -3,8 +3,6 @@ event: GDG DevFest
 location: Cincinnati, OH, USA
 homepage: https://ohiodevfest.com/
 
-type: Technical
-
 title: Making Retrofit Work For You
 speakerdeck: abca0aa5b8d84050b10364f0c00e4ad5
 youtube: t34AQlblSeE

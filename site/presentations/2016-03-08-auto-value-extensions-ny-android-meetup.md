@@ -3,8 +3,6 @@ event: NY Android Meetup
 location: New York City, NY, USA
 homepage: http://www.meetup.com/android-developers-nyc/events/228554404/
 
-type: Technical
-
 title: AutoValue Extensions
 speakerdeck: dad26cd952b24c5c97faf409803f1889
 youtube: FfBBTHkRC-o

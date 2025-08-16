@@ -3,8 +3,6 @@ event: Droidcon
 location: London, England
 homepage: http://droidcon.co.uk/
 
-type: Technical
-
 title: Advancing Development with Kotlin
 speakerdeck: 4103f5af52c8438ba49f85c533eadc2f
 video: https://skillsmatter.com/skillscasts/6651-advancing-development-with-the-kotlin-language

@@ -4,8 +4,6 @@ location: New York City, NY, USA
 homepage: http://droidcon.nyc/
 listing: http://droidcon.nyc/
 
-type: Technical
-
 title: Using Kotlin/JS and Kotlin/Native on Android
 speakerdeck: 2ceed3253c774e3badcbcb6b34448308
 vimeo: 362739094

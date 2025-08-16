@@ -3,8 +3,6 @@ event: GDG DevFest
 location: Dublin, Ireland
 homepage: http://gdg-dublin.appspot.com/
 
-type: Technical
-
 title: "Advancing Android Development with Kotlin"
 speakerdeck: 124b5644bbc54c6b81063ae270cce65b
 ---

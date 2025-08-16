@@ -3,8 +3,6 @@ event: Øredev
 location: Malmö, Sweden
 homepage: http://oredev.org/
 
-type: Technical
-
 title: Demystifying RxJava Subscribers
 vimeo: 144812843
 speakerdeck: d439c614db4d42aa96f310ed6ab329d8
