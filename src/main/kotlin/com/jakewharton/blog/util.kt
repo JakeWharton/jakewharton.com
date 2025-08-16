@@ -16,6 +16,10 @@ internal fun String.splitAround(index: Int): Pair<String, String> {
 	return take(index) to substring(index + 1)
 }
 
-internal fun String.splitAroundLast(delimiter: Char): Pair<String, String> {
-	return splitAround(lastIndexOf(delimiter))
+internal fun <T> Iterable<T>.checkEmptyOrSingleOrThrow(message: () -> String): T? {
+	val iterator = iterator()
+	if (!iterator.hasNext()) return null
+	val item = iterator.next()
+	if (!iterator.hasNext()) return item
+	error(message())
 }

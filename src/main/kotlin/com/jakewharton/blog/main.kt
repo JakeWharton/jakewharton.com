@@ -20,7 +20,6 @@ import java.time.format.DateTimeFormatterBuilder
 import java.time.temporal.ChronoField.HOUR_OF_DAY
 import java.time.temporal.ChronoField.MINUTE_OF_HOUR
 import java.time.temporal.ChronoField.SECOND_OF_MINUTE
-import kotlin.collections.get
 import kotlin.io.path.ExperimentalPathApi
 import kotlin.io.path.copyTo
 import kotlin.io.path.createDirectories
@@ -112,22 +111,26 @@ private class MainCommand(
 
 		val podcasts = rootDir.resolve("podcasts")
 			.asDatedCollection()
-			.map(::parsePodcast)
+			.map(::parsePodcastAppearance)
 			.toList()
 			.sortedByDescending(PodcastAppearance::date)
 
 		val postDir = rootDir.resolve("posts")
-		val presentationDir = rootDir.resolve("presentations")
-
 		val posts = parseCollection(postDir)
-		val presentations = parseCollection(presentationDir)
+
+		val presentations = rootDir.resolve("presentations")
+			.asDatedCollection()
+			.map(::parsePresentation)
+			.toList()
+			.sortedBy(Presentation::title) // Make same-day presentations deterministic.
+			.sortedByDescending(Presentation::date)
 
 		val siteData = mapOf(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
 			"podcasts" to podcasts.map(PodcastAppearance::toData),
 			"posts" to posts.sortedByDescending { it["date"] as String },
-			"presentations" to presentations.sortedByDescending { it["date"] as String },
+			"presentations" to presentations.map { it.toData(mdRenderer) },
 		)
 
 		outputDir.deleteRecursively()
@@ -164,8 +167,8 @@ private class MainCommand(
 		}
 
 		for (presentation in presentations) {
-			if ("homepage" in presentation) {
-				renderPage(outputDir, presentation, presentationTemplate, siteData)
+			if (presentation.eventLink != null) {
+				renderPage(outputDir, presentation.toData(mdRenderer), presentationTemplate, siteData)
 			}
 		}
 	}
@@ -214,10 +217,10 @@ private class MainCommand(
 		}
 	}
 
-	private fun parsePodcast(entry: DatedEntry): PodcastAppearance {
-		val (rawFrontMatter, rawContent) = entry.content.splitFrontMatter()
+	private fun parsePodcastAppearance(entry: DatedEntry): PodcastAppearance {
+		val (rawFrontMatter, content) = entry.content.splitFrontMatter()
 		val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any>).toMutableMap()
-		check(rawContent.isBlank()) { "Content not blank: ${entry.path}" }
+		check(content.isBlank()) { "Content not blank: ${entry.path}" }
 
 		val title = frontMatter.remove("title") as String? ?: error("Missing title: ${entry.path}")
 		val name = frontMatter.remove("name") as String? ?: error("Missing name: ${entry.path}")
@@ -230,6 +233,95 @@ private class MainCommand(
 			name = name,
 			episodeTitle = title,
 			episodeLink = link.toHttpUrl(),
+		)
+	}
+
+	private data class Presentation(
+		val path: Path,
+		val date: LocalDate,
+		val slug: String,
+		val eventName: String,
+		val eventLocation: String,
+		/** Presentations without an event link will not be rendered. */
+		val eventLink: HttpUrl?,
+		val title: String,
+		val slides: Slides?,
+		val video: Video?,
+		val abstract: Node,
+	) {
+		sealed interface Slides {
+			data class SpeakerDeck(val id: String) : Slides
+		}
+		sealed interface Video {
+			data class Youtube(val id: String) : Video
+			data class Vimeo(val id: Int) : Video
+			data class Url(val url: HttpUrl) : Video
+		}
+
+		fun toData(mdRenderer: HtmlRenderer): Map<String, Any> = buildMap {
+			put("title", title)
+			put("url", "/$slug/")
+			put("date", date
+				.atStartOfDay(ZoneOffset.UTC)
+				.toOffsetDateTime()
+				.format(dateTimeFormat))
+			put("event", eventName)
+			put("location", eventLocation)
+			eventLink?.let { put("homepage", it) }
+			when (slides) {
+				is Slides.SpeakerDeck -> put("speakerdeck", slides.id)
+				null -> {}
+			}
+			when (video) {
+				is Video.Url -> put("video", video.url.toString())
+				is Video.Vimeo -> put("vimeo", video.id)
+				is Video.Youtube -> put("youtube", video.id)
+				null -> {}
+			}
+			put("content", mdRenderer.render(abstract))
+		}
+	}
+
+	private fun parsePresentation(entry: DatedEntry): Presentation {
+		val (rawFrontMatter, rawMarkdown) = entry.content.splitFrontMatter()
+		val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any>).toMutableMap()
+
+		val event = frontMatter.remove("event") as String? ?: error("Missing event: ${entry.path}")
+		val location = frontMatter.remove("location") as String? ?: error("Missing location: ${entry.path}")
+		val homepage = frontMatter.remove("homepage") as String?
+
+		val title = frontMatter.remove("title") as String? ?: error("Missing title: ${entry.path}")
+		frontMatter.remove("additional_presenters") // TODO
+
+		val youtube = (frontMatter.remove("youtube") as String?)?.let(Presentation.Video::Youtube)
+		val vimeo = (frontMatter.remove("vimeo") as Int?)?.let(Presentation.Video::Vimeo)
+		val videoUrl = (frontMatter.remove("video") as String?)?.let { Presentation.Video.Url(it.toHttpUrl()) }
+		val video = listOfNotNull(youtube, vimeo, videoUrl)
+			.checkEmptyOrSingleOrThrow { "Multiple video keys: ${entry.path}" }
+
+		val speakerdeck = (frontMatter.remove("speakerdeck") as String?)?.let(Presentation.Slides::SpeakerDeck)
+		val slides = listOfNotNull(speakerdeck)
+			.checkEmptyOrSingleOrThrow { "Multiple slides keys: ${entry.path}" }
+
+		checkFrontMatterIsEmpty(frontMatter, entry)
+		if (homepage == null) {
+			check(video == null) { "Presentations without homepage cannot have video: ${entry.path}" }
+			check(slides == null) { "Presentations without homepage cannot have slides: ${entry.path}" }
+		}
+
+		val abstract = mdParser.parse(rawMarkdown)
+
+		return Presentation(
+			path = entry.path,
+			date = entry.date,
+			slug = entry.slug,
+			eventName = event,
+			eventLocation = location,
+			eventLink = homepage?.toHttpUrl(),
+			title = title,
+			slides = slides,
+			video = video,
+			abstract = abstract,
 		)
 	}
 
