@@ -2,7 +2,6 @@
 event: GDG DevFest
 location: Mountain View, CA, USA
 homepage: https://devfest2016.gdgsv.com/
-listing: https://devfest2016.gdgsv.com/
 
 title: Making Retrofit Work For You
 speakerdeck: bd52f671492644dfbf4b2cdea5119374

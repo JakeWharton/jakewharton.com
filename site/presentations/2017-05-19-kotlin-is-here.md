@@ -2,7 +2,6 @@
 event: Google I/O
 location: Mountain View, CA, USA
 homepage: http://google.com/io
-listing: http://google.com/io
 
 additional_presenters:
 - Christina Lee

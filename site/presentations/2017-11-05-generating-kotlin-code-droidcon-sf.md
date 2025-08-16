@@ -2,7 +2,6 @@
 event: Droidcon
 location: San Francisco, CA, USA
 homepage: https://sf.droidcon.com/
-listing: https://sf.droidcon.com/
 
 additional_presenters:
 - Alec Strong

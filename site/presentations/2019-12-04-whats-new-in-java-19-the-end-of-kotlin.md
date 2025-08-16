@@ -2,7 +2,6 @@
 event: KotlinConf
 location: Copenhagen, Denmark
 homepage: https://www.kotlinconf.com/
-listing: https://www.kotlinconf.com/
 
 title: "What's new in Java 19: The end of Kotlin?"
 youtube: te3OU9fxC8U

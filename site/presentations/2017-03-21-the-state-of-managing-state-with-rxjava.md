@@ -2,7 +2,6 @@
 event: Devoxx
 location: San Jose, CA, USA
 homepage: http://devoxx.us/
-listing: http://devoxx.us/
 
 title: The State of Managing State with RxJava
 speakerdeck: ba2f5b7895024e01833b552288893997

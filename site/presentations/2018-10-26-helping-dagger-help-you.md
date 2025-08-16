@@ -2,7 +2,6 @@
 event: Droidcon
 location: London, England
 homepage: http://uk.droidcon.com/
-listing: http://uk.droidcon.com/
 
 title: Helping Dagger Help You
 speakerdeck: 680f54e783e0428e8f8f0cc74b41bf28

@@ -2,7 +2,6 @@
 event: Kotlin Night
 location: San Francisco, CA, USA
 homepage: http://info.jetbrains.com/Kotlin-Night-2016.html
-listing: http://info.jetbrains.com/Kotlin-Night-2016.html
 
 title: Testing Robots
 speakerdeck: 7410777622564b13a0cd0d90f6fb5468

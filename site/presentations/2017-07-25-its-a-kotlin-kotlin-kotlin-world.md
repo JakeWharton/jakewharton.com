@@ -2,7 +2,6 @@
 event: Londroid
 location: London, England
 homepage: https://www.meetup.com/android/
-listing: https://www.meetup.com/android/events/241396146/
 
 title: It's a Kotlin, Kotlin, Kotlin World
 speakerdeck: fe383b43469f46849318482cabb23809

@@ -2,7 +2,6 @@
 event: Droidcon
 location: London, England
 homepage: http://uk.droidcon.com/
-listing: http://uk.droidcon.com/
 
 title: Sinking Your Teeth Into Bytecode
 speakerdeck: 738f4cc51f944f6398adebbc4883cec5

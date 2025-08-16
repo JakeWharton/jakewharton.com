@@ -296,7 +296,6 @@ private class MainCommand(
 					// Presentations
 					consumeAndPutOptionalFrontMatter(frontMatter, "event")
 					consumeAndPutOptionalFrontMatter(frontMatter, "location")
-					consumeAndPutOptionalFrontMatter(frontMatter, "listing") // TODO validate URL 200s
 					consumeAndPutOptionalFrontMatter(frontMatter, "nolink")
 					consumeAndPutOptionalFrontMatter(frontMatter, "homepage") // TODO validate URL 200s
 					consumeAndPutOptionalFrontMatter(frontMatter, "vimeo") // TODO validate URL 200s

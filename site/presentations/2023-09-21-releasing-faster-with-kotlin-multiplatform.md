@@ -2,7 +2,6 @@
 event: DPE Summit
 location: San Francisco, CA, USA
 homepage: https://dpesummit.com/
-listing: https://dpesummit.com/speakers2023/jake-wharton/
 
 title: "Releasing faster with Kotlin multiplatform"
 speakerdeck: 4370a555fbe540858e88be6e6f1b0669

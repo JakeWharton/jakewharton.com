@@ -2,7 +2,6 @@
 event: KotlinConf
 location: Amsterdam, Netherlands
 homepage: https://www.kotlinconf.com/
-listing: https://www.kotlinconf.com/
 
 additional_presenters:
 - Alec Strong

@@ -2,7 +2,6 @@
 event: Chicago Roboto
 location: Chicago, IL, USA
 homepage: http://chicagoroboto.com/
-listing: http://chicagoroboto.com/sessions/rinsing-brush-picasso-3-0/
 
 title: "Rinsing the Brush: Picasso 3.0"
 speakerdeck: d199f545d22d4f8a8427569f4a454364

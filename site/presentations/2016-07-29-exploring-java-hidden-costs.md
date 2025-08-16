@@ -2,7 +2,6 @@
 event: 360|AnDev
 location: Denver, CO, USA
 homepage: http://360andev.com/
-listing: http://360andev.com/sessions/300-exploring-javas-hidden-costs/
 
 title: Exploring Java Hidden Costs
 speakerdeck: 5ef7038a1106403bb53a34ff4bdedc4e

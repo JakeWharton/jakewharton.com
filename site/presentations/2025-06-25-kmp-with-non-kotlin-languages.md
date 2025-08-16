@@ -2,7 +2,6 @@
 event: Droidcon
 location: New York City, NY, USA
 homepage: https://nyc.droidcon.com/
-listing: https://nyc.droidcon.com/speakers/jake-wharton
 
 title: "KMP with non-Kotlin languages"
 speakerdeck: 35b952941d0b4cf88e89e86c087adff9

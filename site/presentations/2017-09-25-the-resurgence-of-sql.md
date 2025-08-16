@@ -2,7 +2,6 @@
 event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/
-listing: http://droidcon.nyc/
 
 title: The Resurgence of SQL
 speakerdeck: 624e30b2f2f34320b4c8db5f4dd4b749

@@ -2,7 +2,6 @@
 event: Droidcon
 location: New York City, NY, USA
 homepage: https://nyc.droidcon.com
-listing: https://nyc.droidcon.com/jake-wharton/
 
 additional_presenters:
 - Jesse Wilson

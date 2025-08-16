@@ -2,7 +2,6 @@
 event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/
-listing: http://droidcon.nyc/
 
 title: Digging into D8 and R8
 speakerdeck: 30ccda6cb0f642c78c89d35c675ce1c7

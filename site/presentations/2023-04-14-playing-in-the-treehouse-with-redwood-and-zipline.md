@@ -2,7 +2,6 @@
 event: KotlinConf
 location: Amsterdam, Netherlands
 homepage: https://kotlinconf.com
-listing: https://kotlinconf.com/speakers/3eabdd46-6cb5-4083-9eb8-1ad9a3b7a5eb/
 
 title: "Playing in the Treehouse with Redwood and Zipline"
 speakerdeck: 693336bdd82f4cfc8c5e1a8605e66af7

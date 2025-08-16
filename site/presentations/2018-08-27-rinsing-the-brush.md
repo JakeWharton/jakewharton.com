@@ -2,7 +2,6 @@
 event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/
-listing: http://droidcon.nyc/
 
 title: "Rinsing the Brush: Picasso 3.0"
 speakerdeck: f903fe5393eb4fb5aa68b1fbc3908aa3

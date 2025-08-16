@@ -2,7 +2,6 @@
 event: Emerging Technologies Conference
 location: Philadelphia, PA, USA
 homepage: http://2017.phillyemergingtech.com/
-listing: http://2017.phillyemergingtech.com/
 
 title: Managing The Reactive World with RxJava
 speakerdeck: 23266acd586043dea52590a206651c82

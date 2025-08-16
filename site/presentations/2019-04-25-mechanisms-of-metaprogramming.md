@@ -2,7 +2,6 @@
 event: Chicago Roboto
 location: Chicago, IL, USA
 homepage: https://chicagoroboto.com/
-listing: https://chicagoroboto.com/sessions/mechanisms-of-metaprogramming/
 
 title: Mechanisms of Metaprogramming
 speakerdeck: 4ca105ee1b754574b4cd2cf16d239d8b

@@ -2,7 +2,6 @@
 event: Chicago Roboto
 location: Chicago, IL, USA
 homepage: http://chicagoroboto.com/
-listing: http://chicagoroboto.com/sessions/death-taxes-and-http/
 
 additional_presenters:
 - Jesse Wilson

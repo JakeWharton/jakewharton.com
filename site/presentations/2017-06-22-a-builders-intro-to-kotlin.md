@@ -2,7 +2,6 @@
 event: Gradle Summit
 location: Palo Alto, CA, USA
 homepage: https://summit.gradle.com/
-listing: https://summit.gradle.com/
 
 title: A Builder's Intro to Kotlin
 speakerdeck: d5dd5fc84b8e4e1b91c410bbe3170e9b
