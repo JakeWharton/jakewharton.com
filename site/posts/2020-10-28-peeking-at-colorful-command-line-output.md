@@ -1,6 +1,5 @@
 ---
 title: 'Peeking at command-line ANSI escape sequences'
-layout: post
 
 categories: post
 ---

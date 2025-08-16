@@ -1,6 +1,5 @@
 ---
 title: 'Deprecating idling resource libraries'
-layout: post
 
 categories: post
 tags:

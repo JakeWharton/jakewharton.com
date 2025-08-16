@@ -1,6 +1,5 @@
 ---
 title: Easy HTTP Requests with Retrofit
-layout: post
 
 external: true
 blog: Square Corner

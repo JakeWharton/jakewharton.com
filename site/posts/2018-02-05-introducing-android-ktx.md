@@ -1,6 +1,5 @@
 ---
 title: "Introducing Android KTX: Even Sweeter Kotlin Development for Android"
-layout: post
 
 external: true
 blog: Android Developers Blog
@@ -49,8 +48,8 @@ sharedPreferences.edit()
 ```
 ```kotlin
 // Kotlin with Android KTX
-sharedPreferences.edit { 
-    putBoolean(key, value) 
+sharedPreferences.edit {
+    putBoolean(key, value)
 }
 ```
 

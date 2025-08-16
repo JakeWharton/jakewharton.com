@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Devoxx
 location: Antwerp, Belgium
 homepage: http://www.devoxx.be

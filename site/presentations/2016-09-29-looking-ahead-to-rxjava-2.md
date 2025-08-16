@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Droidcon
 location: New York City, NY, USA
 homepage: http://droidcon.nyc/lineup

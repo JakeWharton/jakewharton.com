@@ -1,6 +1,5 @@
 ---
 title: 'Sixteen corners'
-layout: post
 
 categories: post
 ---
@@ -72,7 +71,7 @@ Mapping the four booleans to these bits gives a decimal we can use to index into
 
 ```kotlin
 val corners = " ╷╵│╶┌└├╴┐┘┤─┬┴┼"
-val index = 
+val index =
   (if (down) 0b0001 else 0) or
   (if (up) 0b0010 else 0) or
   (if (right) 0b0100 else 0) or
@@ -92,7 +91,7 @@ The logic of determining the four booleans and then choosing the corner characte
   val table = table { /*..*/ }
   assertThat(table.renderText()).isEqualTo("""
     |1│2
-    |─┼─ 
+    |─┼─
     |3│4
     |""".trimMargin())
 }
@@ -101,7 +100,7 @@ The logic of determining the four booleans and then choosing the corner characte
   val table = table { /*..*/ }
   assertThat(table.renderText()).isEqualTo("""
     |1│2
-    |─┴─ 
+    |─┴─
     |3 4
     |""".trimMargin())
 }
@@ -279,7 +278,7 @@ With these helpers we can add the validation.
 +
 +      if (previousRowCorner.hasRightSegment() != corner.hasLeftSegment()) continue // Horizontal mismatch
 +      if (previousColCorner.hasDownSegment() != corner.hasUpSegment()) continue // Vertical mismatch
-
+ 
        state[index] = i
        placeCorner(index + 1, used.withBit(i))
      }

@@ -1,6 +1,5 @@
 ---
 title: MimeCraft, JavaWriter, and ProtoParser
-layout: post
 
 external: true
 blog: Square Corner

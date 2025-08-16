@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: EclipseCon
 location: Boston, MA, USA
 homepage: https://www.eclipsecon.org/2013/

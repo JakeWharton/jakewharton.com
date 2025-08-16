@@ -1,6 +1,5 @@
 ---
 title: 'Using jlink to cross-compile minimal JREs'
-layout: post
 
 categories: post
 tags:

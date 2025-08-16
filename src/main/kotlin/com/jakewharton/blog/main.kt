@@ -105,18 +105,10 @@ private class MainCommand(
 		.build()
 
 	override fun run() {
-		val templates =
-			buildMap<String, Template> {
-				val layoutsDir = rootDir.resolve("layouts")
-				layoutsDir
-					.walk(maxDepth = 1)
-					.drop(1) // Starts with self.
-					.forEach {
-						val name = it.fileName.toString().substringBeforeLast(".")
-						val template = liquidParser.parse(it.toFile())
-						put(name, template)
-					}
-			}
+		val layoutsDir = rootDir.resolve("layouts")
+		val defaultTemplate = liquidParser.parse(layoutsDir.resolve("default.html"))
+		val postTemplate = liquidParser.parse(layoutsDir.resolve("post.html"))
+		val presentationTemplate = liquidParser.parse(layoutsDir.resolve("presentation.html"))
 
 		val podcasts = rootDir.resolve("podcasts")
 			.asDatedCollection()
@@ -143,36 +135,37 @@ private class MainCommand(
 		copyRecursively(rootDir, rootDir.resolve("static"), outputDir)
 		copyRecursively(rootDir, rootDir.resolve("_redirects"), outputDir)
 
-		renderHtml(rootDir.resolve("index.html"), templates, siteData, outputDir.resolve("index.html"))
+		renderHtml(rootDir.resolve("index.html"), null, siteData, outputDir.resolve("index.html"))
+		renderHtml(rootDir.resolve("atom.xml"), null, siteData, outputDir.resolve("atom.xml"))
+
 		renderHtml(
 			rootDir.resolve("blog.html"),
-			templates,
+			defaultTemplate,
 			siteData,
 			outputDir.resolve("blog/index.html"),
 		)
 		renderHtml(
 			rootDir.resolve("presentations.html"),
-			templates,
+			defaultTemplate,
 			siteData,
 			outputDir.resolve("presentations/index.html"),
 		)
 		renderHtml(
 			rootDir.resolve("podcasts.html"),
-			templates,
+			defaultTemplate,
 			siteData,
 			outputDir.resolve("podcasts/index.html"),
 		)
 
-		renderHtml(rootDir.resolve("atom.xml"), templates, siteData, outputDir.resolve("atom.xml"))
-
 		for (post in posts) {
 			if (post["external"] != true) {
-				renderPage(outputDir, post, templates, siteData)
+				renderPage(outputDir, post, postTemplate, siteData)
 			}
 		}
+
 		for (presentation in presentations) {
 			if (presentation["nolink"] != true) {
-				renderPage(outputDir, presentation, templates, siteData)
+				renderPage(outputDir, presentation, presentationTemplate, siteData)
 			}
 		}
 	}
@@ -291,7 +284,6 @@ private class MainCommand(
 							.format(dateTimeFormat),
 					)
 					put("content", html)
-					put("layout", frontMatter.remove("layout"))
 
 					// Posts
 					consumeAndPutOptionalFrontMatter(frontMatter, "external")
@@ -334,18 +326,16 @@ private class MainCommand(
 	private fun renderPage(
 		outputDir: Path,
 		pageData: Map<String, Any?>,
-		templates: Map<String, Template>,
+		template: Template?,
 		siteData: Map<String, Any>,
 	) {
 		print("Rendering ${pageData["url"]}…")
 
-		val layout = pageData["layout"] as String?
 		val content = pageData.getValue("content") as String
 		val rendered =
-			if (layout == null) {
+			if (template == null) {
 				content
 			} else {
-				val template = templates[layout] ?: error("Unknown layout $layout")
 				template.render(
 					mapOf(
 						"content" to content,
@@ -365,15 +355,14 @@ private class MainCommand(
 
 	private fun renderHtml(
 		htmlFile: Path,
-		templates: Map<String, Template>,
+		template: Template?,
 		siteData: Map<String, Any>,
 		outputFile: Path,
 	) {
 		print("Rendering $htmlFile to HTML…")
 
 		val (rawFrontMatter, content) = htmlFile.readText().splitFrontMatter()
-		val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any?>).toMutableMap()
-		val layout = frontMatter.remove("layout")
+		val frontMatter = rawFrontMatter?.let { (yaml.load(it) as Map<String, Any?>) }.orEmpty().toMutableMap()
 		val title = frontMatter.remove("title")
 
 		if (frontMatter.isNotEmpty()) {
@@ -393,10 +382,9 @@ private class MainCommand(
 			.render(intermediateData)
 
 		val rendered =
-			if (layout == null) {
+			if (template == null) {
 				intermediate
 			} else {
-				val template = templates[layout] ?: error("Unknown layout $layout")
 				template.render(
 					mapOf(
 						"content" to intermediate,

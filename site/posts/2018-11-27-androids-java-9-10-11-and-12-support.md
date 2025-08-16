@@ -1,6 +1,5 @@
 ---
 title: Android's Java 9, 10, 11, and 12 Support
-layout: post
 
 categories: post
 tags:

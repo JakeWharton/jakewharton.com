@@ -1,6 +1,5 @@
 ---
 title: 'Integration verbosity and good layering'
-layout: post
 
 categories: post
 ---

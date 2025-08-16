@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: 360|AnDev
 location: Denver, CO, USA
 homepage: http://360andev.com/

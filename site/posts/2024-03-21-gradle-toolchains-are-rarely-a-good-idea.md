@@ -1,6 +1,5 @@
 ---
 title: 'Gradle toolchains are rarely a good idea'
-layout: post
 
 categories: post
 tags:

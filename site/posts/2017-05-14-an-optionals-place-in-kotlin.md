@@ -1,6 +1,5 @@
 ---
 title: An Optional's place in Kotlin
-layout: post
 
 external: true
 blog: Square Corner

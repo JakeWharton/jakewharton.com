@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Lambda Groups'
-layout: post
 
 categories: post
 tags:

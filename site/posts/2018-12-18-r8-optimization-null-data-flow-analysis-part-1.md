@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Null Data Flow Analysis (Part 1)'
-layout: post
 
 categories: post
 tags:
@@ -96,9 +95,9 @@ With the SSA IR, R8 is able to determine that both conditionals are useless afte
 $ kotlinc *.kt
 
 $ cat rules.txt
--keepclasseswithmembers class * { 
-  public static void main(java.lang.String[]); 
-} 
+-keepclasseswithmembers class * {
+  public static void main(java.lang.String[]);
+}
 -dontobfuscate
 
 $ java -jar r8.jar \

@@ -1,13 +1,12 @@
 ---
 title: 'R8 Optimization: Class Constant Operations'
-layout: post
 
 categories: post
 tags:
 - Android
 - R8
 ---
- 
+
 > Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
 
 The [previous post in the series](/r8-optimization-string-constant-operations/) showed R8 (and D8) invoking string methods at compile-time when the inputs were all constants. R8 is able to do this because the content of constant strings is available inside the bytecode. That post also claimed that strings are the only non-primitive type that can be manipulated like this at compile-time.
@@ -94,7 +93,7 @@ class Logger {
     return new Logger(cls.getSimpleName());
   }
   private Logger(String tag) { /* … */ }
- 
+
 }
 
 class MyClass {
@@ -116,12 +115,12 @@ The Kotlin language offers the ability to force a function to be inlined. It als
 
 ```kotlin
 class Logger private constructor(val tag: String) {
- 
+
 }
 inline fun <reified T : Any> logger() = Logger(T::class.java.simpleName)
 
 class MyClass {
- 
+
   companion object {
     private val logger = logger<MyClass>()
   }

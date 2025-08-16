@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Google I/O
 location: Mountain View, CA, USA
 homepage: http://google.com/io

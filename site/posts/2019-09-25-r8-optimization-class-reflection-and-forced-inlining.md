@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Class Reflection and Forced Inlining'
-layout: post
 
 categories: post
 tags:

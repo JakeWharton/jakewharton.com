@@ -1,6 +1,5 @@
 ---
 title: 'Report card: Java 19 and the end of Kotlin'
-layout: post
 
 categories: post
 tags:
@@ -24,13 +23,13 @@ This feature allows for methods to be declared inside of other methods making th
 ```java
 public static boolean anyMatch(Graph graph, Predicate<Node> predicate) {
   var seen = new HashSet<Node>();
-  
+
   boolean hasMatch(Node node) {
     if (!seen.add(node)) return false; // already seen
     if (predicate.test(node)) return true; // match!
     return node.getNodes().stream().anyMatch(n -> hasMatch(n));
   }
-  
+
   return hasMatch(getRoot());
 }
 ```
@@ -153,7 +152,7 @@ All things considered I think this is a passing report card (despite failing one
 The next three years of Java will hopefully see the completion of the items above as well as see larger efforts like Project Panama and Project Valhalla start to come to fruition.
 It's a great time to be a Java developer.
 
-To the surprise of no one, Kotlin did not end. 
+To the surprise of no one, Kotlin did not end.
 It continued to evolve in the last three years with language features such as context receivers, sealed interfaces, and exhaustive-by-default.
 It's also a great time to be a Kotlin developer.
 

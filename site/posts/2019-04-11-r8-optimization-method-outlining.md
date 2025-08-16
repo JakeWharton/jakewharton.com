@@ -1,13 +1,12 @@
 ---
 title: 'R8 Optimization: Method Outlining'
-layout: post
 
 categories: post
 tags:
 - Android
 - R8
 ---
- 
+
 > Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
 
 I recently wrote about [the economics of generated code](/the-economics-of-generated-code/) which talked about performing optimizations to generated code that aren't worthwhile in manually-written code. While the examples in that post were motivated by changes to code generators that I had worked on in the past, it also resulted in some new changes being made.

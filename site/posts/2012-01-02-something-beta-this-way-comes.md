@@ -1,6 +1,5 @@
 ---
 title: Something Beta This Way Comes!
-layout: post
 
 categories: post
 tags:

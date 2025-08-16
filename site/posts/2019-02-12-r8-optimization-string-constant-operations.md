@@ -1,13 +1,12 @@
 ---
 title: 'R8 Optimization: String Constant Operations'
-layout: post
 
 categories: post
 tags:
 - Android
 - R8
 ---
- 
+
 > Note: This post is part of a series on D8 and R8, Android's new dexer and optimizer, respectively. For an intro to D8 read ["Android's Java 8 support"](/androids-java-8-support/). For an intro to R8 read ["R8 Optimization: Staticization"](/r8-optimization-staticization/).
 
 The [previous post in the series](/r8-optimization-value-assumption/) covered an R8 flag which allows you to specify the return value range of a field or method. R8 can use this to automatically remove conditionals against `SDK_INT` based on your app's minimum supported API level, for example. That can only happen because multiple R8 features are working together. This post (and the next few) will cover smaller optimizations of R8 which work best when combined with others.
@@ -38,10 +37,10 @@ Constant pool:
    #2 = Class              #19            // java/lang/StringBuilder
    #3 = Methodref          #2.#18         // java/lang/StringBuilder."<init>":()V
    #4 = String             #20            // A:
-    ⋮ 
+    ⋮
   #10 = Utf8               <init>
   #11 = Utf8               ()V
-    ⋮ 
+    ⋮
   #18 = NameAndType        #10:#11        // "<init>":()V
   #19 = Utf8               java/lang/StringBuilder
   #20 = Utf8               A:
@@ -112,7 +111,7 @@ And because this computation was trivial and removing the call to `length()` won
 
 ### Inlining
 
-Computing the length of a constant string isn't the only string operation that can happen at compile-time. Common string operations such as `startWith`, `indexOf`, and `substring` can all be computed provided that their arguments are also constants. While this is rare to find verbatim in source code, method inlining can create situations where this happens. 
+Computing the length of a constant string isn't the only string operation that can happen at compile-time. Common string operations such as `startWith`, `indexOf`, and `substring` can all be computed provided that their arguments are also constants. While this is rare to find verbatim in source code, method inlining can create situations where this happens.
 
 ```java
 class Test {

@@ -1,6 +1,5 @@
 ---
 title: Seven Days of Open Source
-layout: post
 
 external: true
 blog: Square Corner

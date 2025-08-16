@@ -1,6 +1,5 @@
 ---
 title: 'Nonsensical Maven is still a Gradle problem'
-layout: post
 
 categories: post
 tags:

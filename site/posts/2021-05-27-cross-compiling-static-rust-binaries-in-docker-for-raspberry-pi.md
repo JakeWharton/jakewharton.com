@@ -1,6 +1,5 @@
 ---
 title: 'Cross-compiling static Rust binaries in Docker for Raspberry Pi'
-layout: post
 
 categories: post
 ---

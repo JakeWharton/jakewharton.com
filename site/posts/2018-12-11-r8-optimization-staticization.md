@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Staticization'
-layout: post
 
 categories: post
 tags:
@@ -88,8 +87,8 @@ We can convert the Java classfiles to Dalvik using R8 instead of D8 and see what
 
 ```
 $ cat rules.txt
--keepclasseswithmembers class * { 
-  public static void main(java.lang.String[]); 
+-keepclasseswithmembers class * {
+  public static void main(java.lang.String[]);
 }
 -dontobfuscate
 

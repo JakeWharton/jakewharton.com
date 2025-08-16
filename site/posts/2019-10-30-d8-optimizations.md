@@ -1,6 +1,5 @@
 ---
 title: 'D8 Optimizations'
-layout: post
 
 categories: post
 tags:
@@ -30,7 +29,7 @@ The last two posts ([1](/r8-optimization-enum-ordinals-and-names/), [2](/r8-opti
 ```java
 enum Greeting {
   FORMAL, INFORMAL;
-  
+
   static String greetingType(Greeting greeting) {
     switch (greeting) {
       case FORMAL: return "formal";
@@ -211,7 +210,7 @@ D8 recognizes that the `length` lookup is being done on an array reference which
 
 The call to `array-length` is removed and the `if` is rewritten to re-use register v5 which is the size that was used to create the array.
 
-On its own this pattern is not overly common. Once again it plays well when R8 inlining comes into effect and a method checking `array.length` is inlined into a caller that declares a new array. 
+On its own this pattern is not overly common. Once again it plays well when R8 inlining comes into effect and a method checking `array.length` is inlined into a caller that declares a new array.
 
 
 ---

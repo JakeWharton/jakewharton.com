@@ -1,6 +1,5 @@
 ---
 title: 'Case-insensitive filesystems considered harmful (to me)'
-layout: post
 
 categories: post
 ---

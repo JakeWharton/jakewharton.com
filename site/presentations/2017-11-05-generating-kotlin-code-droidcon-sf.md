@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Droidcon
 location: San Francisco, CA, USA
 homepage: https://sf.droidcon.com/

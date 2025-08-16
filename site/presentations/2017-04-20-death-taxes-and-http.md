@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Chicago Roboto
 location: Chicago, IL, USA
 homepage: http://chicagoroboto.com/

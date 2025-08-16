@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: GDG DevFest
 location: Cincinnati, OH, USA
 homepage: https://ohiodevfest.com/

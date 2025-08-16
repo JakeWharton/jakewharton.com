@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: GDG DevFest
 location: Dublin, Ireland
 homepage: http://gdg-dublin.appspot.com/

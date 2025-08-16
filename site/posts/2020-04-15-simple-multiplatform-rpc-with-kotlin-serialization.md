@@ -1,6 +1,5 @@
 ---
 title: "Simple Multiplatform RPC with Kotlin Serialization"
-layout: post
 
 categories: post
 tags:

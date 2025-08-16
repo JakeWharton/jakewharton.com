@@ -1,6 +1,5 @@
 ---
 title: "Flow testing with Turbine"
-layout: post
 
 external: true
 blog: Cash App Code Blog

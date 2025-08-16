@@ -1,6 +1,5 @@
 ---
 title: ActionBarSherlock - A Love Story (Part 3)
-layout: post
 
 categories: post
 tags:

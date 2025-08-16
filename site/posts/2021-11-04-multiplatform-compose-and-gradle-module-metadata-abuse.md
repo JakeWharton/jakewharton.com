@@ -1,6 +1,5 @@
 ---
 title: 'Multiplatform Compose and Gradle module metadata abuse'
-layout: post
 
 categories: post
 ---

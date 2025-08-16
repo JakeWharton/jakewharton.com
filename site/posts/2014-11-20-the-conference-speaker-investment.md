@@ -1,6 +1,5 @@
 ---
 title: The Conference Speaker Investment
-layout: post
 
 categories: post
 tags:

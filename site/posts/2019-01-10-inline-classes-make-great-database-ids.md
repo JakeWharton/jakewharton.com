@@ -1,6 +1,5 @@
 ---
 title: Inline Classes Make Great Database IDs
-layout: post
 
 categories: post
 tags:

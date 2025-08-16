@@ -1,6 +1,5 @@
 ---
 title: 'Exceptions and proxies and coroutines, oh my!'
-layout: post
 
 categories: post
 tags:

@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: AnDevCon
 location: Burlingame, CA, USA
 homepage: http://andevcon.com

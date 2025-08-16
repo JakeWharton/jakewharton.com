@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: AnDevCon
 location: Boston, MA, USA
 homepage: http://andevcon.com

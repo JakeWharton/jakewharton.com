@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Droidcon
 location: London, England
 homepage: http://droidcon.co.uk/

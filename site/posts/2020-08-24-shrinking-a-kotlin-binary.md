@@ -1,6 +1,5 @@
 ---
 title: 'Shrinking a Kotlin binary by 99.2%'
-layout: post
 
 categories: post
 ---

@@ -1,6 +1,5 @@
 ---
 title: Square Open Source ♥s Kotlin
-layout: post
 
 external: true
 blog: Square Corner

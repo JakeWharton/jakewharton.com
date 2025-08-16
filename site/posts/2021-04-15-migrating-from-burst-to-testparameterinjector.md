@@ -1,6 +1,5 @@
 ---
 title: "Migrating from Burst to TestParameterInjector"
-layout: post
 
 external: true
 blog: Cash App Code Blog
@@ -40,9 +39,9 @@ We have migrated our Cash App Android codebase and will be migrating others in t
 -import com.squareup.burst.BurstJUnit4
 +import com.google.testing.junit.testparameterinjector.TestParameter
 +import com.google.testing.junit.testparameterinjector.TestParameterInjector
- 
+
  enum class Soda { PEPSI, COKE }
- 
+
 -@RunWith(BurstJUnit4::class)
 +@RunWith(TestParameterInjector::class)
  class DrinkSodaTest(
@@ -63,7 +62,7 @@ If you were using the `@Burst` annotation for field binding (common for Java tes
  class DrinkSodaTest {
 -  @Burst Soda soda;
 +  @TestParameter Soda soda;
- 
+
    // ...
  }
 ```

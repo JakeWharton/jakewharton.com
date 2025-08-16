@@ -1,6 +1,5 @@
 ---
 title: "Gradle dependency license validation"
-layout: post
 
 external: true
 blog: Cash App Code Blog

@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Square Presents
 location: New York, NY, USA
 homepage: https://twitter.com/SquareCareers/status/785877056944877569

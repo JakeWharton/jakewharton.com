@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Droidcon
 location: Berlin, Germany
 homepage: https://www.de.droidcon.com/

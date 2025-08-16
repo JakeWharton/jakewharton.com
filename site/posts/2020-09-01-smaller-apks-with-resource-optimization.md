@@ -1,11 +1,10 @@
 ---
 title: 'Smaller APKs with resource optimization'
-layout: post
 
 categories: post
 ---
 
-How many times does the name of a layout file appear in an Android APK? We can build a minimal APK with a single layout file to count the occurrences empirically. 
+How many times does the name of a layout file appear in an Android APK? We can build a minimal APK with a single layout file to count the occurrences empirically.
 
 Building an Android app with Gradle requires only one thing: an `AndroidManifest.xml` file with a package. From there we can add a dummy layout whose contents are just `<merge/>` since we only care about its name.
 ```
@@ -223,7 +222,7 @@ Once again we hit the 2.0% mark for APK size reduction!
 
 ### One more occurrence
 
-All four examples so far have not used signed APKs. There are multiple versions of APK signing, and if your `minSdkVersion` is lower than 24 you are required include version 1 (V1) when signing. V1 signing uses [Java's `.jar` 
+All four examples so far have not used signed APKs. There are multiple versions of APK signing, and if your `minSdkVersion` is lower than 24 you are required include version 1 (V1) when signing. V1 signing uses [Java's `.jar`
 signing specification](https://docs.oracle.com/javase/tutorial/deployment/jar/intro.html) which signs each file individually as a text entry in the `META-INF/MANIFEST.MF` file.
 
 After creating and configuring a keystore for the original single-layout app, dumping the manifest file with `unzip -c build/outputs/apk/release/app-release.apk META-INF/MANIFEST.MF` shows these signatures:

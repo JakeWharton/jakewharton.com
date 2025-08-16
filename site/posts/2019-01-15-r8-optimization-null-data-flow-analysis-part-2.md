@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Null Data Flow Analysis (Part 2)'
-layout: post
 
 categories: post
 tags:

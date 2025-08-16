@@ -1,6 +1,5 @@
 ---
 title: Decoupling Android App Communication with Otto
-layout: post
 
 external: true
 blog: Square Corner

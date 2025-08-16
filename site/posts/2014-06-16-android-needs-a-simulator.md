@@ -1,6 +1,5 @@
 ---
 title: Android Needs A Simulator, Not An Emulator
-layout: post
 
 categories: post
 tags:

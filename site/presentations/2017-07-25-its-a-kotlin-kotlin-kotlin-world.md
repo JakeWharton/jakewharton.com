@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Londroid
 location: London, England
 homepage: https://www.meetup.com/android/

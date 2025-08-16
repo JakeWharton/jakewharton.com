@@ -1,6 +1,5 @@
 ---
 title: Coercing Picasso To Play With Palette
-layout: post
 
 categories: post
 tags:

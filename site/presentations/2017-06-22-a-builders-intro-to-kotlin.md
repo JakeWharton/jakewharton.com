@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Gradle Summit
 location: Palo Alto, CA, USA
 homepage: https://summit.gradle.com/

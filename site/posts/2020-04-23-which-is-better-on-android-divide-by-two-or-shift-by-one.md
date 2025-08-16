@@ -1,6 +1,5 @@
 ---
 title: "Which is better on Android: divide by 2 or shift by 1?"
-layout: post
 
 categories: post
 tags:

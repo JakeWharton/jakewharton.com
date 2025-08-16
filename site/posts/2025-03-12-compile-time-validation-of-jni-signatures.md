@@ -1,6 +1,5 @@
 ---
 title: 'Compile-time validation of JNI signatures'
-layout: post
 
 categories: post
 tags:
@@ -182,7 +181,7 @@ This is the result after moving `Example.java` into `src/main/java/`, writing `a
 
 If your native build occurs outside Gradle, the `compileJava` task should be run first, then the external native build, and finally (with the native binaries put somewhere like `src/main/resources/`) the full `assemble` or `build` task can be run.
 
-For native builds which run as a Gradle task, you can consume the associated `JavaCompile` task's `options.headerOutputDirectory` property which becomes an additional include directory. 
+For native builds which run as a Gradle task, you can consume the associated `JavaCompile` task's `options.headerOutputDirectory` property which becomes an additional include directory.
 
 
 ### Kotlin (and other JVM languages)
@@ -251,7 +250,7 @@ Someone just has to do the work.
 
 There was [a repo](https://github.com/Glavo/gjavah) which attempted this, but it is incomplete and now seemingly abandoned.
 When the JDK removed the `javah` tool, the Scala community forked that library to create their [sbt-jni](https://github.com/sbt/sbt-jni/) plugin.
-But to my knowledge there is no other general-purpose tool for other languages which fulfills this need today. 
+But to my knowledge there is no other general-purpose tool for other languages which fulfills this need today.
 
 ### Java 22 and FFM
 
@@ -262,7 +261,7 @@ Elaborate tools such as JNA and SWIG were invented to try and simplify native li
 Starting last year with Java 22, the new [Foreign Function & Memory API](https://openjdk.org/jeps/484) became available to use.
 FFM inverts ownership of the stubs, generating the Java sources from native headers using the [jextract](https://github.com/openjdk/jextract) tool.
 
-If I manually write a `things.h` file with a regular C API that can be fed into `jextract`. 
+If I manually write a `things.h` file with a regular C API that can be fed into `jextract`.
 ```c
 #ifndef things_h
 #define things_h
@@ -283,7 +282,7 @@ The resulting `things_h.java` file is a chonker, but among a slew of FFM impleme
 ```java
 public class things_h {
     // …
-    
+
     /**
      * {@snippet lang=c :
      * long createThing(char *name, int count, void *buffer)
@@ -319,7 +318,7 @@ With the ownership reversed, there is no chance of changes to Java breaking the 
  
 -long createThing(char* name, int count, void* buffer);
 +long createThing(char* name, int count);
-
+ 
  #endif // things_h
 ```
 ```

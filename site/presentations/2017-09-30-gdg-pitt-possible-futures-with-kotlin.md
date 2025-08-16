@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: GDG DevFest
 location: Pittsburgh, PA, USA
 homepage: https://www.meetup.com/gdg-pitt/events/241107213/

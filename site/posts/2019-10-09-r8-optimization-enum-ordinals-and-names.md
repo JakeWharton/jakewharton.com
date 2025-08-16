@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Enum Ordinals and Names'
-layout: post
 
 categories: post
 tags:
@@ -113,9 +112,9 @@ In addition to `ordinal()`, each enum constant exposes its declared name through
 enum Greeting {
   FORMAL { /* … */ },
   INFORMAL { /* … */ };
-  
+
   abstract String greet(String name);
-  
+
   @Override public String toString() {
     return "Greeting(" + name().toLowercase(US) + ')';
   }

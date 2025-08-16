@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Droidcon
 location: Montreal, Canada
 homepage: http://www.droidcon.ca/

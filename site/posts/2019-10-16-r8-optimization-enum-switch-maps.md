@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Enum Switch Maps'
-layout: post
 
 categories: post
 tags:

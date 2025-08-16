@@ -1,6 +1,5 @@
 ---
 title: Hello Picasso 2.3
-layout: post
 
 external: true
 blog: Square Corner

@@ -1,6 +1,5 @@
 ---
 title: 'Slope-intercept library design'
-layout: post
 
 categories: post
 ---

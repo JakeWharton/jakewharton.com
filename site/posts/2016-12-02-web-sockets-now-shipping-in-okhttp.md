@@ -1,6 +1,5 @@
 ---
 title: Web Sockets now shipping in OkHttp 3.5!
-layout: post
 
 external: true
 blog: Square Corner

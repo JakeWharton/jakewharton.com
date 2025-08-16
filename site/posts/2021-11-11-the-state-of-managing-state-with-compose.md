@@ -1,6 +1,5 @@
 ---
 title: 'The state of managing state (with Compose)'
-layout: post
 
 external: true
 blog: Cash App Code Blog
@@ -45,14 +44,14 @@ First and foremost, what does it look like?
 @Composable
 fun Counter(start: Int, stop: Int): Int {
   val value by remember { mutableStateOf(start) }
-  
+
   LaunchedEffect(Unit) {
     while (value <= stop) {
       delay(1_000)
       value++
     }
   }
-  
+
   return value
 }
 ```

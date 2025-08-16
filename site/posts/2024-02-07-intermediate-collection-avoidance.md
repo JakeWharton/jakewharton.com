@@ -1,6 +1,5 @@
 ---
 title: 'Intermediate collection avoidance'
-layout: post
 
 categories: post
 tags:

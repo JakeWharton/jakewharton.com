@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: NY Android Meetup
 location: New York City, NY, USA
 homepage: http://www.meetup.com/android-developers-nyc/events/228554404/

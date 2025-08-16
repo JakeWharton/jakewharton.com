@@ -1,6 +1,5 @@
 ---
 title: Better Parameterized Tests with Burst
-layout: post
 
 external: true
 blog: Square Corner

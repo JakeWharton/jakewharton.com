@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Droidcon
 location: Toronto, Canada
 homepage: https://www.to.droidcon.com/

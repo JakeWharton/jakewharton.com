@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: GOTO Conference
 location: Copenhagen, Denmark
 homepage: http://gotocon.com/cph-2016/

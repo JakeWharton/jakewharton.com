@@ -1,6 +1,5 @@
 ---
 title: 'Treating Dockerfiles as shell scripts'
-layout: post
 
 categories: post
 ---
@@ -73,7 +72,7 @@ You can find it at
 The implementation is a bit more complicated than above for a few usability and correctness
 concerns:
 
- 1. Builds can be slow, so a message will be displayed if the container is currently being built. 
+ 1. Builds can be slow, so a message will be displayed if the container is currently being built.
  2. If the build step fails, its entire output will be displayed to aid in debugging.
  3. Most importantly, there's a mechanism for passing arguments to the `docker run` command for
    mounting volumes, setting environment variables, and any other container-level flags.

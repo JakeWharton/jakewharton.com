@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Devoxx
 location: San Jose, CA, USA
 homepage: http://devoxx.us/

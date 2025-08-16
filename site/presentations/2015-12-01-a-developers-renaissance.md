@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: AndroidTO
 location: Toronto, Canada
 homepage: http://androidto.com/

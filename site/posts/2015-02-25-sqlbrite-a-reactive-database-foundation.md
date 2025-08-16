@@ -1,6 +1,5 @@
 ---
 title: "SQLBrite: A reactive Database Foundation"
-layout: post
 
 external: true
 blog: Square Corner

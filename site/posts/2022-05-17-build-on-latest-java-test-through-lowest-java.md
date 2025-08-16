@@ -1,6 +1,5 @@
 ---
 title: 'Build on latest Java, test through lowest Java'
-layout: post
 
 categories: post
 ---

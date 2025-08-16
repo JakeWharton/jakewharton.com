@@ -1,6 +1,5 @@
 ---
 title: 'D8 Library Desugaring'
-layout: post
 
 categories: post
 tags:

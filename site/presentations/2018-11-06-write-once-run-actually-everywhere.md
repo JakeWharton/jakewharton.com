@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: QCon
 location: San Francisco, CA, USA
 homepage: https://qconsf.com/

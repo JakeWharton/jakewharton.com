@@ -1,6 +1,5 @@
 ---
 title: "Kotlin's JDK release compatibility flag"
-layout: post
 
 categories: post
 tags:

@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: DPE Summit
 location: San Francisco, CA, USA
 homepage: https://dpesummit.com/

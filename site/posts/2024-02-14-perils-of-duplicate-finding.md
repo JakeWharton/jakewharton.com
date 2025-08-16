@@ -1,6 +1,5 @@
 ---
 title: 'Perils of duplicate finding'
-layout: post
 
 categories: post
 tags:

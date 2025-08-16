@@ -1,6 +1,5 @@
 ---
 title: Announcing ActionBarSherlock Version 4.0
-layout: post
 
 categories: post
 tags:

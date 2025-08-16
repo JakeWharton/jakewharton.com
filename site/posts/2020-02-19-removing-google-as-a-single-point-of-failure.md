@@ -1,6 +1,5 @@
 ---
 title: 'Removing Google as a Single Point of Failure'
-layout: post
 
 categories: post
 tags:

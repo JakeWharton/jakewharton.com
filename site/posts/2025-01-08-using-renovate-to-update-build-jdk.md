@@ -1,6 +1,5 @@
 ---
 title: 'Using Renovate to update build JDK'
-layout: post
 
 categories: post
 tags:
@@ -10,7 +9,7 @@ tags:
 - Android
 ---
 
-You want to be using the latest JDK for development. 
+You want to be using the latest JDK for development.
 [Don't use Gradle toolchains](/gradle-toolchains-are-rarely-a-good-idea/), they'll needlessly force you to use old JDKs.
 You can still [target and test on old JVM versions](/build-on-latest-java-test-through-lowest-java/) but develop with the latest and greatest.
 Java and the JDK are literally built for this.

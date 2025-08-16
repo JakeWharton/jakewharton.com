@@ -1,6 +1,5 @@
 ---
 title: Calculating the true impact of zip file entries
-layout: post
 
 categories: post
 tags:

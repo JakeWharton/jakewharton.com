@@ -1,6 +1,5 @@
 ---
 title: "Native UI and multiplatform Compose with Redwood"
-layout: post
 
 external: true
 blog: Cash App Code Blog

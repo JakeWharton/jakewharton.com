@@ -1,6 +1,5 @@
 ---
 title: "Wire Support For Swift, Part 1"
-layout: post
 
 external: true
 blog: Cash App Code Blog

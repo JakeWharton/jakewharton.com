@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Android Hacker Night
 location: San Francisco, CA, USA
 homepage: http://www.eventbrite.com/e/android-hacker-night-how-to-code-for-simplicity-and-testability-tickets-6055755929

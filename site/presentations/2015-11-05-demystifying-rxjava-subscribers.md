@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Øredev
 location: Malmö, Sweden
 homepage: http://oredev.org/

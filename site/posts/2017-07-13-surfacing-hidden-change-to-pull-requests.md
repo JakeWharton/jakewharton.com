@@ -1,6 +1,5 @@
 ---
 title: Surfacing Hidden Change to Pull Requests
-layout: post
 
 external: true
 blog: Square Corner

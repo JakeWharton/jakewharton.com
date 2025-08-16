@@ -1,6 +1,5 @@
 ---
 title: 'Optimizing Bytecode by Manipulating Source Code'
-layout: post
 
 categories: post
 ---

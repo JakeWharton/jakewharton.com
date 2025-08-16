@@ -1,6 +1,5 @@
 ---
 title: Forcing bytes downward in Okio
-layout: post
 
 categories: post
 tags:

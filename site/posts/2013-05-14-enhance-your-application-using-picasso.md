@@ -1,6 +1,5 @@
 ---
 title: Enhance Your Application Using Picasso
-layout: post
 
 external: true
 blog: Square Corner

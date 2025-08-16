@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Pitt CS Club
 location: Pittsburgh, PA, USA
 

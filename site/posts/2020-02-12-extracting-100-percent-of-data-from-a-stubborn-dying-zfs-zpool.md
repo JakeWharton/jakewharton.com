@@ -1,6 +1,5 @@
 ---
 title: 'Extracting 100% of Data From a Stubborn, Dying ZFS Pool'
-layout: post
 
 categories: post
 tags:

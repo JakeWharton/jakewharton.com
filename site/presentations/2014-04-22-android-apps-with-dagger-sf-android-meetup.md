@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: SF Android Meetup
 location: San Francisco, CA, USA
 homepage: http://www.meetup.com/sfandroid/events/171955222/

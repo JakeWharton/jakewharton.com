@@ -1,6 +1,5 @@
 ---
 title: 'R8 Optimization: Value Assumption'
-layout: post
 
 categories: post
 tags:

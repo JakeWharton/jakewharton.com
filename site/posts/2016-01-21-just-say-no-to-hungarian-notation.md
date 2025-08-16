@@ -1,6 +1,5 @@
 ---
 title: Just Say mNo to Hungarian Notation
-layout: post
 
 categories: post
 tags:

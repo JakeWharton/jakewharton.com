@@ -1,6 +1,5 @@
 ---
 title: 'D8 Optimization: Assertions'
-layout: post
 
 categories: post
 tags:
@@ -62,11 +61,11 @@ D8 knows that Android does not support Java assertions. It will remove the check
 <!--
 digraph G {
   rankdir="RL";
-  
+
   "if assertions enabled" [style=dotted]
   "if thread == main thread"[style=dotted]
   "throw AssertionError" [style=dotted]
-  
+
   "if thread == main thread" -> "if assertions enabled" [style=dotted]
   "throw AssertionError" -> "if thread == main thread" [style=dotted]
   "int value = id" -> "if thread == main thread" [style=dotted]
@@ -116,9 +115,9 @@ In practice, this means that any debug variant will replace the assertions-enabl
 <!--
 digraph G {
   rankdir="RL";
-  
+
   "if assertions enabled" [style=dotted]
-  
+
   "if thread == main thread" -> "if assertions enabled" [style=dotted]
   "throw AssertionError" -> "if thread == main thread"
   "int value = id" -> "if thread == main thread"
@@ -134,7 +133,7 @@ This eliminates the enabled check but retains the invariant check.
 <!--
 digraph G {
   rankdir="RL";
-  
+
   "throw AssertionError" -> "if thread == main thread"
   "int value = id" -> "if thread == main thread"
   "id = value + 1" -> "int value = id"

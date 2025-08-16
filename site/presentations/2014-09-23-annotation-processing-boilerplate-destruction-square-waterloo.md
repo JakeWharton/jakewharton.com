@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Square Android Tech Talks
 location: Waterloo, Canada
 

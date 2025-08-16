@@ -1,6 +1,5 @@
 ---
 title: "Litmus-Testing Kotlin's Many Memory Models"
-layout: post
 
 categories: post
 tags:
@@ -18,7 +17,7 @@ I've been porting the [AndroidX collection library][collection] to Kotlin multip
 
 ### On Deck
 
-The Kotlin standard library contains general-purpose collections like lists, sets, and maps in both mutable and read-only form. Kotlin&nbsp;1.3.70 added another collection, [`ArrayDeque`][deque], a "double-ended queue" for efficient stacks and queues. 
+The Kotlin standard library contains general-purpose collections like lists, sets, and maps in both mutable and read-only form. Kotlin&nbsp;1.3.70 added another collection, [`ArrayDeque`][deque], a "double-ended queue" for efficient stacks and queues.
 
  [deque]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-deque/
 

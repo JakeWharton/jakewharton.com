@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Emerging Technologies Conference
 location: Philadelphia, PA, USA
 homepage: http://2017.phillyemergingtech.com/

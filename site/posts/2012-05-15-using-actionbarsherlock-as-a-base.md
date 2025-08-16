@@ -1,6 +1,5 @@
 ---
 title: Using ActionBarSherlock As A Base
-layout: post
 
 external: true
 blog: Square Corner

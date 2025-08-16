@@ -1,6 +1,5 @@
 ---
 title: 'Public API challenges in Kotlin'
-layout: post
 
 categories: post
 tags:
@@ -75,7 +74,7 @@ For the manually-written Java type we add a new field, getter, and constructor p
    public @NonNull String getName() { return name; }
 +  public @Nullable String getNickname() { return nickname; }
    public int getAge() { return age; }
-
+ 
    @Override public String toString() {
 -   return "Person(name=" + name + ", age=" + age + ')'
 +   return "Person(name=" + name + ", nickname=" + nickname + ", age=" + age + ')'
@@ -201,7 +200,7 @@ class Person(
   val age: Int
 ) {
   // ...
-  
+
   constructor(name: String, age: Int) : this(name, null, age)
 
   override fun toString() = "Person(name=$name, nickname=$nickname, age=$age)"
@@ -282,7 +281,7 @@ Creating the builder in Kotlin is nearly identical.
    override fun toString() = TODO()
    override fun equals(other: Any) = TODO()
    override fun hashCode() = TODO()
-+   
++
 +  class Builder {
 +    private var name: String? = null
 +    private var nickname: String? = null

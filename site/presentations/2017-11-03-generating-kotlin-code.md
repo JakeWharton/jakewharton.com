@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: KotlinConf
 location: San Francisco, CA, USA
 homepage: https://www.kotlinconf.com/

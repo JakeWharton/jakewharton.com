@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: Harvard CS Tech Talk
 location: Cambridge, MA, USA
 

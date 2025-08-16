@@ -1,6 +1,5 @@
 ---
 title: The Resurrection of Testing for Android
-layout: post
 
 external: true
 blog: Square Corner
@@ -45,7 +44,7 @@ public class SquaredImageViewTest {
     // Manually measure the view at 200x100.
     view.measure(MeasureSpec.makeMeasureSpec(200, EXACTLY),
                  MeasureSpec.makeMeasureSpec(100, EXACTLY));
-    
+
     // Verify that it correctly resized itself to 200x200.
     assertEquals(200, view.getMeasuredWidth());
     assertEquals(200, view.getMeasuredHeight());

@@ -1,6 +1,5 @@
 ---
 title: 'Removing Google as a Single Point of Failure Part 2: Gmail'
-layout: post
 
 categories: post
 tags:

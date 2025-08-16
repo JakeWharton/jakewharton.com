@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: KotlinConf
 location: Amsterdam, Netherlands
 homepage: https://kotlinconf.com

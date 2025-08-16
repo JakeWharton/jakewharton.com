@@ -1,6 +1,5 @@
 ---
 title: "AssistedInject is dead, long live AssistedInject!"
-layout: post
 
 external: true
 blog: Cash App Code Blog
@@ -46,7 +45,7 @@ Most notably, this version will require specifying qualifier annotations for ass
 +  @Assisted @Named("two") assistedValue2: String,
  ) {
    // ...
-   
+
    @AssistedInject.Factory
    interface Factory {
      fun create(
@@ -110,7 +109,7 @@ Aside from simple import changes, Dagger uses `@AssistedFactory` instead of `@As
 +  @Assisted("two") assistedValue2: String,
  ) {
    // ...
-   
+
 -  @AssistedInject.Factory
 +  @AssistedFactory
    interface Factory {
@@ -142,7 +141,7 @@ There is one pattern to watch out for in this migration. Dagger's assisted injec
    // ...
  ) : ObservableTransformer<Event, Model> {
    // ...
-  
+
 +  @AssistedFactory
 +  interface DaggerFactory : Factory {
 +    override fun create(/*..*/): TestPresenter

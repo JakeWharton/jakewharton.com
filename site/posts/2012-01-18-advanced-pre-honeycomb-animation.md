@@ -1,6 +1,5 @@
 ---
 title: Advanced Pre-Honeycomb Animation with NineOldAndroids
-layout: post
 
 categories: post
 tags:

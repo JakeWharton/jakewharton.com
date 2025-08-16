@@ -1,10 +1,9 @@
 ---
 title: 'The Economics of Generated Code'
-layout: post
 
 categories: post
 ---
- 
+
 Among the many things that I've ~~stolen~~ learned from [Jesse Wilson](https://twitter.com/jessewilson) is the phrase "the economics of generated code". This captures the idea that the things we value when generating code are different than those we value for code that's manually written.
 
 A code generator is only written once but the code it generates occurs many times. Thus, any investment into making the generator emit more efficient code will pay for itself very quickly. This generally means output less code and allocate fewer objects wherever possible. I'd like to expand on that with two specific, real-world examples which I've run into.

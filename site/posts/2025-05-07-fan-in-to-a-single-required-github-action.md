@@ -1,6 +1,5 @@
 ---
 title: 'Fan-in to a single required GitHub Action'
-layout: post
 
 categories: post
 tags:
@@ -60,7 +59,7 @@ Next, add a step which ensures the status of each 'needs' job was successful:
 ```
 
 Finally, you can mark this job the only required one.
-It will now successfully reflect the status of all jobs. 
+It will now successfully reflect the status of all jobs.
 You can also hang additional steps on it, or even entire subsequent jobs (provided they aren't needed for PRs).
 
 I'm using this setup on a few repos [such as Mosaic](https://github.com/JakeWharton/mosaic/blob/54f2183bf8757fe941433c824771272e20d35673/.github/workflows/build.yaml#L299-L321) where you can also see a downstream 'publish' job which only runs on the integration branch.

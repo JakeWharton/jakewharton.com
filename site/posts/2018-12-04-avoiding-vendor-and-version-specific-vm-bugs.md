@@ -1,6 +1,5 @@
 ---
 title: Avoiding Vendor- and Version-Specific VM Bugs
-layout: post
 
 categories: post
 tags:

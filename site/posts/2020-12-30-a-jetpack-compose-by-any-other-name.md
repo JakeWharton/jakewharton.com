@@ -1,6 +1,5 @@
 ---
 title: 'A Jetpack Compose by any other name'
-layout: post
 
 categories: post
 ---
@@ -24,7 +23,7 @@ A multiplatform application UI? Thanks to JetBrains this is also true.
 If you're somewhat in tune to how the sausage is made you may also reference the fact that it's a
 Kotlin compiler plugin and DSL to build Android UI or multiplatform UI. It's those things, too.
 
-None of these answers are wrong. However, they're doing a bit of a disservice 
+None of these answers are wrong. However, they're doing a bit of a disservice
 to the internals of Compose and its unrealized potential.
 
 ### Pedigree

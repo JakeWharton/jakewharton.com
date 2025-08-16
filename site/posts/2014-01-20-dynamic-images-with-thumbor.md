@@ -1,6 +1,5 @@
 ---
 title: Dynamic Images with Thumbor
-layout: post
 
 external: true
 blog: Square Corner

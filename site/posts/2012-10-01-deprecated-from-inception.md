@@ -1,6 +1,5 @@
 ---
 title: Deprecated From Inception
-layout: post
 
 categories: post
 tags:

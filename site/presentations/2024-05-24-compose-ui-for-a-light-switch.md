@@ -1,6 +1,4 @@
 ---
-layout: presentation
-
 event: KotlinConf
 location: Copenhagen, Denmark
 homepage: https://kotlinconf.com/

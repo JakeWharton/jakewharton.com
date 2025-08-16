@@ -1,6 +1,5 @@
 ---
 title: Generating Kotlin code with KotinPoet
-layout: post
 
 external: true
 blog: Square Corner
