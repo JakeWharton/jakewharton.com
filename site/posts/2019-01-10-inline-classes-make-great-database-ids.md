@@ -1,7 +1,6 @@
 ---
 title: Inline Classes Make Great Database IDs
 
-categories: post
 tags:
 - Android
 - Kotlin

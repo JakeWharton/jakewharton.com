@@ -1,7 +1,6 @@
 ---
 title: Play Services 5.0 Is A Monolith Abomination
 
-categories: post
 tags:
 - Android
 

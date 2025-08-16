@@ -1,7 +1,5 @@
 ---
 title: 'Cross-compiling static Rust binaries in Docker for Raspberry Pi'
-
-categories: post
 ---
 
 Earlier this year I built a web-based garage door controller using Rust for the Raspberry Pi called [Normally Closed][nc]. My deployment includes a Pi 3b and a Pi Zero which are ARMv7 and ARMv6 devices, respectively. I deploy services with Docker and wanted to continue using it here for simplicity.

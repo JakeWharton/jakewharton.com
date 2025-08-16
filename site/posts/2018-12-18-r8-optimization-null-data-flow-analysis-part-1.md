@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Null Data Flow Analysis (Part 1)'
 
-categories: post
 tags:
 - Android
 - Java

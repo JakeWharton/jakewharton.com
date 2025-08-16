@@ -1,7 +1,6 @@
 ---
 title: 'Intermediate collection avoidance'
 
-categories: post
 tags:
 - Kotlin
 ---

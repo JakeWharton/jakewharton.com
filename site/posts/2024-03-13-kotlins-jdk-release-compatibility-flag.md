@@ -1,7 +1,6 @@
 ---
 title: "Kotlin's JDK release compatibility flag"
 
-categories: post
 tags:
 - Kotlin
 ---

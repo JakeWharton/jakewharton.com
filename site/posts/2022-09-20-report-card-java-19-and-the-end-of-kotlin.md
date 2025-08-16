@@ -1,7 +1,6 @@
 ---
 title: 'Report card: Java 19 and the end of Kotlin'
 
-categories: post
 tags:
 - Java
 - Kotlin

@@ -1,7 +1,6 @@
 ---
 title: "Which is better on Android: divide by 2 or shift by 1?"
 
-categories: post
 tags:
 - Android
 - D8

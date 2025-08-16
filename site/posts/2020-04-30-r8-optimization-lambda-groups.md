@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Lambda Groups'
 
-categories: post
 tags:
 - Android
 - R8

@@ -1,7 +1,5 @@
 ---
 title: 'Case-insensitive filesystems considered harmful (to me)'
-
-categories: post
 ---
 
 Having been burned by case-insensitive filesystem bugs one too many times, I long ago switched my development folder to a case-sensitive filesystem partition on my otherwise case-insensitive Mac. Unfortunately this can actually work against me as I interact with the computers of coworkers and service providers which use the default. Well I was burned again, and this is the tale!

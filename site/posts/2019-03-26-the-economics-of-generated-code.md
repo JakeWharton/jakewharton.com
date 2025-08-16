@@ -1,7 +1,5 @@
 ---
 title: 'The Economics of Generated Code'
-
-categories: post
 ---
 
 Among the many things that I've ~~stolen~~ learned from [Jesse Wilson](https://twitter.com/jessewilson) is the phrase "the economics of generated code". This captures the idea that the things we value when generating code are different than those we value for code that's manually written.

@@ -1,7 +1,5 @@
 ---
 title: 'A Jetpack Compose by any other name'
-
-categories: post
 ---
 
 I really like Jetpack Compose.

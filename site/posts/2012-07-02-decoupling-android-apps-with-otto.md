@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/decoupling-android-app-communication-with-otto
 
-categories: post
 tags:
 - Android
 - Otto

@@ -1,7 +1,6 @@
 ---
 title: Tracing Gradle task execution
 
-categories: post
 tags:
 - Java
 

@@ -1,7 +1,6 @@
 ---
 title: Android's Java 8 Support
 
-categories: post
 tags:
 - Android
 - Java

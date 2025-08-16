@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/an-optionals-place-in-kotlin
 
-categories: post
 tags:
 - Kotlin
 - "Square Open Source ♥s Kotlin"

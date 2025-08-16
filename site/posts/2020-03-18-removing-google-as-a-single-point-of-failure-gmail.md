@@ -1,7 +1,6 @@
 ---
 title: 'Removing Google as a Single Point of Failure Part 2: Gmail'
 
-categories: post
 tags:
 - Linux
 ---

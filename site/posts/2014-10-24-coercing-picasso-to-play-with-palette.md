@@ -1,7 +1,6 @@
 ---
 title: Coercing Picasso To Play With Palette
 
-categories: post
 tags:
 - Android
 

@@ -1,7 +1,5 @@
 ---
 title: 'Peeking at command-line ANSI escape sequences'
-
-categories: post
 ---
 
 Command-line programs use color to convey additional information and to look pretty. For example, compare the output of `ls` with and without the `--color` flag:

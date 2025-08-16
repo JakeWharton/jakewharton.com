@@ -1,7 +1,5 @@
 ---
 title: 'Optimizing Bytecode by Manipulating Source Code'
-
-categories: post
 ---
 
 This post is a follow-up to "[The Economics of Generated Code](/the-economics-of-generated-code/)" which argued that spending time optimizing generated code is more worthwhile than the same optimizations done in manually-written code.

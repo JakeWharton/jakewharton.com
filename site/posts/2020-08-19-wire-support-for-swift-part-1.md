@@ -5,7 +5,6 @@ external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/wire-support-for-swift-part-1
 
-categories: post
 tags:
 - iOS
 - Swift

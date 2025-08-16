@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Value Assumption'
 
-categories: post
 tags:
 - Android
 - Kotlin

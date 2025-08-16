@@ -1,7 +1,6 @@
 ---
 title: Forcing bytes downward in Okio
 
-categories: post
 tags:
 - Android
 - Java

@@ -1,7 +1,6 @@
 ---
 title: 'Public API challenges in Kotlin'
 
-categories: post
 tags:
 - Kotlin
 ---

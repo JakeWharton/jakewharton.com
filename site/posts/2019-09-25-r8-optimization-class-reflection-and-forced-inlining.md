@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Class Reflection and Forced Inlining'
 
-categories: post
 tags:
 - Android
 - R8

@@ -1,7 +1,6 @@
 ---
 title: ActionBarSherlock - A Love Story (Part 1)
 
-categories: post
 tags:
   - Android
   - ActionBarSherlock

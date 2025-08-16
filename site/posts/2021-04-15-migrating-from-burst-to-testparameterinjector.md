@@ -5,7 +5,6 @@ external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/migrating-from-burst-to-testparameterinjector
 
-categories: post
 tags:
 - Android
 ---

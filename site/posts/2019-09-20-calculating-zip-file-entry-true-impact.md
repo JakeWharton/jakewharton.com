@@ -1,7 +1,6 @@
 ---
 title: Calculating the true impact of zip file entries
 
-categories: post
 tags:
 - Java
 ---

@@ -1,7 +1,6 @@
 ---
 title: Avoiding Vendor- and Version-Specific VM Bugs
 
-categories: post
 tags:
 - Android
 - Java

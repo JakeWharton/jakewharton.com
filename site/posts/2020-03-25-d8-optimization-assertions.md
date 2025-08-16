@@ -1,7 +1,6 @@
 ---
 title: 'D8 Optimization: Assertions'
 
-categories: post
 tags:
 - Android
 - D8

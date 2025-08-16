@@ -1,7 +1,6 @@
 ---
 title: 'Fan-in to a single required GitHub Action'
 
-categories: post
 tags:
 - Programming
 ---

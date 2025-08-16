@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/sqlbrite-a-reactive-database-foundation
 
-categories: post
 tags:
 - Android
 - Database

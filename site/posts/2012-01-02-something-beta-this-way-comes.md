@@ -1,7 +1,6 @@
 ---
 title: Something Beta This Way Comes!
 
-categories: post
 tags:
 - Android
 - ActionBarSherlock

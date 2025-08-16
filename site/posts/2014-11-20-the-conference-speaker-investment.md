@@ -1,7 +1,6 @@
 ---
 title: The Conference Speaker Investment
 
-categories: post
 tags:
 - Android
 

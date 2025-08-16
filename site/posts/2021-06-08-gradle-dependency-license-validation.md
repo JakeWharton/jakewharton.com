@@ -5,7 +5,6 @@ external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/gradle-dependency-license-validation
 
-categories: post
 tags:
 - Android
 ---

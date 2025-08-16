@@ -1,7 +1,6 @@
 ---
 title: Java Interoperability Policy for Major Version Updates
 
-categories: post
 tags:
 - Android
 - Java

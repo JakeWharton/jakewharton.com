@@ -1,7 +1,6 @@
 ---
 title: 'Nonsensical Maven is still a Gradle problem'
 
-categories: post
 tags:
 - Gradle
 - Java

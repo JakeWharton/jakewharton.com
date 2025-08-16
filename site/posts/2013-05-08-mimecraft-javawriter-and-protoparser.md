@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/mimecraft-javawriter-and-protoparser
 
-categories: post
 tags:
 - Java
 - HTTP

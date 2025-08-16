@@ -1,7 +1,6 @@
 ---
 title: 'Using jlink to cross-compile minimal JREs'
 
-categories: post
 tags:
 - Java
 - Kotlin

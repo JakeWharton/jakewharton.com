@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/the-resurrection-of-testing-for-android
 
-categories: post
 tags:
 - Android
 - Testing

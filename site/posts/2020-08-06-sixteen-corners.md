@@ -1,7 +1,5 @@
 ---
 title: 'Sixteen corners'
-
-categories: post
 ---
 
 Last year I built a library called [Picnic][picnic] for rendering data tables in monospaced environments like your terminal. Part of rendering the table is calculating what character to use for each wall and each corner separating the cells.

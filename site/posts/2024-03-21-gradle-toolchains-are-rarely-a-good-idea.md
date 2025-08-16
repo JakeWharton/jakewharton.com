@@ -1,7 +1,6 @@
 ---
 title: 'Gradle toolchains are rarely a good idea'
 
-categories: post
 tags:
 - Gradle
 - Java

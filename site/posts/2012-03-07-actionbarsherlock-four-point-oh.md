@@ -1,7 +1,6 @@
 ---
 title: Announcing ActionBarSherlock Version 4.0
 
-categories: post
 tags:
 - Android
 - ActionBarSherlock

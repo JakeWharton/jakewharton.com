@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Enum Ordinals and Names'
 
-categories: post
 tags:
 - Android
 - R8

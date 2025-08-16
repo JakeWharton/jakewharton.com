@@ -1,7 +1,6 @@
 ---
 title: 'D8 Library Desugaring'
 
-categories: post
 tags:
 - Android
 - D8

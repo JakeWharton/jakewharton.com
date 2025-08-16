@@ -1,7 +1,6 @@
 ---
 title: The Android Build System Is Broken
 
-categories: post
 tags:
 - Android
 

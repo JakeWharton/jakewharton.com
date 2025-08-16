@@ -1,7 +1,6 @@
 ---
 title: 'Exceptions and proxies and coroutines, oh my!'
 
-categories: post
 tags:
 - Kotlin
 - Java

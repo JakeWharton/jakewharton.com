@@ -1,7 +1,6 @@
 ---
 title: Increased accuracy of aapt2 "keep" rules
 
-categories: post
 tags:
 - Java
 

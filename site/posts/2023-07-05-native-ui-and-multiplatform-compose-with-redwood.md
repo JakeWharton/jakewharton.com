@@ -5,7 +5,6 @@ external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/native-ui-and-multiplatform-compose-with-redwood
 
-categories: post
 tags:
 - Android
 - Kotlin

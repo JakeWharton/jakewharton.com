@@ -1,7 +1,5 @@
 ---
 title: 'Multiplatform Compose and Gradle module metadata abuse'
-
-categories: post
 ---
 
 My primary work project for the better part of a year (named Redwood) is built on top of Compose[^1] and runs on every platform that Kotlin supports. This of course means Android, but we also have Compose running on iOS, the web, the JVM, and all other native targets. It's truly a multiplatform Compose project[^2].

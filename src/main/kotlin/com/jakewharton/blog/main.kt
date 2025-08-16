@@ -289,7 +289,6 @@ private class MainCommand(
 					consumeAndPutOptionalFrontMatter(frontMatter, "external")
 					consumeAndPutOptionalFrontMatter(frontMatter, "blog")
 					consumeAndPutOptionalFrontMatter(frontMatter, "blog_link") // TODO validate URL 200s
-					frontMatter.remove("categories") // TODO
 					frontMatter.remove("tags") // TODO
 					frontMatter.remove("lead") // TODO delete all of these
 					frontMatter.remove("image") // TODO delete all of these

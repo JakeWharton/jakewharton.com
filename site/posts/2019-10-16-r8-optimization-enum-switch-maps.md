@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Enum Switch Maps'
 
-categories: post
 tags:
 - Android
 - R8

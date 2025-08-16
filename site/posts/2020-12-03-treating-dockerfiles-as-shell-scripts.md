@@ -1,7 +1,5 @@
 ---
 title: 'Treating Dockerfiles as shell scripts'
-
-categories: post
 ---
 
 I use Docker to run a lot of tools. With the tools all wrapped up in containers, my computers are

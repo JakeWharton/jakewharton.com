@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/using-actionbarsherlock-as-a-base
 
-categories: post
 tags:
 - Android
 - ActionBarSherlock

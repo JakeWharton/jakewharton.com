@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/better-parameterized-tests-with-burst
 
-categories: post
 tags:
 - Testing
 - Java

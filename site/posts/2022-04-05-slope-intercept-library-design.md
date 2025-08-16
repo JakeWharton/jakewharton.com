@@ -1,7 +1,5 @@
 ---
 title: 'Slope-intercept library design'
-
-categories: post
 ---
 
 The equation `y=mx+b` defines a line in slope-intercept form. The line will intercept the y-axis at the value `b` and for each change in `x` its slope (the amount the line goes up or down) will change by `m`.

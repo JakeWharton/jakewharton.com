@@ -1,7 +1,6 @@
 ---
 title: Just Say mNo to Hungarian Notation
 
-categories: post
 tags:
 - Android
 

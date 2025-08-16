@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/web-sockets-now-shipping-in-okhttp-3-5
 
-categories: post
 tags:
 - Java
 - OkHttp

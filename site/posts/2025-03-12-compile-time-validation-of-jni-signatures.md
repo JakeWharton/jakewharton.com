@@ -1,7 +1,6 @@
 ---
 title: 'Compile-time validation of JNI signatures'
 
-categories: post
 tags:
 - Android
 - Java

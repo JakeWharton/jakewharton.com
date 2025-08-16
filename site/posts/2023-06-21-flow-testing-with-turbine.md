@@ -5,7 +5,6 @@ external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/flow-testing-with-turbine
 
-categories: post
 tags:
   - Android
   - Kotlin

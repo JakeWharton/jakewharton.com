@@ -1,7 +1,6 @@
 ---
 title: 'D8 Optimizations'
 
-categories: post
 tags:
 - Android
 - D8

@@ -1,7 +1,6 @@
 ---
 title: 'Using Renovate to update build JDK'
 
-categories: post
 tags:
 - Gradle
 - Java

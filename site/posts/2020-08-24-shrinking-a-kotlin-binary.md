@@ -1,7 +1,5 @@
 ---
 title: 'Shrinking a Kotlin binary by 99.2%'
-
-categories: post
 ---
 
 We'll get to the shrinking, but first let's motivate the binary in question. Three years ago I wrote the ["Surfacing Hidden Change to Pull Requests" post][original_post] which covered pushing important stats and diffs into PRs as a comment. This avoids surprises with changes that affect binary size, manifests, and dependency trees.

@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Method Outlining'
 
-categories: post
 tags:
 - Android
 - R8

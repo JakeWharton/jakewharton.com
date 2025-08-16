@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: Staticization'
 
-categories: post
 tags:
 - Android
 - Java

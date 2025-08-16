@@ -5,7 +5,6 @@ external: true
 blog: Android Developers Blog
 blog_link: https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html
 
-categories: post
 tags:
 - Android
 - Kotlin

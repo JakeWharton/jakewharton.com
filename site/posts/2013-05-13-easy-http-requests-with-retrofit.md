@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/easy-http-requests-with-retrofit
 
-categories: post
 tags:
 - Java
 - Android

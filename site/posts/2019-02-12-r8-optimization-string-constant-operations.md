@@ -1,7 +1,6 @@
 ---
 title: 'R8 Optimization: String Constant Operations'
 
-categories: post
 tags:
 - Android
 - R8

@@ -1,7 +1,5 @@
 ---
 title: 'Smaller APKs with resource optimization'
-
-categories: post
 ---
 
 How many times does the name of a layout file appear in an Android APK? We can build a minimal APK with a single layout file to count the occurrences empirically.

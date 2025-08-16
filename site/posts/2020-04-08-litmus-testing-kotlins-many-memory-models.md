@@ -1,7 +1,6 @@
 ---
 title: "Litmus-Testing Kotlin's Many Memory Models"
 
-categories: post
 tags:
 - Kotlin
 ---

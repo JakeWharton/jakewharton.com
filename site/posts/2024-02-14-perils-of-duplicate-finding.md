@@ -1,7 +1,6 @@
 ---
 title: 'Perils of duplicate finding'
 
-categories: post
 tags:
 - Kotlin
 ---

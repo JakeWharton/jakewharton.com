@@ -1,7 +1,6 @@
 ---
 title: Deprecated From Inception
 
-categories: post
 tags:
 - Android
 - ActionBarSherlock

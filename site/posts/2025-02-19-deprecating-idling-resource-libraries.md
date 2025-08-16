@@ -1,7 +1,6 @@
 ---
 title: 'Deprecating idling resource libraries'
 
-categories: post
 tags:
 - Android
 ---

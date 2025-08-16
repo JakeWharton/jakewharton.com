@@ -1,7 +1,6 @@
 ---
 title: 'Removing Google as a Single Point of Failure'
 
-categories: post
 tags:
 - Linux
 ---

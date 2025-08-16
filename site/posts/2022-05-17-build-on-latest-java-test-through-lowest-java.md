@@ -1,7 +1,5 @@
 ---
 title: 'Build on latest Java, test through lowest Java'
-
-categories: post
 ---
 
 In the past, when a new version of Java was released, I would add that version to our open source project's CI builds.

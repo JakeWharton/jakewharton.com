@@ -5,7 +5,6 @@ external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/surfacing-hidden-change-to-pull-requests
 
-categories: post
 tags:
 - Code Review
 ---

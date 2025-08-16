@@ -1,7 +1,5 @@
 ---
 title: 'Integration verbosity and good layering'
-
-categories: post
 ---
 
 One of my favorite non-features from building [view binding][vb] is that it lacks integration with
