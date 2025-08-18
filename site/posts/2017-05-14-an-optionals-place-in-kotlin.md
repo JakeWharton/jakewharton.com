@@ -1,7 +1,6 @@
 ---
 title: An Optional's place in Kotlin
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/an-optionals-place-in-kotlin
 

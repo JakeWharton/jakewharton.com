@@ -1,7 +1,6 @@
 ---
 title: Enhance Your Application Using Picasso
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/enhance-your-application-using-picasso
 

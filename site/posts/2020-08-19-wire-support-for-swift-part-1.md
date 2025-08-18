@@ -1,7 +1,6 @@
 ---
 title: "Wire Support For Swift, Part 1"
 
-external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/wire-support-for-swift-part-1
 

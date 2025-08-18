@@ -1,7 +1,6 @@
 ---
 title: "AssistedInject is dead, long live AssistedInject!"
 
-external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/assisted-inject-is-dead-long-live-assisted-inject
 

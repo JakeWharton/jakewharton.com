@@ -1,7 +1,6 @@
 ---
 title: "Introducing Android KTX: Even Sweeter Kotlin Development for Android"
 
-external: true
 blog: Android Developers Blog
 blog_link: https://android-developers.googleblog.com/2018/02/introducing-android-ktx-even-sweeter.html
 

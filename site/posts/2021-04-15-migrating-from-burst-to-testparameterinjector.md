@@ -1,7 +1,6 @@
 ---
 title: "Migrating from Burst to TestParameterInjector"
 
-external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/migrating-from-burst-to-testparameterinjector
 

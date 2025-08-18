@@ -23,3 +23,9 @@ internal fun <T> Iterable<T>.checkEmptyOrSingleOrThrow(message: () -> String): T
 	if (!iterator.hasNext()) return item
 	error(message())
 }
+
+internal fun <T> List<T>.asSetChecked(): Set<T> {
+	val set = toSet()
+	check(set.size == size) { "Duplicate items found" }
+	return set
+}

@@ -1,7 +1,6 @@
 ---
 title: "Native UI and multiplatform Compose with Redwood"
 
-external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/native-ui-and-multiplatform-compose-with-redwood
 

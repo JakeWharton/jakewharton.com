@@ -1,7 +1,6 @@
 ---
 title: Generating Kotlin code with KotinPoet
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/generating-kotlin-code-with-kotlinpoet/
 

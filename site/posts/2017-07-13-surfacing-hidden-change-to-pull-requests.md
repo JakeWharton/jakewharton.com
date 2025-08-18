@@ -1,7 +1,6 @@
 ---
 title: Surfacing Hidden Change to Pull Requests
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/surfacing-hidden-change-to-pull-requests
 

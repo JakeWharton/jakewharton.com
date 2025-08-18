@@ -86,7 +86,7 @@ private class MainCommand(
 		.withStrictVariables(true)
 		.withFilter(
 			object : Filter("date_to_xmlschema") {
-				override fun apply(value: Any, context: TemplateContext, vararg params: Any?): Any {
+				override fun apply(value: Any?, context: TemplateContext, vararg params: Any?): Any {
 					val string = super.asString(value, context)
 					val dateTime = OffsetDateTime.parse(string, dateTimeFormat)
 					return dateTime.format(ISO_OFFSET_DATE_TIME)
@@ -95,7 +95,7 @@ private class MainCommand(
 		)
 		.withFilter(
 			object : Filter("xml_escape") {
-				override fun apply(value: Any, context: TemplateContext, vararg params: Any?): Any {
+				override fun apply(value: Any?, context: TemplateContext, vararg params: Any?): Any {
 					val string = super.asString(value, context)
 					return StringEscapeUtils.ESCAPE_XML11.translate(string)
 				}
@@ -115,8 +115,11 @@ private class MainCommand(
 			.toList()
 			.sortedByDescending(PodcastAppearance::date)
 
-		val postDir = rootDir.resolve("posts")
-		val posts = parseCollection(postDir)
+		val posts = rootDir.resolve("posts")
+			.asDatedCollection()
+			.map(::parseBlogPost)
+			.toList()
+			.sortedByDescending(BlogPost::date)
 
 		val presentations = rootDir.resolve("presentations")
 			.asDatedCollection()
@@ -129,7 +132,7 @@ private class MainCommand(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
 			"podcasts" to podcasts.map(PodcastAppearance::toData),
-			"posts" to posts.sortedByDescending { it["date"] as String },
+			"posts" to posts.map { it.toData(mdRenderer) },
 			"presentations" to presentations.map { it.toData(mdRenderer) },
 		)
 
@@ -161,8 +164,8 @@ private class MainCommand(
 		)
 
 		for (post in posts) {
-			if (post["external"] != true) {
-				renderPage(outputDir, post, postTemplate, siteData)
+			if (post.externalLink == null) {
+				renderPage(outputDir, post.toData(mdRenderer), postTemplate, siteData)
 			}
 		}
 
@@ -325,6 +328,71 @@ private class MainCommand(
 		)
 	}
 
+	private data class BlogPost(
+		val path: Path,
+		val date: LocalDate,
+		val slug: String,
+		val title: String,
+		val externalLink: ExternalLink?,
+		val tags: Set<String>,
+		val content: Node,
+	) {
+		data class ExternalLink(
+			val blogName: String,
+			val url: HttpUrl,
+		)
+
+		fun toData(mdRenderer: HtmlRenderer): Map<String, Any> = buildMap {
+			put("title", title)
+			put("id", "/$slug")
+			put("url", "/$slug/")
+			put("date", date
+				.atStartOfDay(ZoneOffset.UTC)
+				.toOffsetDateTime()
+				.format(dateTimeFormat))
+			if (externalLink != null) {
+				put("external", true)
+				put("blog", externalLink.blogName)
+				put("blog_link", externalLink.url.toString())
+			}
+			put("content", mdRenderer.render(content))
+		}
+	}
+
+	private fun parseBlogPost(entry: DatedEntry): BlogPost {
+		val (rawFrontMatter, rawMarkdown) = entry.content.splitFrontMatter()
+		val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any>).toMutableMap()
+
+		val title = frontMatter.remove("title") as String? ?: error("Missing title: ${entry.path}")
+		frontMatter.remove("lead") // TODO figure out what to do
+		frontMatter.remove("image") // TODO figure out what to do
+
+		val blogName = frontMatter.remove("blog") as String?
+		val blogLink = frontMatter.remove("blog_link") as String?
+		val externalLink = if (blogName != null) {
+			checkNotNull(blogLink) { "Blog link required if blog name specified: ${entry.path}" }
+			BlogPost.ExternalLink(blogName, blogLink.toHttpUrl())
+		} else {
+			check(blogLink == null) { "Blog name required if blog link specified: ${entry.path}" }
+			null
+		}
+
+		val tags = (frontMatter.remove("tags") as List<String>?).orEmpty()
+
+		val content = mdParser.parse(rawMarkdown)
+
+		checkFrontMatterIsEmpty(frontMatter, entry)
+		return BlogPost(
+			path = entry.path,
+			date = entry.date,
+			slug = entry.slug,
+			title = title,
+			externalLink = externalLink,
+			tags = tags.asSetChecked(),
+			content = content,
+		)
+	}
+
 	private fun checkFrontMatterIsEmpty(
 		frontMatter: Map<String, Any?>,
 		entry: DatedEntry,
@@ -335,80 +403,6 @@ private class MainCommand(
 				frontMatter.keys.joinTo(this, prefix = " - ", separator = "\n - ")
 			}
 		}
-	}
-
-	private fun parseCollection(
-		collectionDirectory: Path,
-	): List<Map<String, Any?>> {
-		return collectionDirectory
-			.walk(maxDepth = 1)
-			.drop(1) // Starts with self.
-			.toList()
-			.sorted()
-			.map {
-				print("Parsing $it…")
-
-				val name = it.fileName.toString().substringBeforeLast('.')
-
-				val (rawFrontMatter, markdown) = it.readText().splitFrontMatter()
-				val frontMatter = (yaml.load(rawFrontMatter) as Map<String, Any?>).toMutableMap()
-				print(" read…")
-				val node = mdParser.parse(markdown)
-				print(" parsed…")
-				val html = mdRenderer.render(node)
-				print(" rendered…")
-
-				val model = buildMap {
-					val title = frontMatter.remove("title") ?: error("Missing title")
-					put("title", title)
-
-					val date = name.take(10)
-					val slug = name.substring(11)
-
-					put("url", "/$slug/")
-					put("id", "/$slug")
-
-					put(
-						"date",
-						LocalDate.parse(date)
-							.atStartOfDay(ZoneOffset.UTC)
-							.toOffsetDateTime()
-							.format(dateTimeFormat),
-					)
-					put("content", html)
-
-					// Posts
-					consumeAndPutOptionalFrontMatter(frontMatter, "external")
-					consumeAndPutOptionalFrontMatter(frontMatter, "blog")
-					consumeAndPutOptionalFrontMatter(frontMatter, "blog_link") // TODO validate URL 200s
-					frontMatter.remove("tags") // TODO
-					frontMatter.remove("lead") // TODO delete all of these
-					frontMatter.remove("image") // TODO delete all of these
-
-					// Presentations
-					consumeAndPutOptionalFrontMatter(frontMatter, "event")
-					consumeAndPutOptionalFrontMatter(frontMatter, "location")
-					consumeAndPutOptionalFrontMatter(frontMatter, "homepage") // TODO validate URL 200s
-					consumeAndPutOptionalFrontMatter(frontMatter, "vimeo") // TODO validate URL 200s
-					consumeAndPutOptionalFrontMatter(frontMatter, "youtube") // TODO validate URL 200s
-					consumeAndPutOptionalFrontMatter(frontMatter, "speakerdeck") // TODO validate URL 200s
-					consumeAndPutOptionalFrontMatter(frontMatter, "video") // TODO validate URL 200s
-					frontMatter.remove("additional_presenters") // TODO handle this
-				}
-
-				if (frontMatter.isNotEmpty()) {
-					throw IllegalStateException(
-						buildString {
-							appendLine("Unhandled front matter in $name:")
-							frontMatter.keys.joinTo(this, prefix = " - ", separator = "\n - ")
-						},
-					)
-				}
-
-				println(" Done")
-
-				model
-			}
 	}
 
 	private fun renderPage(
@@ -513,13 +507,6 @@ private fun String.splitFrontMatter(): Pair<String?, String> {
 
 private fun urlPathToRelativeFilePath(path: String): String {
 	return path.trimStart('/') + if (path.endsWith("/")) "index.html" else ".html"
-}
-
-private fun MutableMap<String, Any?>.consumeAndPutOptionalFrontMatter(
-	frontMatter: MutableMap<String, Any?>,
-	key: String,
-) {
-	frontMatter.remove(key)?.let { put(key, it) }
 }
 
 private fun copyRecursively(rootDir: Path, source: Path, destination: Path) {

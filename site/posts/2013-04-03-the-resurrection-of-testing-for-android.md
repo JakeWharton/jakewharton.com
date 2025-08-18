@@ -1,7 +1,6 @@
 ---
 title: The Resurrection of Testing for Android
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/the-resurrection-of-testing-for-android
 

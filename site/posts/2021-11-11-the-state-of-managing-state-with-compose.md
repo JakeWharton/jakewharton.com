@@ -1,7 +1,6 @@
 ---
 title: 'The state of managing state (with Compose)'
 
-external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/the-state-of-managing-state-with-compose
 

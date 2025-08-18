@@ -1,7 +1,6 @@
 ---
 title: Dynamic Images with Thumbor
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/dynamic-images-with-thumbor
 

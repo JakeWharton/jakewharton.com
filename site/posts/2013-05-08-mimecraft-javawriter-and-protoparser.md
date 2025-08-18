@@ -1,7 +1,6 @@
 ---
 title: MimeCraft, JavaWriter, and ProtoParser
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/mimecraft-javawriter-and-protoparser
 

@@ -1,7 +1,6 @@
 ---
 title: "Flow testing with Turbine"
 
-external: true
 blog: Cash App Code Blog
 blog_link: https://code.cash.app/flow-testing-with-turbine
 

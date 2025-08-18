@@ -1,7 +1,6 @@
 ---
 title: Square Open Source ♥s Kotlin
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/square-open-source-loves-kotlin
 

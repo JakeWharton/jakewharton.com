@@ -1,7 +1,6 @@
 ---
 title: Using ActionBarSherlock As A Base
 
-external: true
 blog: Square Corner
 blog_link: https://developer.squareup.com/blog/using-actionbarsherlock-as-a-base
 
