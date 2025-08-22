@@ -7,6 +7,10 @@ import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.defaultLazy
 import com.github.ajalt.clikt.parameters.types.path
+import com.jakewharton.blog.Presentation.Slides.SpeakerDeck
+import com.jakewharton.blog.Presentation.Video.Url
+import com.jakewharton.blog.Presentation.Video.Vimeo
+import com.jakewharton.blog.Presentation.Video.Youtube
 import java.nio.file.FileSystem
 import java.nio.file.FileSystems
 import java.nio.file.Path
@@ -131,9 +135,9 @@ private class MainCommand(
 		val siteData = mapOf(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
-			"podcasts" to podcasts.map(PodcastAppearance::toData),
-			"posts" to posts.map { it.toData(mdRenderer) },
-			"presentations" to presentations.map { it.toData(mdRenderer) },
+			"podcasts" to podcasts.map { it.toData() },
+			"posts" to posts.map { it.toData() },
+			"presentations" to presentations.map { it.toData() },
 		)
 
 		outputDir.deleteRecursively()
@@ -165,13 +169,13 @@ private class MainCommand(
 
 		for (post in posts) {
 			if (post.externalLink == null) {
-				renderPage(outputDir, post.toData(mdRenderer), postTemplate, siteData)
+				renderPage(outputDir, post.toData(), postTemplate, siteData)
 			}
 		}
 
 		for (presentation in presentations) {
 			if (presentation.eventLink != null) {
-				renderPage(outputDir, presentation.toData(mdRenderer), presentationTemplate, siteData)
+				renderPage(outputDir, presentation.toData(), presentationTemplate, siteData)
 			}
 		}
 	}
@@ -200,24 +204,15 @@ private class MainCommand(
 			}
 	}
 
-	private data class PodcastAppearance(
-		val path: Path,
-		val date: LocalDate,
-		val slug: String,
-		val name: String,
-		val episodeTitle: String,
-		val episodeLink: HttpUrl,
-	) {
-		fun toData(): Map<String, Any> = buildMap {
-			put("name", name)
-			put("title", episodeTitle)
-			put("link", episodeLink.toString())
-			put("date", date
-				.atStartOfDay(ZoneOffset.UTC)
-				.toOffsetDateTime()
-				.format(dateTimeFormat))
-			put("url", "/$slug/")
-		}
+	private fun PodcastAppearance.toData() = buildMap {
+		put("name", name)
+		put("title", episodeTitle)
+		put("link", episodeLink.toString())
+		put("date", date
+			.atStartOfDay(ZoneOffset.UTC)
+			.toOffsetDateTime()
+			.format(dateTimeFormat))
+		put("url", "/$slug/")
 	}
 
 	private fun parsePodcastAppearance(entry: DatedEntry): PodcastAppearance {
@@ -239,50 +234,27 @@ private class MainCommand(
 		)
 	}
 
-	private data class Presentation(
-		val path: Path,
-		val date: LocalDate,
-		val slug: String,
-		val eventName: String,
-		val eventLocation: String,
-		/** Presentations without an event link will not be rendered. */
-		val eventLink: HttpUrl?,
-		val title: String,
-		val slides: Slides?,
-		val video: Video?,
-		val abstract: Node,
-	) {
-		sealed interface Slides {
-			data class SpeakerDeck(val id: String) : Slides
+	private fun Presentation.toData(): Map<String, Any> = buildMap {
+		put("title", title)
+		put("url", "/$slug/")
+		put("date", date
+			.atStartOfDay(ZoneOffset.UTC)
+			.toOffsetDateTime()
+			.format(dateTimeFormat))
+		put("event", eventName)
+		put("location", eventLocation)
+		eventLink?.let { put("homepage", it) }
+		when (slides) {
+			is SpeakerDeck -> put("speakerdeck", slides.id)
+			null -> {}
 		}
-		sealed interface Video {
-			data class Youtube(val id: String) : Video
-			data class Vimeo(val id: Int) : Video
-			data class Url(val url: HttpUrl) : Video
+		when (video) {
+			is Url -> put("video", video.url.toString())
+			is Vimeo -> put("vimeo", video.id)
+			is Youtube -> put("youtube", video.id)
+			null -> {}
 		}
-
-		fun toData(mdRenderer: HtmlRenderer): Map<String, Any> = buildMap {
-			put("title", title)
-			put("url", "/$slug/")
-			put("date", date
-				.atStartOfDay(ZoneOffset.UTC)
-				.toOffsetDateTime()
-				.format(dateTimeFormat))
-			put("event", eventName)
-			put("location", eventLocation)
-			eventLink?.let { put("homepage", it) }
-			when (slides) {
-				is Slides.SpeakerDeck -> put("speakerdeck", slides.id)
-				null -> {}
-			}
-			when (video) {
-				is Video.Url -> put("video", video.url.toString())
-				is Video.Vimeo -> put("vimeo", video.id)
-				is Video.Youtube -> put("youtube", video.id)
-				null -> {}
-			}
-			put("content", mdRenderer.render(abstract))
-		}
+		put("content", mdRenderer.render(abstract))
 	}
 
 	private fun parsePresentation(entry: DatedEntry): Presentation {
@@ -296,13 +268,13 @@ private class MainCommand(
 		val title = frontMatter.remove("title") as String? ?: error("Missing title: ${entry.path}")
 		frontMatter.remove("additional_presenters") // TODO
 
-		val youtube = (frontMatter.remove("youtube") as String?)?.let(Presentation.Video::Youtube)
-		val vimeo = (frontMatter.remove("vimeo") as Int?)?.let(Presentation.Video::Vimeo)
-		val videoUrl = (frontMatter.remove("video") as String?)?.let { Presentation.Video.Url(it.toHttpUrl()) }
+		val youtube = (frontMatter.remove("youtube") as String?)?.let(::Youtube)
+		val vimeo = (frontMatter.remove("vimeo") as Int?)?.let(::Vimeo)
+		val videoUrl = (frontMatter.remove("video") as String?)?.let { Url(it.toHttpUrl()) }
 		val video = listOfNotNull(youtube, vimeo, videoUrl)
 			.checkEmptyOrSingleOrThrow { "Multiple video keys: ${entry.path}" }
 
-		val speakerdeck = (frontMatter.remove("speakerdeck") as String?)?.let(Presentation.Slides::SpeakerDeck)
+		val speakerdeck = (frontMatter.remove("speakerdeck") as String?)?.let(::SpeakerDeck)
 		val slides = listOfNotNull(speakerdeck)
 			.checkEmptyOrSingleOrThrow { "Multiple slides keys: ${entry.path}" }
 
@@ -328,35 +300,20 @@ private class MainCommand(
 		)
 	}
 
-	private data class BlogPost(
-		val path: Path,
-		val date: LocalDate,
-		val slug: String,
-		val title: String,
-		val externalLink: ExternalLink?,
-		val tags: Set<String>,
-		val content: Node,
-	) {
-		data class ExternalLink(
-			val blogName: String,
-			val url: HttpUrl,
-		)
-
-		fun toData(mdRenderer: HtmlRenderer): Map<String, Any> = buildMap {
-			put("title", title)
-			put("id", "/$slug")
-			put("url", "/$slug/")
-			put("date", date
-				.atStartOfDay(ZoneOffset.UTC)
-				.toOffsetDateTime()
-				.format(dateTimeFormat))
-			if (externalLink != null) {
-				put("external", true)
-				put("blog", externalLink.blogName)
-				put("blog_link", externalLink.url.toString())
-			}
-			put("content", mdRenderer.render(content))
+	fun BlogPost.toData(): Map<String, Any> = buildMap {
+		put("title", title)
+		put("id", "/$slug")
+		put("url", "/$slug/")
+		put("date", date
+			.atStartOfDay(ZoneOffset.UTC)
+			.toOffsetDateTime()
+			.format(dateTimeFormat))
+		if (externalLink != null) {
+			put("external", true)
+			put("blog", externalLink.blogName)
+			put("blog_link", externalLink.url.toString())
 		}
+		put("content", mdRenderer.render(content))
 	}
 
 	private fun parseBlogPost(entry: DatedEntry): BlogPost {
