@@ -132,7 +132,7 @@ private class MainCommand(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
 			"podcasts" to podcasts.map(PodcastAppearance::toData),
-			"posts" to posts.map { it.toData(mdRenderer) },
+			"posts" to posts.map { it.toData() },
 			"presentations" to presentations.map { it.toData(mdRenderer) },
 		)
 
@@ -142,7 +142,7 @@ private class MainCommand(
 		copyRecursively(rootDir, rootDir.resolve("_redirects"), outputDir)
 
 		renderHtml(rootDir.resolve("index.html"), null, siteData, outputDir.resolve("index.html"))
-		renderHtml(rootDir.resolve("atom.xml"), null, siteData, outputDir.resolve("atom.xml"))
+		outputDir.resolve("atom.xml").writeText(renderAtom(mdRenderer, posts))
 
 		renderHtml(
 			rootDir.resolve("blog.html"),
@@ -165,7 +165,7 @@ private class MainCommand(
 
 		for (post in posts) {
 			if (post.externalLink == null) {
-				renderPage(outputDir, post.toData(mdRenderer), postTemplate, siteData)
+				renderPage(outputDir, post.toData(), postTemplate, siteData)
 			}
 		}
 
@@ -328,35 +328,20 @@ private class MainCommand(
 		)
 	}
 
-	private data class BlogPost(
-		val path: Path,
-		val date: LocalDate,
-		val slug: String,
-		val title: String,
-		val externalLink: ExternalLink?,
-		val tags: Set<String>,
-		val content: Node,
-	) {
-		data class ExternalLink(
-			val blogName: String,
-			val url: HttpUrl,
-		)
-
-		fun toData(mdRenderer: HtmlRenderer): Map<String, Any> = buildMap {
-			put("title", title)
-			put("id", "/$slug")
-			put("url", "/$slug/")
-			put("date", date
-				.atStartOfDay(ZoneOffset.UTC)
-				.toOffsetDateTime()
-				.format(dateTimeFormat))
-			if (externalLink != null) {
-				put("external", true)
-				put("blog", externalLink.blogName)
-				put("blog_link", externalLink.url.toString())
-			}
-			put("content", mdRenderer.render(content))
+	private fun BlogPost.toData(): Map<String, Any> = buildMap {
+		put("title", title)
+		put("id", "/$slug")
+		put("url", "/$slug/")
+		put("date", date
+			.atStartOfDay(ZoneOffset.UTC)
+			.toOffsetDateTime()
+			.format(dateTimeFormat))
+		if (externalLink != null) {
+			put("external", true)
+			put("blog", externalLink.blogName)
+			put("blog_link", externalLink.url.toString())
 		}
+		put("content", mdRenderer.render(content))
 	}
 
 	private fun parseBlogPost(entry: DatedEntry): BlogPost {
