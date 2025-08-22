@@ -1,4 +1,4 @@
-package com.jakewharton.blog
+package com.jakewharton.website
 
 import java.nio.file.FileVisitOption
 import java.nio.file.Files

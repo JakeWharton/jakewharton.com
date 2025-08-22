@@ -11,7 +11,7 @@ apply plugin: 'org.jetbrains.kotlin.jvm'
 apply plugin: 'application'
 
 application {
-	mainClass = 'com.jakewharton.blog.Main'
+	mainClass = 'com.jakewharton.website.Main'
 }
 
 dependencies {

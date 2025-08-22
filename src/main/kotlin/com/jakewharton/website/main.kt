@@ -1,16 +1,16 @@
 @file:JvmName("Main")
 
-package com.jakewharton.blog
+package com.jakewharton.website
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.defaultLazy
 import com.github.ajalt.clikt.parameters.types.path
-import com.jakewharton.blog.Presentation.Slides.SpeakerDeck
-import com.jakewharton.blog.Presentation.Video.Url
-import com.jakewharton.blog.Presentation.Video.Vimeo
-import com.jakewharton.blog.Presentation.Video.Youtube
+import com.jakewharton.website.Presentation.Slides.SpeakerDeck
+import com.jakewharton.website.Presentation.Video.Url
+import com.jakewharton.website.Presentation.Video.Vimeo
+import com.jakewharton.website.Presentation.Video.Youtube
 import java.nio.file.FileSystem
 import java.nio.file.FileSystems
 import java.nio.file.Path
@@ -37,13 +37,11 @@ import liqp.TemplateContext
 import liqp.TemplateParser
 import liqp.filters.Filter
 import liqp.parser.Flavor
-import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
-import org.commonmark.node.Node
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 import org.yaml.snakeyaml.Yaml

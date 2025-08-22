@@ -1,4 +1,4 @@
-package com.jakewharton.blog
+package com.jakewharton.website
 
 import org.commonmark.node.FencedCodeBlock
 import org.commonmark.node.Node

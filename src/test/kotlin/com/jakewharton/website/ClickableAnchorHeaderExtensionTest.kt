@@ -1,4 +1,4 @@
-package com.jakewharton.blog
+package com.jakewharton.website
 
 import assertk.assertThat
 import assertk.assertions.isEqualTo

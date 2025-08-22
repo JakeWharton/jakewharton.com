@@ -1,4 +1,4 @@
-package com.jakewharton.blog
+package com.jakewharton.website
 
 import java.nio.file.Path
 import java.time.LocalDate
