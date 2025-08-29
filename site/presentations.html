@@ -1,7 +1,3 @@
----
-title: Presentations
----
-
 {% assign sorted_presentations = site.presentations | sort: 'date' | reverse %}
 {% assign upcoming_presentations = sorted_presentations | where_exp:"presentation", "presentation.date > site.time" %}
 {% assign past_presentations = sorted_presentations | where_exp:"presentation", "presentation.date <= site.time" %}

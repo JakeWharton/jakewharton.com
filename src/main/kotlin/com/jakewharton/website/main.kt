@@ -143,24 +143,27 @@ private class MainCommand(
 		copyRecursively(rootDir, rootDir.resolve("static"), outputDir)
 		copyRecursively(rootDir, rootDir.resolve("_redirects"), outputDir)
 
-		renderHtml(rootDir.resolve("index.html"), null, siteData, outputDir.resolve("index.html"))
-		renderHtml(rootDir.resolve("atom.xml"), null, siteData, outputDir.resolve("atom.xml"))
+		renderHtml(rootDir.resolve("index.html"), null, null, siteData, outputDir.resolve("index.html"))
+		renderHtml(rootDir.resolve("atom.xml"), null, null, siteData, outputDir.resolve("atom.xml"))
 
 		renderHtml(
 			rootDir.resolve("blog.html"),
 			defaultTemplate,
+			"Posts",
 			siteData,
 			outputDir.resolve("blog/index.html"),
 		)
 		renderHtml(
 			rootDir.resolve("presentations.html"),
 			defaultTemplate,
+			"Presentations",
 			siteData,
 			outputDir.resolve("presentations/index.html"),
 		)
 		renderHtml(
 			rootDir.resolve("podcasts.html"),
 			defaultTemplate,
+			"Podcasts",
 			siteData,
 			outputDir.resolve("podcasts/index.html"),
 		)
@@ -393,28 +396,17 @@ private class MainCommand(
 	private fun renderHtml(
 		htmlFile: Path,
 		template: Template?,
+		title: String?,
 		siteData: Map<String, Any>,
 		outputFile: Path,
 	) {
 		print("Rendering $htmlFile to HTML…")
 
-		val (rawFrontMatter, content) = htmlFile.readText().splitFrontMatter()
-		val frontMatter = rawFrontMatter?.let { (yaml.load(it) as Map<String, Any?>) }.orEmpty().toMutableMap()
-		val title = frontMatter.remove("title")
-
-		if (frontMatter.isNotEmpty()) {
-			throw IllegalStateException(
-				buildString {
-					appendLine("Unhandled front matter in ${htmlFile.fileName}:")
-					frontMatter.keys.joinTo(this, prefix = " - ", separator = "\n - ")
-				},
-			)
-		}
+		val content = htmlFile.readText()
 
 		val intermediateData = mapOf(
 			"site" to siteData,
 		)
-
 		val intermediate = liquidParser.parse(content)
 			.render(intermediateData)
 
