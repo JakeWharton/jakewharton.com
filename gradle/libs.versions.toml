@@ -9,7 +9,7 @@ commonmark-ext-headingAnchor = { module = "org.commonmark:commonmark-ext-heading
 commonmark-ext-strikethrough = { module = "org.commonmark:commonmark-ext-gfm-strikethrough", version.ref = "commonmark" }
 liqp = "nl.big-o:liqp:0.9.2.3"
 clikt = "com.github.ajalt.clikt:clikt:5.0.3"
-snakeyaml = "org.yaml:snakeyaml:2.4"
+snakeyaml = "org.yaml:snakeyaml:2.5"
 commonsText = "org.apache.commons:commons-text:1.14.0"
 junit = "junit:junit:4.13.2"
 assertk = "com.willowtreeapps.assertk:assertk:0.28.1"
