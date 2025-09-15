@@ -1,5 +1,5 @@
 [versions]
-commonmark = "0.25.1"
+commonmark = "0.26.0"
 
 [libraries]
 kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20"
