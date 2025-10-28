@@ -52,6 +52,8 @@ header {
   background-color: var(--header-background-color);
   color: var(--header-foreground-color);
   padding: 40px;
+  display: inline-flex;
+  flex-direction: column;
 }
 header h1 {
   text-transform: uppercase;
@@ -59,13 +61,23 @@ header h1 {
   letter-spacing: 15px;
   margin: 0 0 0 4px;
 }
+header ul {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding-right: 15px;
+}
 @media (max-width: 767px) {
   header {
     padding: 30px;
+    display: block;
   }
   header h1 {
     letter-spacing: 5px;
     font-size: 40px;
+  }
+  header ul {
+    display: block;
   }
   .list-inline li {
     display: list-item;
@@ -85,17 +97,12 @@ header ul li {
   padding-bottom: 20px;
 }
 header ul a {
-  color: var(--header-link-color-primary);
+  color: var(--header-link-color);
   font-weight: 700;
 }
 header ul a:hover, header ul a:active {
   color: var(--link-color);
   text-decoration: none;
-}
-header ul a span {
-  opacity: 0.7;
-  font-weight: 300;
-  padding-right: 2px;
 }
 
 .content {
