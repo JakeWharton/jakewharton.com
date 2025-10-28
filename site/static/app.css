@@ -52,35 +52,48 @@ header {
   background-color: var(--header-background-color);
   color: var(--header-foreground-color);
   padding: 40px;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 15px;
+    margin: 0;
+    padding-left: 4px;
+  }
+}
+
+#index header {
   display: inline-flex;
   flex-direction: column;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 0 15px 0 0;
+
+    li {
+      list-style: none;
+    }
+  }
 }
-header h1 {
-  text-transform: uppercase;
-  font-size: 50px;
-  letter-spacing: 15px;
-  margin: 0 0 0 4px;
-}
-header ul {
-  display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
-  padding-right: 15px;
-}
+
 @media (max-width: 767px) {
   header {
     padding: 30px;
     display: block;
+
+    h1 {
+      letter-spacing: 5px;
+      font-size: 40px;
+    }
   }
-  header h1 {
-    letter-spacing: 5px;
-    font-size: 40px;
-  }
-  header ul {
+  #index header ul {
     display: block;
-  }
-  .list-inline li {
-    display: list-item;
+
+    li {
+      display: list-item;
+    }
   }
 }
 
