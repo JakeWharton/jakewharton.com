@@ -154,11 +154,11 @@ private class MainCommand(
 			outputDir.resolve("blog/index.html"),
 		)
 		renderHtml(
-			rootDir.resolve("presentations.html"),
+			rootDir.resolve("hire.html"),
 			defaultTemplate,
-			"Presentations",
+			"Hire",
 			siteData,
-			outputDir.resolve("presentations/index.html"),
+			outputDir.resolve("hire/index.html"),
 		)
 		renderHtml(
 			rootDir.resolve("podcasts.html"),
@@ -166,6 +166,13 @@ private class MainCommand(
 			"Podcasts",
 			siteData,
 			outputDir.resolve("podcasts/index.html"),
+		)
+		renderHtml(
+			rootDir.resolve("presentations.html"),
+			defaultTemplate,
+			"Presentations",
+			siteData,
+			outputDir.resolve("presentations/index.html"),
 		)
 
 		for (post in posts) {
