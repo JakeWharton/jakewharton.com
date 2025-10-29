@@ -156,7 +156,7 @@ private class MainCommand(
 		renderHtml(
 			rootDir.resolve("hire.html"),
 			defaultTemplate,
-			"Hire",
+			"Hire me",
 			siteData,
 			outputDir.resolve("hire/index.html"),
 		)
