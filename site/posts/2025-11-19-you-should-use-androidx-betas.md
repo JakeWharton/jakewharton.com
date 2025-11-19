@@ -53,7 +53,7 @@ In all those cases we reported bugs (or found existing bugs) and bumped to the n
 Sticking to stable versions is the easy play, but there’s a cost to that too.
 One of the tradeoffs made in AndroidX’s choice to version this way is that stable versions are much farther apart.
 Let’s say you’re on Compose UI 1.8, and you find a bug when bumping to Compose UI 1.9.
-Not only are we stuck on 1.8 (assuming it has no workaround), but we have to wait _months_ for Compose UI 1.10.
+Not only are you stuck on 1.8 (assuming it has no workaround), but you now have to wait _months_ for Compose UI 1.10.
 And then you hope the cycle doesn’t repeat.
 If you found that same bug in the Compose UI 1.9 betas, however, then it’s fixed in a few weeks, and you can upgrade months sooner.
 
