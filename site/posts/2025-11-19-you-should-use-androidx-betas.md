@@ -62,7 +62,7 @@ You can gradually try this out–that's what we're doing.
 Libraries which are mature (collection, core, activity, etc.) mean there’s simply not a lot of changes happening, so the risk is low.
 Libraries which are wildly load-bearing (Compose runtime, foundation, and UI) are also good candidates since you really need to find any bugs in them as soon as possible.
 
-If you've put the necessary testing infrastructure in the place, you're already set up to do this with confidence.
+If you've put the necessary testing infrastructure in place, you're already set up to do this with confidence.
 Comprehensive unit tests ensure correct behavior.
 Screenshot tests ensure correct pixels.
 And instrumented tests, end-to-end tests, and/or manual QA testing is the reliability backstop ensuring nothing falls through the cracks.
