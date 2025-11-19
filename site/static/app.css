@@ -291,3 +291,10 @@ p.hire-me {
 	font-style: italic;
 	margin-top: 30px;
 }
+
+table {
+	margin-bottom: 15px;
+}
+td, th {
+	padding: 2px 8px;
+}
