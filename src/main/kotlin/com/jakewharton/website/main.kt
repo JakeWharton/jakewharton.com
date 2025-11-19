@@ -41,6 +41,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrl
 import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
+import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
@@ -75,6 +76,7 @@ private class MainCommand(
 		),
 		RougeHighlightingExtension,
 		StrikethroughExtension.create(),
+		TablesExtension.create(),
 	)
 	private val mdParser = Parser.Builder()
 		.extensions(mdExtensions)

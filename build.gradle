@@ -22,6 +22,7 @@ dependencies {
 	implementation(libs.commonmark.ext.footnotes)
 	implementation(libs.commonmark.ext.headingAnchor)
 	implementation(libs.commonmark.ext.strikethrough)
+	implementation(libs.commonmark.ext.tables)
 	implementation(libs.snakeyaml)
 	implementation(libs.liqp)
 	implementation(libs.clikt)

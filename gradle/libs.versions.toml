@@ -7,6 +7,7 @@ commonmark-core = { module = "org.commonmark:commonmark", version.ref = "commonm
 commonmark-ext-footnotes = { module = "org.commonmark:commonmark-ext-footnotes", version.ref = "commonmark" }
 commonmark-ext-headingAnchor = { module = "org.commonmark:commonmark-ext-heading-anchor", version.ref = "commonmark" }
 commonmark-ext-strikethrough = { module = "org.commonmark:commonmark-ext-gfm-strikethrough", version.ref = "commonmark" }
+commonmark-ext-tables = { module = "org.commonmark:commonmark-ext-gfm-tables", version.ref = "commonmark" }
 liqp = "nl.big-o:liqp:0.9.2.3"
 clikt = "com.github.ajalt.clikt:clikt:5.0.3"
 snakeyaml = "org.yaml:snakeyaml:2.5"
