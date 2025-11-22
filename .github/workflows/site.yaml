@@ -13,7 +13,7 @@ jobs:
     outputs:
       message: ${{ steps.message.outputs.message }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - run: docker build -t jw .
       - run: docker run --volume="$PWD/site:/blog" jw /blog
@@ -30,7 +30,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
@@ -44,7 +44,7 @@ jobs:
       - compile
       - check
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           sparse-checkout: package*json
           sparse-checkout-cone-mode: false
