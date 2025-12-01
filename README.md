@@ -10,10 +10,10 @@ The `rouge` Ruby gem will need installed and its `rougify` binary on the PATH.
 
 Alternatively, there is a `Dockerfile` which wraps up everything necessary.
 
-```
-❯ docker build .
+```sh
+docker build .
 
-❯ docker run --volume="$PWD/site:/blog" <hash> /blog
+docker run --volume="$PWD/site:/blog" <hash> /blog
 ```
 
 
