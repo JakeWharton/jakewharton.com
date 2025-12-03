@@ -78,7 +78,7 @@ Now go find the website which contains the mapping to determine if you've alread
 Finally, if you start [gradual adoption of AndroidX betas](/you-should-use-androidx-betas/), you are partially overriding the versions declared in the BOM.
 So not only is it an indirection that masks the real versions, it’s not even the full source of truth.
 
-Because the versions in the BOM are not still participate in normal Gradle dependency resolution semantics, transitive dependencies and local overrides can change the resolved version.
+Because the versions in the BOM still participate in normal Gradle dependency resolution semantics, transitive dependencies and local overrides can change the resolved version.
 Unless you commit a lock file, you won't actually know what version is going into your final artifact.
 
 ---
