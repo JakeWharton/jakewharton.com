@@ -31,11 +31,11 @@ GitHub will skip the 'final-status' job if any of its 'needs' fail, and skipped 
 
 > A job that is skipped will report its status as "Success". It will not prevent a pull request from merging, even if it is a required check.
 
-To work around this undesirable behavior, first, change the job to always run:
+To work around this undesirable behavior, first, change the job to always run (unless canceled):
 
 ```diff
    final-status:
-+    if: always()
++    if: ${{ !cancelled() }}
      needs:
        - build
        - unit-tests
