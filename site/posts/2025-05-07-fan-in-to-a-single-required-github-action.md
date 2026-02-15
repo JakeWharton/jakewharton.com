@@ -50,7 +50,7 @@ Next, add a step which ensures the status of each 'needs' job was successful:
     steps:
       - name: Check
         run: |
-          results=$(tr -d '\n' <<< '${{ "{{" }} toJSON(needs.*.result) }}')
+          results=$(tr -d '\n' <<< '${{ toJSON(needs.*.result) }}')
           if ! grep -q -v -E '(failure|cancelled)' <<< "$results"; then
             echo "One or more required jobs failed"
             exit 1
