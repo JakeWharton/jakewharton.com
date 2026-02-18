@@ -156,11 +156,11 @@ private class MainCommand(
 			outputDir.resolve("blog/index.html"),
 		)
 		renderHtml(
-			rootDir.resolve("hire.html"),
+			rootDir.resolve("résumé.html"),
 			defaultTemplate,
-			"Hire me",
+			"Résumé",
 			siteData,
-			outputDir.resolve("hire/index.html"),
+			outputDir.resolve("résumé/index.html"),
 		)
 		renderHtml(
 			rootDir.resolve("podcasts.html"),

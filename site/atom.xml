@@ -15,7 +15,7 @@
     <link href="{% if post.external %}{{ post.blog_link }}{% else %}{{ site.url }}{{ post.url }}{% endif %}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ post.id }}</id>
-    <content type="html">{% if post.external %}&lt;p&gt;This post was published externally on {{ post.blog }}. Read it at &lt;a href="{{ post.blog_link }}"&gt;{{ post.blog_link }}&lt;/a&gt;.&lt;/p&gt;{% else %}{{ post.content | xml_escape }}{% endif %}&lt;hr /&gt;&lt;p&gt;P.S. I'm looking for employment opportunities. Got a lead? I'm &lt;a href="{{ site.url }}/hire"&gt;available for hire&lt;/a&gt;.&lt;/p&gt;</content>
+    <content type="html">{% if post.external %}&lt;p&gt;This post was published externally on {{ post.blog }}. Read it at &lt;a href="{{ post.blog_link }}"&gt;{{ post.blog_link }}&lt;/a&gt;.&lt;/p&gt;{% else %}{{ post.content | xml_escape }}{% endif %}</content>
   </entry>
 {% endfor %}
 </feed>

@@ -3,6 +3,8 @@
 /@jw  https://mastodon.jakewharton.com/@jw  302
 /@jw/*  https://mastodon.jakewharton.com/@jw/:splat 302
 
+/hire/	/résumé/	302
+
 /making-retrofit-2-work-for-you/	/making-retrofit-work-for-you/
 
 /presentation/2013-05-17-android-hacker-night/	/testing-do-it/
