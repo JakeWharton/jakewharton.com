@@ -5,7 +5,7 @@ homepage: http://droidcon.nyc/
 
 title: "Rinsing the Brush: Picasso 3.0"
 speakerdeck: f903fe5393eb4fb5aa68b1fbc3908aa3
-youtube: VpNwLG3lxbo
+youtube: 7EMIbC5KUPI
 ---
 
 Picasso is a powerful image downloading and caching library for Android but since its launch in 2013, other libraries have improved or entered the scene and new requirements have come up.

@@ -5,7 +5,7 @@ homepage: http://droidcon.nyc/
 
 title: The Resurgence of SQL
 speakerdeck: 624e30b2f2f34320b4c8db5f4dd4b749
-youtube: 4eUuD7LsqMs
+youtube: kuZ-RH3Ze3E
 ---
 
 SQL may have fallen out of fashion over the last decade, but libraries like SQL Delight and Room are now placing it at the forefront of their use. As a language, SQL is more declarative and expressive than any ORM could hope to be. With the support of strong tooling, database interactions not only become easier but you're able to leverage more of its power.
