@@ -13,7 +13,7 @@ Alternatively, there is a `Dockerfile` which wraps up everything necessary.
 ```sh
 docker build .
 
-docker run --volume="$PWD/site:/blog" <hash> /blog
+docker run --rm --volume="$PWD/site:/blog" <hash> /blog
 ```
 
 
