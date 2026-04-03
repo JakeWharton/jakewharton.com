@@ -6,6 +6,9 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.defaultLazy
+import com.github.ajalt.clikt.parameters.options.default
+import com.github.ajalt.clikt.parameters.options.option
+import com.github.ajalt.clikt.parameters.types.enum
 import com.github.ajalt.clikt.parameters.types.path
 import com.jakewharton.website.Presentation.Slides.SpeakerDeck
 import com.jakewharton.website.Presentation.Video.Url
@@ -37,12 +40,20 @@ import liqp.TemplateContext
 import liqp.TemplateParser
 import liqp.filters.Filter
 import liqp.parser.Flavor
+import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
 import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
+import org.commonmark.node.AbstractVisitor
+import org.commonmark.node.Link
+import org.commonmark.node.Visitor
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 import org.yaml.snakeyaml.Yaml
@@ -51,6 +62,12 @@ fun main(vararg args: String) {
 	val systemFs = FileSystems.getDefault()!!
 	val systemClock = Clock.systemUTC()!!
 	MainCommand(systemFs, systemClock).main(args)
+}
+
+private enum class LinkValidationMode {
+	Ignore,
+	Warn,
+	Error,
 }
 
 @OptIn(ExperimentalPathApi::class)
@@ -65,6 +82,10 @@ private class MainCommand(
 	private val outputDir by argument("DIR")
 		.path(canBeFile = false, fileSystem = fs)
 		.defaultLazy { rootDir.resolve("out") }
+
+	private val linkValidation by option()
+		.enum<LinkValidationMode>()
+		.default(LinkValidationMode.Ignore)
 
 	private val yaml = Yaml()
 
@@ -107,12 +128,26 @@ private class MainCommand(
 		)
 		.build()
 
-	override fun run() {
-		val layoutsDir = rootDir.resolve("layouts")
-		val defaultTemplate = liquidParser.parse(layoutsDir.resolve("default.html"))
-		val postTemplate = liquidParser.parse(layoutsDir.resolve("post.html"))
-		val presentationTemplate = liquidParser.parse(layoutsDir.resolve("presentation.html"))
+	private val httpClient = OkHttpClient.Builder()
+		.build()
 
+	override fun run() {
+		try {
+			println("Parsing!\n")
+			val site = parse()
+
+			println("\nValidating!\n")
+			validate(site)
+
+			println("\nRendering!\n")
+			render(site)
+		} finally {
+			httpClient.dispatcher.executorService.shutdown()
+			httpClient.connectionPool.evictAll()
+		}
+	}
+
+	private fun parse(): Site {
 		val podcasts = rootDir.resolve("podcasts")
 			.asDatedCollection()
 			.map(::parsePodcastAppearance)
@@ -134,13 +169,22 @@ private class MainCommand(
 			.sortedBy(Presentation::title) // Make same-day presentations deterministic.
 			.sortedByDescending(Presentation::date)
 
+		return Site(podcasts, posts, presentations)
+	}
+
+	private fun render(site: Site) {
 		val siteData = mapOf(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
-			"podcasts" to podcasts.map { it.toData() },
-			"posts" to posts.map { it.toData() },
-			"presentations" to presentations.map { it.toData() },
+			"podcasts" to site.podcasts.map { it.toData() },
+			"posts" to site.posts.map { it.toData() },
+			"presentations" to site.presentations.map { it.toData() },
 		)
+
+		val layoutsDir = rootDir.resolve("layouts")
+		val defaultTemplate = liquidParser.parse(layoutsDir.resolve("default.html"))
+		val postTemplate = liquidParser.parse(layoutsDir.resolve("post.html"))
+		val presentationTemplate = liquidParser.parse(layoutsDir.resolve("presentation.html"))
 
 		outputDir.deleteRecursively()
 
@@ -179,16 +223,96 @@ private class MainCommand(
 			outputDir.resolve("presentations/index.html"),
 		)
 
-		for (post in posts) {
+		for (post in site.posts) {
 			if (post.externalLink == null) {
+				// TODO this renders twice! Once for site data and once here!
 				renderPage(outputDir, post.toData(), postTemplate, siteData)
 			}
 		}
 
-		for (presentation in presentations) {
+		for (presentation in site.presentations) {
 			if (presentation.eventLink != null) {
+				// TODO this renders twice! Once for site data and once here!
 				renderPage(outputDir, presentation.toData(), presentationTemplate, siteData)
 			}
+		}
+	}
+
+	private fun validate(site: Site) {
+		for (podcast in site.podcasts) {
+			validateUrlReachability(podcast.episodeLink) {
+				"Podcast '${podcast.slug}' episode link unreachable"
+			}
+		}
+
+		for (post in site.posts) {
+			if (post.externalLink != null) {
+				validateUrlReachability(post.externalLink.url) {
+					"Post '${post.slug}' external link unreachable"
+				}
+			}
+			post.content.accept(object : AbstractVisitor() {
+				override fun visit(link: Link) {
+					val destination = link.destination
+					if (destination.startsWith("/")) {
+						// TODO validate relative link
+					} else {
+						val url = destination.toHttpUrlOrNull()
+						if (url == null) {
+							unreachableUrl("Post '${post.slug}' link '${link.title}' malformed/invalid: $url")
+						} else {
+							validateUrlReachability(url) {
+								"Post '${post.slug}' link '$url' unreachable"
+							}
+						}
+					}
+				}
+			})
+		}
+
+		for (presentation in site.presentations) {
+			if (presentation.eventLink != null) {
+				validateUrlReachability(presentation.eventLink) {
+					"Presentation '${presentation.slug}' event link unreachable"
+				}
+			}
+			if (presentation.video != null) {
+				val url = when (presentation.video) {
+					is Url -> presentation.video.url
+					is Vimeo -> "https://vimeo.com/api/v2/video/${presentation.video.id}.xml".toHttpUrl()
+					is Youtube -> "http://img.youtube.com/vi/${presentation.video.id}/maxresdefault.jpg".toHttpUrl()
+				}
+				validateUrlReachability(url) {
+					"Presentation '${presentation.slug}' video unreachable"
+				}
+			}
+			if (presentation.slides != null) {
+				val url = when (presentation.slides) {
+					is SpeakerDeck -> "https://speakerd.s3.amazonaws.com/presentations/${presentation.slides.id}/slide_0.jpg".toHttpUrl()
+				}
+				validateUrlReachability(url) {
+					"Presentation '${presentation.slug}' slides unreachable"
+				}
+			}
+		}
+	}
+
+	private fun validateUrlReachability(url: HttpUrl, failureMessage: () -> String) {
+		val success = runCatching {
+			httpClient.newCall(Request(url, method = "HEAD")).execute().use(Response::isSuccessful)
+		}.getOrElse {
+			false
+		}
+		if (!success) {
+			unreachableUrl(failureMessage())
+		}
+	}
+
+	private fun unreachableUrl(message: String) {
+		when (linkValidation) {
+			LinkValidationMode.Ignore -> {}
+			LinkValidationMode.Warn -> System.err.println(message)
+			LinkValidationMode.Error -> throw IllegalStateException(message)
 		}
 	}
 
