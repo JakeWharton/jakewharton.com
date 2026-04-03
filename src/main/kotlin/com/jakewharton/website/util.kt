@@ -11,21 +11,3 @@ internal fun Path.walk(
 ): Sequence<Path> {
   return Files.walk(this, maxDepth, *option).asSequence()
 }
-
-internal fun String.splitAround(index: Int): Pair<String, String> {
-	return take(index) to substring(index + 1)
-}
-
-internal fun <T> Iterable<T>.checkEmptyOrSingleOrThrow(message: () -> String): T? {
-	val iterator = iterator()
-	if (!iterator.hasNext()) return null
-	val item = iterator.next()
-	if (!iterator.hasNext()) return item
-	error(message())
-}
-
-internal fun <T> List<T>.asSetChecked(): Set<T> {
-	val set = toSet()
-	check(set.size == size) { "Duplicate items found" }
-	return set
-}
