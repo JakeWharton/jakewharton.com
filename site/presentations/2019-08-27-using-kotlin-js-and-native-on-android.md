@@ -5,7 +5,7 @@ homepage: http://droidcon.nyc/
 
 title: Using Kotlin/JS and Kotlin/Native on Android
 speakerdeck: 2ceed3253c774e3badcbcb6b34448308
-vimeo: 362739094
+youtube: mTd5dtRa_r4
 ---
 
 Kotlin's compiler backends, JVM, JS, and native, are each often associated with one platform: Android, the web, and iOS, respectively. But nothing about these three backends require that they be used on multiple platforms. Android is one of the few places where we have the potential to use all three!
