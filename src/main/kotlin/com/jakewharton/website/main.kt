@@ -39,19 +39,11 @@ import liqp.TemplateContext
 import liqp.TemplateParser
 import liqp.filters.Filter
 import liqp.parser.Flavor
-import okhttp3.HttpUrl
-import okhttp3.HttpUrl.Companion.toHttpUrl
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
 import org.apache.commons.text.StringEscapeUtils
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.gfm.tables.TablesExtension
 import org.commonmark.ext.heading.anchor.HeadingAnchorExtension
-import org.commonmark.node.AbstractVisitor
-import org.commonmark.node.Link
 import org.commonmark.renderer.html.HtmlRenderer
 
 fun main(vararg args: String) {
@@ -119,23 +111,27 @@ private class MainCommand(
 		)
 		.build()
 
-	private val httpClient = OkHttpClient.Builder()
-		.build()
-
 	override fun run() {
-		try {
-			println("Parsing!\n")
-			val site = SiteParser(mdExtensions).parse(rootDir)
+		println("Parsing!\n")
+		val site = SiteParser(mdExtensions).parse(rootDir)
 
+		if (linkValidation != LinkValidationMode.Ignore) {
 			println("\nValidating!\n")
-			validate(site)
 
-			println("\nRendering!\n")
-			render(site)
-		} finally {
-			httpClient.dispatcher.executorService.shutdown()
-			httpClient.connectionPool.evictAll()
+			val problems = SiteValidator().use { it.validate(site) }
+			if (problems.isNotEmpty()) {
+				for (problem in problems) {
+					System.err.println(problem.message)
+				}
+				if (linkValidation == LinkValidationMode.Error) {
+					throw IllegalStateException("${problems.size} problems found")
+				}
+				System.err.flush()
+			}
 		}
+
+		println("\nRendering!\n")
+		render(site)
 	}
 
 	private fun render(site: Site) {
@@ -201,84 +197,6 @@ private class MainCommand(
 				// TODO this renders twice! Once for site data and once here!
 				renderPage(outputDir, presentation.toData(), presentationTemplate, siteData)
 			}
-		}
-	}
-
-	private fun validate(site: Site) {
-		for (podcast in site.podcasts) {
-			validateUrlReachability(podcast.episodeLink) {
-				"Podcast '${podcast.slug}' episode link unreachable"
-			}
-		}
-
-		for (post in site.posts) {
-			if (post.externalLink != null) {
-				validateUrlReachability(post.externalLink.url) {
-					"Post '${post.slug}' external link unreachable"
-				}
-			}
-			post.content.accept(object : AbstractVisitor() {
-				override fun visit(link: Link) {
-					val destination = link.destination
-					if (destination.startsWith("/")) {
-						// TODO validate relative link
-					} else {
-						val url = destination.toHttpUrlOrNull()
-						if (url == null) {
-							unreachableUrl("Post '${post.slug}' link '${link.title}' malformed/invalid: $url")
-						} else {
-							validateUrlReachability(url) {
-								"Post '${post.slug}' link '$url' unreachable"
-							}
-						}
-					}
-				}
-			})
-		}
-
-		for (presentation in site.presentations) {
-			if (presentation.eventLink != null) {
-				validateUrlReachability(presentation.eventLink) {
-					"Presentation '${presentation.slug}' event link unreachable"
-				}
-			}
-			if (presentation.video != null) {
-				val url = when (presentation.video) {
-					is Url -> presentation.video.url
-					is Vimeo -> "https://vimeo.com/api/v2/video/${presentation.video.id}.xml".toHttpUrl()
-					is Youtube -> "http://img.youtube.com/vi/${presentation.video.id}/maxresdefault.jpg".toHttpUrl()
-				}
-				validateUrlReachability(url) {
-					"Presentation '${presentation.slug}' video unreachable"
-				}
-			}
-			if (presentation.slides != null) {
-				val url = when (presentation.slides) {
-					is SpeakerDeck -> "https://speakerd.s3.amazonaws.com/presentations/${presentation.slides.id}/slide_0.jpg".toHttpUrl()
-				}
-				validateUrlReachability(url) {
-					"Presentation '${presentation.slug}' slides unreachable"
-				}
-			}
-		}
-	}
-
-	private fun validateUrlReachability(url: HttpUrl, failureMessage: () -> String) {
-		val success = runCatching {
-			httpClient.newCall(Request(url, method = "HEAD")).execute().use(Response::isSuccessful)
-		}.getOrElse {
-			false
-		}
-		if (!success) {
-			unreachableUrl(failureMessage())
-		}
-	}
-
-	private fun unreachableUrl(message: String) {
-		when (linkValidation) {
-			LinkValidationMode.Ignore -> {}
-			LinkValidationMode.Warn -> System.err.println(message)
-			LinkValidationMode.Error -> throw IllegalStateException(message)
 		}
 	}
 
