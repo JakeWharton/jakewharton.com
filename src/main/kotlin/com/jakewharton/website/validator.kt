@@ -54,6 +54,8 @@ internal class SiteValidator(
 			}
 			post.content.accept(object : AbstractVisitor() {
 				override fun visit(link: Link) {
+					super.visit(link)
+
 					val destination = link.destination
 					if (destination.startsWith("/")) {
 						// TODO validate relative link
