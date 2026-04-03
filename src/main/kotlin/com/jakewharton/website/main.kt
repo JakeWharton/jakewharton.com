@@ -117,12 +117,14 @@ private class MainCommand(
 			.asDatedCollection()
 			.map(::parsePodcastAppearance)
 			.toList()
+			.sortedBy(PodcastAppearance::episodeTitle) // Make same-day podcasts deterministic.
 			.sortedByDescending(PodcastAppearance::date)
 
 		val posts = rootDir.resolve("posts")
 			.asDatedCollection()
 			.map(::parseBlogPost)
 			.toList()
+			.sortedBy(BlogPost::title) // Make same-day posts deterministic.
 			.sortedByDescending(BlogPost::date)
 
 		val presentations = rootDir.resolve("presentations")
