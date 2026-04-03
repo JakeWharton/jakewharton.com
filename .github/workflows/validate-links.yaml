@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - run: docker run --rm --volume="$PWD/site:/blog" $(docker build -q .) --link-validation warn /blog
+      - run: docker run --rm --volume="$PWD/site:/blog" $(docker build -q .) --validate-links /blog

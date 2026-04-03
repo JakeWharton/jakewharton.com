@@ -6,13 +6,13 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.defaultLazy
-import com.github.ajalt.clikt.parameters.options.default
+import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.types.enum
 import com.github.ajalt.clikt.parameters.types.path
 import java.nio.file.FileSystem
 import java.nio.file.FileSystems
 import java.time.Clock
+import kotlin.system.exitProcess
 import org.commonmark.ext.footnotes.FootnotesExtension
 import org.commonmark.ext.gfm.strikethrough.StrikethroughExtension
 import org.commonmark.ext.gfm.tables.TablesExtension
@@ -22,12 +22,6 @@ fun main(vararg args: String) {
 	val systemFs = FileSystems.getDefault()!!
 	val systemClock = Clock.systemUTC()!!
 	MainCommand(systemFs, systemClock).main(args)
-}
-
-private enum class LinkValidationMode {
-	Ignore,
-	Warn,
-	Error,
 }
 
 private class MainCommand(
@@ -42,9 +36,7 @@ private class MainCommand(
 		.path(canBeFile = false, fileSystem = fs)
 		.defaultLazy { rootDir.resolve("out") }
 
-	private val linkValidation by option()
-		.enum<LinkValidationMode>()
-		.default(LinkValidationMode.Ignore)
+	private val validateLinks by option().flag()
 
 	private val mdExtensions = listOf(
 		FootnotesExtension.create(),
@@ -64,19 +56,16 @@ private class MainCommand(
 		println("${site.posts.size} posts")
 		println("${site.presentations.size} presentations")
 
-		if (linkValidation != LinkValidationMode.Ignore) {
-			println("\nValidating!\n")
-
-			val problems = SiteValidator().use { it.validate(site) }
-			if (problems.isNotEmpty()) {
-				for (problem in problems) {
-					System.err.println(problem.message)
-				}
-				if (linkValidation == LinkValidationMode.Error) {
-					throw IllegalStateException("${problems.size} problems found")
-				}
-				System.err.flush()
+		println("\nValidating!\n")
+		val problems = SiteValidator(validateLinks).use { it.validate(site) }
+		if (problems.isNotEmpty()) {
+			for (problem in problems.sortedBy { it.level }) {
+				System.err.println(problem::class.simpleName + ": " + problem.message)
 			}
+			if (problems.any { it.level == ValidationProblem.Level.Error }) {
+				exitProcess(1)
+			}
+			System.err.flush()
 		}
 
 		println("\nRendering!\n")
