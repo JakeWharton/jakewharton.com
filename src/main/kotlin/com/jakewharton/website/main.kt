@@ -60,6 +60,9 @@ private class MainCommand(
 	override fun run() {
 		println("Parsing!\n")
 		val site = SiteParser(mdExtensions).parse(rootDir)
+		println("${site.podcasts.size} podcasts")
+		println("${site.posts.size} posts")
+		println("${site.presentations.size} presentations")
 
 		if (linkValidation != LinkValidationMode.Ignore) {
 			println("\nValidating!\n")
