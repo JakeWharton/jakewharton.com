@@ -5,6 +5,12 @@ import java.time.LocalDate
 import okhttp3.HttpUrl
 import org.commonmark.node.Node
 
+internal data class Site(
+	val podcasts: List<PodcastAppearance>,
+	val posts: List<BlogPost>,
+	val presentations: List<Presentation>,
+)
+
 internal data class BlogPost(
 	val path: Path,
 	val date: LocalDate,
