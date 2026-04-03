@@ -66,6 +66,8 @@ private class MainCommand(
 				exitProcess(1)
 			}
 			System.err.flush()
+		} else {
+			println("All good!")
 		}
 
 		println("\nRendering!\n")
