@@ -63,12 +63,16 @@ internal class SiteRenderer(
 
 	@OptIn(ExperimentalPathApi::class)
 	fun render(site: Site, rootDir: Path, outputDir: Path) {
+		val podcasts = site.podcasts.associateWith { it.toData() }
+		val posts = site.posts.associateWith { it.toData() }
+		val presentations = site.presentations.associateWith { it.toData() }
+
 		val siteData = mapOf(
 			"url" to "https://jakewharton.com",
 			"time" to OffsetDateTime.now(clock).format(dateTimeFormat),
-			"podcasts" to site.podcasts.map { it.toData() },
-			"posts" to site.posts.map { it.toData() },
-			"presentations" to site.presentations.map { it.toData() },
+			"podcasts" to podcasts.values,
+			"posts" to posts.values,
+			"presentations" to presentations.values,
 		)
 
 		val layoutsDir = rootDir.resolve("layouts")
@@ -113,17 +117,15 @@ internal class SiteRenderer(
 			outputDir.resolve("presentations/index.html"),
 		)
 
-		for (post in site.posts) {
+		for ((post, data) in posts) {
 			if (post.externalLink == null) {
-				// TODO this renders twice! Once for site data and once here!
-				renderPage(outputDir, post.toData(), postTemplate, siteData)
+				renderPage(outputDir, data, postTemplate, siteData)
 			}
 		}
 
-		for (presentation in site.presentations) {
+		for ((presentation, data) in presentations) {
 			if (presentation.eventLink != null) {
-				// TODO this renders twice! Once for site data and once here!
-				renderPage(outputDir, presentation.toData(), presentationTemplate, siteData)
+				renderPage(outputDir, data, presentationTemplate, siteData)
 			}
 		}
 	}
