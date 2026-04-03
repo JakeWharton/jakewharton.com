@@ -58,14 +58,14 @@ For the manually-written Java type we add a new field, getter, and constructor p
    private final @NonNull String name;
 +  private final @Nullable String nickname;
    private final int age;
- 
+
 -  public Person(@NonNull String name, int age) {
 +  public Person(@NonNull String name, @Nullable String nickname, int age) {
      this.name = name;
 +    this.nickname = nickname;
      this.age = age;
    }
- 
+
 +  public Person(@NonNull String name, int age) {
 +    this(name, null, age);
 +  }
@@ -73,7 +73,7 @@ For the manually-written Java type we add a new field, getter, and constructor p
    public @NonNull String getName() { return name; }
 +  public @Nullable String getNickname() { return nickname; }
    public int getAge() { return age; }
- 
+
    @Override public String toString() {
 -   return "Person(name=" + name + ", age=" + age + ')'
 +   return "Person(name=" + name + ", nickname=" + nickname + ", age=" + age + ')'
@@ -176,7 +176,7 @@ These support creating a new instance of a `Person` while also updating a subset
 Unfortunately, adding the `nickname` property changes the signature of both of these methods breaking compatibility.
 
 ```diff
-public final class Person {
+ public final class Person {
     ⋮
 -  public final Person copy(java.lang.String, int);
 +  public final Person copy(java.lang.String, java.lang.String, int);
@@ -242,14 +242,14 @@ To avoid the explosion of constructors in Java, the `Person` type would traditio
 ```diff
  public final class Person {
    ⋮
- 
+
 -  public Person(@NonNull String name, @Nullable String nickname, int age) {
 +  private Person(@NonNull String name, @Nullable String nickname, int age) {
      this.name = name;
      this.nickname = nickname;
      this.age = age;
    }
- 
+
    ⋮
 +
 +  public static final class Builder {
@@ -310,7 +310,7 @@ A builder is usually a mutable(ish) version of an immutable type that also is re
 +  var nickname: String? = null
 -  private var age: Int = 0
 +  var age: Int = 0
- 
+
 -  fun setName(name: String?) = apply { this.name = name }
 -  fun setNickname(nickname: String?) = apply { this.nickname = nickname }
 -  fun setAge(age: Int) = apply { this.age = age }
@@ -334,11 +334,11 @@ Without a language change to allow property setters to return values, we are for
 -  private var age: Int = 0
 +  @set:JvmSynthetic // Hide 'void' setter from Java
 +  var age: Int = 0
- 
+
    fun setName(name: String?) = apply { this.name = name }
    fun setNickname(nickname: String?) = apply { this.nickname = nickname }
    fun setAge(age: Int) = apply { this.age = age }
- 
+
    fun build() = Person(name!!, nickname, age)
  }
 ```
