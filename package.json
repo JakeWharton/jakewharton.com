@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "netlify-cli": "^24.0.0"
+    "netlify-cli": "^25.0.0"
   }
 }
