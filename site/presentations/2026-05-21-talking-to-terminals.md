@@ -4,6 +4,7 @@ location: Munich, Germany
 homepage: https://kotlinconf.com/
 
 title: "Talking to terminals (and how they talk back)"
+speakerdeck: fde74abc3525461291d2d09284d913fb
 ---
 
 Have you ever wondered how Gradle renders multiple progress bars below the scrolling output? Or how a Linux installer renders full screen in the terminal? What about how curl somehow displays a progress bar despite having its output redirected to a file?
