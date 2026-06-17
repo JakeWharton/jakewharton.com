@@ -11,7 +11,7 @@ I'm happy to announce that Retrofit, OkHttp, and Okio are moving to a new GitHub
 You can read [their announcement of the move](https://www.commonhaus.org/activity/315.html).
 
 This move is meant to reinforce our commitment to these projects' longevity and honor the fact that they've long since outgrown the stewardship of a single company.
-The transfer these projects is already underway!
+The transfer of these projects is already underway!
 Assets and infrastructure are still being moved, so please bear with us as we get everything back up and running.
 
 On behalf of myself, Jesse Wilson, and Alec Kazakova, thank you to everyone at Square, Cash App, and externally who contributed to these projects over the years.
