@@ -2,7 +2,7 @@
 commonmark = "0.29.0"
 
 [libraries]
-kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.0"
+kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.10"
 commonmark-core = { module = "org.commonmark:commonmark", version.ref = "commonmark" }
 commonmark-ext-footnotes = { module = "org.commonmark:commonmark-ext-footnotes", version.ref = "commonmark" }
 commonmark-ext-headingAnchor = { module = "org.commonmark:commonmark-ext-heading-anchor", version.ref = "commonmark" }
