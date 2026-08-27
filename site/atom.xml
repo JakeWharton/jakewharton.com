@@ -11,7 +11,7 @@
   </author>
 {% for post in site.posts %}
   <entry>
-    <title>{{ post.title }}</title>
+    <title>{{ post.title | xml_escape }}</title>
     <link href="{% if post.external %}{{ post.blog_link }}{% else %}{{ site.url }}{{ post.url }}{% endif %}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ post.id }}</id>
